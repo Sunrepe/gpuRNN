@@ -15,7 +15,7 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 # LSTM Neural Network's internal structure
 
 n_hidden = 32  # Hidden layer num of features
-n_classes = 6  # Total classes (should go up, or should go down)
+n_classes = 8  # Total classes (should go up, or should go down)
 n_inputs = 8
 max_seq = 300
 
