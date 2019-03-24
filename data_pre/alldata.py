@@ -35,7 +35,7 @@ class AllData(object):
     func next(): 获得batch_data
     '''
 
-    def __init__(self, foldname='D:/myo_data/all/', max_seq=300, shuffle=True):
+    def __init__(self, foldname, max_seq=300, shuffle=True):
 
         self.all_data = []
         self.all_label = []
