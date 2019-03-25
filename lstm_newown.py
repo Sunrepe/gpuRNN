@@ -15,16 +15,16 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'  # just error no warning
 
 # All hyperparameters
 n_hidden = 20  # Hidden layer num of features
-n_classes = 8  # Total classes (should go up, or should go down)
+n_classes = 10  # Total classes (should go up, or should go down)
 n_inputs = 8
-max_seq = 300
+max_seq = 600
 
 # Training
 learning_rate = 0.0025
 lambda_loss_amount = 0.0015
 training_iters = 500  # Loop 1000 times on the dataset
-batch_size = 100
-display_iter = 3000  # To show test set accuracy during training
+batch_size = 60
+display_iter = 1600  # To show test set accuracy during training
 
 
 def Matrix_to_CSV(filename, data):
@@ -53,8 +53,8 @@ def LSTM_RNN(_X, seqlen, _weight, _bias):
 
 def main():
     time1 = time.time()
-    train_sets = AllData(foldname='./data/all/')
-    test_sets = NewDataSetTest(foldname='./data/actdata/')
+    train_sets = NewDataSetTest2(foldname='./data/actdata/', max_seq=600, trainable=True)
+    test_sets = NewDataSetTest2(foldname='./data/actdata/', max_seq=600, trainable=False)
     train_data_len = len(train_sets.all_seq_len)
 
     # Graph input/output
