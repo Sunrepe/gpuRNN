@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e51bf105-f34c-4031-aa58-28fd3cc5807c" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/actdata/zhouxufeng_ok_b.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/actdata/zhouxufeng_ok_c.txt" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/gaoyan_double_c.txt" afterPath="$PROJECT_DIR$/data/actdata/gaoyan_double_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/gaoyan_finger_c.txt" afterPath="$PROJECT_DIR$/data/actdata/gaoyan_finger_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/gaoyan_fist_c.txt" afterPath="$PROJECT_DIR$/data/actdata/gaoyan_fist_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/gaoyan_no_c.txt" afterPath="$PROJECT_DIR$/data/actdata/gaoyan_no_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/gaoyan_six_c.txt" afterPath="$PROJECT_DIR$/data/actdata/gaoyan_six_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/gaoyan_snap_c.txt" afterPath="$PROJECT_DIR$/data/actdata/gaoyan_snap_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/gaoyan_spread_c.txt" afterPath="$PROJECT_DIR$/data/actdata/gaoyan_spread_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/gaoyan_wavein_c.txt" afterPath="$PROJECT_DIR$/data/actdata/gaoyan_wavein_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/gaoyan_waveout_c.txt" afterPath="$PROJECT_DIR$/data/actdata/gaoyan_waveout_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/gaoyan_yes_c.txt" afterPath="$PROJECT_DIR$/data/actdata/gaoyan_yes_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/shechen_double_c.txt" afterPath="$PROJECT_DIR$/data/actdata/shechen_double_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/shechen_finger_c.txt" afterPath="$PROJECT_DIR$/data/actdata/shechen_finger_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/shechen_fist_c.txt" afterPath="$PROJECT_DIR$/data/actdata/shechen_fist_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/shechen_no_c.txt" afterPath="$PROJECT_DIR$/data/actdata/shechen_no_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/shechen_six_c.txt" afterPath="$PROJECT_DIR$/data/actdata/shechen_six_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/shechen_snap_c.txt" afterPath="$PROJECT_DIR$/data/actdata/shechen_snap_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/shechen_spread_c.txt" afterPath="$PROJECT_DIR$/data/actdata/shechen_spread_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/shechen_wavein_c.txt" afterPath="$PROJECT_DIR$/data/actdata/shechen_wavein_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/shechen_waveout_c.txt" afterPath="$PROJECT_DIR$/data/actdata/shechen_waveout_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/shechen_yes_c.txt" afterPath="$PROJECT_DIR$/data/actdata/shechen_yes_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/wangzihan_double_c.txt" afterPath="$PROJECT_DIR$/data/actdata/wangzihan_double_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/wangzihan_finger_c.txt" afterPath="$PROJECT_DIR$/data/actdata/wangzihan_finger_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/wangzihan_fist_c.txt" afterPath="$PROJECT_DIR$/data/actdata/wangzihan_fist_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/wangzihan_no_c.txt" afterPath="$PROJECT_DIR$/data/actdata/wangzihan_no_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/wangzihan_six_c.txt" afterPath="$PROJECT_DIR$/data/actdata/wangzihan_six_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/wangzihan_snap_c.txt" afterPath="$PROJECT_DIR$/data/actdata/wangzihan_snap_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/wangzihan_spread_c.txt" afterPath="$PROJECT_DIR$/data/actdata/wangzihan_spread_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/wangzihan_wavein_c.txt" afterPath="$PROJECT_DIR$/data/actdata/wangzihan_wavein_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/wangzihan_waveout_c.txt" afterPath="$PROJECT_DIR$/data/actdata/wangzihan_waveout_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/wanyuanqiang_double_c.txt" afterPath="$PROJECT_DIR$/data/actdata/wanyuanqiang_double_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/wanyuanqiang_finger_c.txt" afterPath="$PROJECT_DIR$/data/actdata/wanyuanqiang_finger_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/wanyuanqiang_fist_c.txt" afterPath="$PROJECT_DIR$/data/actdata/wanyuanqiang_fist_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/wanyuanqiang_no_c.txt" afterPath="$PROJECT_DIR$/data/actdata/wanyuanqiang_no_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/wanyuanqiang_six_c.txt" afterPath="$PROJECT_DIR$/data/actdata/wanyuanqiang_six_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/wanyuanqiang_snap_c.txt" afterPath="$PROJECT_DIR$/data/actdata/wanyuanqiang_snap_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/wanyuanqiang_spread_c.txt" afterPath="$PROJECT_DIR$/data/actdata/wanyuanqiang_spread_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/wanyuanqiang_waveout_c.txt" afterPath="$PROJECT_DIR$/data/actdata/wanyuanqiang_waveout_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/wanyuanqiang_yes_c.txt" afterPath="$PROJECT_DIR$/data/actdata/wanyuanqiang_yes_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/wupanhao_double_c.txt" afterPath="$PROJECT_DIR$/data/actdata/wupanhao_double_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/wupanhao_finger_c.txt" afterPath="$PROJECT_DIR$/data/actdata/wupanhao_finger_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/wupanhao_fist_c.txt" afterPath="$PROJECT_DIR$/data/actdata/wupanhao_fist_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/wupanhao_no_c.txt" afterPath="$PROJECT_DIR$/data/actdata/wupanhao_no_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/wupanhao_six_c.txt" afterPath="$PROJECT_DIR$/data/actdata/wupanhao_six_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/wupanhao_snap_c.txt" afterPath="$PROJECT_DIR$/data/actdata/wupanhao_snap_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/wupanhao_spread_c.txt" afterPath="$PROJECT_DIR$/data/actdata/wupanhao_spread_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/wupanhao_wavein_c.txt" afterPath="$PROJECT_DIR$/data/actdata/wupanhao_wavein_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/wupanhao_waveout_c.txt" afterPath="$PROJECT_DIR$/data/actdata/wupanhao_waveout_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/wupanhao_yes_c.txt" afterPath="$PROJECT_DIR$/data/actdata/wupanhao_yes_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/xiejiabao_double_c.txt" afterPath="$PROJECT_DIR$/data/actdata/xiejiabao_double_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/xiejiabao_finger_c.txt" afterPath="$PROJECT_DIR$/data/actdata/xiejiabao_finger_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/xiejiabao_fist_c.txt" afterPath="$PROJECT_DIR$/data/actdata/xiejiabao_fist_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/xiejiabao_no_c.txt" afterPath="$PROJECT_DIR$/data/actdata/xiejiabao_no_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/xiejiabao_six_c.txt" afterPath="$PROJECT_DIR$/data/actdata/xiejiabao_six_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/xiejiabao_snap_c.txt" afterPath="$PROJECT_DIR$/data/actdata/xiejiabao_snap_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/xiejiabao_spread_c.txt" afterPath="$PROJECT_DIR$/data/actdata/xiejiabao_spread_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/xiejiabao_wavein_c.txt" afterPath="$PROJECT_DIR$/data/actdata/xiejiabao_wavein_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/xiejiabao_waveout_c.txt" afterPath="$PROJECT_DIR$/data/actdata/xiejiabao_waveout_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/xiejiabao_yes_c.txt" afterPath="$PROJECT_DIR$/data/actdata/xiejiabao_yes_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/zhangqijian_double_c.txt" afterPath="$PROJECT_DIR$/data/actdata/zhangqijian_double_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/zhangqijian_finger_c.txt" afterPath="$PROJECT_DIR$/data/actdata/zhangqijian_finger_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/zhangqijian_fist_c.txt" afterPath="$PROJECT_DIR$/data/actdata/zhangqijian_fist_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/zhangqijian_no_c.txt" afterPath="$PROJECT_DIR$/data/actdata/zhangqijian_no_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/zhangqijian_six_c.txt" afterPath="$PROJECT_DIR$/data/actdata/zhangqijian_six_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/zhangqijian_snap_c.txt" afterPath="$PROJECT_DIR$/data/actdata/zhangqijian_snap_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/zhangqijian_spread_c.txt" afterPath="$PROJECT_DIR$/data/actdata/zhangqijian_spread_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/zhangqijian_wavein_c.txt" afterPath="$PROJECT_DIR$/data/actdata/zhangqijian_wavein_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/zhangqijian_waveout_c.txt" afterPath="$PROJECT_DIR$/data/actdata/zhangqijian_waveout_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/zhangqijian_yes_c.txt" afterPath="$PROJECT_DIR$/data/actdata/zhangqijian_yes_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/zhouxufeng_double_c.txt" afterPath="$PROJECT_DIR$/data/actdata/zhouxufeng_double_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/zhouxufeng_fist_c.txt" afterPath="$PROJECT_DIR$/data/actdata/zhouxufeng_fist_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/zhouxufeng_no_c.txt" afterPath="$PROJECT_DIR$/data/actdata/zhouxufeng_no_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/zhouxufeng_six_c.txt" afterPath="$PROJECT_DIR$/data/actdata/zhouxufeng_six_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/zhouxufeng_spread_c.txt" afterPath="$PROJECT_DIR$/data/actdata/zhouxufeng_spread_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/zhouxufeng_wavein_c.txt" afterPath="$PROJECT_DIR$/data/actdata/zhouxufeng_wavein_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/zhouxufeng_waveout_c.txt" afterPath="$PROJECT_DIR$/data/actdata/zhouxufeng_waveout_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/actdata/zhouxufeng_yes_c.txt" afterPath="$PROJECT_DIR$/data/actdata/zhouxufeng_yes_c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data_pre/alldata.py" afterPath="$PROJECT_DIR$/data_pre/alldata.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/loss_dir/test_acc.txt" afterPath="$PROJECT_DIR$/loss_dir/test_acc.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/loss_dir/test_loss.txt" afterPath="$PROJECT_DIR$/loss_dir/test_loss.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/loss_dir/train_acc.txt" afterPath="$PROJECT_DIR$/loss_dir/train_acc.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/loss_dir/train_loss.txt" afterPath="$PROJECT_DIR$/loss_dir/train_loss.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lstm.py" afterPath="$PROJECT_DIR$/lstm.py" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/gpuRNN$lstm_testNEWOLD.coverage" NAME="lstm_testNEWOLD Coverage Results" MODIFIED="1553519576001" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="lstm.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lstm.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="275">
+              <caret line="11" column="42" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="222" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#36#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="lstm_testNEWOLD.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lstm_testNEWOLD.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="175">
+              <caret line="25" column="16" lean-forward="false" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
+              <folding>
+                <element signature="e#20#50#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="alldata.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data_pre/alldata.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="226">
+              <caret line="126" column="60" lean-forward="true" selection-start-line="126" selection-start-column="60" selection-end-line="126" selection-end-column="60" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+                <element signature="e#660#3308#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="myo_data.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data_pre/myo_data.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="175">
+              <caret line="10" column="100" lean-forward="false" selection-start-line="10" selection-start-column="82" selection-end-line="10" selection-end-column="100" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/lstm.py" />
+        <option value="$PROJECT_DIR$/data_pre/alldata.py" />
+        <option value="$PROJECT_DIR$/lstm_testNEWOLD.py" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="708" />
+    <option name="width" value="665" />
+    <option name="height" value="745" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="gpuRNN" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gpuRNN" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.lstm_testNEWOLD">
+    <configuration name="lstm_testNEWOLD" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="gpuRNN" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lstm_testNEWOLD.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="Python.lstm_testNEWOLD" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e51bf105-f34c-4031-aa58-28fd3cc5807c" name="Default" comment="" />
+      <created>1553514293749</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1553514293749</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19742814" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30794165" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.41166937" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../firstLSTM/data_pre/myo_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_pre/myo_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="10" column="100" lean-forward="false" selection-start-line="10" selection-start-column="82" selection-end-line="10" selection-end-column="100" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lstm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="11" column="42" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="222" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_pre/alldata.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="126" column="60" lean-forward="true" selection-start-line="126" selection-start-column="60" selection-end-line="126" selection-end-column="60" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#660#3308#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lstm_testNEWOLD.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="25" column="16" lean-forward="false" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
+          <folding>
+            <element signature="e#20#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

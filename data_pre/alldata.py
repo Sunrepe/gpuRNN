@@ -13,7 +13,7 @@ def Read__mean_2(filename):
 
 
 def get_lei(sq):
-    alllei = ['double', 'fist', 'spread', 'six', 'wavein', 'waveout', 'yes', 'no']
+    alllei = ['double', 'fist', 'spread', 'six', 'wavein', 'waveout', 'yes', 'no', 'finger', 'snap']
     return alllei.index(sq)
 
 
@@ -87,3 +87,68 @@ class AllData(object):
         self.batch_id = min(self.batch_id + batch_size, len(self.all_seq_len))
         return batch_data, batch_labels, batch_seq_len
 
+
+class NewDataSetTest(object):
+    '''
+    对于新数据进行测试的第一个数据类:与原数据同步,用原数据测试新数据
+    之后还会有NewDataSetTest2等,进行单独的新数据测试,或者进行新老数据混合训练集测试集测试
+
+    细节:
+        1,注意去除新数据中len>600的数据(该数据假设为动作分割不标准)
+        2,注意只使用前8类
+
+    '''
+
+    def __init__(self, foldname, max_seq=300, shuffle=True):
+
+        self.all_data = []
+        self.all_label = []
+        self.all_seq_len = []
+        self.batch_id = 0
+        for filename in os.listdir(foldname):
+            oa, ob, oc = filename.split('_')
+            if oc == 'b.txt' and get_lei(ob) < 8:
+                filename = foldname + filename
+                data = Read__mean_2(filename)
+                cutting = Read__mean_2(foldname + oa + '_' + ob + '_c.txt')
+                for cut in range(0, 20):
+                    # 读取数据
+                    if cutting[cut] >= 600:
+                        pass
+                    else:
+                        if cut == 0:
+                            tmp_data = z_score(data[0:cutting[cut], :])
+                        else:
+                            tmp_data = z_score(data[cutting[cut-1]:cutting[cut], :])
+                        _per = [i for i in range(0, tmp_data.shape[0], 3)]
+                        tmp_data = tmp_data[_per, :]
+                        _len = tmp_data.shape[0]
+                        # 生成数据
+                        self.all_label.append(get_label(ob))
+                        self.all_seq_len.append(_len)
+                        s_tmp = np.zeros((max_seq, 8))
+                        s_tmp[0:_len] = tmp_data
+                        self.all_data.append(s_tmp)
+        # 打乱数据
+        if shuffle:
+            _per = np.random.permutation(len(self.all_seq_len))  # 打乱后的行号
+            self.all_data = np.array(self.all_data)[_per, :, :].astype('float32')
+            self.all_label = np.array(self.all_label)[_per, :].astype('float32')
+            self.all_seq_len = np.array(self.all_seq_len)[_per].astype('float32')
+
+    def _shuffle_data(self):
+        _per = np.random.permutation(len(self.all_seq_len))  # 打乱后的行号
+        self.all_data = np.array(self.all_data)[_per, :, :].astype('float32')
+        self.all_label = np.array(self.all_label)[_per, :].astype('float32')
+        self.all_seq_len = np.array(self.all_seq_len)[_per].astype('float32')
+
+    def next(self, batch_size, shuffle=False):
+        if self.batch_id == len(self.all_seq_len):
+            self.batch_id = 0
+            if shuffle:
+                self._shuffle_data()
+        batch_data = self.all_data[self.batch_id:min(self.batch_id + batch_size, len(self.all_seq_len))]
+        batch_labels = self.all_label[self.batch_id:min(self.batch_id + batch_size, len(self.all_seq_len))]
+        batch_seq_len = self.all_seq_len[self.batch_id:min(self.batch_id + batch_size, len(self.all_seq_len))]
+        self.batch_id = min(self.batch_id + batch_size, len(self.all_seq_len))
+        return batch_data, batch_labels, batch_seq_len

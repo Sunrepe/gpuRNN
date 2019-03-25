@@ -1,3 +1,9 @@
 # gpuRNN
-Personal Use 
-for test gpus
+*Personal Use for test gpus*
+
+
+
+
+
+
+
