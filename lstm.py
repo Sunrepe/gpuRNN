@@ -11,6 +11,92 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 # os.environ['TF_CPP_MIN_LOG_LEVEL'] = '1'
 # os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
+def Read__mean_2(filename):
+    '''
+    获得所有且分点信息，同时将所有数据进行（绝对值、去噪操作）
+    :param filename:
+    :return: 转置的8*N 的预处理的原始数据
+    '''
+    # f_csv = csv.reader(filename)
+    my_matrix = np.loadtxt(filename, dtype='int', delimiter=",")
+    return my_matrix
+
+
+def get_lei(sq):
+    alllei = ['double', 'fist', 'spread', 'six', 'wavein', 'waveout', 'yes', 'no']
+    return alllei.index(sq)
+
+
+def get_label(ch, num_classes=8):
+    return np.eye(num_classes)[get_lei(ch)]
+
+
+# 数据标准化方案1
+def z_score(data_x):
+    x_m = np.mean(data_x)
+    x_p = np.std(data_x)
+    x = (data_x-x_m)/x_p
+    return x
+
+
+class AllData(object):
+    '''
+    根据文件夹获得数据，分为train/test
+    func next(): 获得batch_data
+    '''
+
+    def __init__(self, foldname='D:/myo_data/all/', max_seq=300, shuffle=True):
+
+        self.all_data = []
+        self.all_label = []
+        self.all_seq_len = []
+        self.batch_id = 0
+        for filename in os.listdir(foldname):
+            oa, ob, oc = filename.split('_')
+            if oc == 'b.txt' and get_lei(ob) < 8:
+                filename = foldname + filename
+                data = Read__mean_2(filename)
+                cutting = Read__mean_2(foldname + oa + '_' + ob + '_c.txt')
+                for cut in range(0, 10):
+                    # 读取数据
+                    if cut == 0:
+                        tmp_data = z_score(data[0:cutting[cut] - 1, :])
+                        _len = cutting[0]
+                    else:
+                        tmp_data = z_score(data[cutting[cut - 1]:cutting[cut] - 1, :])
+                        _len = cutting[cut] - cutting[cut - 1]
+                    # 生成数据
+                    self.all_label.append(get_label(ob))
+                    self.all_seq_len.append(_len)
+                    s_tmp = np.zeros((max_seq, 8))
+                    # print(np.shape(tmp_data))
+                    # print('len_', _len)
+                    s_tmp[0:_len-1] = tmp_data
+                    self.all_data.append(s_tmp)
+        # 打乱数据
+        if shuffle:
+            _per = np.random.permutation(len(self.all_seq_len))  # 打乱后的行号
+            self.all_data = np.array(self.all_data)[_per, :, :].astype('float32')
+            self.all_label = np.array(self.all_label)[_per, :].astype('float32')
+            self.all_seq_len = np.array(self.all_seq_len)[_per].astype('float32')
+
+    def _shuffle_data(self):
+        _per = np.random.permutation(len(self.all_seq_len))  # 打乱后的行号
+        self.all_data = np.array(self.all_data)[_per, :, :].astype('float32')
+        self.all_label = np.array(self.all_label)[_per, :].astype('float32')
+        self.all_seq_len = np.array(self.all_seq_len)[_per].astype('float32')
+
+    def next(self, batch_size, shuffle=False):
+        if self.batch_id == len(self.all_seq_len):
+            self.batch_id = 0
+            if shuffle:
+                self._shuffle_data()
+        batch_data = self.all_data[self.batch_id:min(self.batch_id + batch_size, len(self.all_seq_len))]
+        batch_labels = self.all_label[self.batch_id:min(self.batch_id + batch_size, len(self.all_seq_len))]
+        batch_seq_len = self.all_seq_len[self.batch_id:min(self.batch_id + batch_size, len(self.all_seq_len))]
+        self.batch_id = min(self.batch_id + batch_size, len(self.all_seq_len))
+        return batch_data, batch_labels, batch_seq_len
+
 # LSTM Neural Network's internal structure
 
 n_hidden = 32  # Hidden layer num of features
@@ -21,7 +107,7 @@ max_seq = 300
 # Training
 learning_rate = 0.0025
 lambda_loss_amount = 0.0015
-training_iters = 200  # Loop 1000 times on the dataset
+training_iters = 1  # Loop 1000 times on the dataset
 batch_size = 80
 display_iter = 2400  # To show test set accuracy during training
 
@@ -50,10 +136,10 @@ def LSTM_RNN(_X, seqlen, _weight, _bias):
     return tf.matmul(lstm_out, _weight['out']) + _bias['out']
 
 
-def main2():
+def main():
     time1 = time.time()
-    train_sets = AllData(foldname='../data/train/')
-    test_sets = AllData(foldname='../data/test/')
+    train_sets = AllData(foldname='./data/train/')
+    test_sets = AllData(foldname='./data/test/')
     train_data_len = len(train_sets.all_seq_len)
 
     # Graph input/output
@@ -139,7 +225,7 @@ def main2():
         # save the model:
         if (step * batch_size % (display_iter*50) == 0) or (
                 step * batch_size > training_iters * train_data_len):
-            save_path = saver.save(sess, "../model/_lstm_6/model.ckpt", global_step=step)
+            save_path = saver.save(sess, "./lstm/model.ckpt", global_step=step)
             print("Model saved in file: %s" % save_path)
         step += 1
 
@@ -174,7 +260,6 @@ def main2():
     }
     matplotlib.rc('font', **font)
 
-    import numpy as np
     width = 12
     height = 12
     plt.figure(figsize=(width, height))
@@ -200,17 +285,24 @@ def main2():
     plt.show()
 
     # save and load
-    Matrix_to_CSV('../loss_dir/train_loss.txt', train_losses)
-    Matrix_to_CSV('../loss_dir/train_acc.txt', train_accuracies)
-    Matrix_to_CSV('../loss_dir/test_loss.txt', test_losses)
-    Matrix_to_CSV('../loss_dir/test_acc.txt', test_accuracies)
+    Matrix_to_CSV('./loss_dir/train_loss.txt', train_losses)
+    Matrix_to_CSV('./loss_dir/train_acc.txt', train_accuracies)
+    Matrix_to_CSV('./loss_dir/test_loss.txt', test_losses)
+    Matrix_to_CSV('./loss_dir/test_acc.txt', test_accuracies)
+    # train_losses = np.loadtxt('./loss_dir/train_loss.txt')
+    # train_accuracies = np.loadtxt('../loss_dir/train_acc.txt')
+    # test_losses = np.loadtxt('../loss_dir/test_loss.txt')
+    # test_accuracies = np.loadtxt('../loss_dir/test_acc.txt')
 
     sess.close()
 
 
-def main():
-    a=np.array([1,2,3,4,5])
-    print(a)
-
 if __name__ == '__main__':
     main()
+    # train_sets = AllData(foldname='./data/train/')
+    # a, b, c = train_sets.next(10)
+    # test_sets = AllData(foldname='./data/test/')
+    # a, b, c = test_sets.next(10)
+    # print(a.dtype)
+    # print(b.dtype)
+    # print(c.dtype)
