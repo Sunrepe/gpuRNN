@@ -17,8 +17,13 @@ def get_lei(sq):
     return alllei.index(sq)
 
 
+def get_8class(sq):
+    alllei = ['double', 'fist', 'spread', 'six', 'wavein', 'waveout', 'yes', 'snap', 'no', 'finger']
+    return alllei.index(sq)
+
+
 def get_label(ch, num_classes=8):
-    return np.eye(num_classes)[get_lei(ch)]
+    return np.eye(num_classes)[ch]
 
 
 # 数据标准化方案1
@@ -334,6 +339,77 @@ class NewDataSetTest4(object):
                     else:
                         # 生成数据
                         self.all_label.append(get_label(ob, num_classes=10))
+                        self.all_seq_len.append(_len)
+                        s_tmp = np.zeros((max_seq, 8))
+                        s_tmp[0:_len] = tmp_data
+                        self.all_data.append(s_tmp)
+        # 打乱数据
+        if shuffle:
+            _per = np.random.permutation(len(self.all_seq_len))  # 打乱后的行号
+            self.all_data = np.array(self.all_data)[_per, :, :].astype('float32')
+            self.all_label = np.array(self.all_label)[_per, :].astype('float32')
+            self.all_seq_len = np.array(self.all_seq_len)[_per].astype('float32')
+
+    def _shuffle_data(self):
+        _per = np.random.permutation(len(self.all_seq_len))  # 打乱后的行号
+        self.all_data = np.array(self.all_data)[_per, :, :].astype('float32')
+        self.all_label = np.array(self.all_label)[_per, :].astype('float32')
+        self.all_seq_len = np.array(self.all_seq_len)[_per].astype('float32')
+
+    def next(self, batch_size, shuffle=False):
+        if self.batch_id == len(self.all_seq_len):
+            self.batch_id = 0
+            if shuffle:
+                self._shuffle_data()
+        batch_data = self.all_data[self.batch_id:min(self.batch_id + batch_size, len(self.all_seq_len))]
+        batch_labels = self.all_label[self.batch_id:min(self.batch_id + batch_size, len(self.all_seq_len))]
+        batch_seq_len = self.all_seq_len[self.batch_id:min(self.batch_id + batch_size, len(self.all_seq_len))]
+        self.batch_id = min(self.batch_id + batch_size, len(self.all_seq_len))
+        return batch_data, batch_labels, batch_seq_len
+
+
+class NewData8class1(object):
+    '''
+    对于新数据进行测试4:只选择其中8个动作进行分类
+    注意:原始数据帧率较高,只选择其1/4帧率进行测试
+    之后还会有NewDataSetTest2等,进行单独的新数据测试,或者进行新老数据混合训练集测试集测试
+
+    细节:
+        1,注意去除新数据中len>600的数据(该数据假设为动作分割不标准)
+        2,注意只使用前8类
+
+    '''
+
+    def __init__(self, foldname, max_seq=300, shuffle=True, trainable=True, num_class=8):
+        # allmen = ['zhangqijian', 'wupanhao', 'zhouxufeng', 'wangzihan', 'wanyuanqiang', 'shechen', 'gaoyan', 'xiejiabao']
+        train_person = ['zhangqijian', 'wupanhao', 'gaoyan', 'wangzihan', 'wanyuanqiang', 'shechen', 'simengbin']
+        test_person = ['zhouxufeng', 'xiejiabao']
+        self.__people = train_person if trainable else test_person
+        self.all_data = []
+        self.all_label = []
+        self.all_seq_len = []
+        self.batch_id = 0
+        for filename in os.listdir(foldname):
+            oa, ob, oc = filename.split('_')
+            if oc == 'b.txt' and get_8class(ob) < 8 and oa in self.__people:
+                filename = foldname + filename
+                data = Read__mean_2(filename)
+                cutting = Read__mean_2(foldname + oa + '_' + ob + '_c.txt')
+                for cut in range(0, 20):
+                    if cut == 0:
+                        tmp_data = data[0:cutting[cut], :]
+                    else:
+                        tmp_data = data[cutting[cut - 1]:cutting[cut], :]
+                    # _per = [i for i in range(0, tmp_data.shape[0], 4)]
+                    # tmp_data = tmp_data[_per, :]
+                    tmp_data = z_score(tmp_data)
+                    _len = tmp_data.shape[0]
+                    # 读取数据
+                    if _len >= max_seq:
+                        pass
+                    else:
+                        # 生成数据
+                        self.all_label.append(get_label(get_8class(ob), num_classes=num_class))
                         self.all_seq_len.append(_len)
                         s_tmp = np.zeros((max_seq, 8))
                         s_tmp[0:_len] = tmp_data
