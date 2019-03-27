@@ -22,7 +22,7 @@ max_seq = 600
 # Training
 learning_rate = 0.0025
 lambda_loss_amount = 0.0015
-training_iters = 500  # Loop 1000 times on the dataset
+training_iters = 1000  # Loop 1000 times on the dataset
 batch_size = 60
 display_iter = 1600  # To show test set accuracy during training
 
@@ -102,7 +102,6 @@ def main():
 
     while step * batch_size <= training_iters * train_data_len:
         batch_xs, batch_ys, batch_seq_len = train_sets.next(batch_size)
-
         # Fit training using batch data
         _, loss, acc = sess.run(
             [optimizer, cost, accuracy],
@@ -200,10 +199,10 @@ def main():
     plt.show()
 
     # save and load
-    Matrix_to_CSV('./loss_dir/train_loss.txt', train_losses)
-    Matrix_to_CSV('./loss_dir/train_acc.txt', train_accuracies)
-    Matrix_to_CSV('./loss_dir/test_loss.txt', test_losses)
-    Matrix_to_CSV('./loss_dir/test_acc.txt', test_accuracies)
+    Matrix_to_CSV('./loss_dir/hd{}iter{}ba{}lr{}train_loss.txt'.format(n_hidden,training_iters,batch_size,learning_rate), train_losses)
+    Matrix_to_CSV('./loss_dir/hd{}iter{}ba{}lr{}train_acc.txt'.format(n_hidden,training_iters,batch_size,learning_rate), train_accuracies)
+    Matrix_to_CSV('./loss_dir/hd{}iter{}ba{}lr{}test_loss.txt'.format(n_hidden,training_iters,batch_size,learning_rate), test_losses)
+    Matrix_to_CSV('./loss_dir/hd{}iter{}ba{}lr{}test_acc.txt'.format(n_hidden,training_iters,batch_size,learning_rate), test_accuracies)
     # train_losses = np.loadtxt('./loss_dir/train_loss.txt')
     # train_accuracies = np.loadtxt('../loss_dir/train_acc.txt')
     # test_losses = np.loadtxt('../loss_dir/test_loss.txt')

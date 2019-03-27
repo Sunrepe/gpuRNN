@@ -181,15 +181,15 @@ class NewDataSetTest2(object):
                 data = Read__mean_2(filename)
                 cutting = Read__mean_2(foldname + oa + '_' + ob + '_c.txt')
                 for cut in range(0, 20):
+                    if cut == 0:
+                        tmp_data = z_score(data[0:cutting[cut], :])
+                    else:
+                        tmp_data = z_score(data[cutting[cut - 1]:cutting[cut], :])
+                    _len = tmp_data.shape[0]
                     # 读取数据
-                    if cutting[cut] >= 600:
+                    if _len >= 600:
                         pass
                     else:
-                        if cut == 0:
-                            tmp_data = z_score(data[0:cutting[cut], :])
-                        else:
-                            tmp_data = z_score(data[cutting[cut-1]:cutting[cut], :])
-                        _len = tmp_data.shape[0]
                         # 生成数据
                         self.all_label.append(get_label(ob, num_classes=10))
                         self.all_seq_len.append(_len)
