@@ -2,8 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e51bf105-f34c-4031-aa58-28fd3cc5807c" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lstm/model.ckpt-1600.data-00000-of-00001" afterPath="$PROJECT_DIR$/lstm/model.ckpt-1600.data-00000-of-00001" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lstm/model.ckpt-1600.index" afterPath="$PROJECT_DIR$/lstm/model.ckpt-1600.index" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lstm/model.ckpt-1600.meta" afterPath="$PROJECT_DIR$/lstm/model.ckpt-1600.meta" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data_pre/alldata.py" afterPath="$PROJECT_DIR$/data_pre/alldata.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data_pre/mfccData.py" afterPath="$PROJECT_DIR$/data_pre/mfccData.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/loss_dir/hd20iter200ba100lr0.0025test_acc.txt" afterPath="$PROJECT_DIR$/loss_dir/hd20iter200ba100lr0.0025test_acc.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/loss_dir/hd20iter200ba100lr0.0025test_loss.txt" afterPath="$PROJECT_DIR$/loss_dir/hd20iter200ba100lr0.0025test_loss.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/loss_dir/hd20iter200ba100lr0.0025train_acc.txt" afterPath="$PROJECT_DIR$/loss_dir/hd20iter200ba100lr0.0025train_acc.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/loss_dir/hd20iter200ba100lr0.0025train_loss.txt" afterPath="$PROJECT_DIR$/loss_dir/hd20iter200ba100lr0.0025train_loss.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lstm/checkpoint" afterPath="$PROJECT_DIR$/lstm/checkpoint" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lstm_testNEWOLD.py" afterPath="$PROJECT_DIR$/lstm_testNEWOLD.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,7 +26,7 @@
     <SUITE FILE_PATH="coverage/gpuRNN$lstm_testNEWOLD.coverage" NAME="lstm_testNEWOLD Coverage Results" MODIFIED="1553736937380" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$lstm_twof.coverage" NAME="lstm_twof Coverage Results" MODIFIED="1553686466089" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$PicandMatrix.coverage" NAME="PicandMatrix Coverage Results" MODIFIED="1553741226742" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/gpuRNN$lstm_mfcctest.coverage" NAME="lstm_mfcctest Coverage Results" MODIFIED="1553743729054" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/gpuRNN$lstm_mfcctest.coverage" NAME="lstm_mfcctest Coverage Results" MODIFIED="1553744180019" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$lstm_8pose.coverage" NAME="lstm_8pose Coverage Results" MODIFIED="1553700407599" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FileEditorManager">
@@ -26,8 +34,20 @@
       <file leaf-file-name="lstm_testNEWOLD.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lstm_testNEWOLD.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="141">
-              <caret line="212" column="54" lean-forward="true" selection-start-line="211" selection-start-column="4" selection-end-line="212" selection-end-column="54" />
+            <state relative-caret-position="4425">
+              <caret line="184" column="38" lean-forward="false" selection-start-line="184" selection-start-column="38" selection-end-line="184" selection-end-column="38" />
+              <folding>
+                <element signature="e#20#50#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="lstm_8poseold.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lstm_8poseold.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-114">
+              <caret line="24" column="19" lean-forward="false" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
               <folding>
                 <element signature="e#20#50#0" expanded="true" />
               </folding>
@@ -38,41 +58,28 @@
       <file leaf-file-name="PicandMatrix.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PicandMatrix.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="75">
+              <caret line="3" column="27" lean-forward="false" selection-start-line="2" selection-start-column="31" selection-end-line="3" selection-end-column="27" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mfccData.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data_pre/mfccData.py">
+      <file leaf-file-name="myo_data.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data_pre/myo_data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="50">
-              <caret line="2" column="39" lean-forward="true" selection-start-line="1" selection-start-column="9" selection-end-line="2" selection-end-column="39" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-                <element signature="e#102#319#0" expanded="false" />
-                <element signature="e#343#467#0" expanded="false" />
-                <element signature="e#494#618#0" expanded="false" />
-                <element signature="e#659#689#0" expanded="false" />
-                <element signature="e#728#812#0" expanded="false" />
-                <element signature="e#842#3409#0" expanded="false" />
-                <element signature="e#3446#6237#0" expanded="false" />
-                <element signature="e#6275#9517#0" expanded="false" />
-                <element signature="e#9555#12779#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="3850">
+              <caret line="161" column="111" lean-forward="false" selection-start-line="161" selection-start-column="4" selection-end-line="161" selection-end-column="111" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="lstm_mfcctest.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="lstm_mfcctest.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lstm_mfcctest.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-25">
-              <caret line="17" column="14" lean-forward="false" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
+            <state relative-caret-position="5100">
+              <caret line="211" column="54" lean-forward="false" selection-start-line="210" selection-start-column="4" selection-end-line="211" selection-end-column="54" />
               <folding>
                 <element signature="e#20#50#0" expanded="true" />
               </folding>
@@ -83,8 +90,8 @@
       <file leaf-file-name="lstm_8pose.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lstm_8pose.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="25">
-              <caret line="52" column="0" lean-forward="true" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+            <state relative-caret-position="3925">
+              <caret line="165" column="58" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="249" selection-end-column="10" />
               <folding>
                 <element signature="e#20#50#0" expanded="true" />
               </folding>
@@ -95,15 +102,14 @@
       <file leaf-file-name="alldata.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data_pre/alldata.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="50">
-              <caret line="2" column="39" lean-forward="false" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
+            <state relative-caret-position="5275">
+              <caret line="469" column="33" lean-forward="false" selection-start-line="469" selection-start-column="33" selection-end-line="469" selection-end-column="33" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
-                <element signature="e#842#3499#0" expanded="false" />
-                <element signature="e#6365#9607#0" expanded="false" />
-                <element signature="e#9645#12952#0" expanded="false" />
-                <element signature="e#12990#16297#0" expanded="false" />
-                <element signature="e#19710#22934#0" expanded="false" />
+                <element signature="e#994#3651#0" expanded="false" />
+                <element signature="e#6517#9759#0" expanded="false" />
+                <element signature="e#9797#13104#0" expanded="false" />
+                <element signature="e#13142#16449#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -112,7 +118,7 @@
       <file leaf-file-name="lstm_fourf.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lstm_fourf.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3992">
+            <state relative-caret-position="5200">
               <caret line="215" column="26" lean-forward="false" selection-start-line="215" selection-start-column="26" selection-end-line="215" selection-end-column="26" />
               <folding>
                 <element signature="e#26#56#0" expanded="true" />
@@ -124,7 +130,7 @@
       <file leaf-file-name="lstm_newown3.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lstm_newown3.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
+            <state relative-caret-position="450">
               <caret line="25" column="15" lean-forward="false" selection-start-line="25" selection-start-column="15" selection-end-line="25" selection-end-column="15" />
               <folding />
             </state>
@@ -134,7 +140,7 @@
       <file leaf-file-name="lstm_newown.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lstm_newown.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="89">
+            <state relative-caret-position="5175">
               <caret line="214" column="10" lean-forward="false" selection-start-line="214" selection-start-column="10" selection-end-line="214" selection-end-column="10" />
               <folding>
                 <element signature="e#20#50#0" expanded="true" />
@@ -170,12 +176,13 @@
         <option value="$PROJECT_DIR$/lstm_newown3.py" />
         <option value="$PROJECT_DIR$/lstm_twof.py" />
         <option value="$PROJECT_DIR$/lstm_fourf.py" />
-        <option value="$PROJECT_DIR$/lstm_8pose.py" />
-        <option value="$PROJECT_DIR$/lstm_testNEWOLD.py" />
         <option value="$PROJECT_DIR$/PicandMatrix.py" />
         <option value="$PROJECT_DIR$/data_pre/mfccData.py" />
-        <option value="$PROJECT_DIR$/data_pre/alldata.py" />
         <option value="$PROJECT_DIR$/lstm_mfcctest.py" />
+        <option value="$PROJECT_DIR$/lstm_8pose.py" />
+        <option value="$PROJECT_DIR$/lstm_testNEWOLD.py" />
+        <option value="$PROJECT_DIR$/data_pre/alldata.py" />
+        <option value="$PROJECT_DIR$/lstm_8poseold.py" />
       </list>
     </option>
   </component>
@@ -186,8 +193,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="708" />
-    <option name="width" value="665" />
+    <option name="x" value="-7" />
+    <option name="width" value="697" />
     <option name="height" value="745" />
   </component>
   <component name="ProjectView">
@@ -205,6 +212,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -212,22 +221,10 @@
               <item name="gpuRNN" type="b2602c69:ProjectViewProjectNode" />
               <item name="gpuRNN" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="gpuRNN" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gpuRNN" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gpuRNN" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gpuRNN" type="462c0819:PsiDirectoryNode" />
-              <item name="data_pre" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -370,19 +367,18 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17397882" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1762481" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.534846" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3306321" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33225283" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4019449" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28038898" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -404,13 +400,108 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/lstm_testNEWOLD.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4425">
+          <caret line="184" column="38" lean-forward="false" selection-start-line="184" selection-start-column="38" selection-end-line="184" selection-end-column="38" />
+          <folding>
+            <element signature="e#20#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PicandMatrix.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="3" column="27" lean-forward="false" selection-start-line="2" selection-start-column="31" selection-end-line="3" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_pre/myo_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3850">
+          <caret line="161" column="111" lean-forward="false" selection-start-line="161" selection-start-column="4" selection-end-line="161" selection-end-column="111" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lstm_mfcctest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5100">
+          <caret line="211" column="54" lean-forward="false" selection-start-line="210" selection-start-column="4" selection-end-line="211" selection-end-column="54" />
+          <folding>
+            <element signature="e#20#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lstm_8pose.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3925">
+          <caret line="165" column="58" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="249" selection-end-column="10" />
+          <folding>
+            <element signature="e#20#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_pre/alldata.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="11725">
+          <caret line="469" column="33" lean-forward="false" selection-start-line="469" selection-start-column="33" selection-end-line="469" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#994#3651#0" expanded="false" />
+            <element signature="e#6517#9759#0" expanded="false" />
+            <element signature="e#9797#13104#0" expanded="false" />
+            <element signature="e#13142#16449#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lstm_fourf.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5200">
+          <caret line="215" column="26" lean-forward="false" selection-start-line="215" selection-start-column="26" selection-end-line="215" selection-end-column="26" />
+          <folding>
+            <element signature="e#26#56#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lstm_newown3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="25" column="15" lean-forward="false" selection-start-line="25" selection-start-column="15" selection-end-line="25" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lstm_newown.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5175">
+          <caret line="214" column="10" lean-forward="false" selection-start-line="214" selection-start-column="10" selection-end-line="214" selection-end-column="10" />
+          <folding>
+            <element signature="e#20#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lstm_8poseold.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="24" column="19" lean-forward="false" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
+          <folding>
+            <element signature="e#20#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lstm.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
           <caret line="11" column="42" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="222" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#36#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -430,11 +521,10 @@
           <caret line="195" column="52" lean-forward="false" selection-start-line="195" selection-start-column="52" selection-end-line="195" selection-end-column="52" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#842#3499#0" expanded="false" />
-            <element signature="e#6365#9607#0" expanded="false" />
-            <element signature="e#9645#12952#0" expanded="false" />
-            <element signature="e#12990#16297#0" expanded="false" />
-            <element signature="e#19710#22934#0" expanded="false" />
+            <element signature="e#994#3651#0" expanded="false" />
+            <element signature="e#6517#9759#0" expanded="false" />
+            <element signature="e#9797#13104#0" expanded="false" />
+            <element signature="e#13142#16449#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -460,9 +550,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#18#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -470,27 +557,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="11" column="42" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="222" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#36#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/loss_dir/hd20iter1ba60lr0.0025test_acc.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/loss_dir/hd20iter1ba60lr0.0025test_acc.txt" />
     <entry file="file://$PROJECT_DIR$/tf_model/bi_lstm.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1100">
           <caret line="59" column="76" lean-forward="false" selection-start-line="59" selection-start-column="76" selection-end-line="59" selection-end-column="76" />
-          <folding>
-            <element signature="e#0#36#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -498,7 +572,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
           <caret line="25" column="16" lean-forward="false" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -506,7 +579,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
           <caret line="15" column="21" lean-forward="false" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -514,15 +586,19 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="24" column="22" lean-forward="false" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
-          <folding>
-            <element signature="e#26#56#0" expanded="true" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_pre/mfccData.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lstm_newown3.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
+        <state relative-caret-position="450">
           <caret line="25" column="15" lean-forward="false" selection-start-line="25" selection-start-column="15" selection-end-line="25" selection-end-column="15" />
           <folding />
         </state>
@@ -530,7 +606,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lstm_newown.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="89">
+        <state relative-caret-position="5175">
           <caret line="214" column="10" lean-forward="false" selection-start-line="214" selection-start-column="10" selection-end-line="214" selection-end-column="10" />
           <folding>
             <element signature="e#20#50#0" expanded="true" />
@@ -538,9 +614,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/data_pre/myo_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3850">
+          <caret line="161" column="111" lean-forward="false" selection-start-line="161" selection-start-column="4" selection-end-line="161" selection-end-column="111" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lstm_fourf.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3992">
+        <state relative-caret-position="5200">
           <caret line="215" column="26" lean-forward="false" selection-start-line="215" selection-start-column="26" selection-end-line="215" selection-end-column="26" />
           <folding>
             <element signature="e#26#56#0" expanded="true" />
@@ -548,82 +632,62 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data_pre/myo_data.py">
+    <entry file="file://$PROJECT_DIR$/PicandMatrix.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="159" column="20" lean-forward="true" selection-start-line="159" selection-start-column="20" selection-end-line="159" selection-end-column="20" />
+        <state relative-caret-position="75">
+          <caret line="3" column="27" lean-forward="false" selection-start-line="2" selection-start-column="31" selection-end-line="3" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lstm_8pose.py">
+    <entry file="file://$PROJECT_DIR$/lstm_mfcctest.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="52" column="0" lean-forward="true" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+        <state relative-caret-position="5100">
+          <caret line="211" column="54" lean-forward="false" selection-start-line="210" selection-start-column="4" selection-end-line="211" selection-end-column="54" />
           <folding>
             <element signature="e#20#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PicandMatrix.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data_pre/mfccData.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="39" lean-forward="true" selection-start-line="1" selection-start-column="9" selection-end-line="2" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#102#319#0" expanded="false" />
-            <element signature="e#343#467#0" expanded="false" />
-            <element signature="e#494#618#0" expanded="false" />
-            <element signature="e#659#689#0" expanded="false" />
-            <element signature="e#728#812#0" expanded="false" />
-            <element signature="e#842#3409#0" expanded="false" />
-            <element signature="e#3446#6237#0" expanded="false" />
-            <element signature="e#6275#9517#0" expanded="false" />
-            <element signature="e#9555#12779#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data_pre/alldata.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="39" lean-forward="false" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#842#3499#0" expanded="false" />
-            <element signature="e#6365#9607#0" expanded="false" />
-            <element signature="e#9645#12952#0" expanded="false" />
-            <element signature="e#12990#16297#0" expanded="false" />
-            <element signature="e#19710#22934#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lstm_testNEWOLD.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="212" column="54" lean-forward="true" selection-start-line="211" selection-start-column="4" selection-end-line="212" selection-end-column="54" />
+        <state relative-caret-position="4425">
+          <caret line="184" column="38" lean-forward="false" selection-start-line="184" selection-start-column="38" selection-end-line="184" selection-end-column="38" />
           <folding>
             <element signature="e#20#50#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lstm_mfcctest.py">
+    <entry file="file://$PROJECT_DIR$/lstm_8pose.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-25">
-          <caret line="17" column="14" lean-forward="false" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
+        <state relative-caret-position="3925">
+          <caret line="165" column="58" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="249" selection-end-column="10" />
+          <folding>
+            <element signature="e#20#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_pre/alldata.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5275">
+          <caret line="469" column="33" lean-forward="false" selection-start-line="469" selection-start-column="33" selection-end-line="469" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#994#3651#0" expanded="false" />
+            <element signature="e#6517#9759#0" expanded="false" />
+            <element signature="e#9797#13104#0" expanded="false" />
+            <element signature="e#13142#16449#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lstm_8poseold.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-114">
+          <caret line="24" column="19" lean-forward="false" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
           <folding>
             <element signature="e#20#50#0" expanded="true" />
           </folding>

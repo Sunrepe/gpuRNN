@@ -23,6 +23,11 @@ def get_8class(sq):
     return alllei.index(sq)
 
 
+def get_8class2(sq):
+    alllei = ['double', 'fist', 'spread', 'six', 'wavein', 'waveout', 'yes', 'no', 'snap', 'finger']
+    return alllei.index(sq)
+
+
 def get_label(ch, num_classes=8):
     return np.eye(num_classes)[ch]
 
@@ -392,7 +397,7 @@ class NewData8class1(object):
         self.batch_id = 0
         for filename in os.listdir(foldname):
             oa, ob, oc = filename.split('_')
-            if oc == 'b.txt' and get_8class(ob) < 8 and oa in self.__people:
+            if oc == 'b.txt' and get_8class2(ob) < 8 and oa in self.__people:
                 filename = foldname + filename
                 data = Read__mean_2(filename)
                 cutting = Read__mean_2(foldname + oa + '_' + ob + '_c.txt')
@@ -410,7 +415,7 @@ class NewData8class1(object):
                         pass
                     else:
                         # 生成数据
-                        self.all_label.append(get_label(get_8class(ob), num_classes=num_class))
+                        self.all_label.append(get_label(get_8class2(ob), num_classes=num_class))
                         self.all_seq_len.append(_len)
                         s_tmp = np.zeros((max_seq, 8))
                         s_tmp[0:_len] = tmp_data
