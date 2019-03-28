@@ -14,18 +14,17 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'  # just error no warning
 # os.environ['TF_CPP_MIN_LOG_LEVEL'] = '0'
 
 # All hyperparameters
-n_hidden = 40  # Hidden layer num of features
+n_hidden = 20  # Hidden layer num of features
 n_classes = 8  # Total classes (should go up, or should go down)
-n_inputs = 8
-max_seq = 300
+n_inputs = 13
+max_seq = 950
 
 # Training
 learning_rate = 0.0025
 lambda_loss_amount = 0.0015
 training_iters = 200  # Loop 1000 times on the dataset
 batch_size = 100
-display_iter = 3000  # To show test set accuracy during training
-model_save_iter = 20  # means per GCD(batch_size,display_iter)*model_save_iter samples save a model
+display_iter = 1600  # To show test set accuracy during training
 
 
 def Matrix_to_CSV(filename, data):
@@ -54,8 +53,9 @@ def LSTM_RNN(_X, seqlen, _weight, _bias):
 
 def main():
     time1 = time.time()
-    train_sets = AllData(foldname='./data/all/')
-    test_sets = NewDataSetTest(foldname='./data/actdata/')
+    train_sets = NewDataSetMFCC1(foldname='./data/actdata/', max_seq=max_seq, trainable=True)
+    test_sets = NewDataSetMFCC1(foldname='./data/actdata/', max_seq=max_seq, trainable=False)
+    print("Data_download:",time.time()-time1)
     train_data_len = len(train_sets.all_seq_len)
 
     # Graph input/output
@@ -103,7 +103,6 @@ def main():
 
     while step * batch_size <= training_iters * train_data_len:
         batch_xs, batch_ys, batch_seq_len = train_sets.next(batch_size)
-
         # Fit training using batch data
         _, loss, acc = sess.run(
             [optimizer, cost, accuracy],
@@ -139,7 +138,7 @@ def main():
                   ", Accuracy = {}".format(acc))
 
         # save the model:
-        if (step * batch_size % (display_iter*100) == 0) or (
+        if (step * batch_size % (display_iter*10) == 0) or (
                 step * batch_size > training_iters * train_data_len):
             save_path = saver.save(sess, "./lstm/model.ckpt", global_step=step)
             print("Model saved in file: %s" % save_path)
@@ -186,7 +185,7 @@ def main():
 
     indep_test_axis = np.append(
         np.array(range(batch_size, len(test_losses) * display_iter, display_iter)[:-1]),
-        [training_iters*len(test_losses)]
+        [training_iters*2560]
     )
     plt.plot(indep_test_axis, np.array(test_losses), "b-", label="Test losses")
     plt.plot(indep_test_axis, np.array(test_accuracies), "g-", label="Test accuracies")
@@ -197,21 +196,20 @@ def main():
     plt.legend(loc='upper right', shadow=True)
     plt.ylabel('Training Progress (Loss or Accuracy values)')
     plt.xlabel('Training iteration')
-    plt.savefig('./loss_dir/testNEWOLD_hd{}_ba{}.png'.format(n_hidden,batch_size), dpi=600, bbox_inches='tight')
-    # plt.show()
+
+    plt.show()
 
     # save and load
-    Matrix_to_CSV('./loss_dir/train_loss.txt', train_losses)
-    Matrix_to_CSV('./loss_dir/train_acc.txt', train_accuracies)
-    Matrix_to_CSV('./loss_dir/test_loss.txt', test_losses)
-    Matrix_to_CSV('./loss_dir/test_acc.txt', test_accuracies)
+    Matrix_to_CSV('./loss_dir/hd{}iter{}ba{}lr{}train_loss.txt'.format(n_hidden,training_iters,batch_size,learning_rate), train_losses)
+    Matrix_to_CSV('./loss_dir/hd{}iter{}ba{}lr{}train_acc.txt'.format(n_hidden,training_iters,batch_size,learning_rate), train_accuracies)
+    Matrix_to_CSV('./loss_dir/hd{}iter{}ba{}lr{}test_loss.txt'.format(n_hidden,training_iters,batch_size,learning_rate), test_losses)
+    Matrix_to_CSV('./loss_dir/hd{}iter{}ba{}lr{}test_acc.txt'.format(n_hidden,training_iters,batch_size,learning_rate), test_accuracies)
     # train_losses = np.loadtxt('./loss_dir/train_loss.txt')
     # train_accuracies = np.loadtxt('../loss_dir/train_acc.txt')
     # test_losses = np.loadtxt('../loss_dir/test_loss.txt')
     # test_accuracies = np.loadtxt('../loss_dir/test_acc.txt')
     save_path = saver.save(sess, "./lstm/model.ckpt-final")
     print("Final Model saved in file: %s" % save_path)
-    
     sess.close()
 
 
