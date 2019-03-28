@@ -61,7 +61,7 @@ class AllData(object):
                         tmp_data = z_score(data[cutting[cut - 1]:cutting[cut] - 1, :])
                         _len = cutting[cut] - cutting[cut - 1]
                     # 生成数据
-                    self.all_label.append(get_label(ob))
+                    self.all_label.append(get_label(get_lei(ob)))
                     self.all_seq_len.append(_len)
                     s_tmp = np.zeros((max_seq, 8))
                     # print(np.shape(tmp_data))
@@ -127,7 +127,7 @@ class NewDataSetTest(object):
                     # 读取数据
                     if not _len >= 600:
                         # 生成数据
-                        self.all_label.append(get_label(ob))
+                        self.all_label.append(get_label(get_lei(ob)))
                         self.all_seq_len.append(_len)
                         s_tmp = np.zeros((max_seq, 8))
                         s_tmp[0:_len] = tmp_data
