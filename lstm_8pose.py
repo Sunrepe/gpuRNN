@@ -7,14 +7,14 @@ import matplotlib
 import csv
 import matplotlib.pyplot as plt
 import numpy as np
-
+from sklearn import metrics
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'  # just error no warning
 # os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'  # warnings and errors
 # os.environ['TF_CPP_MIN_LOG_LEVEL'] = '1'
 # os.environ['TF_CPP_MIN_LOG_LEVEL'] = '0'
 
 # All hyperparameters
-n_hidden = 20  # Hidden layer num of features
+n_hidden = 50  # Hidden layer num of features
 n_classes = 8  # Total classes (should go up, or should go down)
 n_inputs = 8
 max_seq = 600
@@ -137,7 +137,7 @@ def main():
                   ", Accuracy = {}".format(acc))
 
         # save the model:
-        if (step * batch_size % (display_iter*100) == 0) or (
+        if (step * batch_size % (display_iter*10) == 0) or (
                 step * batch_size > training_iters * train_data_len):
             save_path = saver.save(sess, "./lstm/model.ckpt", global_step=step)
             print("Model saved in file: %s" % save_path)
@@ -164,7 +164,8 @@ def main():
           "Batch Loss = {}".format(final_loss) + \
           ", Accuracy = {}".format(accuracy))
     print("All train time = {}".format(time.time()-time1))
-
+    save_path = saver.save(sess, "./lstm/model8pose.ckpt-final")
+    print("Final Model saved in file: %s" % save_path)
 
 
     font = {
@@ -184,7 +185,7 @@ def main():
 
     indep_test_axis = np.append(
         np.array(range(batch_size, len(test_losses) * display_iter, display_iter)[:-1]),
-        [training_iters*2560]
+        [training_iters*len(test_losses)]
     )
     plt.plot(indep_test_axis, np.array(test_losses), "b-", label="Test losses")
     plt.plot(indep_test_axis, np.array(test_accuracies), "g-", label="Test accuracies")
@@ -195,8 +196,9 @@ def main():
     plt.legend(loc='upper right', shadow=True)
     plt.ylabel('Training Progress (Loss or Accuracy values)')
     plt.xlabel('Training iteration')
+    plt.savefig('8pose.png', dpi=600, bbox_inches='tight')
 
-    plt.show()
+    # plt.show()
 
     # save and load
     Matrix_to_CSV('./loss_dir/hd{}iter{}ba{}lr{}train_loss.txt'.format(n_hidden,training_iters,batch_size,learning_rate), train_losses)
@@ -208,6 +210,39 @@ def main():
     # test_losses = np.loadtxt('../loss_dir/test_loss.txt')
     # test_accuracies = np.loadtxt('../loss_dir/test_acc.txt')
 
+    predictions = one_hot_predictions.argmax(1)
+    result_labels = test_sets.all_label.argmax(1)
+    print("Precision: {}%".format(100 * metrics.precision_score(result_labels, predictions, average="weighted")))
+    print("Recall: {}%".format(100 * metrics.recall_score(result_labels, predictions, average="weighted")))
+    print("f1_score: {}%".format(100 * metrics.f1_score(result_labels, predictions, average="weighted")))
+
+    print("")
+    print("Confusion Matrix:")
+    confusion_matrix = metrics.confusion_matrix(result_labels, predictions)
+    print(confusion_matrix)
+    normalised_confusion_matrix = np.array(confusion_matrix, dtype=np.float32) / np.sum(confusion_matrix) * 100
+
+    print("")
+    print("Confusion matrix (normalised to % of total test data):")
+    print(normalised_confusion_matrix)
+    print("Note: training and testing data is not equally distributed amongst classes, ")
+    print("so it is normal that more than a 6th of the data is correctly classifier in the last category.")
+
+    # Plot Results:
+    width = 12
+    height = 12
+    plt.figure(figsize=(width, height))
+    plt.imshow(
+        normalised_confusion_matrix,
+        interpolation='nearest',
+        cmap=plt.cm.rainbow
+    )
+    plt.title("Confusion matrix \n(normalised to % of total test data)")
+    plt.colorbar()
+    plt.savefig('8poseMatrix.png', dpi=600, bbox_inches='tight')
+
+    # save_path = saver.save(sess, "./lstm/model8pose.ckpt-final")
+    # print("Final Model saved in file: %s" % save_path)
     sess.close()
 
 
