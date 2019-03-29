@@ -20,7 +20,7 @@ learning_rate = 0.002
 lambda_loss_amount = 0.0015
 training_iters = 500  # Loop 1000 times on the dataset
 batch_size = 80
-display_iter = 160  # To show test set accuracy during training
+display_iter = 1600  # To show test set accuracy during training
 savename = '8poseRNNafterCNN'
 
 
