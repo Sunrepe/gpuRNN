@@ -20,8 +20,8 @@ n_inputs = 8
 max_seq = 600
 
 # Training
-learning_rate = 0.002
-lambda_loss_amount = 0.0045
+learning_rate = 0.001
+lambda_loss_amount = 0.0005
 training_iters = 200  # Loop 1000 times on the dataset
 batch_size = 60
 display_iter = 1600  # To show test set accuracy during training
