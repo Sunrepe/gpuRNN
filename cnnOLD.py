@@ -18,7 +18,7 @@ max_seq = 300
 # Training
 learning_rate = 0.002
 lambda_loss_amount = 0.0015
-training_iters = 1  # Loop 1000 times on the dataset
+training_iters = 300  # Loop 1000 times on the dataset
 batch_size = 80
 display_iter = 1600  # To show test set accuracy during training
 savename = 'OLD_RNNafterCNN'

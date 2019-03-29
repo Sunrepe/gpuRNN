@@ -21,7 +21,7 @@ lambda_loss_amount = 0.0015
 training_iters = 200  # Loop 1000 times on the dataset
 batch_size = 80
 display_iter = 1600  # To show test set accuracy during training
-savename = '8poseRNNafterCNN'
+savename = '_RNNafterCNNdrop'
 LABELS = ['double', 'fist', 'spread', 'six', 'wavein', 'waveout', 'yes', 'snap', 'no', 'finger']
 
 
