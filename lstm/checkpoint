@@ -1,4 +1,2 @@
-model_checkpoint_path: "model8.ckpt-2400"
-all_model_checkpoint_paths: "model8.ckpt-800"
-all_model_checkpoint_paths: "model8.ckpt-1600"
-all_model_checkpoint_paths: "model8.ckpt-2400"
+model_checkpoint_path: "model8posenewsets.ckpt-final"
+all_model_checkpoint_paths: "model8posenewsets.ckpt-final"

@@ -1,0 +1,17 @@
+最佳参数与Model
+-------------------------------------------------
+8个动作:lstm_8pose 对应了之前的那种新数据data方案..训练结果在model10.zip中
+其参数:# All hyperparameters
+    n_hidden = 50  # Hidden layer num of features
+    n_classes = 8  # Total classes (should go up, or should go down)
+    n_inputs = 8
+    max_seq = 600
+
+    # Training
+    learning_rate = 0.001
+    lambda_loss_amount = 0.0005
+    training_iters = 200  # Loop 1000 times on the dataset
+    batch_size = 60
+    display_iter = 1600  # To show test set accuracy during training
+
+----------------------------------------------------
