@@ -2,7 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e51bf105-f34c-4031-aa58-28fd3cc5807c" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/8pose.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/8poseMatrix.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Matrix8posenewsets.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/accloss_8posenewsets.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lstm/checkpoint" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lstm/model8.ckpt-1600.data-00000-of-00001" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lstm/model8.ckpt-1600.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lstm/model8.ckpt-1600.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lstm/model8.ckpt-2400.data-00000-of-00001" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lstm/model8.ckpt-2400.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lstm/model8.ckpt-2400.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lstm/model8.ckpt-800.data-00000-of-00001" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lstm/model8.ckpt-800.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lstm/model8.ckpt-800.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lstm/model8posenewsets.ckpt-final.data-00000-of-00001" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lstm/model8posenewsets.ckpt-final.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lstm/model8posenewsets.ckpt-final.meta" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cnntest.py" afterPath="$PROJECT_DIR$/cnntest.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data_pre/origindata.py" afterPath="$PROJECT_DIR$/data_pre/origindata.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lstm_8pose.py" afterPath="$PROJECT_DIR$/lstm_8pose.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,8 +35,9 @@
     <SUITE FILE_PATH="coverage/gpuRNN$lstm_testNEWOLD.coverage" NAME="lstm_testNEWOLD Coverage Results" MODIFIED="1553736937380" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$lstm_twof.coverage" NAME="lstm_twof Coverage Results" MODIFIED="1553686466089" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$PicandMatrix.coverage" NAME="PicandMatrix Coverage Results" MODIFIED="1553741226742" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/gpuRNN$cnnOLD.coverage" NAME="cnnOLD Coverage Results" MODIFIED="1553861207684" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$gru_8pose.coverage" NAME="gru_8pose Coverage Results" MODIFIED="1553775162284" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/gpuRNN$cnntest.coverage" NAME="cnntest Coverage Results" MODIFIED="1553852276215" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/gpuRNN$cnntest.coverage" NAME="cnntest Coverage Results" MODIFIED="1553853141204" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$lstm_mfcctest.coverage" NAME="lstm_mfcctest Coverage Results" MODIFIED="1553744180019" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$lstm_8pose.coverage" NAME="lstm_8pose Coverage Results" MODIFIED="1553832031024" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
@@ -26,8 +46,8 @@
       <file leaf-file-name="lstm_8pose.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lstm_8pose.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
-              <caret line="34" column="24" lean-forward="true" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
+            <state relative-caret-position="125">
+              <caret line="56" column="74" lean-forward="false" selection-start-line="56" selection-start-column="74" selection-end-line="56" selection-end-column="74" />
               <folding>
                 <element signature="e#20#50#0" expanded="true" />
               </folding>
@@ -38,8 +58,8 @@
       <file leaf-file-name="origindata.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data_pre/origindata.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="85" column="53" lean-forward="true" selection-start-line="85" selection-start-column="53" selection-end-line="85" selection-end-column="53" />
+            <state relative-caret-position="161">
+              <caret line="80" column="26" lean-forward="false" selection-start-line="80" selection-start-column="26" selection-end-line="80" selection-end-column="26" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -47,14 +67,36 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cnntest.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="cnntest.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cnntest.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="22" column="19" lean-forward="false" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
+            <state relative-caret-position="1025">
+              <caret line="71" column="22" lean-forward="true" selection-start-line="71" selection-start-column="22" selection-end-line="71" selection-end-column="22" />
               <folding>
                 <element signature="e#0#33#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cnnOLD.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/cnnOLD.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-6025">
+              <caret line="17" column="10" lean-forward="false" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
+              <folding>
+                <element signature="e#0#33#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="lstm_testNEWOLD.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lstm_testNEWOLD.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="200">
+              <caret line="58" column="48" lean-forward="false" selection-start-line="58" selection-start-column="48" selection-end-line="58" selection-end-column="48" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -63,7 +105,7 @@
         <entry file="file://$PROJECT_DIR$/data_pre/alldata.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="259">
-              <caret line="443" column="54" lean-forward="true" selection-start-line="375" selection-start-column="0" selection-end-line="443" selection-end-column="54" />
+              <caret line="443" column="54" lean-forward="false" selection-start-line="375" selection-start-column="0" selection-end-line="443" selection-end-column="54" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
                 <element signature="e#954#3611#0" expanded="false" />
@@ -116,6 +158,7 @@
         <option value="$PROJECT_DIR$/lstm_8poseold.py" />
         <option value="$PROJECT_DIR$/recode.txt" />
         <option value="$PROJECT_DIR$/lstm_8pose.py" />
+        <option value="$PROJECT_DIR$/cnnOLD.py" />
         <option value="$PROJECT_DIR$/data_pre/origindata.py" />
         <option value="$PROJECT_DIR$/cnntest.py" />
       </list>
@@ -154,11 +197,6 @@
               <item name="gpuRNN" type="b2602c69:ProjectViewProjectNode" />
               <item name="gpuRNN" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="gpuRNN" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gpuRNN" type="462c0819:PsiDirectoryNode" />
-              <item name="data_pre" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -189,8 +227,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.cnntest">
-    <configuration name="PicandMatrix" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.cnnOLD">
+    <configuration name="cnnOLD" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -203,7 +241,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="gpuRNN" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/PicandMatrix.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/cnnOLD.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -282,18 +320,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.lstm_8pose" />
-      <item index="1" class="java.lang.String" itemvalue="Python.PicandMatrix" />
-      <item index="2" class="java.lang.String" itemvalue="Python.lstm_mfcctest" />
-      <item index="3" class="java.lang.String" itemvalue="Python.gru_8pose" />
-      <item index="4" class="java.lang.String" itemvalue="Python.cnntest" />
+      <item index="1" class="java.lang.String" itemvalue="Python.lstm_mfcctest" />
+      <item index="2" class="java.lang.String" itemvalue="Python.gru_8pose" />
+      <item index="3" class="java.lang.String" itemvalue="Python.cnntest" />
+      <item index="4" class="java.lang.String" itemvalue="Python.cnnOLD" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.cnntest" />
-        <item index="1" class="java.lang.String" itemvalue="Python.lstm_8pose" />
-        <item index="2" class="java.lang.String" itemvalue="Python.gru_8pose" />
-        <item index="3" class="java.lang.String" itemvalue="Python.lstm_mfcctest" />
-        <item index="4" class="java.lang.String" itemvalue="Python.PicandMatrix" />
+        <item index="0" class="java.lang.String" itemvalue="Python.cnnOLD" />
+        <item index="1" class="java.lang.String" itemvalue="Python.cnntest" />
+        <item index="2" class="java.lang.String" itemvalue="Python.lstm_8pose" />
+        <item index="3" class="java.lang.String" itemvalue="Python.gru_8pose" />
+        <item index="4" class="java.lang.String" itemvalue="Python.lstm_mfcctest" />
       </list>
     </recent_temporary>
   </component>
@@ -314,13 +352,13 @@
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1785174" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17927383" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6012966" sideWeight="0.5030257" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32252836" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27228525" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38249594" sideWeight="0.4969743" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28038898" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -535,16 +573,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lstm_testNEWOLD.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="190" column="38" lean-forward="false" selection-start-line="190" selection-start-column="38" selection-end-line="190" selection-end-column="38" />
-          <folding>
-            <element signature="e#20#50#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/recode.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
@@ -566,7 +594,7 @@
     <entry file="file://$PROJECT_DIR$/data_pre/alldata.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="259">
-          <caret line="443" column="54" lean-forward="true" selection-start-line="375" selection-start-column="0" selection-end-line="443" selection-end-column="54" />
+          <caret line="443" column="54" lean-forward="false" selection-start-line="375" selection-start-column="0" selection-end-line="443" selection-end-column="54" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
             <element signature="e#954#3611#0" expanded="false" />
@@ -579,10 +607,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/lstm_testNEWOLD.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="58" column="48" lean-forward="false" selection-start-line="58" selection-start-column="48" selection-end-line="58" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lstm_8pose.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="34" column="24" lean-forward="true" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
+        <state relative-caret-position="125">
+          <caret line="56" column="74" lean-forward="false" selection-start-line="56" selection-start-column="74" selection-end-line="56" selection-end-column="74" />
           <folding>
             <element signature="e#20#50#0" expanded="true" />
           </folding>
@@ -591,8 +627,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/data_pre/origindata.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="85" column="53" lean-forward="true" selection-start-line="85" selection-start-column="53" selection-end-line="85" selection-end-column="53" />
+        <state relative-caret-position="161">
+          <caret line="80" column="26" lean-forward="false" selection-start-line="80" selection-start-column="26" selection-end-line="80" selection-end-column="26" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
@@ -601,8 +637,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cnntest.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="22" column="19" lean-forward="false" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
+        <state relative-caret-position="1025">
+          <caret line="71" column="22" lean-forward="true" selection-start-line="71" selection-start-column="22" selection-end-line="71" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cnnOLD.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6025">
+          <caret line="17" column="10" lean-forward="false" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
           <folding>
             <element signature="e#0#33#0" expanded="true" />
           </folding>

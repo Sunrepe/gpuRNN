@@ -1,5 +1,4 @@
-# 用于测试新数据是否和老数据可以共用
-from data_pre.alldata import *
+from data_pre.origindata import *
 import tensorflow as tf
 import os
 import time
@@ -9,23 +8,22 @@ import matplotlib.pyplot as plt
 import numpy as np
 from sklearn import metrics
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'  # just error no warning
-# os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'  # warnings and errors
-# os.environ['TF_CPP_MIN_LOG_LEVEL'] = '1'
-# os.environ['TF_CPP_MIN_LOG_LEVEL'] = '0'
 
 # All hyperparameters
 n_hidden = 50  # Hidden layer num of features
 n_classes = 8  # Total classes (should go up, or should go down)
-n_inputs = 8
-max_seq = 600
+n_inputs = 10
+max_seq = 300
 
 # Training
-learning_rate = 0.001
-lambda_loss_amount = 0.0005
-training_iters = 200  # Loop 1000 times on the dataset
-batch_size = 60
+learning_rate = 0.002
+lambda_loss_amount = 0.0015
+training_iters = 1  # Loop 1000 times on the dataset
+batch_size = 80
 display_iter = 1600  # To show test set accuracy during training
-savename = '8posenewsets'
+savename = 'OLD_RNNafterCNN'
+LABELS = ['double', 'fist', 'spread', 'six', 'wavein', 'waveout', 'yes', 'snap', 'no', 'finger']
+
 
 def Matrix_to_CSV(filename, data):
     with open(filename, "a", newline='', ) as csvfile:
@@ -34,6 +32,44 @@ def Matrix_to_CSV(filename, data):
         # writer.writerow(["emg1", "emg2", "emg3", "emg4", "emg5", "emg6", "emg7", "emg8", "label"])
         for row in data:
             writer.writerow([row])
+
+
+def weight_init(shape, name):
+    '''
+    获取某个shape大小的参数
+    '''
+    return tf.get_variable(name, shape, initializer=tf.random_normal_initializer(mean=0.0, stddev=0.1))
+
+
+def bias_init(shape, name):
+    return tf.get_variable(name, shape, initializer=tf.constant_initializer(0.0))
+
+
+def CNNnet(inputs):
+    '''
+    CNN网络,用于获得动态长度的数据,之后交给RNN网络
+    :param inputs:
+    :return:
+    '''
+
+    # 第一层卷积
+    with tf.name_scope('conv1'):
+        w_conv1 = weight_init([5,3,1,4], 'conv1_w')
+        b_conv1 = bias_init([4], 'conv1_b')
+        conv1 = tf.nn.conv2d(input=inputs, filter=w_conv1, strides=[1,2,1,1], padding='VALID')
+        h_conv1 = tf.nn.relu(conv1+b_conv1)
+        h_pool1 = tf.nn.max_pool(h_conv1, ksize=[1,2,2,1], strides=[1,2,2,1],padding='VALID')
+
+    # 第二层卷积
+    with tf.name_scope('conv2'):
+        w_conv2 = weight_init([10,1,4,2], 'conv2_w')
+        b_conv2 = bias_init([2], 'conv2_b')
+        conv2 = tf.nn.conv2d(input=h_pool1, filter=w_conv2, strides=[1,2,1,1], padding='VALID')
+        h_conv2 = tf.nn.relu(conv2+b_conv2)
+        # h_pool2 = tf.nn.max_pool(h_conv2, ksize=[1,2,2,1], strides=[1,2,2,1],padding='VALID')
+
+    _a = h_conv2.shape
+    return tf.reshape(h_conv2, [-1,_a[1],8])
 
 
 def LSTM_RNN(_X, seqlen, _weight, _bias):
@@ -53,12 +89,12 @@ def LSTM_RNN(_X, seqlen, _weight, _bias):
 
 def main():
     time1 = time.time()
-    train_sets = NewData8class1(foldname='./data/actdata/', max_seq=max_seq, trainable=True, num_class=n_classes)
-    test_sets = NewData8class1(foldname='./data/actdata/', max_seq=max_seq, trainable=False, num_class=n_classes)
+    train_sets = OriDataOldSet(foldname='./data/train/', max_seq=max_seq, trainable=True, num_class=n_classes)
+    test_sets = OriDataOldSet(foldname='./data/test/', max_seq=max_seq, trainable=False, num_class=n_classes)
     train_data_len = len(train_sets.all_seq_len)
 
     # Graph input/output
-    x = tf.placeholder(tf.float32, [None, max_seq, n_inputs])
+    x = tf.placeholder(tf.float32, [None, max_seq, n_inputs, 1])
     y = tf.placeholder(tf.float32, [None, n_classes])
     seq_len = tf.placeholder(tf.float32, [None])
 
@@ -70,7 +106,8 @@ def main():
         'out': tf.Variable(tf.random_normal([n_classes]))
     }
 
-    pred = LSTM_RNN(x, seq_len, weights, biases)
+    CNN_res = CNNnet(x)
+    pred = LSTM_RNN(CNN_res, seq_len, weights, biases)
 
     # Loss, optimizer and evaluation
     l2 = lambda_loss_amount * sum(
@@ -99,7 +136,6 @@ def main():
     step = 1
     print("Start train!")
 
-
     while step * batch_size <= training_iters * train_data_len:
         batch_xs, batch_ys, batch_seq_len = train_sets.next(batch_size)
         # Fit training using batch data
@@ -115,7 +151,8 @@ def main():
         train_accuracies.append(acc)
 
         # Evaluate network only at some steps for faster training:
-        if (step * batch_size % display_iter == 0) or (step == 1) or (step * batch_size > training_iters*train_data_len):
+        if (step * batch_size % display_iter == 0) or (step == 1) or (
+                step * batch_size > training_iters * train_data_len):
             # To not spam console, show training accuracy/loss in this "if"
             print("Training iter #" + str(step * batch_size) + \
                   ":   Batch Loss = " + "{:.6f}".format(loss) + \
@@ -137,12 +174,11 @@ def main():
                   ", Accuracy = {}".format(acc))
 
         # save the model:
-        if (step * batch_size % (display_iter*20) == 0) or (
-                step * batch_size > training_iters * train_data_len):
+        if (step * batch_size % (display_iter * 20) == 0) or (
+                        step * batch_size > training_iters * train_data_len):
             save_path = saver.save(sess, "./lstm/model{}.ckpt".format(savename), global_step=step)
             print("Model saved in file: %s" % save_path)
         step += 1
-
 
     print("Optimization Finished!")
 
@@ -163,10 +199,9 @@ def main():
     print("FINAL RESULT: " + \
           "Batch Loss = {}".format(final_loss) + \
           ", Accuracy = {}".format(accuracy))
-    print("All train time = {}".format(time.time()-time1))
+    print("All train time = {}".format(time.time() - time1))
     save_path = saver.save(sess, "./lstm/model{}.ckpt-final".format(savename))
     print("Final Model saved in file: %s" % save_path)
-
 
     font = {
         'family': 'Bitstream Vera Sans',
@@ -185,12 +220,10 @@ def main():
 
     indep_test_axis = np.append(
         np.array(range(batch_size, len(test_losses) * display_iter, display_iter)[:-1]),
-        [training_iters*train_data_len]
+        [training_iters * train_data_len]
     )
     plt.plot(indep_test_axis, np.array(test_losses), "b-", label="Test losses")
     plt.plot(indep_test_axis, np.array(test_accuracies), "g-", label="Test accuracies")
-
-
 
     plt.title("Training session's progress over iterations")
     plt.legend(loc='upper right', shadow=True)
@@ -201,10 +234,15 @@ def main():
     # plt.show()
 
     # save and load
-    Matrix_to_CSV('./loss_dir/{}_hd{}iter{}ba{}lr{}train_loss.txt'.format(savename,n_hidden,training_iters,batch_size,learning_rate), train_losses)
-    Matrix_to_CSV('./loss_dir/{}_hd{}iter{}ba{}lr{}train_acc.txt'.format(savename,n_hidden,training_iters,batch_size,learning_rate), train_accuracies)
-    Matrix_to_CSV('./loss_dir/{}_hd{}iter{}ba{}lr{}test_loss.txt'.format(savename,n_hidden,training_iters,batch_size,learning_rate), test_losses)
-    Matrix_to_CSV('./loss_dir/{}_hd{}iter{}ba{}lr{}test_acc.txt'.format(savename,n_hidden,training_iters,batch_size,learning_rate), test_accuracies)
+    Matrix_to_CSV(
+        './loss_dir/{}_hd{}iter{}ba{}lr{}train_loss.txt'.format(savename, n_hidden, training_iters, batch_size,
+                                                                learning_rate), train_losses)
+    Matrix_to_CSV('./loss_dir/{}_hd{}iter{}ba{}lr{}train_acc.txt'.format(savename, n_hidden, training_iters, batch_size,
+                                                                         learning_rate), train_accuracies)
+    Matrix_to_CSV('./loss_dir/{}_hd{}iter{}ba{}lr{}test_loss.txt'.format(savename, n_hidden, training_iters, batch_size,
+                                                                         learning_rate), test_losses)
+    Matrix_to_CSV('./loss_dir/{}_hd{}iter{}ba{}lr{}test_acc.txt'.format(savename, n_hidden, training_iters, batch_size,
+                                                                        learning_rate), test_accuracies)
     # train_losses = np.loadtxt('./loss_dir/train_loss.txt')
     # train_accuracies = np.loadtxt('../loss_dir/train_acc.txt')
     # test_losses = np.loadtxt('../loss_dir/test_loss.txt')
@@ -239,6 +277,8 @@ def main():
     )
     plt.title("Confusion matrix \n(normalised to % of total test data)")
     plt.colorbar()
+    tick_marks = np.arange(n_classes)
+    plt.yticks(tick_marks, LABELS)
     plt.savefig('Matrix{}.png'.format(savename), dpi=600, bbox_inches='tight')
 
     sess.close()

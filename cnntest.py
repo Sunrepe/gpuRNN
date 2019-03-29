@@ -16,12 +16,13 @@ n_inputs = 10
 max_seq = 600
 
 # Training
-learning_rate = 0.002
+learning_rate = 0.0025
 lambda_loss_amount = 0.0015
-training_iters = 500  # Loop 1000 times on the dataset
+training_iters = 200  # Loop 1000 times on the dataset
 batch_size = 80
 display_iter = 1600  # To show test set accuracy during training
 savename = '8poseRNNafterCNN'
+LABELS = ['double', 'fist', 'spread', 'six', 'wavein', 'waveout', 'yes', 'snap', 'no', 'finger']
 
 
 def Matrix_to_CSV(filename, data):
@@ -37,7 +38,7 @@ def weight_init(shape, name):
     '''
     获取某个shape大小的参数
     '''
-    return tf.get_variable(name, shape, initializer=tf.random_normal_initializer(mean=0.0, stddev=0.1))
+    return tf.get_variable(name, shape, initializer=tf.random_normal_initializer(mean=0.0, stddev=0.05))
 
 
 def bias_init(shape, name):
@@ -58,12 +59,13 @@ def CNNnet(inputs):
         conv1 = tf.nn.conv2d(input=inputs, filter=w_conv1, strides=[1,2,1,1], padding='VALID')
         h_conv1 = tf.nn.relu(conv1+b_conv1)
         h_pool1 = tf.nn.max_pool(h_conv1, ksize=[1,2,2,1], strides=[1,2,2,1],padding='VALID')
+        conv1 = tf.nn.dropout(h_pool1, 0.7)
 
     # 第二层卷积
     with tf.name_scope('conv2'):
         w_conv2 = weight_init([10,1,4,2], 'conv2_w')
         b_conv2 = bias_init([2], 'conv2_b')
-        conv2 = tf.nn.conv2d(input=h_pool1, filter=w_conv2, strides=[1,2,1,1], padding='VALID')
+        conv2 = tf.nn.conv2d(input=conv1, filter=w_conv2, strides=[1,2,1,1], padding='VALID')
         h_conv2 = tf.nn.relu(conv2+b_conv2)
         # h_pool2 = tf.nn.max_pool(h_conv2, ksize=[1,2,2,1], strides=[1,2,2,1],padding='VALID')
 
@@ -88,7 +90,7 @@ def LSTM_RNN(_X, seqlen, _weight, _bias):
 
 def main():
     time1 = time.time()
-    train_sets = OriData(foldname='./data/actdata/', max_seq=600, trainable=False, num_class=n_classes)
+    train_sets = OriData(foldname='./data/actdata/', max_seq=600, trainable=True, num_class=n_classes)
     test_sets = OriData(foldname='./data/actdata/', max_seq=600, trainable=False, num_class=n_classes)
     train_data_len = len(train_sets.all_seq_len)
 
@@ -276,6 +278,8 @@ def main():
     )
     plt.title("Confusion matrix \n(normalised to % of total test data)")
     plt.colorbar()
+    tick_marks = np.arange(n_classes)
+    plt.yticks(tick_marks, LABELS)
     plt.savefig('Matrix{}.png'.format(savename), dpi=600, bbox_inches='tight')
 
     sess.close()
