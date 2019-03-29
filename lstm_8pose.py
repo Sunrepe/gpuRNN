@@ -25,7 +25,7 @@ lambda_loss_amount = 0.0045
 training_iters = 200  # Loop 1000 times on the dataset
 batch_size = 60
 display_iter = 1600  # To show test set accuracy during training
-
+savename = '8posenewsets'
 
 def Matrix_to_CSV(filename, data):
     with open(filename, "a", newline='', ) as csvfile:
@@ -139,7 +139,7 @@ def main():
         # save the model:
         if (step * batch_size % (display_iter*10) == 0) or (
                 step * batch_size > training_iters * train_data_len):
-            save_path = saver.save(sess, "./lstm/model8.ckpt", global_step=step)
+            save_path = saver.save(sess, "./lstm/model{}.ckpt".format(savename), global_step=step)
             print("Model saved in file: %s" % save_path)
         step += 1
 
@@ -164,7 +164,7 @@ def main():
           "Batch Loss = {}".format(final_loss) + \
           ", Accuracy = {}".format(accuracy))
     print("All train time = {}".format(time.time()-time1))
-    save_path = saver.save(sess, "./lstm/model8posenew.ckpt-final")
+    save_path = saver.save(sess, "./lstm/model{}.ckpt-final".format(savename))
     print("Final Model saved in file: %s" % save_path)
 
 
@@ -185,7 +185,7 @@ def main():
 
     indep_test_axis = np.append(
         np.array(range(batch_size, len(test_losses) * display_iter, display_iter)[:-1]),
-        [training_iters*len(test_losses)]
+        [training_iters*train_data_len]
     )
     plt.plot(indep_test_axis, np.array(test_losses), "b-", label="Test losses")
     plt.plot(indep_test_axis, np.array(test_accuracies), "g-", label="Test accuracies")
@@ -196,15 +196,15 @@ def main():
     plt.legend(loc='upper right', shadow=True)
     plt.ylabel('Training Progress (Loss or Accuracy values)')
     plt.xlabel('Training iteration')
-    plt.savefig('8posenew.png', dpi=600, bbox_inches='tight')
+    plt.savefig('accloss_{}.png'.format(savename), dpi=600, bbox_inches='tight')
 
     # plt.show()
 
     # save and load
-    Matrix_to_CSV('./loss_dir/hd{}iter{}ba{}lr{}train_loss.txt'.format(n_hidden,training_iters,batch_size,learning_rate), train_losses)
-    Matrix_to_CSV('./loss_dir/hd{}iter{}ba{}lr{}train_acc.txt'.format(n_hidden,training_iters,batch_size,learning_rate), train_accuracies)
-    Matrix_to_CSV('./loss_dir/hd{}iter{}ba{}lr{}test_loss.txt'.format(n_hidden,training_iters,batch_size,learning_rate), test_losses)
-    Matrix_to_CSV('./loss_dir/hd{}iter{}ba{}lr{}test_acc.txt'.format(n_hidden,training_iters,batch_size,learning_rate), test_accuracies)
+    Matrix_to_CSV('./loss_dir/{}_hd{}iter{}ba{}lr{}train_loss.txt'.format(savename,n_hidden,training_iters,batch_size,learning_rate), train_losses)
+    Matrix_to_CSV('./loss_dir/{}_hd{}iter{}ba{}lr{}train_acc.txt'.format(savename,n_hidden,training_iters,batch_size,learning_rate), train_accuracies)
+    Matrix_to_CSV('./loss_dir/{}_hd{}iter{}ba{}lr{}test_loss.txt'.format(savename,n_hidden,training_iters,batch_size,learning_rate), test_losses)
+    Matrix_to_CSV('./loss_dir/{}_hd{}iter{}ba{}lr{}test_acc.txt'.format(savename,n_hidden,training_iters,batch_size,learning_rate), test_accuracies)
     # train_losses = np.loadtxt('./loss_dir/train_loss.txt')
     # train_accuracies = np.loadtxt('../loss_dir/train_acc.txt')
     # test_losses = np.loadtxt('../loss_dir/test_loss.txt')
@@ -239,10 +239,8 @@ def main():
     )
     plt.title("Confusion matrix \n(normalised to % of total test data)")
     plt.colorbar()
-    plt.savefig('8poseMatrixnew.png', dpi=600, bbox_inches='tight')
+    plt.savefig('Matrix{}.png'.format(savename), dpi=600, bbox_inches='tight')
 
-    # save_path = saver.save(sess, "./lstm/model8pose.ckpt-final")
-    # print("Final Model saved in file: %s" % save_path)
     sess.close()
 
 

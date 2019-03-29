@@ -1,6 +1,5 @@
 import numpy as np
 import os
-from python_speech_features import mfcc
 
 def Read__mean_2(filename):
     '''
