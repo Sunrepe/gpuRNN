@@ -53,10 +53,14 @@ class AllData(object):
         for filename in os.listdir(foldname):
             oa, ob, oc = filename.split('_')
             if oc == 'b.txt' and get_lei(ob) < num_class:
-                filename = foldname + filename
-                data = Read__mean_2(filename)
+                filenames = foldname + filename
+                data = Read__mean_2(filenames)
                 cutting = Read__mean_2(foldname + oa + '_' + ob + '_c.txt')
-                for cut in range(0, len(cutting)):
+                a__ = len(cutting)
+                if len(oa) < 4:
+                    a__ = 10
+                print("len:",a__, "\tfile:", filename)
+                for cut in range(0, a__):
                     # 读取数据
                     if cut == 0:
                         tmp_data = z_score(data[0:cutting[cut], :])
