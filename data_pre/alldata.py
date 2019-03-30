@@ -56,7 +56,7 @@ class AllData(object):
                 filename = foldname + filename
                 data = Read__mean_2(filename)
                 cutting = Read__mean_2(foldname + oa + '_' + ob + '_c.txt')
-                for cut in range(0, len(cutting)):
+                for cut in range(0, 10):
                     # 读取数据
                     if cut == 0:
                         tmp_data = z_score(data[0:cutting[cut], :])
@@ -71,7 +71,7 @@ class AllData(object):
                         self.all_label.append(get_label(get_lei(ob), num_classes=num_class))
                         self.all_seq_len.append(_len)
                         s_tmp = np.zeros((max_seq, 8))
-                        s_tmp[0:_len-1] = tmp_data
+                        s_tmp[0:_len] = tmp_data
                         self.all_data.append(s_tmp)
         # 打乱数据
         if shuffle:

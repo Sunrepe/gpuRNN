@@ -22,11 +22,12 @@ max_seq = 600
 # Training
 learning_rate = 0.001
 lambda_loss_amount = 0.0005
-training_iters = 200  # Loop 1000 times on the dataset
+training_iters = 1  # Loop 1000 times on the dataset
 batch_size = 60
 display_iter = 1600  # To show test set accuracy during training
 savename = '8posenewsets'
 LABELS = ['double', 'fist', 'spread', 'six', 'wavein', 'waveout', 'yes', 'no']
+
 
 def Matrix_to_CSV(filename, data):
     with open(filename, "a", newline='', ) as csvfile:
