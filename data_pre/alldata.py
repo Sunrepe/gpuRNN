@@ -56,7 +56,7 @@ class AllData(object):
                 filename = foldname + filename
                 data = Read__mean_2(filename)
                 cutting = Read__mean_2(foldname + oa + '_' + ob + '_c.txt')
-                for cut in range(0, 10):
+                for cut in range(0, len(cutting)):
                     # 读取数据
                     if cut == 0:
                         tmp_data = z_score(data[0:cutting[cut], :])
