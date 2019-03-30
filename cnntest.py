@@ -21,6 +21,7 @@ lambda_loss_amount = 0.0015
 training_iters = 200  # Loop 1000 times on the dataset
 batch_size = 80
 display_iter = 1600  # To show test set accuracy during training
+model_save = 20
 savename = '_RNNafterCNNdrop'
 LABELS = ['double', 'fist', 'spread', 'six', 'wavein', 'waveout', 'yes', 'snap', 'no', 'finger']
 
@@ -175,7 +176,7 @@ def main():
                   ", Accuracy = {}".format(acc))
 
         # save the model:
-        if (step * batch_size % (display_iter * 20) == 0) or (
+        if (step * batch_size % (display_iter * model_save) == 0) or (
                         step * batch_size > training_iters * train_data_len):
             save_path = saver.save(sess, "./lstm/model{}.ckpt".format(savename), global_step=step)
             print("Model saved in file: %s" % save_path)

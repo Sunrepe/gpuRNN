@@ -15,10 +15,10 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'  # just error no warning
 # os.environ['TF_CPP_MIN_LOG_LEVEL'] = '0'
 
 # All hyperparameters
-n_hidden = 20  # Hidden layer num of features
+n_hidden = 50  # Hidden layer num of features
 n_classes = 8  # Total classes (should go up, or should go down)
 n_inputs = 8
-max_seq = 300
+max_seq = 600
 
 # Training
 learning_rate = 0.0025
@@ -26,8 +26,9 @@ lambda_loss_amount = 0.0015
 training_iters = 200  # Loop 1000 times on the dataset
 batch_size = 100
 display_iter = 3000  # To show test set accuracy during training
-model_save_iter = 20  # means per GCD(batch_size,display_iter)*model_save_iter samples save a model
-savename = 'newWITHold'
+model_save = 20
+savename = '_LSTMnewold_'
+LABELS = ['double', 'fist', 'spread', 'six', 'wavein', 'waveout', 'yes', 'no']
 
 
 def Matrix_to_CSV(filename, data):
@@ -102,7 +103,6 @@ def main():
     step = 1
     print("Start train!")
 
-
     while step * batch_size <= training_iters * train_data_len:
         batch_xs, batch_ys, batch_seq_len = train_sets.next(batch_size)
         # Fit training using batch data
@@ -118,7 +118,8 @@ def main():
         train_accuracies.append(acc)
 
         # Evaluate network only at some steps for faster training:
-        if (step * batch_size % display_iter == 0) or (step == 1) or (step * batch_size > training_iters*train_data_len):
+        if (step * batch_size % display_iter == 0) or (step == 1) or (
+                step * batch_size > training_iters * train_data_len):
             # To not spam console, show training accuracy/loss in this "if"
             print("Training iter #" + str(step * batch_size) + \
                   ":   Batch Loss = " + "{:.6f}".format(loss) + \
@@ -140,12 +141,11 @@ def main():
                   ", Accuracy = {}".format(acc))
 
         # save the model:
-        if (step * batch_size % (display_iter*10) == 0) or (
-                step * batch_size > training_iters * train_data_len):
+        if (step * batch_size % (display_iter * 20) == 0) or (
+                        step * batch_size > training_iters * train_data_len):
             save_path = saver.save(sess, "./lstm/model{}.ckpt".format(savename), global_step=step)
             print("Model saved in file: %s" % save_path)
         step += 1
-
 
     print("Optimization Finished!")
 
@@ -166,10 +166,9 @@ def main():
     print("FINAL RESULT: " + \
           "Batch Loss = {}".format(final_loss) + \
           ", Accuracy = {}".format(accuracy))
-    print("All train time = {}".format(time.time()-time1))
+    print("All train time = {}".format(time.time() - time1))
     save_path = saver.save(sess, "./lstm/model{}.ckpt-final".format(savename))
     print("Final Model saved in file: %s" % save_path)
-
 
     font = {
         'family': 'Bitstream Vera Sans',
@@ -188,12 +187,10 @@ def main():
 
     indep_test_axis = np.append(
         np.array(range(batch_size, len(test_losses) * display_iter, display_iter)[:-1]),
-        [training_iters*train_data_len]
+        [training_iters * train_data_len]
     )
     plt.plot(indep_test_axis, np.array(test_losses), "b-", label="Test losses")
     plt.plot(indep_test_axis, np.array(test_accuracies), "g-", label="Test accuracies")
-
-
 
     plt.title("Training session's progress over iterations")
     plt.legend(loc='upper right', shadow=True)
@@ -204,10 +201,15 @@ def main():
     # plt.show()
 
     # save and load
-    Matrix_to_CSV('./loss_dir/{}_hd{}iter{}ba{}lr{}train_loss.txt'.format(savename,n_hidden,training_iters,batch_size,learning_rate), train_losses)
-    Matrix_to_CSV('./loss_dir/{}_hd{}iter{}ba{}lr{}train_acc.txt'.format(savename,n_hidden,training_iters,batch_size,learning_rate), train_accuracies)
-    Matrix_to_CSV('./loss_dir/{}_hd{}iter{}ba{}lr{}test_loss.txt'.format(savename,n_hidden,training_iters,batch_size,learning_rate), test_losses)
-    Matrix_to_CSV('./loss_dir/{}_hd{}iter{}ba{}lr{}test_acc.txt'.format(savename,n_hidden,training_iters,batch_size,learning_rate), test_accuracies)
+    Matrix_to_CSV(
+        './loss_dir/{}_hd{}iter{}ba{}lr{}train_loss.txt'.format(savename, n_hidden, training_iters, batch_size,
+                                                                learning_rate), train_losses)
+    Matrix_to_CSV('./loss_dir/{}_hd{}iter{}ba{}lr{}train_acc.txt'.format(savename, n_hidden, training_iters, batch_size,
+                                                                         learning_rate), train_accuracies)
+    Matrix_to_CSV('./loss_dir/{}_hd{}iter{}ba{}lr{}test_loss.txt'.format(savename, n_hidden, training_iters, batch_size,
+                                                                         learning_rate), test_losses)
+    Matrix_to_CSV('./loss_dir/{}_hd{}iter{}ba{}lr{}test_acc.txt'.format(savename, n_hidden, training_iters, batch_size,
+                                                                        learning_rate), test_accuracies)
     # train_losses = np.loadtxt('./loss_dir/train_loss.txt')
     # train_accuracies = np.loadtxt('../loss_dir/train_acc.txt')
     # test_losses = np.loadtxt('../loss_dir/test_loss.txt')
@@ -242,6 +244,8 @@ def main():
     )
     plt.title("Confusion matrix \n(normalised to % of total test data)")
     plt.colorbar()
+    tick_marks = np.arange(n_classes)
+    plt.yticks(tick_marks, LABELS)
     plt.savefig('Matrix{}.png'.format(savename), dpi=600, bbox_inches='tight')
 
     sess.close()

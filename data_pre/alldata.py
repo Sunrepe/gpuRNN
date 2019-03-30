@@ -45,34 +45,34 @@ class AllData(object):
     func next(): 获得batch_data
     '''
 
-    def __init__(self, foldname, max_seq=300, shuffle=True):
-
+    def __init__(self, foldname, max_seq=300, shuffle=True, num_class=8):
         self.all_data = []
         self.all_label = []
         self.all_seq_len = []
         self.batch_id = 0
         for filename in os.listdir(foldname):
             oa, ob, oc = filename.split('_')
-            if oc == 'b.txt' and get_lei(ob) < 8:
+            if oc == 'b.txt' and get_lei(ob) < num_class:
                 filename = foldname + filename
                 data = Read__mean_2(filename)
                 cutting = Read__mean_2(foldname + oa + '_' + ob + '_c.txt')
-                for cut in range(0, 10):
+                for cut in range(0, len(cutting)):
                     # 读取数据
                     if cut == 0:
-                        tmp_data = z_score(data[0:cutting[cut] - 1, :])
-                        _len = cutting[0]
+                        tmp_data = z_score(data[0:cutting[cut], :])
                     else:
-                        tmp_data = z_score(data[cutting[cut - 1]:cutting[cut] - 1, :])
-                        _len = cutting[cut] - cutting[cut - 1]
+                        tmp_data = z_score(data[cutting[cut - 1]:cutting[cut], :])
                     # 生成数据
-                    self.all_label.append(get_label(get_lei(ob)))
-                    self.all_seq_len.append(_len)
-                    s_tmp = np.zeros((max_seq, 8))
-                    # print(np.shape(tmp_data))
-                    # print('len_', _len)
-                    s_tmp[0:_len-1] = tmp_data
-                    self.all_data.append(s_tmp)
+                    _len = tmp_data.shape[0]
+                    if _len >= max_seq:
+                        pass
+                    else:
+                        # 生成数据
+                        self.all_label.append(get_label(get_lei(ob), num_classes=num_class))
+                        self.all_seq_len.append(_len)
+                        s_tmp = np.zeros((max_seq, 8))
+                        s_tmp[0:_len-1] = tmp_data
+                        self.all_data.append(s_tmp)
         # 打乱数据
         if shuffle:
             _per = np.random.permutation(len(self.all_seq_len))  # 打乱后的行号
@@ -86,7 +86,7 @@ class AllData(object):
         self.all_label = np.array(self.all_label)[_per, :].astype('float32')
         self.all_seq_len = np.array(self.all_seq_len)[_per].astype('float32')
 
-    def next(self, batch_size, shuffle=False):
+    def next(self, batch_size, shuffle=True):
         if self.batch_id == len(self.all_seq_len):
             self.batch_id = 0
             if shuffle:
@@ -109,7 +109,7 @@ class NewDataSetTest(object):
 
     '''
 
-    def __init__(self, foldname, max_seq=300, shuffle=True):
+    def __init__(self, foldname, max_seq=300, shuffle=False):
 
         self.all_data = []
         self.all_label = []

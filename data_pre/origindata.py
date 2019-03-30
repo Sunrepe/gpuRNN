@@ -75,8 +75,8 @@ class OriData(object):
                         tmp_data = data[cutting[cut - 1]:cutting[cut], :]
                     # _per = [i for i in range(0, tmp_data.shape[0], 4)]
                     # tmp_data = tmp_data[_per, :]
-                    # tmp_data = z_score(tmp_data)
-                    tmp_data = preprocessing.scale(tmp_data.astype('float32'))
+                    tmp_data = z_score(tmp_data)
+                    # tmp_data = preprocessing.scale(tmp_data.astype('float32'))
                     _len = tmp_data.shape[0]
                     # 读取数据
                     if _len >= max_seq:
@@ -140,8 +140,8 @@ class OriDataOldSet(object):
                         tmp_data = data[0:cutting[cut], :]
                     else:
                         tmp_data = data[cutting[cut - 1]:cutting[cut], :]
-                    # tmp_data = z_score(tmp_data)
-                    tmp_data = preprocessing.scale(tmp_data.astype('float32'))
+                    tmp_data = z_score(tmp_data)
+                    # tmp_data = preprocessing.scale(tmp_data.astype('float32'))
                     _len = tmp_data.shape[0]
                     # 读取数据
                     if _len >= max_seq:

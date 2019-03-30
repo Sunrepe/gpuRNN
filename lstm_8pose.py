@@ -26,6 +26,7 @@ training_iters = 200  # Loop 1000 times on the dataset
 batch_size = 60
 display_iter = 1600  # To show test set accuracy during training
 savename = '8posenewsets'
+LABELS = ['double', 'fist', 'spread', 'six', 'wavein', 'waveout', 'yes', 'no']
 
 def Matrix_to_CSV(filename, data):
     with open(filename, "a", newline='', ) as csvfile:
@@ -239,6 +240,8 @@ def main():
     )
     plt.title("Confusion matrix \n(normalised to % of total test data)")
     plt.colorbar()
+    tick_marks = np.arange(n_classes)
+    plt.yticks(tick_marks, LABELS)
     plt.savefig('Matrix{}.png'.format(savename), dpi=600, bbox_inches='tight')
 
     sess.close()
