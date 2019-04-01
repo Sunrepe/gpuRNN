@@ -18,7 +18,7 @@ max_seq = 700
 # Training
 learning_rate = 0.0025
 lambda_loss_amount = 0.0015
-training_iters = 200  # Loop 200 times on the dataset
+training_iters = 500  # Loop 200 times on the dataset
 batch_size = 80
 display_iter = 3200  # To show test set accuracy during training
 model_save = 50
