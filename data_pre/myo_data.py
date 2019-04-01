@@ -23,9 +23,9 @@ b_filename = '../myodata/actdata/'+peoplename+'_'+alllei[motion_Label]+'_b.txt'
 c_filename = '../myodata/actdata/'+peoplename+'_'+alllei[motion_Label]+'_c.txt'
 
 # if recode again
-os.remove(a_filename)
-os.remove(b_filename)
-os.remove(c_filename)
+# os.remove(a_filename)
+# os.remove(b_filename)
+# os.remove(c_filename)
 
 csvfile = open(a_filename, "a", newline='')
 writer = csv.writer(csvfile)

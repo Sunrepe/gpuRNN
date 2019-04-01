@@ -23,12 +23,13 @@ max_seq = 300
 # Training
 learning_rate = 0.0025
 lambda_loss_amount = 0.0015
-training_iters = 200  # Loop 1000 times on the dataset
+training_iters = 1  # Loop 1000 times on the dataset
 batch_size = 100
 display_iter = 3000  # To show test set accuracy during training
 model_save = 20
 savename = '_LSTMnewold_'
 LABELS = ['double', 'fist', 'spread', 'six', 'wavein', 'waveout', 'yes', 'no']
+test_sets = NewDataSetTest(foldname='./data/actdata/')
 
 
 def Matrix_to_CSV(filename, data):

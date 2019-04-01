@@ -59,7 +59,7 @@ class AllData(object):
                 a__ = len(cutting)
                 if len(oa) < 4:
                     a__ = 10
-                print("len:",a__, "\tfile:", filename)
+                # print("len:",a__, "\tfile:", filename)
                 for cut in range(0, a__):
                     # 读取数据
                     if cut == 0:
@@ -141,12 +141,15 @@ class NewDataSetTest(object):
                         s_tmp = np.zeros((max_seq, 8))
                         s_tmp[0:_len] = tmp_data
                         self.all_data.append(s_tmp)
+        self.all_data = np.array(self.all_data).astype('float32')
+        self.all_label = np.array(self.all_label).astype('float32')
+        self.all_seq_len = np.array(self.all_seq_len).astype('float32')
         # 打乱数据
         if shuffle:
             _per = np.random.permutation(len(self.all_seq_len))  # 打乱后的行号
-            self.all_data = np.array(self.all_data)[_per, :, :].astype('float32')
-            self.all_label = np.array(self.all_label)[_per, :].astype('float32')
-            self.all_seq_len = np.array(self.all_seq_len)[_per].astype('float32')
+            self.all_data = self.all_data[_per, :, :]
+            self.all_label = self.all_label[_per, :]
+            self.all_seq_len = self.all_seq_len[_per]
 
     def _shuffle_data(self):
         _per = np.random.permutation(len(self.all_seq_len))  # 打乱后的行号
