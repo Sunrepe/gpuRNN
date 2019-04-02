@@ -13,12 +13,12 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'  # just error no warning
 n_hidden = 50  # Hidden layer num of features
 n_classes = 10  # Total classes (should go up, or should go down)
 n_inputs = 10
-max_seq = 700
+max_seq = 800
 
 # Training
 learning_rate = 0.0025
 lambda_loss_amount = 0.0015
-training_iters = 500  # Loop 200 times on the dataset
+training_iters = 200  # Loop 200 times on the dataset
 batch_size = 80
 display_iter = 3200  # To show test set accuracy during training
 model_save = 50
@@ -64,7 +64,7 @@ def CNNnet(inputs):
 
     # 第二层卷积
     with tf.name_scope('conv2'):
-        w_conv2 = weight_init([10,1,4,2], 'conv2_w')
+        w_conv2 = weight_init([20,1,4,2], 'conv2_w')
         b_conv2 = bias_init([2], 'conv2_b')
         conv2 = tf.nn.conv2d(input=conv1, filter=w_conv2, strides=[1,2,1,1], padding='VALID')
         h_conv2 = tf.nn.relu(conv2+b_conv2)
@@ -91,8 +91,8 @@ def LSTM_RNN(_X, seqlen, _weight, _bias):
 
 def main():
     time1 = time.time()
-    train_sets = CNNData(foldname='./data/train4/', max_seq=max_seq, trainable=True, num_class=n_classes)
-    test_sets = CNNData(foldname='./data/test4/', max_seq=max_seq, trainable=False, num_class=n_classes)
+    train_sets = CNNData(foldname='./data/train3/', max_seq=max_seq, trainable=True, num_class=n_classes)
+    test_sets = CNNData(foldname='./data/test3/', max_seq=max_seq, trainable=False, num_class=n_classes)
     train_data_len = len(train_sets.all_seq_len)
 
     # Graph input/output
