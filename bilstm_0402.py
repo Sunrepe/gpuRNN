@@ -23,7 +23,7 @@ max_seq = 700
 # Training
 learning_rate = 0.0025
 lambda_loss_amount = 0.0015
-training_iters = 1  # Loop 1000 times on the dataset
+training_iters = 200  # Loop 1000 times on the dataset
 batch_size = 100
 display_iter = 3200  # To show test set accuracy during training
 model_save = 20
@@ -70,8 +70,8 @@ def BiLSTM_RNN(_X, seqlen, _weight, _bias,):
 def main():
     time1 = time.time()
     print('loading data...')
-    train_sets = RNNData(foldname='./data/train/', max_seq=max_seq, trainable=True, num_class=n_classes)
-    test_sets = RNNData(foldname='./data/test/', max_seq=max_seq, trainable=False, num_class=n_classes)
+    train_sets = RNNData(foldname='./data/train3/', max_seq=max_seq, trainable=True, num_class=n_classes)
+    test_sets = RNNData(foldname='./data/test3/', max_seq=max_seq, trainable=False, num_class=n_classes)
     train_data_len = len(train_sets.all_seq_len)
     print('load data time:',time.time()-time1)
     # Graph input/output
