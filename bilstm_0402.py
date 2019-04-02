@@ -1,5 +1,5 @@
 # 用于测试新数据是否和老数据可以共用
-from data_pre.cnndata import *
+from data_pre.alldata import *
 import tensorflow as tf
 import os
 import time
@@ -15,7 +15,7 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'  # just error no warning
 # os.environ['TF_CPP_MIN_LOG_LEVEL'] = '0'
 
 # All hyperparameters
-n_hidden = 50  # Hidden layer num of features
+n_hidden = 40  # Hidden layer num of features
 n_classes = 10  # Total classes (should go up, or should go down)
 n_inputs = 8
 max_seq = 700
@@ -23,11 +23,11 @@ max_seq = 700
 # Training
 learning_rate = 0.0025
 lambda_loss_amount = 0.0015
-training_iters = 200  # Loop 1000 times on the dataset
-batch_size = 80
+training_iters = 1  # Loop 1000 times on the dataset
+batch_size = 100
 display_iter = 3200  # To show test set accuracy during training
 model_save = 20
-savename = '_LSTMnewdata04_'
+savename = '_BiLSTM0402_'
 LABELS = ['double', 'fist', 'spread', 'six', 'wavein', 'waveout', 'yes', 'no', 'finger', 'snap']
 
 
@@ -40,41 +40,63 @@ def Matrix_to_CSV(filename, data):
             writer.writerow([row])
 
 
-def LSTM_RNN(_X, seqlen, _weight, _bias):
+def BiLSTM_RNN(_X, seqlen, _weight, _bias,):
+    # shaping the dataSet
+    # _X = tf.reshape(_X, [-1, n_inputs])
+    # _X = tf.nn.relu(tf.matmul(_X, _weight['hidden']) + _bias['hidden'])
+    # _X = tf.reshape(_X, [-1, max_seq, n_inputs])
+
+    # net
     lstm_cell_1 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
     lstm_cell_2 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
-    lstm_cells = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2])
+    lstm_cells_fw = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2])
+    # backword
+    lstm_cell_1_bw = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
+    lstm_cell_2_bw = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
+    lstm_cells_bw = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1_bw, lstm_cell_2_bw])
     # Get LSTM cell output
-    outputs, _ = tf.nn.dynamic_rnn(lstm_cells, inputs=_X, sequence_length=seqlen, dtype=tf.float32)
-    # many to one 关键。两种方案，一个是选择最后的输出，一个是选择所有输出的均值
-    # 方案一：
-    # lstm_out = tf.gather_nd(outputs, seqlen-1)
-    # 方案二：
-    lstm_out = tf.divide(tf.reduce_sum(outputs, 1), seqlen[:, None])
-
-    return tf.matmul(lstm_out, _weight['out']) + _bias['out']
+    outputs, _ = tf.nn.bidirectional_dynamic_rnn(cell_fw=lstm_cells_fw,
+                                                 cell_bw=lstm_cells_bw,
+                                                 inputs=_X,
+                                                 sequence_length=tf.to_int32(seqlen),
+                                                 dtype=tf.float32)
+    _out1, _out2 = outputs
+    lstm_out_1 = tf.divide(tf.reduce_sum(_out1, 1), seqlen[:, None])
+    lstm_out_2 = tf.divide(tf.reduce_sum(_out2, 1), seqlen[:, None])
+    _out_last = lstm_out_1*0.7 + lstm_out_2*0.3
+    return tf.matmul(_out_last, _weight['out']) + _bias['out']
 
 
 def main():
     time1 = time.time()
-    train_sets = RNNData(foldname='./data/train3/', max_seq=max_seq, trainable=True, num_class=n_classes)
-    test_sets = RNNData(foldname='./data/test3/', max_seq=max_seq, trainable=False, num_class=n_classes)
+    print('loading data...')
+    train_sets = RNNData(foldname='./data/train/', max_seq=max_seq, trainable=True, num_class=n_classes)
+    test_sets = RNNData(foldname='./data/test/', max_seq=max_seq, trainable=False, num_class=n_classes)
     train_data_len = len(train_sets.all_seq_len)
-
+    print('load data time:',time.time()-time1)
     # Graph input/output
     x = tf.placeholder(tf.float32, [None, max_seq, n_inputs])
     y = tf.placeholder(tf.float32, [None, n_classes])
     seq_len = tf.placeholder(tf.float32, [None])
 
     # Graph weights
+    # weights = {
+    #     'out': tf.Variable(tf.random_normal([n_hidden, n_classes], mean=1.0))
+    # }
+    # biases = {
+    #     'out': tf.Variable(tf.random_normal([n_classes]))
+    # }
+    # Graph weights
     weights = {
+        'hidden': tf.Variable(tf.random_normal([n_inputs, n_hidden])),  # Hidden layer weights
         'out': tf.Variable(tf.random_normal([n_hidden, n_classes], mean=1.0))
     }
     biases = {
+        'hidden': tf.Variable(tf.random_normal([n_hidden])),
         'out': tf.Variable(tf.random_normal([n_classes]))
     }
 
-    pred = LSTM_RNN(x, seq_len, weights, biases)
+    pred = BiLSTM_RNN(x, seq_len, weights, biases)
 
     # Loss, optimizer and evaluation
     l2 = lambda_loss_amount * sum(

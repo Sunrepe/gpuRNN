@@ -1,3 +1,9 @@
+'''
+本函数是生成用于RNN after CNN的相关DataSet
+主要有CNNData
+还有一个RNNData只是单纯提取了所有的数据,并没做任何处理.
+'''
+
 import numpy as np
 import os
 from sklearn import preprocessing
@@ -43,13 +49,13 @@ def z_score(data_x):
 
 class CNNData(object):
     '''
-    对于新数据进行测试4:只选择其中8个动作进行分类
-    注意:原始数据帧率较高,只选择其1/4帧率进行测试
-    之后还会有NewDataSetTest2等,进行单独的新数据测试,或者进行新老数据混合训练集测试集测试
+    生成为RNN after CNN 的DataSet.
+    注意,由于CNN 部分将原数据数据缩短了,所以生成数据的Length 是缩小了八倍的
+    具体而言与CNN网络结构设置相关.
 
     细节:
-        1,注意去除新数据中len>600的数据(该数据假设为动作分割不标准)
-        2,注意只使用前8类
+        1,注意去除新数据中len>max_seq 的数据(该数据假设为动作分割不标准)
+        2,注意使用了所有10类数据
 
     '''
 

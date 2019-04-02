@@ -95,7 +95,7 @@ def main():
     train_accuracies = []
 
     # Launch the graph
-    sess = tf.InteractiveSession(config=tf.ConfigProto(log_device_placement=True))
+    sess = tf.InteractiveSession()
     init = tf.global_variables_initializer()
     sess.run(init)
 
