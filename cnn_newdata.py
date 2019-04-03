@@ -18,11 +18,11 @@ max_seq = 800
 # Training
 learning_rate = 0.0025
 lambda_loss_amount = 0.0015
-training_iters = 200  # Loop 200 times on the dataset
-batch_size = 80
-display_iter = 3200  # To show test set accuracy during training
+training_iters = 500  # Loop 200 times on the dataset
+batch_size = 100
+display_iter = 4000  # To show test set accuracy during training
 model_save = 50
-savename = '_RNNCNN_newdatadrop_'
+savename = 'RNNCNN_newdatadrop_'
 LABELS = ['double', 'fist', 'spread', 'six', 'wavein', 'waveout', 'yes', 'no', 'finger', 'snap']
 
 
@@ -55,7 +55,7 @@ def CNNnet(inputs):
 
     # 第一层卷积
     with tf.name_scope('conv1'):
-        w_conv1 = weight_init([5,3,1,4], 'conv1_w')
+        w_conv1 = weight_init([5, 3, 1, 4], 'conv1_w')
         b_conv1 = bias_init([4], 'conv1_b')
         conv1 = tf.nn.conv2d(input=inputs, filter=w_conv1, strides=[1,2,1,1], padding='VALID')
         h_conv1 = tf.nn.relu(conv1+b_conv1)
@@ -71,7 +71,7 @@ def CNNnet(inputs):
         # h_pool2 = tf.nn.max_pool(h_conv2, ksize=[1,2,2,1], strides=[1,2,2,1],padding='VALID')
 
     _a = h_conv2.shape
-    return tf.reshape(h_conv2, [-1,_a[1],8])
+    return tf.reshape(h_conv2, [-1, _a[1], 8])
 
 
 def LSTM_RNN(_X, seqlen, _weight, _bias):
@@ -91,9 +91,11 @@ def LSTM_RNN(_X, seqlen, _weight, _bias):
 
 def main():
     time1 = time.time()
-    train_sets = CNNData(foldname='./data/train3/', max_seq=max_seq, trainable=True, num_class=n_classes)
-    test_sets = CNNData(foldname='./data/test3/', max_seq=max_seq, trainable=False, num_class=n_classes)
+    print('loading data...')
+    train_sets = CNNData(foldname='./data/train/', max_seq=max_seq, trainable=True, num_class=n_classes)
+    test_sets = CNNData(foldname='./data/test/', max_seq=max_seq, trainable=False, num_class=n_classes)
     train_data_len = len(train_sets.all_seq_len)
+    print('load data time:',time.time()-time1)
 
     # Graph input/output
     x = tf.placeholder(tf.float32, [None, max_seq, n_inputs, 1])
@@ -130,7 +132,7 @@ def main():
     train_accuracies = []
 
     # Launch the graph
-    sess = tf.InteractiveSession(config=tf.ConfigProto(log_device_placement=True))
+    sess = tf.InteractiveSession(config=tf.ConfigProto(log_device_placement=False))
     init = tf.global_variables_initializer()
     sess.run(init)
 
