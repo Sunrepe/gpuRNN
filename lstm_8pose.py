@@ -22,10 +22,10 @@ max_seq = 600
 # Training
 learning_rate = 0.001
 lambda_loss_amount = 0.0005
-training_iters = 1  # Loop 1000 times on the dataset
+training_iters = 200  # Loop 1000 times on the dataset
 batch_size = 60
 display_iter = 1600  # To show test set accuracy during training
-savename = '8posenewsets'
+savename = 'LSTM8pose_'
 LABELS = ['double', 'fist', 'spread', 'six', 'wavein', 'waveout', 'yes', 'no']
 
 
@@ -43,7 +43,10 @@ def LSTM_RNN(_X, seqlen, _weight, _bias):
     lstm_cell_2 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
     lstm_cells = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2])
     # Get LSTM cell output
-    outputs, _ = tf.nn.dynamic_rnn(lstm_cells, inputs=_X, sequence_length=seqlen, dtype=tf.float32)
+    outputs, _ = tf.nn.dynamic_rnn(lstm_cells,
+                                   inputs=_X,
+                                   sequence_length=tf.to_int32(seqlen),
+                                   dtype=tf.float32)
     # many to one 关键。两种方案，一个是选择最后的输出，一个是选择所有输出的均值
     # 方案一：
     # lstm_out = tf.gather_nd(outputs, seqlen-1)
@@ -55,9 +58,11 @@ def LSTM_RNN(_X, seqlen, _weight, _bias):
 
 def main():
     time1 = time.time()
-    train_sets = NewData8class1(foldname='./data/actdata/', max_seq=max_seq, trainable=True, num_class=n_classes)
-    test_sets = NewData8class1(foldname='./data/actdata/', max_seq=max_seq, trainable=False, num_class=n_classes)
+    print('loading data...')
+    train_sets = RNNData(foldname='./data/train3/', max_seq=max_seq, trainable=True, num_class=n_classes)
+    test_sets = RNNData(foldname='./data/test3/', max_seq=max_seq, trainable=False, num_class=n_classes)
     train_data_len = len(train_sets.all_seq_len)
+    print('load data time:', time.time() - time1)
 
     # Graph input/output
     x = tf.placeholder(tf.float32, [None, max_seq, n_inputs])
@@ -93,7 +98,7 @@ def main():
     train_accuracies = []
 
     # Launch the graph
-    sess = tf.InteractiveSession(config=tf.ConfigProto(log_device_placement=True))
+    sess = tf.InteractiveSession(config=tf.ConfigProto(log_device_placement=False))
     init = tf.global_variables_initializer()
     sess.run(init)
 
@@ -171,7 +176,7 @@ def main():
 
 
     font = {
-        'family': 'Bitstream Vera Sans',
+        'family': 'Arial',
         'weight': 'bold',
         'size': 18
     }
