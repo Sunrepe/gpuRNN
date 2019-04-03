@@ -1,5 +1,4 @@
-all_old:所有olddata
-all_new:所有newdata
+﻿actdata:由firstLSTM转化来的所有新数据
 train:old data train
 train2: old 和 new1(所有室友数据) 混合
 train3:new data train
