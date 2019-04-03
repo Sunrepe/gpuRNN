@@ -171,7 +171,7 @@ def main():
     print("Final Model saved in file: %s" % save_path)
 
     font = {
-        'family': 'Bitstream Vera Sans',
+        'family': 'Times New Roman',
         'weight': 'bold',
         'size': 18
     }
