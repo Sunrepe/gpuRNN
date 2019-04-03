@@ -92,8 +92,8 @@ def LSTM_RNN(_X, seqlen, _weight, _bias):
 def main():
     time1 = time.time()
     print('loading data...')
-    train_sets = CNNData(foldname='./data/train/', max_seq=max_seq, trainable=True, num_class=n_classes)
-    test_sets = CNNData(foldname='./data/test/', max_seq=max_seq, trainable=False, num_class=n_classes)
+    train_sets = CNNData(foldname='./data/train3/', max_seq=max_seq, trainable=True, num_class=n_classes)
+    test_sets = CNNData(foldname='./data/test3/', max_seq=max_seq, trainable=False, num_class=n_classes)
     train_data_len = len(train_sets.all_seq_len)
     print('load data time:',time.time()-time1)
 
