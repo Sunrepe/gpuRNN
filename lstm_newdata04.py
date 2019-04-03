@@ -15,7 +15,7 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'  # just error no warning
 # os.environ['TF_CPP_MIN_LOG_LEVEL'] = '0'
 
 # All hyperparameters
-n_hidden = 50  # Hidden layer num of features
+n_hidden = 60  # Hidden layer num of features
 n_classes = 10  # Total classes (should go up, or should go down)
 n_inputs = 8
 max_seq = 800
@@ -23,7 +23,7 @@ max_seq = 800
 # Training
 learning_rate = 0.0025
 lambda_loss_amount = 0.0015
-training_iters = 200  # Loop 1000 times on the dataset
+training_iters = 300  # Loop 1000 times on the dataset
 batch_size = 100
 display_iter = 4000  # To show test set accuracy during training
 model_save = 40
@@ -58,8 +58,8 @@ def LSTM_RNN(_X, seqlen, _weight, _bias):
 
 def main():
     time1 = time.time()
-    train_sets = RNNData(foldname='./data/train3/', max_seq=max_seq, trainable=True, num_class=n_classes)
-    test_sets = RNNData(foldname='./data/test3/', max_seq=max_seq, trainable=False, num_class=n_classes)
+    train_sets = RNNData(foldname='./data/test3/', max_seq=max_seq, trainable=True, num_class=n_classes)
+    test_sets = RNNData(foldname='./data/train3/', max_seq=max_seq, trainable=False, num_class=n_classes)
     train_data_len = len(train_sets.all_seq_len)
 
     # Graph input/output
