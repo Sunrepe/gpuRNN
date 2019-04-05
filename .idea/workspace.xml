@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e51bf105-f34c-4031-aa58-28fd3cc5807c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data_pre/alldata.py" afterPath="$PROJECT_DIR$/data_pre/alldata.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data_pre/dataFortest.py" afterPath="$PROJECT_DIR$/data_pre/dataFortest.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lstm_newdata04.py" afterPath="$PROJECT_DIR$/lstm_newdata04.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testEveryone.py" afterPath="$PROJECT_DIR$/testEveryone.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lstm_0405_kfold.py" afterPath="$PROJECT_DIR$/lstm_0405_kfold.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -76,8 +72,8 @@
       <file leaf-file-name="lstm_0405_kfold.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lstm_0405_kfold.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="68" column="46" lean-forward="false" selection-start-line="68" selection-start-column="46" selection-end-line="68" selection-end-column="46" />
+            <state relative-caret-position="234">
+              <caret line="27" column="16" lean-forward="true" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
               <folding>
                 <element signature="e#20#50#0" expanded="true" />
               </folding>
@@ -406,7 +402,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35008103" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3743922" sideWeight="0.4969743" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2560778" sideWeight="0.4969743" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28038898" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -773,8 +769,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lstm_0405_kfold.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="68" column="46" lean-forward="false" selection-start-line="68" selection-start-column="46" selection-end-line="68" selection-end-column="46" />
+        <state relative-caret-position="234">
+          <caret line="27" column="16" lean-forward="true" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
           <folding>
             <element signature="e#20#50#0" expanded="true" />
           </folding>

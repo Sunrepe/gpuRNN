@@ -24,7 +24,7 @@ max_seq = 800
 learning_rate = 0.0025
 lambda_loss_amount = 0.0015
 training_iters = 1  # Loop 1000 times on the dataset
-k_fold_num = 0
+k_fold_num = 1
 batch_size = 100
 display_iter = 6000  # To show test set accuracy during training
 model_save = 40
@@ -44,8 +44,9 @@ def Matrix_to_CSV(filename, data):
 def LSTM_RNN(_X, seqlen, _weight, _bias):
     lstm_cell_1 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
     lstm_cell_2 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
-    lstm_cell_3 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
-    lstm_cells = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2, lstm_cell_3])
+    # lstm_cell_3 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
+    # lstm_cells = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2, lstm_cell_3])
+    lstm_cells = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2])
     # Get LSTM cell output
     outputs, _ = tf.nn.dynamic_rnn(lstm_cells, inputs=_X, sequence_length=seqlen, dtype=tf.float32)
     # many to one 关键。两种方案，一个是选择最后的输出，一个是选择所有输出的均值
