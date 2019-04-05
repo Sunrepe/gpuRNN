@@ -28,8 +28,8 @@ batch_size = 100
 display_iter = 1000  # To show test set accuracy during training
 model_save = 80
 
-k_fold_num = 0
-savename = '_LSTM_kfold1_'
+k_fold_num = 2
+savename = '_LSTM_kfold2_'
 LABELS = ['double', 'fist', 'spread', 'six', 'wavein', 'waveout', 'yes', 'no', 'finger', 'snap']
 
 
