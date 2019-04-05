@@ -1,5 +1,5 @@
 # 用于测试新数据是否和老数据可以共用
-from data_pre.cnndata import *
+from data_pre.alldata import *
 import tensorflow as tf
 import os
 import time
@@ -24,10 +24,11 @@ max_seq = 800
 learning_rate = 0.0025
 lambda_loss_amount = 0.0015
 training_iters = 1  # Loop 1000 times on the dataset
+k_fold_num = 0
 batch_size = 100
-display_iter = 4000  # To show test set accuracy during training
+display_iter = 6000  # To show test set accuracy during training
 model_save = 40
-savename = '_LSTMnewdata04_'
+savename = '_LSTM_kfold0_'
 LABELS = ['double', 'fist', 'spread', 'six', 'wavein', 'waveout', 'yes', 'no', 'finger', 'snap']
 
 
@@ -59,9 +60,12 @@ def LSTM_RNN(_X, seqlen, _weight, _bias):
 def main():
     time1 = time.time()
     print('loading data...')
-    train_sets = RNNData(foldname='./data/train/', max_seq=max_seq, trainable=True, num_class=n_classes)
-    test_sets = RNNData(foldname='./data/test/', max_seq=max_seq, trainable=False, num_class=n_classes)
+    train_sets = AllData_RNN(foldname='./data/actdata/', max_seq=max_seq,
+                             num_class=n_classes, trainable=True, kfold_num=k_fold_num)
+    test_sets = AllData_RNN(foldname='./data/actdata/', max_seq=max_seq,
+                            num_class=n_classes, trainable=False, kfold_num=k_fold_num)
     train_data_len = len(train_sets.all_seq_len)
+    print('train:',len(train_sets.all_seq_len), 'test:',len(test_sets.all_seq_len))
     print('load data time:', time.time()-time1)
 
     # Graph input/output

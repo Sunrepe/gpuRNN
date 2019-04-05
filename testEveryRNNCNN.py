@@ -10,30 +10,29 @@ import os
 import time
 import csv
 import pandas as pd
-import matplotlib.pyplot as plt
 import numpy as np
 from sklearn import metrics
-
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'  # just error no warning
+
+# All hyperparameters
+model_name = 'E:/Research-bachelor/storeMODELs/RNNCNN_data_and_model2/lstm/modelRNNCNN_newdatadrop_.ckpt-final'
+df_save_path = 'E:/Research-bachelor/storeMODELs/RNNCNN_data_and_model2/RNNCNN0402_everyone.csv'
+foldname = './data/test3/'
 
 # All hyperparameters
 n_hidden = 50  # Hidden layer num of features
 n_classes = 10  # Total classes (should go up, or should go down)
-n_inputs = 8
-max_seq = 700
-model_name = 'E:/Research-bachelor/storeMODELs/10pose_lstm_0402data/lstm/model_LSTMnewdata04_.ckpt-final'
-df_save_path = 'E:/Research-bachelor/storeMODELs/10pose_lstm_0402data/LSTMnewdata04_everyone2.csv'
-# model_name = "./lstm/model_LSTMnewdata04_.ckpt-8800"
-foldname = './data/test3/'
+n_inputs = 10
+max_seq = 800
 
 # Training
 learning_rate = 0.0025
 lambda_loss_amount = 0.0015
-training_iters = 200  # Loop 1000 times on the dataset
-batch_size = 80
-display_iter = 3200  # To show test set accuracy during training
-model_save = 20
-savename = '_LSTMnewdata04_'
+training_iters = 500  # Loop 200 times on the dataset
+batch_size = 100
+display_iter = 4000  # To show test set accuracy during training
+model_save = 50
+savename = 'RNNCNN_newdatadrop_'
 LABELS = ['double', 'fist', 'spread', 'six', 'wavein', 'waveout', 'yes', 'no', 'finger', 'snap']
 
 
@@ -44,6 +43,45 @@ def Matrix_to_CSV(filename, data):
         # writer.writerow(["emg1", "emg2", "emg3", "emg4", "emg5", "emg6", "emg7", "emg8", "label"])
         for row in data:
             writer.writerow([row])
+
+
+def weight_init(shape, name):
+    '''
+    获取某个shape大小的参数
+    '''
+    return tf.get_variable(name, shape, initializer=tf.random_normal_initializer(mean=0.0, stddev=0.05))
+
+
+def bias_init(shape, name):
+    return tf.get_variable(name, shape, initializer=tf.constant_initializer(0.0))
+
+
+def CNNnet(inputs):
+    '''
+    CNN网络,用于获得动态长度的数据,之后交给RNN网络
+    :param inputs:
+    :return:
+    '''
+
+    # 第一层卷积
+    with tf.name_scope('conv1'):
+        w_conv1 = weight_init([5, 3, 1, 4], 'conv1_w')
+        b_conv1 = bias_init([4], 'conv1_b')
+        conv1 = tf.nn.conv2d(input=inputs, filter=w_conv1, strides=[1,2,1,1], padding='VALID')
+        h_conv1 = tf.nn.relu(conv1+b_conv1)
+        h_pool1 = tf.nn.max_pool(h_conv1, ksize=[1,2,2,1], strides=[1,2,2,1],padding='VALID')
+        conv1 = tf.nn.dropout(h_pool1, 0.7)
+
+    # 第二层卷积
+    with tf.name_scope('conv2'):
+        w_conv2 = weight_init([5,1,4,2], 'conv2_w')
+        b_conv2 = bias_init([2], 'conv2_b')
+        conv2 = tf.nn.conv2d(input=conv1, filter=w_conv2, strides=[1,2,1,1], padding='VALID')
+        h_conv2 = tf.nn.relu(conv2+b_conv2)
+        # h_pool2 = tf.nn.max_pool(h_conv2, ksize=[1,2,2,1], strides=[1,2,2,1],padding='VALID')
+
+    _a = h_conv2.shape
+    return tf.reshape(h_conv2, [-1, _a[1], 8])
 
 
 def LSTM_RNN(_X, seqlen, _weight, _bias):
@@ -65,9 +103,11 @@ def main():
     time1 = time.time()
 
     # load sess and model
-    x = tf.placeholder(tf.float32, [None, max_seq, n_inputs])
+    # Graph input/output
+    x = tf.placeholder(tf.float32, [None, max_seq, n_inputs, 1])
     y = tf.placeholder(tf.float32, [None, n_classes])
     seq_len = tf.placeholder(tf.float32, [None])
+
     # Graph weights
     weights = {
         'out': tf.Variable(tf.random_normal([n_hidden, n_classes], mean=1.0))
@@ -75,24 +115,23 @@ def main():
     biases = {
         'out': tf.Variable(tf.random_normal([n_classes]))
     }
-    pred = LSTM_RNN(x, seq_len, weights, biases)
-    # Loss, optimizer and evaluation
-    saver = tf.train.Saver()
-    # start train and test
-    # To keep track of training's performance
 
+    CNN_res = CNNnet(x)
+    pred = LSTM_RNN(CNN_res, seq_len, weights, biases)
+
+    saver = tf.train.Saver()
+    print('load model...')
     # Launch the graph
     sess = tf.InteractiveSession(config=tf.ConfigProto(log_device_placement=False))
     saver.restore(sess, model_name)
     # load accomplished
     print('Model are loaded!\t{}s'.format(time.time()-time1))
-
     df_data = []
     print("Start test!")
     person_list = getAllPeople(foldname)
     for person in person_list:
         print(person)
-        test_data = Per_RNNData(foldname=foldname,
+        test_data = Per_CNNData(foldname=foldname,
                                person_name=person,
                                max_seq=max_seq,
                                num_class=n_classes)
@@ -113,23 +152,22 @@ def main():
         print("Precision: {}%".format(100 * _percision))
         print("Recall: {}%".format(100 * _recall))
         print("f1_score: {}%".format(100 * _f1Score))
-        # print("Precision: ",metrics.precision_score(result_labels, predictions, average=None))
-        # # print("Recall: {}%".format(100 * metrics.recall_score(result_labels, predictions)))
-        # # print("f1_score: {}%".format(100 * metrics.f1_score(result_labels, predictions)))
 
-        print("{}'s Confusion Matrix:".format(person))
+        print("Confusion Matrix:")
         confusion_matrix = metrics.confusion_matrix(result_labels, predictions)
         print(confusion_matrix)
-        n_wrong = 0
+        n_wrong=0
         for i in range(len(predictions)):
-            if predictions[i] != result_labels[i]:
-                n_wrong += 1
-                # print('True:', LABELS[result_labels[i]], 'Pred:', LABELS[predictions[i]])
+            if predictions[i]!=result_labels[i]:
+                n_wrong+=1
+                # print('True:',LABELS[result_labels[i]],'Pred:',LABELS[predictions[i]])
         print(person, "\t total wrong pred:{}".format(n_wrong))
+        df_data.append([_recall, _percision, _f1Score, n_wrong])
         print("")
-        df_data.append([_recall,_percision,_f1Score,n_wrong])
-    df=pd.DataFrame(df_data,index=person_list,columns=["Recall","Precision","F1_score","Total_wrong"])
+
+    df = pd.DataFrame(df_data, index=person_list, columns=["Recall", "Precision", "F1_score", "Total_wrong"])
     df.to_csv(df_save_path)
+
     sess.close()
 
 
