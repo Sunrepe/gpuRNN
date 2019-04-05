@@ -28,8 +28,8 @@ batch_size = 100
 display_iter = 1000  # To show test set accuracy during training
 model_save = 80
 
-k_fold_num = 2
-savename = '_LSTM_kfold2_'
+k_fold_num = 3
+savename = '_LSTM_kfold3_'
 LABELS = ['double', 'fist', 'spread', 'six', 'wavein', 'waveout', 'yes', 'no', 'finger', 'snap']
 
 
@@ -95,7 +95,7 @@ def main():
     correct_pred = tf.equal(tf.argmax(pred, 1), tf.argmax(y, 1))
     accuracy = tf.reduce_mean(tf.cast(correct_pred, tf.float32))
 
-    saver = tf.train.Saver()
+    saver = tf.train.Saver(max_to_keep=12)
     # start train and test
     # To keep track of training's performance
     test_losses = []
@@ -205,7 +205,7 @@ def main():
     plt.legend(loc='upper right', shadow=True)
     plt.ylabel('Training Progress (Loss or Accuracy values)')
     plt.xlabel('Training iteration')
-    plt.savefig('accloss_{}.png'.format(savename), dpi=600, bbox_inches='tight')
+    plt.savefig('./loss_dir/accloss_{}.png'.format(savename), dpi=600, bbox_inches='tight')
 
     # plt.show()
 
@@ -255,7 +255,7 @@ def main():
     plt.colorbar()
     tick_marks = np.arange(n_classes)
     plt.yticks(tick_marks, LABELS)
-    plt.savefig('Matrix{}.png'.format(savename), dpi=600, bbox_inches='tight')
+    plt.savefig('./loss_dir/Matrix{}.png'.format(savename), dpi=600, bbox_inches='tight')
 
     sess.close()
 
