@@ -70,14 +70,19 @@ class CNNData(object):
 
     '''
 
-    def __init__(self, foldname, max_seq=700, trainable=False, num_class=10):
+    def __init__(self, foldname, max_seq=700, num_class=10, trainable=False, kfold_num=0):
+        train_person, test_person = getPersons(foldname, kfold_num)
+        __person = train_person if trainable else test_person
+        __person = __person[0:2]
+        print('person:',__person)
+        # __person = ['zhouxufeng']
         self.all_data = []
         self.all_label = []
         self.all_seq_len = []
         self.batch_id = 0
         for filename in os.listdir(foldname):
             oa, ob, oc = filename.split('_')
-            if oc == 'b.txt' and get_lei(ob) < num_class:
+            if oc == 'b.txt' and get_lei(ob) < num_class and oa in __person:
                 filename = foldname + filename
                 data = Read__mean_2(filename)
                 cutting = Read__mean_2(foldname + oa + '_' + ob + '_c.txt')
@@ -96,7 +101,7 @@ class CNNData(object):
                     else:
                         # 生成数据
                         self.all_label.append(get_label(get_lei(ob), num_classes=num_class))
-                        self.all_seq_len.append(int(_len/8.0)-2)
+                        self.all_seq_len.append(int(_len/4.0)-2)
                         s_tmp = np.zeros((max_seq, 10))
                         s_tmp[0:_len, 1:9] = tmp_data
                         s_tmp[:, 0] = s_tmp[:, 8]
@@ -108,8 +113,9 @@ class CNNData(object):
         self.all_seq_len = np.array(self.all_seq_len).astype('float32')
         # 打乱数据
         if trainable:
-            _per = np.random.permutation(len(self.all_seq_len))  # 打乱后的行号
-            self.all_data = self.all_data[_per, :, :]
+            _per = np.random.permutation(len(self.all_label))  # 打乱后的行号
+            print('shape:',self.all_data.shape)
+            self.all_data = self.all_data[_per, :, :, :]
             self.all_label = self.all_label[_per, :]
             self.all_seq_len = self.all_seq_len[_per]
 
@@ -141,14 +147,16 @@ class RNNData(object):
 
     '''
 
-    def __init__(self, foldname, max_seq=700, trainable=False, num_class=10):
+    def __init__(self, foldname, max_seq=700, num_class=10, trainable=False, kfold_num=0):
+        train_person, test_person = getPersons(foldname, kfold_num)
+        __person = train_person if trainable else test_person
         self.all_data = []
         self.all_label = []
         self.all_seq_len = []
         self.batch_id = 0
         for filename in os.listdir(foldname):
             oa, ob, oc = filename.split('_')
-            if oc == 'b.txt' and get_lei(ob) < num_class:
+            if oc == 'b.txt' and get_lei(ob) < num_class and oa in __person:
                 filename = foldname + filename
                 data = Read__mean_2(filename)
                 cutting = Read__mean_2(foldname + oa + '_' + ob + '_c.txt')
@@ -157,8 +165,6 @@ class RNNData(object):
                         tmp_data = data[0:cutting[cut], :]
                     else:
                         tmp_data = data[cutting[cut - 1]:cutting[cut], :]
-                    # _per = [i for i in range(0, tmp_data.shape[0], 4)]
-                    # tmp_data = tmp_data[_per, :]
                     tmp_data = z_score(tmp_data)
                     _len = tmp_data.shape[0]
                     # 读取数据
@@ -198,6 +204,9 @@ class RNNData(object):
         batch_seq_len = self.all_seq_len[self.batch_id:min(self.batch_id + batch_size, len(self.all_seq_len))]
         self.batch_id = min(self.batch_id + batch_size, len(self.all_seq_len))
         return batch_data, batch_labels, batch_seq_len
+
+    def __len__(self):
+        return len(self.all_label)
 
 
 class AllData_RNN(object):
