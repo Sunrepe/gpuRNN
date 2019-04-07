@@ -20,8 +20,8 @@ learning_rate = 0.0025
 lambda_loss_amount = 0.0015
 training_iters = 200  # Loop 200 times on the dataset
 batch_size = 100
-display_iter = 4000  # To show test set accuracy during training
-model_save = 50
+display_iter = 1000  # To show test set accuracy during training
+model_save = 100
 
 k_fold_num = 0
 savename = '_CNN_kfold'+str(k_fold_num)
@@ -127,7 +127,7 @@ def main():
     correct_pred = tf.equal(tf.argmax(pred, 1), tf.argmax(y, 1))
     accuracy = tf.reduce_mean(tf.cast(correct_pred, tf.float32))
 
-    saver = tf.train.Saver()
+    saver = tf.train.Saver(max_to_keep=12)
     # start train and test
     # To keep track of training's performance
     test_losses = []
@@ -237,7 +237,7 @@ def main():
     plt.legend(loc='upper right', shadow=True)
     plt.ylabel('Training Progress (Loss or Accuracy values)')
     plt.xlabel('Training iteration')
-    plt.savefig('accloss_{}.png'.format(savename), dpi=600, bbox_inches='tight')
+    plt.savefig('./lstm/accloss_{}.png'.format(savename), dpi=600, bbox_inches='tight')
 
     # plt.show()
 
@@ -287,7 +287,7 @@ def main():
     plt.colorbar()
     tick_marks = np.arange(n_classes)
     plt.yticks(tick_marks, LABELS)
-    plt.savefig('Matrix{}.png'.format(savename), dpi=600, bbox_inches='tight')
+    plt.savefig('./lstm/Matrix{}.png'.format(savename), dpi=600, bbox_inches='tight')
 
     sess.close()
 
