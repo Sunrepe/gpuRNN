@@ -73,8 +73,8 @@ class CNNData(object):
     def __init__(self, foldname, max_seq=700, num_class=10, trainable=False, kfold_num=0):
         train_person, test_person = getPersons(foldname, kfold_num)
         __person = train_person if trainable else test_person
-        __person = __person[0:2]
-        print('person:',__person)
+        # __person = __person[0:2]
+        # print('person:',__person)
         # __person = ['zhouxufeng']
         self.all_data = []
         self.all_label = []
@@ -111,10 +111,10 @@ class CNNData(object):
         self.all_data = np.array(self.all_data).astype('float32')
         self.all_label = np.array(self.all_label).astype('float32')
         self.all_seq_len = np.array(self.all_seq_len).astype('float32')
+        print('shape:',self.all_data.shape)
         # 打乱数据
         if trainable:
             _per = np.random.permutation(len(self.all_label))  # 打乱后的行号
-            print('shape:',self.all_data.shape)
             self.all_data = self.all_data[_per, :, :, :]
             self.all_label = self.all_label[_per, :]
             self.all_seq_len = self.all_seq_len[_per]
