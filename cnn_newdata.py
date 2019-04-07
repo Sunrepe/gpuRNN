@@ -18,12 +18,12 @@ max_seq = 800
 # Training
 learning_rate = 0.0025
 lambda_loss_amount = 0.0015
-training_iters = 200  # Loop 200 times on the dataset
+training_iters = 500  # Loop 200 times on the dataset
 batch_size = 100
 display_iter = 1000  # To show test set accuracy during training
 model_save = 100
 
-k_fold_num = 0
+k_fold_num = 1
 savename = '_CNN_kfold'+str(k_fold_num)
 LABELS = ['double', 'fist', 'spread', 'six', 'wavein', 'waveout', 'yes', 'no', 'finger', 'snap']
 
