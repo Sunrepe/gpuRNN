@@ -33,12 +33,12 @@ def Read__mean_2(filename):
     return my_matrix
 
 
-def wavelet_trans(data):
+def wavelet_trans1(data):
     # data = data.T
     wave_let = pywt.Wavelet('db2')
     data_new = []
     for i in range(8):
-        channel_data = data[:,i]
+        channel_data = data[:, i]
 
         # 小波变换
         coeffs = pywt.wavedec(channel_data, wavelet=wave_let, level=3)
@@ -58,6 +58,33 @@ def wavelet_trans(data):
         # print(np.array(pywt.waverec(coeffs, 'db5'), 'int'))  # 查看反小波分解
         # print('coffs.shaoe',coeffs[0])
 
+
+def wavelet_trans(data):
+    # data = data.T
+    wave_let = pywt.Wavelet('db4')
+    data_new = []
+    for i in range(8):
+        channel_data = data[:, i]
+
+        # 小波变换
+        coeffs = pywt.wavedec(channel_data, wavelet=wave_let, level=2)
+        new_coeffs = []
+        for i_coeffs in coeffs:
+            thresh = np.sort(i_coeffs)[int((len(i_coeffs))/2)]/0.6745
+            i_coeffs = pywt.threshold(i_coeffs, thresh*3, 'soft', 0)
+            new_coeffs.append(i_coeffs)
+
+        # 小波重构
+        data_new.append(np.array(pywt.waverec(new_coeffs, wave_let,), 'int'))
+
+    data_new = np.array(data_new)
+    return data_new.T
+
+            # print(pywt.dwt_max_level(50, wave_let))      # 查看可进行的最高分解层次
+        # print(np.array(pywt.waverec(coeffs, 'db5'), 'int'))  # 查看反小波分解
+        # print('coffs.shaoe',coeffs[0])
+
+
 def cleanfold(fold):
     shutil.rmtree(fold)
     os.mkdir(fold)
@@ -70,7 +97,7 @@ def main():
     for filename in os.listdir(foldname):
         oa, ob, oc = filename.split('_')
         if oc == 'b.txt':
-
+            print(filename)
             c_filename = des_fold + oa + '_' + ob + '_c.txt'
             csvfile = open(c_filename, "a", newline='')
             c_filewriter = csv.writer(csvfile)
