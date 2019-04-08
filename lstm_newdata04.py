@@ -1,5 +1,5 @@
 # 用于测试新数据是否和老数据可以共用
-from data_pre.cnndata import *
+from data_pre.alldata import *
 import tensorflow as tf
 import os
 import time
@@ -59,8 +59,8 @@ def LSTM_RNN(_X, seqlen, _weight, _bias):
 def main():
     time1 = time.time()
     print('loading data...')
-    train_sets = RNNData(foldname='./data/train/', max_seq=max_seq, trainable=True, num_class=n_classes)
-    test_sets = RNNData(foldname='./data/test/', max_seq=max_seq, trainable=False, num_class=n_classes)
+    train_sets = AllData_RNN_WAC(foldname='./data/train/', max_seq=max_seq, trainable=True, num_class=n_classes)
+    test_sets = AllData_RNN_WAC(foldname='./data/test/', max_seq=max_seq, trainable=False, num_class=n_classes)
     train_data_len = len(train_sets.all_seq_len)
     print('load data time:', time.time()-time1)
 

@@ -1,130 +1,118 @@
-from data_pre.alldata import *
-import tensorflow as tf
+'''
+采用小波变换去噪,
+先变换,去噪后重构原始信号.
+'''
+
 import os
-import time
-import matplotlib
 import csv
-import matplotlib.pyplot as plt
+import time
+import shutil
 import numpy as np
-from sklearn import metrics
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'  # just error no warning
-
-# All hyperparameters
-n_hidden = 50  # Hidden layer num of features
-n_classes = 10  # Total classes (should go up, or should go down)
-n_inputs = 10
-max_seq = 800
-
-# Training
-learning_rate = 0.0025
-lambda_loss_amount = 0.0015
-training_iters = 200  # Loop 200 times on the dataset
-batch_size = 100
-display_iter = 1000  # To show test set accuracy during training
-model_save = 100
-
-k_fold_num = 0
-savename = '_CNN_kfold'+str(k_fold_num)
-LABELS = ['double', 'fist', 'spread', 'six', 'wavein', 'waveout', 'yes', 'no', 'finger', 'snap']
+import tensorflow as tf
+import matplotlib
+import matplotlib.pyplot as plt
+import pywt
 
 
 def Matrix_to_CSV(filename, data):
+    import numpy as np
+    data = data.astype('int')
     with open(filename, "a", newline='', ) as csvfile:
         writer = csv.writer(csvfile)
         # 先写入columns_name
         # writer.writerow(["emg1", "emg2", "emg3", "emg4", "emg5", "emg6", "emg7", "emg8", "label"])
         for row in data:
-            writer.writerow([row])
+            writer.writerow(row)
 
 
-def weight_init(shape, name):
+def Read__mean_2(filename):
     '''
-    获取某个shape大小的参数
+    获得所有且分点信息，同时将所有数据进行（绝对值、去噪操作）
+    :param filename:
+    :return: 转置的8*N 的预处理的原始数据
     '''
-    return tf.get_variable(name, shape, initializer=tf.random_normal_initializer(mean=0.0, stddev=0.05))
+    # f_csv = csv.reader(filename)
+    my_matrix = np.loadtxt(filename, dtype='int', delimiter=",")
+    return my_matrix
 
 
-def bias_init(shape, name):
-    return tf.get_variable(name, shape, initializer=tf.constant_initializer(0.0))
+def wave_change(data):
+    _len = data.shape[0]
+    for i in range(_len - 1):
+        data[i, :] = data[i + 1, :] - data[i, :]
+    return data[0:-1, :]
 
 
-def CNNnet(inputs):
-    '''
-    CNN网络,用于获得动态长度的数据,之后交给RNN网络
-    :param inputs:
-    :return:
-    '''
-
-    # 第一层卷积
-    with tf.name_scope('conv1'):
-        w_conv1 = weight_init([5, 3, 1, 4], 'conv1_w')
-        b_conv1 = bias_init([4], 'conv1_b')
-        conv1 = tf.nn.conv2d(input=inputs, filter=w_conv1, strides=[1,2,1,1], padding='VALID')
-        h_conv1 = tf.nn.relu(conv1+b_conv1)
-        # h_pool1 = tf.nn.max_pool(h_conv1, ksize=[1,2,2,1], strides=[1,2,2,1],padding='VALID')
-        conv1 = tf.nn.dropout(h_conv1, 0.7)
-
-    # 第二层卷积
-    with tf.name_scope('conv2'):
-        w_conv2 = weight_init([10, 1, 4, 2], 'conv2_w')
-        b_conv2 = bias_init([2], 'conv2_b')
-        conv2 = tf.nn.conv2d(input=conv1, filter=w_conv2, strides=[1,2,1,1], padding='VALID')
-        h_conv2 = tf.nn.relu(conv2+b_conv2)
-        # h_pool2 = tf.nn.max_pool(h_conv2, ksize=[1,2,2,1], strides=[1,2,2,1],padding='VALID')
-
-    _a = h_conv2.shape
-    return tf.reshape(h_conv2, [-1, _a[1], 16])
+def partition(num, low, high):
+    pivot = num[low]
+    while(low<high):
+        while(low < high and num[high] > pivot):
+            high -= 1
+        while (low < high and num[low] < pivot):
+            low += 1
+        temp = num[low]
+        num[low] = num[high]
+        num[high] = temp
+    num[low] = pivot
+    return low
 
 
-def LSTM_RNN(_X, seqlen, _weight, _bias):
-    lstm_cell_1 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
-    lstm_cell_2 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
-    lstm_cells = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2])
-    # Get LSTM cell output
-    outputs, _ = tf.nn.dynamic_rnn(lstm_cells, inputs=_X, sequence_length=seqlen, dtype=tf.float32)
-    # many to one 关键。两种方案，一个是选择最后的输出，一个是选择所有输出的均值
-    # 方案一：
-    # lstm_out = tf.gather_nd(outputs, seqlen-1)
-    # 方案二：
-    lstm_out = tf.divide(tf.reduce_sum(outputs, 1), seqlen[:, None])
+def findkth(num, low, high, k):  # 找到数组里第k个数
+    index = partition(num, low, high)
+    if index == k: return num[index]
+    if index < k:
+        return findkth(num, index + 1, high, k)
+    else:
+        return findkth(num, low, index - 1, k)
 
-    return tf.matmul(lstm_out, _weight['out']) + _bias['out']
+# data_n = wavelet_trans(data)
 
+def wavelet_trans(data):
+    # data = data.T
+    wave_let = pywt.Wavelet('db2')
+    data_new = []
+    for i in range(8):
+        channel_data = data[:,i]
+        # 小波变换
+        coeffs = pywt.wavedec(channel_data, wavelet=wave_let, level=3)
+        new_coeffs = []
+        for i_coeffs in coeffs:
+            # print(findkth(pai, 0, len(pai) - 1, 0))
+            thresh = np.sort(i_coeffs)[int((len(i_coeffs))/2)]/0.6745
+            i_coeffs = pywt.threshold(i_coeffs,thresh,'soft',0)
+            new_coeffs.append(i_coeffs)
+        # 小波重构
+        data_new.append(np.array(pywt.waverec(new_coeffs, wave_let,),'int'))
+    data_new = np.array(data_new)
+    return data_new.T
+
+            # print(pywt.dwt_max_level(50, wave_let))      # 查看可进行的最高分解层次
+        # print(np.array(pywt.waverec(coeffs, 'db5'), 'int'))  # 查看反小波分解
+        # print('coffs.shaoe',coeffs[0])
 
 def main():
-    time1 = time.time()
-    print('loading data...')
-    train_sets = CNNData(foldname='./data/actdata/', max_seq=max_seq,
-                             num_class=n_classes, trainable=True, kfold_num=k_fold_num)
-    test_sets = CNNData(foldname='./data/actdata/', max_seq=max_seq,
-                            num_class=n_classes, trainable=False, kfold_num=k_fold_num)
-    train_data_len = len(train_sets.all_seq_len)
-    print('load data time:',time.time()-time1)
+    # foldname = '../myodata/actdata/'
+    foldname = '../myodata/testdata/'
+    for filename in os.listdir(foldname):
+        oa, ob, oc = filename.split('_')
+        if oc == 'b.txt':
+            print(filename)
+            a_filename = '../../gpuRNN/data/wtdata/' + oa + '_' + ob + '_c.txt'
+            csvfile = open(a_filename, "a", newline='')
+            writer = csv.writer(csvfile)
 
-    # Graph input/output
-    x = tf.placeholder(tf.float32, [None, max_seq, n_inputs, 1])
-    y = tf.placeholder(tf.float32, [None, n_classes])
-    seq_len = tf.placeholder(tf.float32, [None])
-
-    # Graph weights
-    weights = {
-        'out': tf.Variable(tf.random_normal([n_hidden, n_classes], mean=1.0))
-    }
-    biases = {
-        'out': tf.Variable(tf.random_normal([n_classes]))
-    }
-
-    CNN_res = CNNnet(x)
-    pred = LSTM_RNN(CNN_res, seq_len, weights, biases)
-
-
-    # Launch the graph
-    sess = tf.InteractiveSession(config=tf.ConfigProto(log_device_placement=False))
-    init = tf.global_variables_initializer()
-    sess.run(init)
-
-    sess.close()
+            filenames = foldname + filename
+            data = Read__mean_2(filenames)
+            cutting = np.loadtxt(foldname + oa + '_' + ob + '_c.txt')
+            _last = 0
+            for i in range(0, len(cutting)):
+                tmp_data = data[_last:int(_last + cutting[i]), :]
+                _last = int(_last + cutting[i])
+                tmp_data = wavelet_trans(tmp_data)
+                Matrix_to_CSV('../../gpuRNN/data/wtdata/' + oa + '_' + ob + '_b.txt', tmp_data)
+                writer.writerow([_last])
 
 
 if __name__ == '__main__':
     main()
+

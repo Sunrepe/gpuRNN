@@ -326,7 +326,7 @@ class AllData_RNN_WAC(object):
                         self.all_label.append(get_label(get_lei(ob), num_classes=num_class))
                         self.all_seq_len.append(_len-1)
                         s_tmp = np.zeros((max_seq, 8))
-                        s_tmp[0:_len-1, :] = tmp_data
+                        s_tmp[0:_len-1, :] = tmp_data[0:-1,:]
                         self.all_data.append(s_tmp)
 
         self.all_data = np.array(self.all_data).astype('float32')

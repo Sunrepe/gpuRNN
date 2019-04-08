@@ -28,8 +28,8 @@ batch_size = 100
 display_iter = 1000  # To show test set accuracy during training
 model_save = 80
 
-k_fold_num = 1
-savename = '_LSTM_WC_kfold'+str(k_fold_num)
+k_fold_num = 0
+savename = '_LSTM_WTdata_kfold'+str(k_fold_num)
 LABELS = ['double', 'fist', 'spread', 'six', 'wavein', 'waveout', 'yes', 'no', 'finger', 'snap']
 
 
@@ -62,9 +62,9 @@ def LSTM_RNN(_X, seqlen, _weight, _bias):
 def main():
     time1 = time.time()
     print('loading data...')
-    train_sets = AllData_RNN(foldname='./data/wavechdata/', max_seq=max_seq,
+    train_sets = AllData_RNN(foldname='./data/wtdata/', max_seq=max_seq,
                              num_class=n_classes, trainable=True, kfold_num=k_fold_num)
-    test_sets = AllData_RNN(foldname='./data/wavechdata/', max_seq=max_seq,
+    test_sets = AllData_RNN(foldname='./data/wtdata/', max_seq=max_seq,
                             num_class=n_classes, trainable=False, kfold_num=k_fold_num)
     train_data_len = len(train_sets.all_seq_len)
     print('train:', len(train_sets.all_seq_len), 'test:', len(test_sets.all_seq_len))
