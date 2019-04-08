@@ -56,6 +56,33 @@ def LSTM_RNN(_X, seqlen, _weight, _bias):
     return tf.matmul(lstm_out, _weight['out']) + _bias['out']
 
 
+def BiLSTM_RNN(_X, seqlen, _weight, _bias,):
+    # shaping the dataSet
+    # _X = tf.reshape(_X, [-1, n_inputs])
+    # _X = tf.nn.relu(tf.matmul(_X, _weight['hidden']) + _bias['hidden'])
+    # _X = tf.reshape(_X, [-1, max_seq, n_inputs])
+
+    # net
+    lstm_cell_1 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
+    lstm_cell_2 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
+    lstm_cells_fw = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2])
+    # backword
+    lstm_cell_1_bw = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
+    lstm_cell_2_bw = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
+    lstm_cells_bw = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1_bw, lstm_cell_2_bw])
+    # Get LSTM cell output
+    outputs, _ = tf.nn.bidirectional_dynamic_rnn(cell_fw=lstm_cells_fw,
+                                                 cell_bw=lstm_cells_bw,
+                                                 inputs=_X,
+                                                 sequence_length=tf.to_int32(seqlen),
+                                                 dtype=tf.float32)
+    _out1, _out2 = outputs
+    lstm_out_1 = tf.divide(tf.reduce_sum(_out1, 1), seqlen[:, None])
+    lstm_out_2 = tf.divide(tf.reduce_sum(_out2, 1), seqlen[:, None])
+    _out_last = lstm_out_1*0.7 + lstm_out_2*0.3
+    return tf.matmul(_out_last, _weight['out']) + _bias['out']
+
+
 def main():
     time1 = time.time()
     print('loading data...')
