@@ -15,19 +15,21 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'  # just error no warning
 # os.environ['TF_CPP_MIN_LOG_LEVEL'] = '0'
 
 # All hyperparameters
-n_hidden = 40  # Hidden layer num of features
+n_hidden = 50  # Hidden layer num of features
 n_classes = 10  # Total classes (should go up, or should go down)
 n_inputs = 8
-max_seq = 700
+max_seq = 800
 
 # Training
 learning_rate = 0.0025
 lambda_loss_amount = 0.0015
-training_iters = 200  # Loop 1000 times on the dataset
+training_iters = 150  # Loop 1000 times on the dataset
 batch_size = 100
-display_iter = 3200  # To show test set accuracy during training
-model_save = 20
-savename = '_BiLSTM0402_'
+display_iter = 1000  # To show test set accuracy during training
+model_save = 80
+
+k_fold_num = 0
+savename = '_LSTM_WTsym2data_kfold'+str(k_fold_num)
 LABELS = ['double', 'fist', 'spread', 'six', 'wavein', 'waveout', 'yes', 'no', 'finger', 'snap']
 
 
@@ -67,13 +69,34 @@ def BiLSTM_RNN(_X, seqlen, _weight, _bias,):
     return tf.matmul(_out_last, _weight['out']) + _bias['out']
 
 
+def LSTM_RNN(_X, seqlen, _weight, _bias):
+    lstm_cell_1 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
+    lstm_cell_2 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
+    # lstm_cell_3 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
+    # lstm_cells = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2, lstm_cell_3])
+    lstm_cells = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2])
+    # Get LSTM cell output
+    outputs, _ = tf.nn.dynamic_rnn(lstm_cells, inputs=_X, sequence_length=seqlen, dtype=tf.float32)
+    # many to one 关键。两种方案，一个是选择最后的输出，一个是选择所有输出的均值
+    # 方案一：
+    # lstm_out = tf.gather_nd(outputs, seqlen-1)
+    # 方案二：
+    lstm_out = tf.divide(tf.reduce_sum(outputs, 1), seqlen[:, None])
+
+    return tf.matmul(lstm_out, _weight['out']) + _bias['out']
+
+
 def main():
     time1 = time.time()
     print('loading data...')
-    train_sets = RNNData(foldname='./data/train3/', max_seq=max_seq, trainable=True, num_class=n_classes)
-    test_sets = RNNData(foldname='./data/test3/', max_seq=max_seq, trainable=False, num_class=n_classes)
+    train_sets = AllData_RNN(foldname='./data/wtdata/', max_seq=max_seq,
+                             num_class=n_classes, trainable=True, kfold_num=k_fold_num)
+    test_sets = AllData_RNN(foldname='./data/wtdata/', max_seq=max_seq,
+                            num_class=n_classes, trainable=False, kfold_num=k_fold_num)
     train_data_len = len(train_sets.all_seq_len)
-    print('load data time:',time.time()-time1)
+    print('train:', len(train_sets.all_seq_len), 'test:', len(test_sets.all_seq_len))
+    print('load data time:', time.time()-time1)
+
     # Graph input/output
     x = tf.placeholder(tf.float32, [None, max_seq, n_inputs])
     y = tf.placeholder(tf.float32, [None, n_classes])
@@ -86,7 +109,7 @@ def main():
     # biases = {
     #     'out': tf.Variable(tf.random_normal([n_classes]))
     # }
-    # Graph weights
+    #
     weights = {
         'hidden': tf.Variable(tf.random_normal([n_inputs, n_hidden])),  # Hidden layer weights
         'out': tf.Variable(tf.random_normal([n_hidden, n_classes], mean=1.0))
@@ -108,7 +131,7 @@ def main():
     correct_pred = tf.equal(tf.argmax(pred, 1), tf.argmax(y, 1))
     accuracy = tf.reduce_mean(tf.cast(correct_pred, tf.float32))
 
-    saver = tf.train.Saver()
+    saver = tf.train.Saver(max_to_keep=12)
     # start train and test
     # To keep track of training's performance
     test_losses = []
@@ -193,7 +216,7 @@ def main():
     print("Final Model saved in file: %s" % save_path)
 
     font = {
-        'family': 'Bitstream Vera Sans',
+        'family': 'Times New Roman',
         'weight': 'bold',
         'size': 18
     }
@@ -218,7 +241,7 @@ def main():
     plt.legend(loc='upper right', shadow=True)
     plt.ylabel('Training Progress (Loss or Accuracy values)')
     plt.xlabel('Training iteration')
-    plt.savefig('accloss_{}.png'.format(savename), dpi=600, bbox_inches='tight')
+    plt.savefig('./loss_dir/accloss_{}.png'.format(savename), dpi=600, bbox_inches='tight')
 
     # plt.show()
 
@@ -268,7 +291,7 @@ def main():
     plt.colorbar()
     tick_marks = np.arange(n_classes)
     plt.yticks(tick_marks, LABELS)
-    plt.savefig('Matrix{}.png'.format(savename), dpi=600, bbox_inches='tight')
+    plt.savefig('./loss_dir/Matrix{}.png'.format(savename), dpi=600, bbox_inches='tight')
 
     sess.close()
 
