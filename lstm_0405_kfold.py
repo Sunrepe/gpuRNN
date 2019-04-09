@@ -103,23 +103,23 @@ def main():
     seq_len = tf.placeholder(tf.float32, [None])
 
     # Graph weights
-    # weights = {
-    #     'out': tf.Variable(tf.random_normal([n_hidden, n_classes], mean=1.0))
-    # }
-    # biases = {
-    #     'out': tf.Variable(tf.random_normal([n_classes]))
-    # }
-    #
     weights = {
-        'hidden': tf.Variable(tf.random_normal([n_inputs, n_hidden])),  # Hidden layer weights
         'out': tf.Variable(tf.random_normal([n_hidden, n_classes], mean=1.0))
     }
     biases = {
-        'hidden': tf.Variable(tf.random_normal([n_hidden])),
         'out': tf.Variable(tf.random_normal([n_classes]))
     }
+    #
+    # weights = {
+    #     'hidden': tf.Variable(tf.random_normal([n_inputs, n_hidden])),  # Hidden layer weights
+    #     'out': tf.Variable(tf.random_normal([n_hidden, n_classes], mean=1.0))
+    # }
+    # biases = {
+    #     'hidden': tf.Variable(tf.random_normal([n_hidden])),
+    #     'out': tf.Variable(tf.random_normal([n_classes]))
+    # }
 
-    pred = BiLSTM_RNN(x, seq_len, weights, biases)
+    pred = LSTM_RNN(x, seq_len, weights, biases)
 
     # Loss, optimizer and evaluation
     l2 = lambda_loss_amount * sum(

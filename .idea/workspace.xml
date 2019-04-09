@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e51bf105-f34c-4031-aa58-28fd3cc5807c" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/caimengyuan_finger_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/caimengyuan_finger_c.txt" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bilstm_0402.py" afterPath="$PROJECT_DIR$/bilstm_0402.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lstm_0405_kfold.py" afterPath="$PROJECT_DIR$/lstm_0405_kfold.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -51,8 +49,8 @@
       <file leaf-file-name="lstm_newdata04.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lstm_newdata04.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="349">
-              <caret line="84" column="0" lean-forward="false" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
+            <state relative-caret-position="-926">
+              <caret line="57" column="0" lean-forward="true" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
               <folding>
                 <element signature="e#20#50#0" expanded="true" />
               </folding>
@@ -60,11 +58,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="lstm_0405_kfold.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="lstm_0405_kfold.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lstm_0405_kfold.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-4100">
-              <caret line="22" column="10" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="299" selection-end-column="10" />
+            <state relative-caret-position="275">
+              <caret line="122" column="0" lean-forward="true" selection-start-line="122" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
               <folding>
                 <element signature="e#20#50#0" expanded="true" />
               </folding>
@@ -85,10 +83,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tmp_trans_wavelet.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="tmp_trans_wavelet.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tmp_trans_wavelet.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1012">
+            <state relative-caret-position="1312">
               <caret line="80" column="0" lean-forward="true" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
               <folding>
                 <element signature="e#34#43#0" expanded="true" />
@@ -239,9 +237,9 @@
         <option value="$PROJECT_DIR$/testtmp.py" />
         <option value="$PROJECT_DIR$/lstm_newdata04.py" />
         <option value="$PROJECT_DIR$/data_pre/wavelet_trans.py" />
-        <option value="$PROJECT_DIR$/lstm_0405_kfold.py" />
         <option value="$PROJECT_DIR$/bilstm_0402.py" />
         <option value="$PROJECT_DIR$/tmp_trans_wavelet.py" />
+        <option value="$PROJECT_DIR$/lstm_0405_kfold.py" />
       </list>
     </option>
   </component>
@@ -780,26 +778,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lstm_newdata04.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="84" column="0" lean-forward="false" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
-          <folding>
-            <element signature="e#20#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lstm_0405_kfold.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4100">
-          <caret line="22" column="10" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="299" selection-end-column="10" />
-          <folding>
-            <element signature="e#20#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bilstm_0402.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-12">
@@ -823,11 +801,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tmp_trans_wavelet.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1012">
+        <state relative-caret-position="1312">
           <caret line="80" column="0" lean-forward="true" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
           <folding>
             <element signature="e#34#43#0" expanded="true" />
             <element signature="e#763#1549#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lstm_newdata04.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-926">
+          <caret line="57" column="0" lean-forward="true" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+          <folding>
+            <element signature="e#20#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lstm_0405_kfold.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="122" column="0" lean-forward="true" selection-start-line="122" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
+          <folding>
+            <element signature="e#20#50#0" expanded="true" />
           </folding>
         </state>
       </provider>
