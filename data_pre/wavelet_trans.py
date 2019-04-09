@@ -61,7 +61,7 @@ def wavelet_trans1(data):
 
 def wavelet_trans(data):
     # data = data.T
-    wave_let = pywt.Wavelet('db4')
+    wave_let = pywt.Wavelet('sym4')
     data_new = []
     for i in range(8):
         channel_data = data[:, i]
