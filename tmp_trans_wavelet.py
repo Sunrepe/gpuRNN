@@ -69,7 +69,8 @@ def wavelet_trans(data):
         # 小波变换
         coeffs = pywt.wavedec(channel_data, wavelet=wave_let, level=2)
         new_coeffs = []
-        coeffs[3] = np.zeros(len(coeffs[3]))
+        # print(len(coeffs[2]))
+        coeffs[2] = np.zeros(coeffs[2].shape)
         data_new.append(np.array(pywt.waverec(coeffs, wave_let, ), 'int'))
         # for i_coeffs in coeffs:
         #     thresh = np.sort(i_coeffs)[int((len(i_coeffs))/2)]/0.6745
