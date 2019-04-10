@@ -89,6 +89,13 @@ def wavelet_trans(data):
         # print('coffs.shaoe',coeffs[0])
 
 
+def mean_trans(data):
+    # data = data.T
+    for i in range(data.shape[0]-4):
+        data[i, :] = np.mean(data[i:i+4, :], axis=0)
+    return data[:-4, :]
+
+
 def cleanfold(fold):
     if os.path.exists(fold):
         shutil.rmtree(fold)
@@ -97,9 +104,11 @@ def cleanfold(fold):
         os.mkdir(fold)
 
 
-def main():
+def main_datatrans(desfold=''):
+    print('transfer data...')
+    time1 = time.time()
     foldname = './data/actdata/'
-    des_fold = './data/wtdata/'
+    des_fold = desfold
     cleanfold(des_fold)
     for filename in os.listdir(foldname):
         oa, ob, oc = filename.split('_')
@@ -124,9 +133,9 @@ def main():
                 c_filewriter.writerow([_last])
                 Matrix_to_CSV(des_fold + oa + '_' + ob + '_b.txt', tmp_data)
             csvfile.close()
-
+    print('Transfer Time:  {} s'.format(time.time() - time1))
 
 if __name__ == '__main__':
     time1 = time.time()
-    main()
-    print('All Time:  {} s'.format(time.time()-time1))
+    # main()
+    # print('All Time:  {} s'.format(time.time() - time1))

@@ -66,8 +66,8 @@ def BiLSTM_RNN(_X, seqlen, _weight, _bias,):
     # 方案一
     tf.reshape(tf.batch_gather(outputs, tf.to_int32(seqlen[:, None] - 1)), [-1, n_hidden])
 
-    lstm_out_1 = tf.reshape(tf.batch_gather(_out1, tf.to_int32(seqlen[:, None] - 1)), [-1, n_hidden])
-    lstm_out_2 = tf.reshape(tf.batch_gather(_out2, tf.to_int32(seqlen[:, None] - 1)), [-1, n_hidden])
+    lstm_out_1 = tf.reshape(tf.batch_gather(_out1, tf.to_int32(seqlen[:, None] - 2)), [-1, n_hidden])
+    lstm_out_2 = tf.reshape(tf.batch_gather(_out2, tf.to_int32(seqlen[:, None] - 2)), [-1, n_hidden])
 
     # 方案二
     # lstm_out_1 = tf.divide(tf.reduce_sum(_out1, 1), seqlen[:, None])
