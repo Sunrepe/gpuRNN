@@ -63,8 +63,16 @@ def BiLSTM_RNN(_X, seqlen, _weight, _bias,):
                                                  sequence_length=tf.to_int32(seqlen),
                                                  dtype=tf.float32)
     _out1, _out2 = outputs
-    lstm_out_1 = tf.divide(tf.reduce_sum(_out1, 1), seqlen[:, None])
-    lstm_out_2 = tf.divide(tf.reduce_sum(_out2, 1), seqlen[:, None])
+    # 方案一
+    tf.reshape(tf.batch_gather(outputs, tf.to_int32(seqlen[:, None] - 1)), [-1, n_hidden])
+
+    lstm_out_1 = tf.reshape(tf.batch_gather(_out1, tf.to_int32(seqlen[:, None] - 1)), [-1, n_hidden])
+    lstm_out_2 = tf.reshape(tf.batch_gather(_out2, tf.to_int32(seqlen[:, None] - 1)), [-1, n_hidden])
+
+    # 方案二
+    # lstm_out_1 = tf.divide(tf.reduce_sum(_out1, 1), seqlen[:, None])
+    # lstm_out_2 = tf.divide(tf.reduce_sum(_out2, 1), seqlen[:, None])
+
     _out_last = lstm_out_1*0.7 + lstm_out_2*0.3
     return tf.matmul(_out_last, _weight['out']) + _bias['out']
 
@@ -89,9 +97,9 @@ def LSTM_RNN(_X, seqlen, _weight, _bias):
 def main():
     time1 = time.time()
     print('loading data...')
-    train_sets = AllData_RNN(foldname='./data/wtdata/', max_seq=max_seq,
+    train_sets = AllData_RNN(foldname='./data/actdata/', max_seq=max_seq,
                              num_class=n_classes, trainable=True, kfold_num=k_fold_num)
-    test_sets = AllData_RNN(foldname='./data/wtdata/', max_seq=max_seq,
+    test_sets = AllData_RNN(foldname='./data/actdata/', max_seq=max_seq,
                             num_class=n_classes, trainable=False, kfold_num=k_fold_num)
     train_data_len = len(train_sets.all_seq_len)
     print('train:', len(train_sets.all_seq_len), 'test:', len(test_sets.all_seq_len))
