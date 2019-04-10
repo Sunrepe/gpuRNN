@@ -1,5 +1,6 @@
 import numpy as np
 import os
+import pywt
 
 def Read__mean_2(filename):
     '''
@@ -56,6 +57,33 @@ def getPersons(foldname, kfold_num):
         if i not in test_p:
             train_p.append(i)
     return train_p,test_p
+
+
+def wavelet_trans(data):
+    # data = data.T
+    wave_let = pywt.Wavelet('sym4')
+    data_new = []
+    for i in range(8):
+        channel_data = data[:, i]
+
+        # 小波变换
+        coeffs = pywt.wavedec(channel_data, wavelet=wave_let, level=3)
+        new_coeffs = []
+        new_coeffs.append(coeffs[0])
+        new_coeffs.append(coeffs[1])
+        # 只处理高频部分信号.低频信号保留
+        for i in range(2, 4):
+            i_coeffs = coeffs[i]
+            thresh = np.sort(i_coeffs)[int((len(i_coeffs))/2)]/0.6745
+            i_coeffs = pywt.threshold(i_coeffs, thresh*3, 'soft', 0)
+            new_coeffs.append(i_coeffs)
+
+        # 小波重构
+        data_new.append(np.array(pywt.waverec(new_coeffs, wave_let,), 'int'))
+
+    data_new = np.array(data_new)
+    return data_new.T
+
 
 
 class CNNData(object):
@@ -697,3 +725,88 @@ class NewDataSetTest4(object):
         self.batch_id = min(self.batch_id + batch_size, len(self.all_seq_len))
         return batch_data, batch_labels, batch_seq_len
 
+
+class waveandemg_RNNData(object):
+    '''
+    根据fold 和 kfold_num 获取wavelet 和 原始振幅信号 的DataSets
+
+    细节:
+        1,注意去除新数据中len>max_seq 的数据(该数据假设为动作分割不标准)
+        2,注意只使用前8类
+
+    '''
+
+    def __init__(self, foldname, max_seq=700, num_class=10, trainable=False, kfold_num=0):
+        train_person, test_person = getPersons(foldname, kfold_num)
+        __person = train_person if trainable else test_person
+        self.all_data = []
+        self.all_label = []
+        self.all_seq_len = []
+        # wavelet
+        self.all_data_wt = []
+        self.all_label_wt = []
+        self.all_seq_len_wt = []
+        self.batch_id = 0
+        for filename in os.listdir(foldname):
+            oa, ob, oc = filename.split('_')
+            if oc == 'b.txt' and get_lei(ob) < num_class and oa in __person:
+                filename = foldname + filename
+                data = Read__mean_2(filename)
+                cutting = Read__mean_2(foldname + oa + '_' + ob + '_c.txt')
+                for cut in range(0, len(cutting)):
+                    if cut == 0:
+                        tmp_data = data[0:cutting[cut], :]
+                    else:
+                        tmp_data = data[cutting[cut - 1]:cutting[cut], :]
+                    tmp_data_wt = z_score(wavelet_trans(tmp_data))
+                    tmp_data = z_score(tmp_data)
+                    _len = tmp_data.shape[0]
+                    # 读取数据
+                    if _len >= max_seq:
+                        pass
+                    else:
+                        # 生成数据
+                        self.all_label.append(get_label(get_lei(ob), num_classes=num_class))
+                        self.all_seq_len.append(_len)
+                        s_tmp = np.zeros((max_seq, 8))
+                        s_tmp[0:_len, :] = tmp_data
+                        self.all_data.append(s_tmp)
+                        # wavelet
+                        s_tmp_wt = np.zeros((max_seq, 8))
+                        s_tmp_wt[0:_len, :] = tmp_data_wt
+                        self.all_data_wt.append(s_tmp_wt)
+
+        self.all_data = np.array(self.all_data).astype('float32')
+        self.all_label = np.array(self.all_label).astype('float32')
+        self.all_seq_len = np.array(self.all_seq_len).astype('float32')
+        self.all_data_wt = np.array(self.all_data_wt).astype('float32')
+        # 打乱数据
+        if trainable:
+            _per = np.random.permutation(len(self.all_seq_len))  # 打乱后的行号
+            self.all_data = self.all_data[_per, :, :]
+            self.all_data_wt = self.all_data_wt[_per, :, :]
+            self.all_label = self.all_label[_per, :]
+            self.all_seq_len = self.all_seq_len[_per]
+
+    def _shuffle_data(self):
+        _per = np.random.permutation(len(self.all_seq_len))  # 打乱后的行号
+        self.all_data = self.all_data[_per, :, :]
+        self.all_data_wt = self.all_data_wt[_per, :, :]
+        self.all_label = self.all_label[_per, :]
+        self.all_seq_len = self.all_seq_len[_per]
+
+    def next(self, batch_size, shuffle=False):
+        if self.batch_id == len(self.all_seq_len):
+            self.batch_id = 0
+            if shuffle:
+                self._shuffle_data()
+        batch_data = self.all_data[self.batch_id:min(self.batch_id + batch_size, len(self.all_seq_len))]
+        batch_labels = self.all_label[self.batch_id:min(self.batch_id + batch_size, len(self.all_seq_len))]
+        batch_seq_len = self.all_seq_len[self.batch_id:min(self.batch_id + batch_size, len(self.all_seq_len))]
+        batch_data_wt = self.all_data_wt[self.batch_id:min(self.batch_id + batch_size, len(self.all_seq_len))]
+
+        self.batch_id = min(self.batch_id + batch_size, len(self.all_seq_len))
+        return batch_data, batch_labels, batch_seq_len, batch_data_wt
+
+    def __len__(self):
+        return len(self.all_label)

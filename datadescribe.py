@@ -107,10 +107,11 @@ def main():
 
 
 def mainlong():
-    foldname = './data/test3/'
+    foldname = './data/actdata/'
     personlist = getAllPeople(foldname)
+    print("total person{}".format(len(personlist)))
     oblist = ['double', 'fist', 'spread', 'six', 'wavein', 'waveout', 'yes', 'no', 'finger', 'snap']
-    ave_k = [7.71,11.51,12.01,9.87,11.59,11.47,10.36,10.85,10.97,11.67]
+    # ave_k = [7.71,11.51,12.01,9.87,11.59,11.47,10.36,10.85,10.97,11.67]
     df_savepath1 = './dataAVE.csv'
     df_savepath2 = './dataLONG.csv'
     df_savepath3 = './dataNUM.csv'
@@ -156,7 +157,7 @@ def mainlong():
         peop_info1.append(pose_info1)
         peop_info2.append(pose_info2)
         peop_info3.append(pose_info3)
-        peop_info4.append(np.array(pose_info1)-np.array(ave_k))
+        # peop_info4.append(np.array(pose_info1)-np.array(ave_k))
     df1 = pd.DataFrame(peop_info1, index=personlist, columns=oblist)
     df2 = pd.DataFrame(peop_info2, index=personlist, columns=oblist)
     df3 = pd.DataFrame(peop_info3, index=personlist, columns=oblist)
@@ -164,9 +165,9 @@ def mainlong():
     df1.to_csv(df_savepath1)
     df2.to_csv(df_savepath2)
     df3.to_csv(df_savepath3)
-    df4.to_csv('./dataEMGmins')
+    # df4.to_csv('./dataEMGmins')
     print("All test pose:", num_all_pose)
 
 
 if __name__ == '__main__':
-    main()
+    mainlong()
