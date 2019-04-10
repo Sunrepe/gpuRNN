@@ -67,9 +67,12 @@ def wavelet_trans(data):
         channel_data = data[:, i]
 
         # 小波变换
-        coeffs = pywt.wavedec(channel_data, wavelet=wave_let, level=2)
+        coeffs = pywt.wavedec(channel_data, wavelet=wave_let, level=3)
         new_coeffs = []
-        for i_coeffs in coeffs:
+        new_coeffs.append(coeffs[0])
+        new_coeffs.append(coeffs[1])
+        for i in range(2,4):
+            i_coeffs = coeffs[i]
             thresh = np.sort(i_coeffs)[int((len(i_coeffs))/2)]/0.6745
             i_coeffs = pywt.threshold(i_coeffs, thresh*3, 'soft', 0)
             new_coeffs.append(i_coeffs)
@@ -91,7 +94,7 @@ def cleanfold(fold):
 
 
 def main():
-    foldname = '../data/actdata/'
+    foldname = '../data/tmpdata/'
     des_fold = '../data/wtdata/'
     cleanfold(des_fold)
     for filename in os.listdir(foldname):

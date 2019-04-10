@@ -67,18 +67,19 @@ def wavelet_trans(data):
         channel_data = data[:, i]
 
         # 小波变换
-        coeffs = pywt.wavedec(channel_data, wavelet=wave_let, level=2)
+        coeffs = pywt.wavedec(channel_data, wavelet=wave_let, level=3)
         new_coeffs = []
-        # print(len(coeffs[2]))
-        coeffs[2] = np.zeros(coeffs[2].shape)
-        data_new.append(np.array(pywt.waverec(coeffs, wave_let, ), 'int'))
-        # for i_coeffs in coeffs:
-        #     thresh = np.sort(i_coeffs)[int((len(i_coeffs))/2)]/0.6745
-        #     i_coeffs = pywt.threshold(i_coeffs, thresh*3, 'soft', 0)
-        #     new_coeffs.append(i_coeffs)
+        new_coeffs.append(coeffs[0])
+        new_coeffs.append(coeffs[1])
+        # 只处理高频部分信号.低频信号保留
+        for i in range(2, 4):
+            i_coeffs = coeffs[i]
+            thresh = np.sort(i_coeffs)[int((len(i_coeffs))/2)]/0.6745
+            i_coeffs = pywt.threshold(i_coeffs, thresh*3, 'soft', 0)
+            new_coeffs.append(i_coeffs)
 
-        # # 小波重构
-        # data_new.append(np.array(pywt.waverec(new_coeffs, wave_let,), 'int'))
+        # 小波重构
+        data_new.append(np.array(pywt.waverec(new_coeffs, wave_let,), 'int'))
 
     data_new = np.array(data_new)
     return data_new.T
@@ -89,8 +90,11 @@ def wavelet_trans(data):
 
 
 def cleanfold(fold):
-    shutil.rmtree(fold)
-    os.mkdir(fold)
+    if os.path.exists(fold):
+        shutil.rmtree(fold)
+        os.mkdir(fold)
+    else:
+        os.mkdir(fold)
 
 
 def main():

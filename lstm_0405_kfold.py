@@ -124,7 +124,9 @@ def main():
     # Loss, optimizer and evaluation
     l2 = lambda_loss_amount * sum(
         tf.nn.l2_loss(tf_var) for tf_var in tf.trainable_variables()
-    )  # L2 loss prevents this overkill neural network to overfit the data
+    )
+    # L2 loss prevents this overkill neural network to overfit the data
+
     cost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits_v2(labels=y, logits=pred)) + l2  # Softmax loss
     optimizer = tf.train.AdamOptimizer(learning_rate=learning_rate).minimize(cost)  # Adam Optimizer
 
