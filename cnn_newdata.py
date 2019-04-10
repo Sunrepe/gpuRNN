@@ -84,9 +84,11 @@ def LSTM_RNN(_X, seqlen, _weight, _bias):
     outputs, _ = tf.nn.dynamic_rnn(lstm_cells, inputs=_X, sequence_length=seqlen, dtype=tf.float32)
     # many to one 关键。两种方案，一个是选择最后的输出，一个是选择所有输出的均值
     # 方案一：
-    # lstm_out = tf.gather_nd(outputs, seqlen-1)
+    #  获取数据,此时维度为[none,batch_size,n_hidden],需要进一步降维
+    lstm_out = tf.batch_gather(outputs, tf.to_int32(seqlen[:, None]-2))
+    lstm_out = tf.reshape(lstm_out, [-1, n_hidden])
     # 方案二：
-    lstm_out = tf.divide(tf.reduce_sum(outputs, 1), seqlen[:, None])
+    # lstm_out = tf.divide(tf.reduce_sum(outputs, 1), seqlen[:, None])
 
     return tf.matmul(lstm_out, _weight['out']) + _bias['out']
 
@@ -99,7 +101,7 @@ def main():
     test_sets = CNNData(foldname='./data/actdata/', max_seq=max_seq,
                             num_class=n_classes, trainable=False, kfold_num=k_fold_num)
     train_data_len = len(train_sets.all_seq_len)
-    print('load data time:',time.time()-time1)
+    print('load data time:', time.time()-time1)
 
     # Graph input/output
     x = tf.placeholder(tf.float32, [None, max_seq, n_inputs, 1])

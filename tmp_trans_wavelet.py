@@ -113,7 +113,7 @@ def main_datatrans(desfold=''):
     for filename in os.listdir(foldname):
         oa, ob, oc = filename.split('_')
         if oc == 'b.txt':
-            print(filename)
+            # print(filename)
             c_filename = des_fold + oa + '_' + ob + '_c.txt'
             csvfile = open(c_filename, "a", newline='')
             c_filewriter = csv.writer(csvfile)
@@ -128,7 +128,7 @@ def main_datatrans(desfold=''):
                     tmp_data = data[0:cutting[cut], :]
                 else:
                     tmp_data = data[cutting[cut - 1]:cutting[cut], :]
-                tmp_data = wavelet_trans(tmp_data)
+                tmp_data = mean_trans(tmp_data)
                 _last += tmp_data.shape[0]
                 c_filewriter.writerow([_last])
                 Matrix_to_CSV(des_fold + oa + '_' + ob + '_b.txt', tmp_data)
