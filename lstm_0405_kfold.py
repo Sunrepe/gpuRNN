@@ -71,7 +71,7 @@ def BiLSTM_RNN(_X, seqlen, _weight, _bias,):
     return tf.matmul(_out_last, _weight['out']) + _bias['out']
 
 
-def LSTM_RNN(_X, seqlen, _weight, _bias, _x_wt):
+def LSTM_RNN(_X, seqlen, _weight, _bias):
     lstm_cell_1 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
     lstm_cell_2 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
     # lstm_cell_3 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
@@ -82,22 +82,8 @@ def LSTM_RNN(_X, seqlen, _weight, _bias, _x_wt):
     # many to one 关键。两种方案，一个是选择最后的输出，一个是选择所有输出的均值
     # 方案一：
     # 获取数据,此时维度为[none,batch_size,n_hidden],需要进一步降维
-    lstm_out = tf.batch_gather(outputs, tf.to_int32(seqlen[:, None]-1))
-    lstm_out = tf.reshape(lstm_out, [-1, n_hidden])
-    # 方案二：
-    # lstm_out = tf.divide(tf.reduce_sum(outputs, 1), seqlen[:, None])
-    # wavelet
-    lstm_cell_3 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
-    lstm_cell_4= tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
-    # lstm_cell_3 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
-    # lstm_cells = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2, lstm_cell_3])
-    lstm_cells_wt = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2])
-    # Get LSTM cell output
-    outputs_wt, _wt = tf.nn.dynamic_rnn(lstm_cells, inputs=_x_wt, sequence_length=seqlen, dtype=tf.float32)
-    # many to one 关键。两种方案，一个是选择最后的输出，一个是选择所有输出的均值
-    # 方案一：
-    # 获取数据,此时维度为[none,batch_size,n_hidden],需要进一步降维
-    # lstm_out_wt = tf.reshape(tf.batch_gather(outputs, tf.to_int32(seqlen[:, None] - 1)), [-1, n_hidden])
+    # lstm_out = tf.batch_gather(outputs, tf.to_int32(seqlen[:, None]-1))
+    # lstm_out = tf.reshape(lstm_out, [-1, n_hidden])
     # 方案二：
     lstm_out = tf.divide(tf.reduce_sum(outputs, 1), seqlen[:, None])
 
