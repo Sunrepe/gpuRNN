@@ -30,8 +30,8 @@ display_iter = 1000  # To show test set accuracy during training
 model_save = 80
 
 k_fold_num = 0
-fold = './data/meanfilter_data/'
-savename = '_LSTM_lastout_kfold'+str(k_fold_num)
+fold = './data/actdata/'
+savename = '_LSTMemg_kfold'+str(k_fold_num)
 LABELS = ['double', 'fist', 'spread', 'six', 'wavein', 'waveout', 'yes', 'no', 'finger', 'snap']
 
 
@@ -97,12 +97,9 @@ def LSTM_RNN(_X, seqlen, _weight, _bias, _x_wt):
     # many to one 关键。两种方案，一个是选择最后的输出，一个是选择所有输出的均值
     # 方案一：
     # 获取数据,此时维度为[none,batch_size,n_hidden],需要进一步降维
-    lstm_out_wt = tf.reshape(tf.batch_gather(outputs, tf.to_int32(seqlen[:, None] - 1)), [-1, n_hidden])
+    # lstm_out_wt = tf.reshape(tf.batch_gather(outputs, tf.to_int32(seqlen[:, None] - 1)), [-1, n_hidden])
     # 方案二：
-    # lstm_out = tf.divide(tf.reduce_sum(outputs, 1), seqlen[:, None])
-
-
-
+    lstm_out = tf.divide(tf.reduce_sum(outputs, 1), seqlen[:, None])
 
     return tf.matmul(lstm_out, _weight['out']) + _bias['out']
 
@@ -128,7 +125,7 @@ def LSTM_RNN_WT(_X, seqlen, _weight, _bias):
 
 def main():
     time1 = time.time()
-    tmp_trans_wavelet.main_datatrans(fold)
+    # tmp_trans_wavelet.main_datatrans(fold)
     print('loading data...')
     train_sets = AllData_RNN(foldname=fold, max_seq=max_seq,
                              num_class=n_classes, trainable=True, kfold_num=k_fold_num)

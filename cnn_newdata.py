@@ -23,8 +23,8 @@ batch_size = 100
 display_iter = 1000  # To show test set accuracy during training
 model_save = 100
 
-k_fold_num = 1
-savename = '_CNN_kfold'+str(k_fold_num)
+k_fold_num = 0
+savename = 'emgandwavelet_CNN_kfold'+str(k_fold_num)
 LABELS = ['double', 'fist', 'spread', 'six', 'wavein', 'waveout', 'yes', 'no', 'finger', 'snap']
 
 
@@ -101,6 +101,7 @@ def main():
     test_sets = CNNData(foldname='./data/meanfilter_data/', max_seq=max_seq,
                             num_class=n_classes, trainable=False, kfold_num=k_fold_num)
     train_data_len = len(train_sets.all_seq_len)
+    print('train:', len(train_sets.all_seq_len), 'test:', len(test_sets.all_seq_len))
     print('load data time:', time.time()-time1)
 
     # Graph input/output

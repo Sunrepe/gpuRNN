@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e51bf105-f34c-4031-aa58-28fd3cc5807c" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/tmpdata/caimengyuan_finger_b.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/tmpdata/caimengyuan_finger_c.txt" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cnn_newdata.py" afterPath="$PROJECT_DIR$/cnn_newdata.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data_pre/alldata.py" afterPath="$PROJECT_DIR$/data_pre/alldata.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datadescribe.py" afterPath="$PROJECT_DIR$/datadescribe.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lstm_0405_kfold.py" afterPath="$PROJECT_DIR$/lstm_0405_kfold.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lstm_0410_emgandwavelet.py" afterPath="$PROJECT_DIR$/lstm_0410_emgandwavelet.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testEveryone.py" afterPath="$PROJECT_DIR$/testEveryone.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -15,51 +18,53 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/gpuRNN$lstm_newdata04.coverage" NAME="lstm_newdata04 Coverage Results" MODIFIED="1554306706690" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/gpuRNN$test.coverage" NAME="test Coverage Results" MODIFIED="1554866932644" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data_pre" />
-    <SUITE FILE_PATH="coverage/gpuRNN$testtmp.coverage" NAME="testtmp Coverage Results" MODIFIED="1554607652627" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/gpuRNN$lstm_0410_emgandwavelet.coverage" NAME="lstm_0410_emgandwavelet Coverage Results" MODIFIED="1554949103693" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$lstm_0405_kfold.coverage" NAME="lstm_0405_kfold Coverage Results" MODIFIED="1554879635356" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$bilstm_0402.coverage" NAME="bilstm_0402 Coverage Results" MODIFIED="1554211984148" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/gpuRNN$testEveryone.coverage" NAME="testEveryone Coverage Results" MODIFIED="1554364212790" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/gpuRNN$test__1_.coverage" NAME="test (1) Coverage Results" MODIFIED="1554885456265" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/gpuRNN$gru_8pose.coverage" NAME="gru_8pose Coverage Results" MODIFIED="1553775162284" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/gpuRNN$testEveryone.coverage" NAME="testEveryone Coverage Results" MODIFIED="1554951599362" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$lstm_mfcctest.coverage" NAME="lstm_mfcctest Coverage Results" MODIFIED="1553744180019" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/gpuRNN$alldata.coverage" NAME="alldata Coverage Results" MODIFIED="1554606521389" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data_pre" />
-    <SUITE FILE_PATH="coverage/gpuRNN$cnn_newdata.coverage" NAME="cnn_newdata Coverage Results" MODIFIED="1554607822715" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$lstm_8pose.coverage" NAME="lstm_8pose Coverage Results" MODIFIED="1554256648416" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$lstm_newown.coverage" NAME="lstm_newown Coverage Results" MODIFIED="1553529159829" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/gpuRNN$lstm_testMerge.coverage" NAME="lstm_testMerge Coverage Results" MODIFIED="1553927273515" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/gpuRNN$wavelet_trans.coverage" NAME="wavelet_trans Coverage Results" MODIFIED="1554862420513" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data_pre" />
-    <SUITE FILE_PATH="coverage/gpuRNN$lstm_testNEWOLD.coverage" NAME="lstm_testNEWOLD Coverage Results" MODIFIED="1553927643948" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$tmp_trans_wavelet.coverage" NAME="tmp_trans_wavelet Coverage Results" MODIFIED="1554812606717" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$lstm_twof.coverage" NAME="lstm_twof Coverage Results" MODIFIED="1553686466089" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/gpuRNN$datadescribe.coverage" NAME="datadescribe Coverage Results" MODIFIED="1554898717396" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$PicandMatrix.coverage" NAME="PicandMatrix Coverage Results" MODIFIED="1553741226742" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$testEveryRNNCNN.coverage" NAME="testEveryRNNCNN Coverage Results" MODIFIED="1554341944489" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$testEveryoneBilstm.coverage" NAME="testEveryoneBilstm Coverage Results" MODIFIED="1554296989267" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/gpuRNN$cnnOLD.coverage" NAME="cnnOLD Coverage Results" MODIFIED="1553865280485" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$cnntest.coverage" NAME="cnntest Coverage Results" MODIFIED="1553865292101" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/gpuRNN$lstm_newdata04.coverage" NAME="lstm_newdata04 Coverage Results" MODIFIED="1554306706690" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/gpuRNN$test.coverage" NAME="test Coverage Results" MODIFIED="1554866932644" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data_pre" />
+    <SUITE FILE_PATH="coverage/gpuRNN$testtmp.coverage" NAME="testtmp Coverage Results" MODIFIED="1554607652627" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/gpuRNN$test__1_.coverage" NAME="test (1) Coverage Results" MODIFIED="1554885456265" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/gpuRNN$gru_8pose.coverage" NAME="gru_8pose Coverage Results" MODIFIED="1553775162284" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/gpuRNN$alldata.coverage" NAME="alldata Coverage Results" MODIFIED="1554606521389" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data_pre" />
+    <SUITE FILE_PATH="coverage/gpuRNN$cnn_newdata.coverage" NAME="cnn_newdata Coverage Results" MODIFIED="1554607822715" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/gpuRNN$lstm_testMerge.coverage" NAME="lstm_testMerge Coverage Results" MODIFIED="1553927273515" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/gpuRNN$wavelet_trans.coverage" NAME="wavelet_trans Coverage Results" MODIFIED="1554862420513" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data_pre" />
+    <SUITE FILE_PATH="coverage/gpuRNN$lstm_testNEWOLD.coverage" NAME="lstm_testNEWOLD Coverage Results" MODIFIED="1553927643948" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/gpuRNN$datadescribe.coverage" NAME="datadescribe Coverage Results" MODIFIED="1554898717396" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/gpuRNN$cnnOLD.coverage" NAME="cnnOLD Coverage Results" MODIFIED="1553865280485" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="lstm_0405_kfold.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="lstm_0405_kfold.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lstm_0405_kfold.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="93" column="29" lean-forward="true" selection-start-line="93" selection-start-column="29" selection-end-line="93" selection-end-column="29" />
+            <state relative-caret-position="-1848">
+              <caret line="128" column="28" lean-forward="true" selection-start-line="128" selection-start-column="28" selection-end-line="128" selection-end-column="28" />
               <folding>
                 <element signature="e#20#50#0" expanded="true" />
-                <element signature="e#4717#5653#0" expanded="false" />
+                <element signature="e#1376#2774#0" expanded="false" />
+                <element signature="e#4701#5637#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="lstm_0410_emgandwavelet.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="lstm_0410_emgandwavelet.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lstm_0410_emgandwavelet.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1275">
-              <caret line="3" column="17" lean-forward="false" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
+            <state relative-caret-position="-180">
+              <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
               <folding>
                 <element signature="e#48#78#0" expanded="true" />
               </folding>
@@ -67,10 +72,30 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="testEveryone.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testEveryone.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="125">
+              <caret line="11" column="19" lean-forward="true" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dataFortest.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data_pre/dataFortest.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-896">
+              <caret line="103" column="71" lean-forward="false" selection-start-line="103" selection-start-column="71" selection-end-line="103" selection-end-column="71" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="datadescribe.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/datadescribe.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
+            <state relative-caret-position="281">
               <caret line="173" column="0" lean-forward="true" selection-start-line="173" selection-start-column="0" selection-end-line="173" selection-end-column="0" />
               <folding>
                 <element signature="e#921#3366#0" expanded="false" />
@@ -82,12 +107,11 @@
       <file leaf-file-name="tmp_trans_wavelet.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tmp_trans_wavelet.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
-              <caret line="88" column="40" lean-forward="true" selection-start-line="88" selection-start-column="40" selection-end-line="88" selection-end-column="40" />
+            <state relative-caret-position="925">
+              <caret line="69" column="70" lean-forward="true" selection-start-line="69" selection-start-column="8" selection-end-line="69" selection-end-column="70" />
               <folding>
                 <element signature="e#34#43#0" expanded="true" />
                 <element signature="e#763#1549#0" expanded="false" />
-                <element signature="e#1581#2501#0" expanded="false" />
                 <element signature="e#2530#2659#0" expanded="false" />
                 <element signature="e#2687#2795#0" expanded="false" />
               </folding>
@@ -98,8 +122,8 @@
       <file leaf-file-name="cnn_newdata.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cnn_newdata.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1050">
-              <caret line="107" column="53" lean-forward="true" selection-start-line="107" selection-start-column="53" selection-end-line="107" selection-end-column="53" />
+            <state relative-caret-position="2250">
+              <caret line="104" column="47" lean-forward="true" selection-start-line="104" selection-start-column="47" selection-end-line="104" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -132,8 +156,8 @@
       <file leaf-file-name="alldata.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data_pre/alldata.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="738" column="8" lean-forward="false" selection-start-line="738" selection-start-column="8" selection-end-line="738" selection-end-column="8" />
+            <state relative-caret-position="0">
+              <caret line="60" column="0" lean-forward="true" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
                 <element signature="e#74#291#0" expanded="false" />
@@ -141,18 +165,18 @@
                 <element signature="e#466#727#0" expanded="false" />
                 <element signature="e#769#799#0" expanded="false" />
                 <element signature="e#838#922#0" expanded="false" />
-                <element signature="e#966#1439#0" expanded="false" />
-                <element signature="e#2233#5674#0" expanded="false" />
-                <element signature="e#5704#8708#0" expanded="false" />
-                <element signature="e#7791#8001#0" expanded="false" />
-                <element signature="e#8058#8649#0" expanded="false" />
-                <element signature="e#8742#11991#0" expanded="false" />
-                <element signature="e#12029#15290#0" expanded="false" />
-                <element signature="e#15323#18164#0" expanded="false" />
-                <element signature="e#18201#21115#0" expanded="false" />
-                <element signature="e#21153#24395#0" expanded="false" />
-                <element signature="e#24433#27740#0" expanded="false" />
-                <element signature="e#27778#31085#0" expanded="false" />
+                <element signature="e#966#1459#0" expanded="false" />
+                <element signature="e#1491#2222#0" expanded="false" />
+                <element signature="e#2253#5694#0" expanded="false" />
+                <element signature="e#5724#8728#0" expanded="false" />
+                <element signature="e#7811#8021#0" expanded="false" />
+                <element signature="e#8078#8669#0" expanded="false" />
+                <element signature="e#12049#15310#0" expanded="false" />
+                <element signature="e#15343#18184#0" expanded="false" />
+                <element signature="e#18221#21135#0" expanded="false" />
+                <element signature="e#21173#24415#0" expanded="false" />
+                <element signature="e#24453#27760#0" expanded="false" />
+                <element signature="e#27798#31105#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -210,9 +234,7 @@
         <option value="$PROJECT_DIR$/lstm_8pose.py" />
         <option value="$PROJECT_DIR$/gru_8pose.py" />
         <option value="$PROJECT_DIR$/testEveryoneBilstm.py" />
-        <option value="$PROJECT_DIR$/data_pre/dataFortest.py" />
         <option value="$PROJECT_DIR$/testEveryRNNCNN.py" />
-        <option value="$PROJECT_DIR$/testEveryone.py" />
         <option value="$PROJECT_DIR$/data_pre/filter_data.py" />
         <option value="$PROJECT_DIR$/testtmp.py" />
         <option value="$PROJECT_DIR$/lstm_newdata04.py" />
@@ -222,11 +244,13 @@
         <option value="$PROJECT_DIR$/bilstm_0402.py" />
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/tmp_trans_wavelet.py" />
-        <option value="$PROJECT_DIR$/data_pre/alldata.py" />
-        <option value="$PROJECT_DIR$/lstm_0405_kfold.py" />
-        <option value="$PROJECT_DIR$/lstm_0410_emgandwavelet.py" />
         <option value="$PROJECT_DIR$/datadescribe.py" />
         <option value="$PROJECT_DIR$/cnn_newdata.py" />
+        <option value="$PROJECT_DIR$/lstm_0410_emgandwavelet.py" />
+        <option value="$PROJECT_DIR$/data_pre/dataFortest.py" />
+        <option value="$PROJECT_DIR$/testEveryone.py" />
+        <option value="$PROJECT_DIR$/data_pre/alldata.py" />
+        <option value="$PROJECT_DIR$/lstm_0405_kfold.py" />
       </list>
     </option>
   </component>
@@ -236,9 +260,9 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="-7" />
-    <option name="width" value="884" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="676" />
+    <option name="width" value="697" />
     <option name="height" value="745" />
   </component>
   <component name="ProjectView">
@@ -263,11 +287,6 @@
             <path>
               <item name="gpuRNN" type="b2602c69:ProjectViewProjectNode" />
               <item name="gpuRNN" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gpuRNN" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gpuRNN" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -298,7 +317,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.datadescribe">
+  <component name="RunManager" selected="Python.testEveryone">
     <configuration name="datadescribe" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -335,6 +354,24 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
+    <configuration name="lstm_0410_emgandwavelet" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="gpuRNN" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lstm_0410_emgandwavelet.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
     <configuration name="test (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -353,56 +390,38 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="testEveryone" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data_pre" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="gpuRNN" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="E:\Research-bachelor\python\gpuRNN\test.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-    </configuration>
-    <configuration name="wavelet_trans" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data_pre" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="gpuRNN" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data_pre/wavelet_trans.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testEveryone.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.wavelet_trans" />
-      <item index="1" class="java.lang.String" itemvalue="Python.test" />
-      <item index="2" class="java.lang.String" itemvalue="Python.test (1)" />
-      <item index="3" class="java.lang.String" itemvalue="Python.lstm_0405_kfold" />
-      <item index="4" class="java.lang.String" itemvalue="Python.datadescribe" />
+      <item index="0" class="java.lang.String" itemvalue="Python.test (1)" />
+      <item index="1" class="java.lang.String" itemvalue="Python.lstm_0405_kfold" />
+      <item index="2" class="java.lang.String" itemvalue="Python.datadescribe" />
+      <item index="3" class="java.lang.String" itemvalue="Python.lstm_0410_emgandwavelet" />
+      <item index="4" class="java.lang.String" itemvalue="Python.testEveryone" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.datadescribe" />
-        <item index="1" class="java.lang.String" itemvalue="Python.test (1)" />
-        <item index="2" class="java.lang.String" itemvalue="Python.lstm_0405_kfold" />
-        <item index="3" class="java.lang.String" itemvalue="Python.test" />
-        <item index="4" class="java.lang.String" itemvalue="Python.wavelet_trans" />
+        <item index="0" class="java.lang.String" itemvalue="Python.testEveryone" />
+        <item index="1" class="java.lang.String" itemvalue="Python.lstm_0410_emgandwavelet" />
+        <item index="2" class="java.lang.String" itemvalue="Python.datadescribe" />
+        <item index="3" class="java.lang.String" itemvalue="Python.test (1)" />
+        <item index="4" class="java.lang.String" itemvalue="Python.lstm_0405_kfold" />
       </list>
     </recent_temporary>
   </component>
@@ -429,16 +448,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15885022" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2632375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901135" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6012966" sideWeight="0.5030257" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7066451" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32252836" sideWeight="0.4969743" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42787683" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36953" sideWeight="0.4969743" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28038898" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -482,12 +501,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="4" />
+      <option name="time" value="5" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/lstm_testNEWOLD.py" />
     <entry file="file://$PROJECT_DIR$/data_pre/alldata.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1900">
@@ -499,18 +517,18 @@
             <element signature="e#466#727#0" expanded="false" />
             <element signature="e#769#799#0" expanded="false" />
             <element signature="e#838#922#0" expanded="false" />
-            <element signature="e#966#1439#0" expanded="false" />
-            <element signature="e#2233#5674#0" expanded="false" />
-            <element signature="e#5704#8708#0" expanded="false" />
-            <element signature="e#7791#8001#0" expanded="false" />
-            <element signature="e#8058#8649#0" expanded="false" />
-            <element signature="e#8742#11991#0" expanded="false" />
-            <element signature="e#12029#15290#0" expanded="false" />
-            <element signature="e#15323#18164#0" expanded="false" />
-            <element signature="e#18201#21115#0" expanded="false" />
-            <element signature="e#21153#24395#0" expanded="false" />
-            <element signature="e#24433#27740#0" expanded="false" />
-            <element signature="e#27778#31085#0" expanded="false" />
+            <element signature="e#966#1459#0" expanded="false" />
+            <element signature="e#1491#2222#0" expanded="false" />
+            <element signature="e#2253#5694#0" expanded="false" />
+            <element signature="e#5724#8728#0" expanded="false" />
+            <element signature="e#7811#8021#0" expanded="false" />
+            <element signature="e#8078#8669#0" expanded="false" />
+            <element signature="e#12049#15310#0" expanded="false" />
+            <element signature="e#15343#18184#0" expanded="false" />
+            <element signature="e#18221#21135#0" expanded="false" />
+            <element signature="e#21173#24415#0" expanded="false" />
+            <element signature="e#24453#27760#0" expanded="false" />
+            <element signature="e#27798#31105#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -666,24 +684,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testEveryone.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testEveryoneBilstm.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="292">
           <caret line="137" column="27" lean-forward="false" selection-start-line="136" selection-start-column="4" selection-end-line="137" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data_pre/dataFortest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3450">
-          <caret line="146" column="24" lean-forward="false" selection-start-line="138" selection-start-column="0" selection-end-line="146" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -758,7 +762,7 @@
         <state relative-caret-position="1525">
           <caret line="138" column="9" lean-forward="false" selection-start-line="131" selection-start-column="8" selection-end-line="138" selection-end-column="9" />
           <folding>
-            <element signature="e#20#50#0" expanded="true" />
+            <element signature="e#20#50#0" expanded="false" />
             <element signature="e#1331#2242#0" expanded="false" />
           </folding>
         </state>
@@ -779,66 +783,14 @@
         <state relative-caret-position="499">
           <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
           <folding>
-            <element signature="e#20#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lstm_0405_kfold.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="93" column="29" lean-forward="true" selection-start-line="93" selection-start-column="29" selection-end-line="93" selection-end-column="29" />
-          <folding>
-            <element signature="e#20#50#0" expanded="true" />
-            <element signature="e#4717#5653#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data_pre/alldata.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="738" column="8" lean-forward="false" selection-start-line="738" selection-start-column="8" selection-end-line="738" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#74#291#0" expanded="false" />
-            <element signature="e#315#439#0" expanded="false" />
-            <element signature="e#466#727#0" expanded="false" />
-            <element signature="e#769#799#0" expanded="false" />
-            <element signature="e#838#922#0" expanded="false" />
-            <element signature="e#966#1439#0" expanded="false" />
-            <element signature="e#2233#5674#0" expanded="false" />
-            <element signature="e#5704#8708#0" expanded="false" />
-            <element signature="e#7791#8001#0" expanded="false" />
-            <element signature="e#8058#8649#0" expanded="false" />
-            <element signature="e#8742#11991#0" expanded="false" />
-            <element signature="e#12029#15290#0" expanded="false" />
-            <element signature="e#15323#18164#0" expanded="false" />
-            <element signature="e#18201#21115#0" expanded="false" />
-            <element signature="e#21153#24395#0" expanded="false" />
-            <element signature="e#24433#27740#0" expanded="false" />
-            <element signature="e#27778#31085#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tmp_trans_wavelet.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="88" column="40" lean-forward="true" selection-start-line="88" selection-start-column="40" selection-end-line="88" selection-end-column="40" />
-          <folding>
-            <element signature="e#34#43#0" expanded="true" />
-            <element signature="e#763#1549#0" expanded="false" />
-            <element signature="e#1581#2501#0" expanded="false" />
-            <element signature="e#2530#2659#0" expanded="false" />
-            <element signature="e#2687#2795#0" expanded="false" />
+            <element signature="e#20#50#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/datadescribe.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
+        <state relative-caret-position="281">
           <caret line="173" column="0" lean-forward="true" selection-start-line="173" selection-start-column="0" selection-end-line="173" selection-end-column="0" />
           <folding>
             <element signature="e#921#3366#0" expanded="false" />
@@ -846,20 +798,96 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://C:/Program/Anaconda/Lib/site-packages/tensorflow/python/ops/rnn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="53">
+          <caret line="663" column="0" lean-forward="false" selection-start-line="663" selection-start-column="0" selection-end-line="663" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/cnn_newdata.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1050">
-          <caret line="107" column="53" lean-forward="true" selection-start-line="107" selection-start-column="53" selection-end-line="107" selection-end-column="53" />
+        <state relative-caret-position="2250">
+          <caret line="104" column="47" lean-forward="true" selection-start-line="104" selection-start-column="47" selection-end-line="104" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_pre/dataFortest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-896">
+          <caret line="103" column="71" lean-forward="false" selection-start-line="103" selection-start-column="71" selection-end-line="103" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tmp_trans_wavelet.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="925">
+          <caret line="69" column="70" lean-forward="true" selection-start-line="69" selection-start-column="8" selection-end-line="69" selection-end-column="70" />
+          <folding>
+            <element signature="e#34#43#0" expanded="true" />
+            <element signature="e#763#1549#0" expanded="false" />
+            <element signature="e#2530#2659#0" expanded="false" />
+            <element signature="e#2687#2795#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_pre/alldata.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="60" column="0" lean-forward="true" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#74#291#0" expanded="false" />
+            <element signature="e#315#439#0" expanded="false" />
+            <element signature="e#466#727#0" expanded="false" />
+            <element signature="e#769#799#0" expanded="false" />
+            <element signature="e#838#922#0" expanded="false" />
+            <element signature="e#966#1459#0" expanded="false" />
+            <element signature="e#1491#2222#0" expanded="false" />
+            <element signature="e#2253#5694#0" expanded="false" />
+            <element signature="e#5724#8728#0" expanded="false" />
+            <element signature="e#7811#8021#0" expanded="false" />
+            <element signature="e#8078#8669#0" expanded="false" />
+            <element signature="e#12049#15310#0" expanded="false" />
+            <element signature="e#15343#18184#0" expanded="false" />
+            <element signature="e#18221#21135#0" expanded="false" />
+            <element signature="e#21173#24415#0" expanded="false" />
+            <element signature="e#24453#27760#0" expanded="false" />
+            <element signature="e#27798#31105#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testEveryone.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="11" column="19" lean-forward="true" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lstm_0410_emgandwavelet.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1275">
-          <caret line="3" column="17" lean-forward="false" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
+        <state relative-caret-position="-180">
+          <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
           <folding>
             <element signature="e#48#78#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lstm_0405_kfold.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1848">
+          <caret line="128" column="28" lean-forward="true" selection-start-line="128" selection-start-column="28" selection-end-line="128" selection-end-column="28" />
+          <folding>
+            <element signature="e#20#50#0" expanded="true" />
+            <element signature="e#1376#2774#0" expanded="false" />
+            <element signature="e#4701#5637#0" expanded="false" />
           </folding>
         </state>
       </provider>

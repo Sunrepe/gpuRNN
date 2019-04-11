@@ -49,6 +49,7 @@ def getPersons(foldname, kfold_num):
         oa, ob, oc = filename.split('_')
         _person.add(oa)
     _person = list(_person)
+    _person.sort()
     _person.remove('marui')
     _person.remove('zhangyixuan')
     test_p = _person[7*kfold_num:7*(kfold_num+1)]
@@ -56,7 +57,7 @@ def getPersons(foldname, kfold_num):
     for i in _person:
         if i not in test_p:
             train_p.append(i)
-    return train_p,test_p
+    return train_p, test_p
 
 
 def wavelet_trans(data):
@@ -739,6 +740,7 @@ class waveandemg_RNNData(object):
     def __init__(self, foldname, max_seq=700, num_class=10, trainable=False, kfold_num=0):
         train_person, test_person = getPersons(foldname, kfold_num)
         __person = train_person if trainable else test_person
+        # __person = ['zhouxufeng']
         self.all_data = []
         self.all_label = []
         self.all_seq_len = []
@@ -750,6 +752,7 @@ class waveandemg_RNNData(object):
         for filename in os.listdir(foldname):
             oa, ob, oc = filename.split('_')
             if oc == 'b.txt' and get_lei(ob) < num_class and oa in __person:
+                print(filename)
                 filename = foldname + filename
                 data = Read__mean_2(filename)
                 cutting = Read__mean_2(foldname + oa + '_' + ob + '_c.txt')
@@ -761,6 +764,7 @@ class waveandemg_RNNData(object):
                     tmp_data_wt = z_score(wavelet_trans(tmp_data))
                     tmp_data = z_score(tmp_data)
                     _len = tmp_data.shape[0]
+                    _len_wt = tmp_data_wt.shape[0]
                     # 读取数据
                     if _len >= max_seq:
                         pass
@@ -773,7 +777,7 @@ class waveandemg_RNNData(object):
                         self.all_data.append(s_tmp)
                         # wavelet
                         s_tmp_wt = np.zeros((max_seq, 8))
-                        s_tmp_wt[0:_len, :] = tmp_data_wt
+                        s_tmp_wt[0:_len_wt, :] = tmp_data_wt
                         self.all_data_wt.append(s_tmp_wt)
 
         self.all_data = np.array(self.all_data).astype('float32')
