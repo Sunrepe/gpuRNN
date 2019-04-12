@@ -29,7 +29,7 @@ batch_size = 100
 display_iter = 1000  # To show test set accuracy during training
 model_save = 80
 
-k_fold_num = 0
+k_fold_num = 3
 fold = './data/actdata/'
 savename = '_LSTMemg_kfold'+str(k_fold_num)
 LABELS = ['double', 'fist', 'spread', 'six', 'wavein', 'waveout', 'yes', 'no', 'finger', 'snap']

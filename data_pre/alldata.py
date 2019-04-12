@@ -254,6 +254,7 @@ class AllData_RNN(object):
         '''
         train_person,test_person = getPersons(foldname, kfold_num)
         __person = train_person if trainable else test_person
+        if not trainable:print(__person)
         self.all_data = []
         self.all_label = []
         self.all_seq_len = []
@@ -738,9 +739,10 @@ class waveandemg_RNNData(object):
     '''
 
     def __init__(self, foldname, max_seq=700, num_class=10, trainable=False, kfold_num=0):
-        train_person, test_person = getPersons(foldname, kfold_num)
-        __person = train_person if trainable else test_person
-        # __person = ['zhouxufeng']
+        # train_person, test_person = getPersons(foldname, kfold_num)
+        # __person = train_person if trainable else test_person
+        __person = ['zhouxufeng']
+        if not trainable:print(__person)
         self.all_data = []
         self.all_label = []
         self.all_seq_len = []
@@ -752,7 +754,7 @@ class waveandemg_RNNData(object):
         for filename in os.listdir(foldname):
             oa, ob, oc = filename.split('_')
             if oc == 'b.txt' and get_lei(ob) < num_class and oa in __person:
-                print(filename)
+                # print(filename)
                 filename = foldname + filename
                 data = Read__mean_2(filename)
                 cutting = Read__mean_2(foldname + oa + '_' + ob + '_c.txt')

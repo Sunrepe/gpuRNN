@@ -35,7 +35,7 @@ model_save = 80
 
 k_fold_num = 0
 fold = './data/actdata/'
-savename = '_LSTM_lastout_kfold'+str(k_fold_num)
+savename = '_LSTM_emgandwavelet_kfold'+str(k_fold_num)
 LABELS = ['double', 'fist', 'spread', 'six', 'wavein', 'waveout', 'yes', 'no', 'finger', 'snap']
 
 
@@ -48,40 +48,29 @@ def Matrix_to_CSV(filename, data):
             writer.writerow([row])
 
 
-def LSTM_RNN(_X, seqlen):
-    with tf.name_scope('lstm_emg'):
+def LSTM_RNN(_X, seqlen, _weight, _bias, _x_wt):
+    with tf.variable_scope('lstm_emg'):
         lstm_cell_1 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
         lstm_cell_2 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
         lstm_cells = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2])
-        # Get LSTM cell output
         outputs, _ = tf.nn.dynamic_rnn(lstm_cells, inputs=_X, sequence_length=seqlen, dtype=tf.float32)
-        # many to one 关键。两种方案，一个是选择最后的输出，一个是选择所有输出的均值
         # 方案一：
-        # 获取数据,此时维度为[none,batch_size,n_hidden],需要进一步降维
-        lstm_out = tf.batch_gather(outputs, tf.to_int32(seqlen[:, None] - 1))
-        lstm_out = tf.reshape(lstm_out, [-1, n_hidden])
+        lstm_out = tf.reshape(tf.batch_gather(outputs, tf.to_int32(seqlen[:, None] - 1)), [-1, n_hidden])
         # 方案二：
-        # lstm_out = tf.divide(tf.reduce_sum(outputs, 1), seqlen[:, None])
-    return lstm_out
-
-def LSTM_RNN_WT(_x_wt, seqlen):
-    # wavelet
-    with tf.name_scope('lstm_wavelet'):
+        # lstm_out = tf.divide(tf.reduce_sum(outputs, 1), seqlen[:, None])\
+    with tf.variable_scope('lstm_wavelet'):
         lstm_cell_3 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
         lstm_cell_4 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
         lstm_cells_wt = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_3, lstm_cell_4])
-        # Get LSTM_WT cell output
         outputs_wt, _wt = tf.nn.dynamic_rnn(lstm_cells_wt, inputs=_x_wt,
                                             sequence_length=tf.to_int32(seqlen),
                                             dtype=tf.float32)
-        # many to one 关键。两种方案，一个是选择最后的输出，一个是选择所有输出的均值
-        # 方案一：
-        # 获取数据,此时维度为[none,batch_size,n_hidden],需要进一步降维
-        # lstm_out_wt = tf.reshape(tf.batch_gather(outputs, tf.to_int32(seqlen[:, None] - 1)), [-1, n_hidden])
         # 方案二：
         lstm_out_wt = tf.divide(tf.reduce_sum(outputs_wt, 1), seqlen[:, None])
 
-    return lstm_out_wt
+    # _out_last = lstm_out*0.5 + lstm_out_wt*0.5
+    # return tf.matmul(_out_last, _weight['out']) + _bias['out']
+    return tf.matmul(lstm_out, _weight['out']) + _bias['out']
 
 
 def main():
@@ -121,10 +110,10 @@ def main():
     #     'out': tf.Variable(tf.random_normal([n_classes]))
     # }
 
-    pred_emg = LSTM_RNN(x, seq_len)
-    pred_wavelet = LSTM_RNN_WT(x_wt, seq_len)
-    pred_ = pred_emg*0.5 + pred_wavelet*0.5
-    pred = tf.matmul(pred_, weights['out']) + biases['out']
+    pred = LSTM_RNN(x, seq_len, weights, biases, x_wt)
+    # pred_wavelet = LSTM_RNN_WT(x_wt, seq_len)
+    # pred_ = pred_emg*0.5 + pred_wavelet*0.5
+    # pred = tf.matmul(pred_, weights['out']) + biases['out']
 
     # Loss, optimizer and evaluation
     l2 = lambda_loss_amount * sum(
@@ -185,7 +174,7 @@ def main():
                     x: test_sets.all_data,
                     y: test_sets.all_label,
                     seq_len: test_sets.all_seq_len,
-                    x_wt: batch_xs_wt
+                    x_wt: test_sets.all_data_wt
                 }
             )
             test_losses.append(loss)
