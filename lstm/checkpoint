@@ -1,2 +1,0 @@
-model_checkpoint_path: "model_CNN_kfold0.ckpt-final"
-all_model_checkpoint_paths: "model_CNN_kfold0.ckpt-final"
