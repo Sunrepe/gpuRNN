@@ -63,13 +63,13 @@ def main():
     _len = int(train_sets.all_seq_len[0])
     x = data[0:_len, 0]
     y = np.fft.fft(x)
-    show(x, y)
-    # plt.figure()
-    # plt.subplot(211)
-    # plt.plot(x)
-    # plt.subplot(212)
-    # plt.plot(y)
-    # plt.show()
+    # show(x, y)
+    plt.figure()
+    plt.subplot(211)
+    plt.plot(x)
+    plt.subplot(212)
+    plt.plot(y)
+    plt.show()
 
 if __name__ == '__main__':
     main()
