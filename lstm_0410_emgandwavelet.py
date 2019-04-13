@@ -92,14 +92,16 @@ def main():
     x_wt = tf.placeholder(tf.float32, [None, max_seq, n_inputs])
 
     # Graph weights
-    weights = {
-        'out': tf.Variable(tf.random_normal([n_hidden, n_classes], mean=1.0)),
-        'outwt': tf.Variable(tf.random_normal([n_hidden, n_classes], mean=1.0))
-    }
-    biases = {
-        'out': tf.Variable(tf.random_normal([n_classes])),
-        'outwt': tf.Variable(tf.random_normal([n_classes]))
-    }
+    with tf.variable_scope('weightandbias'):
+        weights = {
+            'out': tf.Variable(tf.random_normal([n_hidden, n_classes], mean=1.0)),
+            'outwt': tf.Variable(tf.random_normal([n_hidden, n_classes], mean=1.0))
+        }
+        biases = {
+            'out': tf.Variable(tf.random_normal([n_classes])),
+            'outwt': tf.Variable(tf.random_normal([n_classes]))
+        }
+
     #
     # weights = {
     #     'hidden': tf.Variable(tf.random_normal([n_inputs, n_hidden])),  # Hidden layer weights
@@ -136,7 +138,7 @@ def main():
     train_accuracies = []
 
     # Launch the graph
-    sess = tf.InteractiveSession(config=tf.ConfigProto(log_device_placement=False))
+    sess = tf.InteractiveSession(config=tf.ConfigProto(log_device_placement=True))
     init = tf.global_variables_initializer()
     sess.run(init)
 
