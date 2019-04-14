@@ -20,11 +20,12 @@ n_hidden = 50  # Hidden layer num of features
 n_classes = 10  # Total classes (should go up, or should go down)
 n_inputs = 8
 max_seq = 800
+tmp_use_len = [150,150,250,450]
 
 # Training
 learning_rate = 0.0025
 lambda_loss_amount = 0.0015
-training_iters = 150  # Loop 1000 times on the dataset
+training_iters = 300  # Loop 1000 times on the dataset
 batch_size = 100
 display_iter = 4000  # To show test set accuracy during training
 model_save = 80
@@ -45,22 +46,83 @@ def Matrix_to_CSV(filename, data):
 
 
 def LSTM_RNN(_X, seqlen, _weight, _bias):
-    lstm_cell_1 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
-    lstm_cell_2 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
-    # lstm_cell_3 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
-    # lstm_cells = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2, lstm_cell_3])
-    lstm_cells = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2])
-    # Get LSTM cell output
-    outputs, _ = tf.nn.dynamic_rnn(lstm_cells, inputs=_X, sequence_length=seqlen, dtype=tf.float32)
-    # many to one 关键。两种方案，一个是选择最后的输出，一个是选择所有输出的均值
-    # 方案一：
-    # 获取数据,此时维度为[none,batch_size,n_hidden],需要进一步降维
-    # lstm_out = tf.batch_gather(outputs, tf.to_int32(seqlen[:, None]-1))
-    # lstm_out = tf.reshape(lstm_out, [-1, n_hidden])
-    # 方案二：
-    lstm_out = tf.divide(tf.reduce_sum(outputs, 1), seqlen[:, None])
+    with tf.variable_scope('dwt0'):
+        lstm_cell_1 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
+        lstm_cell_2 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
+        lstm_cells = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2])
+        outputs, _ = tf.nn.dynamic_rnn(lstm_cells, inputs=_X[0], sequence_length=tf.to_int32(seqlen[0]), dtype=tf.float32)
+        lstm_out0 = tf.divide(tf.reduce_sum(outputs, 1), seqlen[0][:, None])
+    with tf.variable_scope('dwt1'):
+        lstm_cell_1 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
+        lstm_cell_2 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
+        lstm_cells = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2])
+        outputs, _ = tf.nn.dynamic_rnn(lstm_cells, inputs=_X[1], sequence_length=tf.to_int32(seqlen[1]), dtype=tf.float32)
+        lstm_out1 = tf.divide(tf.reduce_sum(outputs, 1), seqlen[1][:, None])
+    with tf.variable_scope('dwt2'):
+        lstm_cell_1 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
+        lstm_cell_2 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
+        lstm_cells = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2])
+        outputs, _ = tf.nn.dynamic_rnn(lstm_cells, inputs=_X[2], sequence_length=tf.to_int32(seqlen[2]), dtype=tf.float32)
+        lstm_out2 = tf.divide(tf.reduce_sum(outputs, 1), seqlen[2][:, None])
+    with tf.variable_scope('dwt3'):
+        lstm_cell_1 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
+        lstm_cell_2 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
+        lstm_cells = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2])
+        outputs, _ = tf.nn.dynamic_rnn(lstm_cells, inputs=_X[3], sequence_length=tf.to_int32(seqlen[3]), dtype=tf.float32)
+        lstm_out3 = tf.divide(tf.reduce_sum(outputs, 1), seqlen[3][:, None])
+
+    # print(type(lstm_out0.shape))
+    # print(type(lstm_out1.shape))
+    # print(type(lstm_out2.shape))
+    # print(type(lstm_out3.shape))
+    lstm_out0 = tf.concat([lstm_out0, lstm_out1], 0)
+    lstm_out0 = tf.concat([lstm_out0, lstm_out2], 0)
+    lstm_out0 = tf.concat([lstm_out0, lstm_out3], 0)
+    with tf.variable_scope('fullConnect'):
+        lstm_out = tf.layers.dense(lstm_out0, 50)
 
     return tf.matmul(lstm_out, _weight['out']) + _bias['out']
+
+def LSTM_RNN_tmp(x0,x1,x2,x3,seq0,seq1,seq2,seq3,_weight, _bias):
+    with tf.variable_scope('dwt0'):
+        lstm_cell_1 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
+        lstm_cell_2 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
+        lstm_cells = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2])
+        outputs, _ = tf.nn.dynamic_rnn(lstm_cells, inputs=x0, sequence_length=tf.to_int32(seq0), dtype=tf.float32)
+        lstm_out0 = tf.divide(tf.reduce_sum(outputs, 1), seq0[:, None])
+    with tf.variable_scope('dwt1'):
+        lstm_cell_1 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
+        lstm_cell_2 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
+        lstm_cells = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2])
+        outputs, _ = tf.nn.dynamic_rnn(lstm_cells, inputs=x1, sequence_length=tf.to_int32(seq1), dtype=tf.float32)
+        lstm_out1 = tf.divide(tf.reduce_sum(outputs, 1), seq1[:, None])
+    with tf.variable_scope('dwt2'):
+        lstm_cell_1 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
+        lstm_cell_2 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
+        lstm_cells = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2])
+        outputs, _ = tf.nn.dynamic_rnn(lstm_cells, inputs=x2, sequence_length=tf.to_int32(seq2), dtype=tf.float32)
+        lstm_out2 = tf.divide(tf.reduce_sum(outputs, 1), seq2[:, None])
+    with tf.variable_scope('dwt3'):
+        lstm_cell_1 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
+        lstm_cell_2 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
+        lstm_cells = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2])
+        outputs, _ = tf.nn.dynamic_rnn(lstm_cells, inputs=x3, sequence_length=tf.to_int32(seq3), dtype=tf.float32)
+        lstm_out3 = tf.divide(tf.reduce_sum(outputs, 1), seq3[:, None])
+
+    # print(type(lstm_out0.shape))
+    # print(type(lstm_out1.shape))
+    # print(type(lstm_out2.shape))
+    # print(type(lstm_out3.shape))
+    lstm_out0 = tf.concat([lstm_out0, lstm_out1], 0)
+    lstm_out0 = tf.concat([lstm_out0, lstm_out2], 0)
+    lstm_out0 = tf.concat([lstm_out0, lstm_out3], 0)
+    lstm_out0 = tf.reshape(lstm_out0, [-1, 200])
+    with tf.variable_scope('fullConnect'):
+        lstm_out = tf.layers.dense(lstm_out0, 400)
+        lstm_out = tf.layers.dense(lstm_out, 50)
+
+    return tf.matmul(lstm_out, _weight['out']) + _bias['out']
+
 
 
 def LSTM_RNN_static(_X, seqlen, _weight, _bias):
@@ -105,18 +167,24 @@ def main():
     time1 = time.time()
     # tmp_trans_wavelet.main_datatrans(fold)
     print('loading data...')
-    train_sets = fft1_RNNData(foldname=fold, max_seq=max_seq,
+    train_sets = dwtData_RNN(foldname=fold, max_seq=max_seq,
                              num_class=n_classes, trainable=True, kfold_num=k_fold_num)
-    test_sets = fft1_RNNData(foldname=fold, max_seq=max_seq,
+    test_sets = dwtData_RNN(foldname=fold, max_seq=max_seq,
                             num_class=n_classes, trainable=False, kfold_num=k_fold_num)
-    train_data_len = len(train_sets.all_seq_len)
-    print('train:', len(train_sets.all_seq_len), 'test:', len(test_sets.all_seq_len))
+    train_data_len = len(train_sets.all_label)
+    print('train:', len(train_sets.all_label), 'test:', len(test_sets.all_label))
     print('load data time:', time.time()-time1)
 
     # Graph input/output
-    x = tf.placeholder(tf.float32, [None, max_seq, n_inputs])
+    x0 = tf.placeholder(tf.float32, [None, tmp_use_len[0], n_inputs])
+    x1 = tf.placeholder(tf.float32, [None, tmp_use_len[1], n_inputs])
+    x2 = tf.placeholder(tf.float32, [None, tmp_use_len[2], n_inputs])
+    x3 = tf.placeholder(tf.float32, [None, tmp_use_len[3], n_inputs])
+    seq_len0 = tf.placeholder(tf.float32, [None])
+    seq_len1 = tf.placeholder(tf.float32, [None])
+    seq_len2 = tf.placeholder(tf.float32, [None])
+    seq_len3 = tf.placeholder(tf.float32, [None])
     y = tf.placeholder(tf.float32, [None, n_classes])
-    seq_len = tf.placeholder(tf.float32, [None])
 
     # Graph weights
     weights = {
@@ -135,7 +203,7 @@ def main():
     #     'out': tf.Variable(tf.random_normal([n_classes]))
     # }
 
-    pred = LSTM_RNN(x, seq_len, weights, biases)
+    pred = LSTM_RNN_tmp(x0,x1,x2,x3,seq_len0,seq_len1,seq_len2,seq_len3, weights, biases)
 
     # Loss, optimizer and evaluation
     l2 = lambda_loss_amount * sum(
@@ -159,23 +227,30 @@ def main():
 
     # Launch the graph
     sess = tf.InteractiveSession(config=tf.ConfigProto(log_device_placement=True))
-    # init = tf.global_variables_initializer()
-    # sess.run(init)
-    saver.restore(sess, "./lstm/model{}.ckpt-final".format(savename))
+    init = tf.global_variables_initializer()
+    sess.run(init)
+    # saver.restore(sess, "./lstm/model{}.ckpt-final".format(savename))
     # Perform Training steps with "batch_size" amount of example data at each loop
     step = 1
     print("Start train!")
 
     while step * batch_size <= training_iters * train_data_len:
-        batch_xs, batch_ys, batch_seq_len = train_sets.next(batch_size)
+        batch_ys, batch_xs, batch_seq_len = train_sets.next(batch_size)
+        feed_dic = {
+            y: batch_ys,
+            x0:batch_xs[0],
+            x1:batch_xs[1],
+            x2:batch_xs[2],
+            x3:batch_xs[3],
+            seq_len0:batch_seq_len[0],
+            seq_len1:batch_seq_len[1],
+            seq_len2:batch_seq_len[2],
+            seq_len3:batch_seq_len[3]
+        }
         # Fit training using batch data
         _, loss, acc = sess.run(
             [optimizer, cost, accuracy],
-            feed_dict={
-                x: batch_xs,
-                y: batch_ys,
-                seq_len: batch_seq_len
-            }
+            feed_dict=feed_dic
         )
         train_losses.append(loss)
         train_accuracies.append(acc)
@@ -187,15 +262,22 @@ def main():
             print("Training iter #" + str(step * batch_size) + \
                   ":   Batch Loss = " + "{:.6f}".format(loss) + \
                   ", Accuracy = {}".format(acc))
+            feed_dic = {
+                y: test_sets.all_label,
+                x0: test_sets.data[0],
+                x1: test_sets.data[1],
+                x2: test_sets.data[2],
+                x3: test_sets.data[3],
+                seq_len0: test_sets.seqlen[0],
+                seq_len1: test_sets.seqlen[1],
+                seq_len2: test_sets.seqlen[2],
+                seq_len3: test_sets.seqlen[3]
+            }
 
             # Evaluation on the test set (no learning made here - just evaluation for diagnosis)
             loss, acc = sess.run(
                 [cost, accuracy],
-                feed_dict={
-                    x: test_sets.all_data,
-                    y: test_sets.all_label,
-                    seq_len: test_sets.all_seq_len
-                }
+                feed_dict=feed_dic
             )
             test_losses.append(loss)
             test_accuracies.append(acc)
@@ -213,14 +295,20 @@ def main():
     print("Optimization Finished!")
 
     # Accuracy for test data
-
+    feed_dic = {
+        y: test_sets.all_label,
+        x0: test_sets.data[0],
+        x1: test_sets.data[1],
+        x2: test_sets.data[2],
+        x3: test_sets.data[3],
+        seq_len0: test_sets.seqlen[0],
+        seq_len1: test_sets.seqlen[1],
+        seq_len2: test_sets.seqlen[2],
+        seq_len3: test_sets.seqlen[3]
+    }
     one_hot_predictions, accuracy, final_loss = sess.run(
         [pred, accuracy, cost],
-        feed_dict={
-            x: test_sets.all_data,
-            y: test_sets.all_label,
-            seq_len: test_sets.all_seq_len
-        }
+        feed_dict=feed_dic
     )
 
     test_losses.append(final_loss)
