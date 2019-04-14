@@ -2,52 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e51bf105-f34c-4031-aa58-28fd3cc5807c" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/loss_dir/Matrix_LSTMfft_kfold4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/loss_dir/_LSTMfft_kfold4_hd50iter300ba100lr0.0025test_acc.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/loss_dir/_LSTMfft_kfold4_hd50iter300ba100lr0.0025test_loss.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/loss_dir/_LSTMfft_kfold4_hd50iter300ba100lr0.0025train_acc.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/loss_dir/_LSTMfft_kfold4_hd50iter300ba100lr0.0025train_loss.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/loss_dir/accloss__LSTMfft_kfold4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lstm/checkpoint" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lstm/model_LSTMfft_kfold4.ckpt-12000.data-00000-of-00001" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lstm/model_LSTMfft_kfold4.ckpt-12000.index" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lstm/model_LSTMfft_kfold4.ckpt-12000.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lstm/model_LSTMfft_kfold4.ckpt-12800.data-00000-of-00001" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lstm/model_LSTMfft_kfold4.ckpt-12800.index" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lstm/model_LSTMfft_kfold4.ckpt-12800.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lstm/model_LSTMfft_kfold4.ckpt-13600.data-00000-of-00001" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lstm/model_LSTMfft_kfold4.ckpt-13600.index" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lstm/model_LSTMfft_kfold4.ckpt-13600.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lstm/model_LSTMfft_kfold4.ckpt-14400.data-00000-of-00001" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lstm/model_LSTMfft_kfold4.ckpt-14400.index" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lstm/model_LSTMfft_kfold4.ckpt-14400.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lstm/model_LSTMfft_kfold4.ckpt-15200.data-00000-of-00001" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lstm/model_LSTMfft_kfold4.ckpt-15200.index" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lstm/model_LSTMfft_kfold4.ckpt-15200.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lstm/model_LSTMfft_kfold4.ckpt-16000.data-00000-of-00001" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lstm/model_LSTMfft_kfold4.ckpt-16000.index" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lstm/model_LSTMfft_kfold4.ckpt-16000.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lstm/model_LSTMfft_kfold4.ckpt-16800.data-00000-of-00001" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lstm/model_LSTMfft_kfold4.ckpt-16800.index" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lstm/model_LSTMfft_kfold4.ckpt-16800.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lstm/model_LSTMfft_kfold4.ckpt-17600.data-00000-of-00001" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lstm/model_LSTMfft_kfold4.ckpt-17600.index" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lstm/model_LSTMfft_kfold4.ckpt-17600.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lstm/model_LSTMfft_kfold4.ckpt-18400.data-00000-of-00001" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lstm/model_LSTMfft_kfold4.ckpt-18400.index" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lstm/model_LSTMfft_kfold4.ckpt-18400.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lstm/model_LSTMfft_kfold4.ckpt-19200.data-00000-of-00001" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lstm/model_LSTMfft_kfold4.ckpt-19200.index" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lstm/model_LSTMfft_kfold4.ckpt-19200.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lstm/model_LSTMfft_kfold4.ckpt-20000.data-00000-of-00001" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lstm/model_LSTMfft_kfold4.ckpt-20000.index" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lstm/model_LSTMfft_kfold4.ckpt-20000.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lstm/model_LSTMfft_kfold4.ckpt-final.data-00000-of-00001" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lstm/model_LSTMfft_kfold4.ckpt-final.index" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lstm/model_LSTMfft_kfold4.ckpt-final.meta" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data_pre/alldata.py" afterPath="$PROJECT_DIR$/data_pre/alldata.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fft_lstm.py" afterPath="$PROJECT_DIR$/fft_lstm.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dwt_lstm.py" afterPath="$PROJECT_DIR$/dwt_lstm.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -83,7 +40,7 @@
     <SUITE FILE_PATH="coverage/gpuRNN$lstm_testNEWOLD.coverage" NAME="lstm_testNEWOLD Coverage Results" MODIFIED="1553927643948" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$datadescribe.coverage" NAME="datadescribe Coverage Results" MODIFIED="1554898717396" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$cnnOLD.coverage" NAME="cnnOLD Coverage Results" MODIFIED="1553865280485" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/gpuRNN$dwt_lstm.coverage" NAME="dwt_lstm Coverage Results" MODIFIED="1555241890116" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/gpuRNN$dwt_lstm.coverage" NAME="dwt_lstm Coverage Results" MODIFIED="1555246502344" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
@@ -112,11 +69,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="alldata.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="alldata.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data_pre/alldata.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="83">
-              <caret line="798" column="40" lean-forward="false" selection-start-line="798" selection-start-column="40" selection-end-line="798" selection-end-column="40" />
+            <state relative-caret-position="65">
+              <caret line="796" column="53" lean-forward="true" selection-start-line="795" selection-start-column="53" selection-end-line="796" selection-end-column="53" />
               <folding>
                 <element signature="e#74#291#0" expanded="false" />
                 <element signature="e#315#439#0" expanded="false" />
@@ -149,21 +106,21 @@
       <file leaf-file-name="dwt_lstm.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dwt_lstm.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="79">
-              <caret line="361" column="53" lean-forward="false" selection-start-line="361" selection-start-column="53" selection-end-line="361" selection-end-column="53" />
+            <state relative-caret-position="-300">
+              <caret line="166" column="23" lean-forward="true" selection-start-line="166" selection-start-column="23" selection-end-line="166" selection-end-column="23" />
               <folding>
                 <element signature="e#20#50#0" expanded="true" />
                 <element signature="e#1405#3860#0" expanded="false" />
-                <element signature="e#7481#8417#0" expanded="false" />
+                <element signature="e#7483#8419#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fft_lstm.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="fft_lstm.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/fft_lstm.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
+            <state relative-caret-position="-5528">
               <caret line="70" column="58" lean-forward="false" selection-start-line="70" selection-start-column="58" selection-end-line="70" selection-end-column="58" />
               <folding>
                 <element signature="e#20#50#0" expanded="true" />
@@ -465,7 +422,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22366288" sideWeight="0.49546143" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.58184767" sideWeight="0.4969743" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27552673" sideWeight="0.4969743" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28038898" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -815,34 +772,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fft_lstm.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="70" column="58" lean-forward="false" selection-start-line="70" selection-start-column="58" selection-end-line="70" selection-end-column="58" />
-          <folding>
-            <element signature="e#20#50#0" expanded="true" />
-            <element signature="e#1373#2311#0" expanded="false" />
-            <element signature="e#3357#4293#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dwt_lstm.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="79">
-          <caret line="361" column="53" lean-forward="false" selection-start-line="361" selection-start-column="53" selection-end-line="361" selection-end-column="53" />
-          <folding>
-            <element signature="e#20#50#0" expanded="true" />
-            <element signature="e#1405#3860#0" expanded="false" />
-            <element signature="e#7481#8417#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data_pre/alldata.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="83">
-          <caret line="798" column="40" lean-forward="false" selection-start-line="798" selection-start-column="40" selection-end-line="798" selection-end-column="40" />
+        <state relative-caret-position="65">
+          <caret line="796" column="53" lean-forward="true" selection-start-line="795" selection-start-column="53" selection-end-line="796" selection-end-column="53" />
           <folding>
             <element signature="e#74#291#0" expanded="false" />
             <element signature="e#315#439#0" expanded="false" />
@@ -867,6 +800,30 @@
             <element signature="e#22263#25524#0" expanded="false" />
             <element signature="e#25557#28398#0" expanded="false" />
             <element signature="e#28439#32350#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dwt_lstm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-300">
+          <caret line="166" column="23" lean-forward="true" selection-start-line="166" selection-start-column="23" selection-end-line="166" selection-end-column="23" />
+          <folding>
+            <element signature="e#20#50#0" expanded="true" />
+            <element signature="e#1405#3860#0" expanded="false" />
+            <element signature="e#7483#8419#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fft_lstm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5528">
+          <caret line="70" column="58" lean-forward="false" selection-start-line="70" selection-start-column="58" selection-end-line="70" selection-end-column="58" />
+          <folding>
+            <element signature="e#20#50#0" expanded="true" />
+            <element signature="e#1373#2311#0" expanded="false" />
+            <element signature="e#3357#4293#0" expanded="false" />
           </folding>
         </state>
       </provider>
