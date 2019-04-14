@@ -19,12 +19,12 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'  # just error no warning
 n_hidden = 50  # Hidden layer num of features
 n_classes = 10  # Total classes (should go up, or should go down)
 n_inputs = 8
-max_seq = 200
+max_seq = 400
 
 # Training
 learning_rate = 0.0025
 lambda_loss_amount = 0.0015
-training_iters = 150  # Loop 1000 times on the dataset
+training_iters = 300  # Loop 1000 times on the dataset
 batch_size = 100
 display_iter = 2000  # To show test set accuracy during training
 model_save = 80
@@ -159,9 +159,9 @@ def main():
 
     # Launch the graph
     sess = tf.InteractiveSession(config=tf.ConfigProto(log_device_placement=False))
-    init = tf.global_variables_initializer()
-    sess.run(init)
-
+    # init = tf.global_variables_initializer()
+    # sess.run(init)
+    saver.restore(sess, "./lstm/model{}.ckpt-final".format(savename))
     # Perform Training steps with "batch_size" amount of example data at each loop
     step = 1
     print("Start train!")

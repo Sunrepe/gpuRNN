@@ -70,8 +70,8 @@
       <file leaf-file-name="alldata.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data_pre/alldata.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-25">
-              <caret line="337" column="7" lean-forward="true" selection-start-line="337" selection-start-column="7" selection-end-line="337" selection-end-column="7" />
+            <state relative-caret-position="446">
+              <caret line="440" column="51" lean-forward="true" selection-start-line="440" selection-start-column="51" selection-end-line="440" selection-end-column="51" />
               <folding>
                 <element signature="e#74#291#0" expanded="false" />
                 <element signature="e#315#439#0" expanded="false" />
@@ -87,10 +87,15 @@
                 <element signature="e#9521#12549#0" expanded="false" />
                 <element signature="e#11632#11842#0" expanded="false" />
                 <element signature="e#11899#12490#0" expanded="false" />
+                <element signature="e#12584#15647#0" expanded="false" />
                 <element signature="e#14730#14940#0" expanded="false" />
                 <element signature="e#14997#15588#0" expanded="false" />
-                <element signature="e#19009#22270#0" expanded="false" />
-                <element signature="e#22303#25144#0" expanded="false" />
+                <element signature="e#17849#18059#0" expanded="false" />
+                <element signature="e#18116#18707#0" expanded="false" />
+                <element signature="e#18800#22090#0" expanded="false" />
+                <element signature="e#22128#25389#0" expanded="false" />
+                <element signature="e#25422#28263#0" expanded="false" />
+                <element signature="e#28304#32215#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -99,8 +104,8 @@
       <file leaf-file-name="fft_lstm.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/fft_lstm.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="21" column="13" lean-forward="true" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+            <state relative-caret-position="-100">
+              <caret line="78" column="10" lean-forward="true" selection-start-line="78" selection-start-column="10" selection-end-line="78" selection-end-column="10" />
               <folding>
                 <element signature="e#20#50#0" expanded="true" />
                 <element signature="e#1373#2311#0" expanded="false" />
@@ -113,8 +118,8 @@
       <file leaf-file-name="test.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
-              <caret line="53" column="14" lean-forward="false" selection-start-line="53" selection-start-column="14" selection-end-line="53" selection-end-column="14" />
+            <state relative-caret-position="200">
+              <caret line="71" column="14" lean-forward="true" selection-start-line="65" selection-start-column="16" selection-end-line="71" selection-end-column="14" />
               <folding>
                 <element signature="e#48#78#0" expanded="true" />
               </folding>
@@ -145,6 +150,7 @@
       <find>saver</find>
       <find>png</find>
       <find>plt</find>
+      <find>final</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -398,8 +404,8 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6012966" sideWeight="0.5030257" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37277147" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38249594" sideWeight="0.4969743" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.09886548" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35980552" sideWeight="0.4969743" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28038898" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -734,8 +740,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="53" column="14" lean-forward="false" selection-start-line="53" selection-start-column="14" selection-end-line="53" selection-end-column="14" />
+        <state relative-caret-position="200">
+          <caret line="71" column="14" lean-forward="true" selection-start-line="65" selection-start-column="16" selection-end-line="71" selection-end-column="14" />
           <folding>
             <element signature="e#48#78#0" expanded="true" />
           </folding>
@@ -744,8 +750,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/data_pre/alldata.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-25">
-          <caret line="337" column="7" lean-forward="true" selection-start-line="337" selection-start-column="7" selection-end-line="337" selection-end-column="7" />
+        <state relative-caret-position="446">
+          <caret line="440" column="51" lean-forward="true" selection-start-line="440" selection-start-column="51" selection-end-line="440" selection-end-column="51" />
           <folding>
             <element signature="e#74#291#0" expanded="false" />
             <element signature="e#315#439#0" expanded="false" />
@@ -761,18 +767,23 @@
             <element signature="e#9521#12549#0" expanded="false" />
             <element signature="e#11632#11842#0" expanded="false" />
             <element signature="e#11899#12490#0" expanded="false" />
+            <element signature="e#12584#15647#0" expanded="false" />
             <element signature="e#14730#14940#0" expanded="false" />
             <element signature="e#14997#15588#0" expanded="false" />
-            <element signature="e#19009#22270#0" expanded="false" />
-            <element signature="e#22303#25144#0" expanded="false" />
+            <element signature="e#17849#18059#0" expanded="false" />
+            <element signature="e#18116#18707#0" expanded="false" />
+            <element signature="e#18800#22090#0" expanded="false" />
+            <element signature="e#22128#25389#0" expanded="false" />
+            <element signature="e#25422#28263#0" expanded="false" />
+            <element signature="e#28304#32215#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fft_lstm.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="21" column="13" lean-forward="true" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+        <state relative-caret-position="-100">
+          <caret line="78" column="10" lean-forward="true" selection-start-line="78" selection-start-column="10" selection-end-line="78" selection-end-column="10" />
           <folding>
             <element signature="e#20#50#0" expanded="true" />
             <element signature="e#1373#2311#0" expanded="false" />

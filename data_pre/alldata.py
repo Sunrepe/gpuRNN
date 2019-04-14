@@ -401,6 +401,76 @@ class fft2_RNNData(object):
         return len(self.all_label)
 
 
+class fft3_RNNData(object):
+    '''
+    取得非对称区域的所有特征!.
+    及除去第一个信号以外的所有信号的前一半
+    '''
+
+    def __init__(self, foldname, max_seq=400, num_class=10, trainable=False, kfold_num=0):
+        train_person, test_person = getPersons(foldname, kfold_num)
+        __person = train_person if trainable else test_person
+        if not trainable:print(__person)
+        self.all_data = []
+        self.all_label = []
+        self.all_seq_len = []
+        self.batch_id = 0
+        for filename in os.listdir(foldname):
+            oa, ob, oc = filename.split('_')
+            if oc == 'b.txt' and get_lei(ob) < num_class and oa in __person:
+                filename = foldname + filename
+                data = Read__mean_2(filename)
+                cutting = Read__mean_2(foldname + oa + '_' + ob + '_c.txt')
+                for cut in range(0, len(cutting)):
+                    if cut == 0:
+                        tmp_data = data[0:cutting[cut], :]
+                    else:
+                        tmp_data = data[cutting[cut - 1]:cutting[cut], :]
+                    _len = int(tmp_data.shape[0]/2)+1
+                    # 读取数据
+                    if _len >= max_seq:
+                        pass
+                    else:
+                        tmp_data = np.abs(np.fft.fft(tmp_data))
+                        tmp_data = z_score(tmp_data[0:_len, :])
+                        # 生成数据
+                        self.all_label.append(get_label(get_lei(ob), num_classes=num_class))
+                        self.all_seq_len.append(_len)
+                        s_tmp = np.zeros((max_seq, 8))
+                        s_tmp[0:_len, :] = tmp_data
+                        self.all_data.append(s_tmp)
+
+        self.all_data = np.array(self.all_data).astype('float32')
+        self.all_label = np.array(self.all_label).astype('float32')
+        self.all_seq_len = np.array(self.all_seq_len).astype('float32')
+        # 打乱数据
+        if trainable:
+            _per = np.random.permutation(len(self.all_seq_len))  # 打乱后的行号
+            self.all_data = self.all_data[_per, :, :]
+            self.all_label = self.all_label[_per, :]
+            self.all_seq_len = self.all_seq_len[_per]
+
+    def _shuffle_data(self):
+        _per = np.random.permutation(len(self.all_seq_len))  # 打乱后的行号
+        self.all_data = self.all_data[_per, :, :]
+        self.all_label = self.all_label[_per, :]
+        self.all_seq_len = self.all_seq_len[_per]
+
+    def next(self, batch_size, shuffle=False):
+        if self.batch_id == len(self.all_seq_len):
+            self.batch_id = 0
+            if shuffle:
+                self._shuffle_data()
+        batch_data = self.all_data[self.batch_id:min(self.batch_id + batch_size, len(self.all_seq_len))]
+        batch_labels = self.all_label[self.batch_id:min(self.batch_id + batch_size, len(self.all_seq_len))]
+        batch_seq_len = self.all_seq_len[self.batch_id:min(self.batch_id + batch_size, len(self.all_seq_len))]
+        self.batch_id = min(self.batch_id + batch_size, len(self.all_seq_len))
+        return batch_data, batch_labels, batch_seq_len
+
+    def __len__(self):
+        return len(self.all_label)
+
+
 class AllData_RNN(object):
     '''
     获得训练集与测试集数据,
