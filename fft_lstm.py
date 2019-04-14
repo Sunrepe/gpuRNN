@@ -26,7 +26,7 @@ learning_rate = 0.0025
 lambda_loss_amount = 0.0015
 training_iters = 300  # Loop 1000 times on the dataset
 batch_size = 100
-display_iter = 2000  # To show test set accuracy during training
+display_iter = 4000  # To show test set accuracy during training
 model_save = 80
 
 k_fold_num = 4
@@ -105,9 +105,9 @@ def main():
     time1 = time.time()
     # tmp_trans_wavelet.main_datatrans(fold)
     print('loading data...')
-    train_sets = fft2_RNNData(foldname=fold, max_seq=max_seq,
+    train_sets = fft3_RNNData(foldname=fold, max_seq=max_seq,
                              num_class=n_classes, trainable=True, kfold_num=k_fold_num)
-    test_sets = fft2_RNNData(foldname=fold, max_seq=max_seq,
+    test_sets = fft3_RNNData(foldname=fold, max_seq=max_seq,
                             num_class=n_classes, trainable=False, kfold_num=k_fold_num)
     train_data_len = len(train_sets.all_seq_len)
     print('train:', len(train_sets.all_seq_len), 'test:', len(test_sets.all_seq_len))
@@ -158,10 +158,10 @@ def main():
     train_accuracies = []
 
     # Launch the graph
-    sess = tf.InteractiveSession(config=tf.ConfigProto(log_device_placement=False))
-    # init = tf.global_variables_initializer()
-    # sess.run(init)
-    saver.restore(sess, "./lstm/model{}.ckpt-final".format(savename))
+    sess = tf.InteractiveSession(config=tf.ConfigProto(log_device_placement=True))
+    init = tf.global_variables_initializer()
+    sess.run(init)
+    # saver.restore(sess, "./lstm/model{}.ckpt-final".format(savename))
     # Perform Training steps with "batch_size" amount of example data at each loop
     step = 1
     print("Start train!")
