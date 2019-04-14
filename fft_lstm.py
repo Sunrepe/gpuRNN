@@ -19,7 +19,7 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'  # just error no warning
 n_hidden = 50  # Hidden layer num of features
 n_classes = 10  # Total classes (should go up, or should go down)
 n_inputs = 8
-max_seq = 800
+max_seq = 100
 
 # Training
 learning_rate = 0.0025
@@ -44,34 +44,26 @@ def Matrix_to_CSV(filename, data):
             writer.writerow([row])
 
 
-def BiLSTM_RNN(_X, seqlen, _weight, _bias,):
-    # shaping the dataSet
-    # _X = tf.reshape(_X, [-1, n_inputs])
-    # _X = tf.nn.relu(tf.matmul(_X, _weight['hidden']) + _bias['hidden'])
-    # _X = tf.reshape(_X, [-1, max_seq, n_inputs])
-
-    # net
+def LSTM_RNN(_X, seqlen, _weight, _bias):
     lstm_cell_1 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
     lstm_cell_2 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
-    lstm_cells_fw = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2])
-    # backword
-    lstm_cell_1_bw = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
-    lstm_cell_2_bw = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
-    lstm_cells_bw = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1_bw, lstm_cell_2_bw])
+    # lstm_cell_3 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
+    # lstm_cells = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2, lstm_cell_3])
+    lstm_cells = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2])
     # Get LSTM cell output
-    outputs, _ = tf.nn.bidirectional_dynamic_rnn(cell_fw=lstm_cells_fw,
-                                                 cell_bw=lstm_cells_bw,
-                                                 inputs=_X,
-                                                 sequence_length=tf.to_int32(seqlen),
-                                                 dtype=tf.float32)
-    _out1, _out2 = outputs
-    lstm_out_1 = tf.divide(tf.reduce_sum(_out1, 1), seqlen[:, None])
-    lstm_out_2 = tf.divide(tf.reduce_sum(_out2, 1), seqlen[:, None])
-    _out_last = lstm_out_1*0.7 + lstm_out_2*0.3
-    return tf.matmul(_out_last, _weight['out']) + _bias['out']
+    outputs, _ = tf.nn.dynamic_rnn(lstm_cells, inputs=_X, sequence_length=seqlen, dtype=tf.float32)
+    # many to one 关键。两种方案，一个是选择最后的输出，一个是选择所有输出的均值
+    # 方案一：
+    # 获取数据,此时维度为[none,batch_size,n_hidden],需要进一步降维
+    # lstm_out = tf.batch_gather(outputs, tf.to_int32(seqlen[:, None]-1))
+    # lstm_out = tf.reshape(lstm_out, [-1, n_hidden])
+    # 方案二：
+    lstm_out = tf.divide(tf.reduce_sum(outputs, 1), seqlen[:, None])
+
+    return tf.matmul(lstm_out, _weight['out']) + _bias['out']
 
 
-def LSTM_RNN(_X, seqlen, _weight, _bias):
+def LSTM_RNN_static(_X, seqlen, _weight, _bias):
     lstm_cell_1 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
     lstm_cell_2 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
     # lstm_cell_3 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
@@ -113,9 +105,9 @@ def main():
     time1 = time.time()
     # tmp_trans_wavelet.main_datatrans(fold)
     print('loading data...')
-    train_sets = fft1_RNNData(foldname=fold, max_seq=max_seq,
+    train_sets = fft2_RNNData(foldname=fold, max_seq=max_seq,
                              num_class=n_classes, trainable=True, kfold_num=k_fold_num)
-    test_sets = fft1_RNNData(foldname=fold, max_seq=max_seq,
+    test_sets = fft2_RNNData(foldname=fold, max_seq=max_seq,
                             num_class=n_classes, trainable=False, kfold_num=k_fold_num)
     train_data_len = len(train_sets.all_seq_len)
     print('train:', len(train_sets.all_seq_len), 'test:', len(test_sets.all_seq_len))

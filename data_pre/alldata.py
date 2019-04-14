@@ -365,7 +365,7 @@ class fft2_RNNData(object):
                     else:
                         # 生成数据
                         self.all_label.append(get_label(get_lei(ob), num_classes=num_class))
-                        self.all_seq_len.append(_len)
+                        self.all_seq_len.append(100)
                         s_tmp = np.zeros((max_seq, 8))
                         s_tmp[0:_len, :] = tmp_data
                         self.all_data.append(s_tmp)
