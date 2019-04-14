@@ -334,13 +334,13 @@ class fft1_RNNData(object):
 
 class fft2_RNNData(object):
     '''
-    只保留采样率下有效频率:<=100 Hz
+    只保留采样率下有效频率:<=max_seq Hz
     '''
 
     def __init__(self, foldname, max_seq=100, num_class=10, trainable=False, kfold_num=0):
         train_person, test_person = getPersons(foldname, kfold_num)
         __person = train_person if trainable else test_person
-        if not trainable : print(__person)
+        if not trainable:print(__person)
         self.all_data = []
         self.all_label = []
         self.all_seq_len = []
@@ -356,16 +356,16 @@ class fft2_RNNData(object):
                         tmp_data = data[0:cutting[cut], :]
                     else:
                         tmp_data = data[cutting[cut - 1]:cutting[cut], :]
-                    tmp_data = np.abs(np.fft.fft(tmp_data))
-                    tmp_data = z_score(tmp_data[0:max_seq,:])
                     _len = tmp_data.shape[0]
                     # 读取数据
-                    if _len >= max_seq:
+                    if _len >= 800:
                         pass
                     else:
+                        tmp_data = np.abs(np.fft.fft(tmp_data))
+                        tmp_data = z_score(tmp_data[0:max_seq, :])
                         # 生成数据
                         self.all_label.append(get_label(get_lei(ob), num_classes=num_class))
-                        self.all_seq_len.append(100)
+                        self.all_seq_len.append(max_seq)
                         s_tmp = np.zeros((max_seq, 8))
                         s_tmp[0:_len, :] = tmp_data
                         self.all_data.append(s_tmp)

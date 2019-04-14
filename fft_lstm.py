@@ -19,7 +19,7 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'  # just error no warning
 n_hidden = 50  # Hidden layer num of features
 n_classes = 10  # Total classes (should go up, or should go down)
 n_inputs = 8
-max_seq = 100
+max_seq = 200
 
 # Training
 learning_rate = 0.0025
