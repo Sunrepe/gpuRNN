@@ -26,7 +26,7 @@ tmp_use_len = [150,150,250,450]
 learning_rate = 0.0025
 lambda_loss_amount = 0.0015
 training_iters = 300  # Loop 1000 times on the dataset
-batch_size = 100
+batch_size = 400
 display_iter = 4000  # To show test set accuracy during training
 model_save = 80
 
