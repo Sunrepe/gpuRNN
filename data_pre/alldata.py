@@ -795,7 +795,7 @@ class dwtData_RNN(object):
         '''
         train_person,test_person = getPersons(foldname, kfold_num)
         __person = train_person if trainable else test_person
-        __person = ['zhouxufeng']
+        # __person = ['zhouxufeng']
         if not trainable:print(__person)
         self.batch_id = 0  # use for batch_get
         self.all_label = []  # only one use

@@ -227,11 +227,11 @@ def main():
 
     # Launch the graph
     sess = tf.InteractiveSession(config=tf.ConfigProto(log_device_placement=True))
-    # init = tf.global_variables_initializer()
-    # sess.run(init)
-    saver.restore(sess, "./lstm/model{}.ckpt-8000".format(savename))
+    init = tf.global_variables_initializer()
+    sess.run(init)
+    # saver.restore(sess, "./lstm/model{}.ckpt-68000".format(savename))
     # Perform Training steps with "batch_size" amount of example data at each loop
-    step = 8000
+    step = 1
     print("Start train!")
 
     while step * batch_size <= training_iters * train_data_len:
