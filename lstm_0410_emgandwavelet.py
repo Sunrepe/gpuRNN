@@ -75,7 +75,7 @@ def LSTM_RNN(_X, seqlen, _weight, _bias, _x_wt):
 
 def main():
     time1 = time.time()
-    # tmp_trans_wavelet.main_datatrans(fold)
+    tmp_trans_wavelet.main_datatrans(fold)
     print('loading data...')
     train_sets = waveandemg_RNNData(foldname=fold, max_seq=max_seq,
                              num_class=n_classes, trainable=True, kfold_num=k_fold_num)
