@@ -231,7 +231,7 @@ def main():
     # sess.run(init)
     saver.restore(sess, "./lstm/model{}.ckpt-8000".format(savename))
     # Perform Training steps with "batch_size" amount of example data at each loop
-    step = 1
+    step = 8000
     print("Start train!")
 
     while step * batch_size <= training_iters * train_data_len:
