@@ -25,8 +25,8 @@ max_seq = 800
 learning_rate = 0.0025
 lambda_loss_amount = 0.0015
 training_iters = 150  # Loop 1000 times on the dataset
-batch_size = 100
-display_iter = 1000  # To show test set accuracy during training
+batch_size = 200
+display_iter = 4000  # To show test set accuracy during training
 model_save = 80
 
 k_fold_num = 4
@@ -111,7 +111,7 @@ def LSTM_RNN_WT(_X, seqlen, _weight, _bias):
 
 def main():
     time1 = time.time()
-    # tmp_trans_wavelet.main_datatrans(fold)
+    tmp_trans_wavelet.main_datatrans(fold)
     print('loading data...')
     train_sets = AllData_RNN(foldname=fold, max_seq=max_seq,
                              num_class=n_classes, trainable=True, kfold_num=k_fold_num)

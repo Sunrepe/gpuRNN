@@ -540,7 +540,7 @@ class AllData_RNN(object):
         self.all_label = self.all_label[_per, :]
         self.all_seq_len = self.all_seq_len[_per]
 
-    def next(self, batch_size, shuffle=False):
+    def next(self, batch_size, shuffle=True):
         if self.batch_id == len(self.all_seq_len):
             self.batch_id = 0
             if shuffle:

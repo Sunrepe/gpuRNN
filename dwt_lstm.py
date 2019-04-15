@@ -83,6 +83,7 @@ def LSTM_RNN(_X, seqlen, _weight, _bias):
 
     return tf.matmul(lstm_out, _weight['out']) + _bias['out']
 
+
 def LSTM_RNN_tmp(x0,x1,x2,x3,seq0,seq1,seq2,seq3,_weight, _bias):
     with tf.variable_scope('dwt0'):
         lstm_cell_1 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
