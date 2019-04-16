@@ -2,650 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e51bf105-f34c-4031-aa58-28fd3cc5807c" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/caimengyuan_double_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/caimengyuan_double_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/caimengyuan_finger_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/caimengyuan_finger_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/caimengyuan_fist_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/caimengyuan_fist_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/caimengyuan_no_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/caimengyuan_no_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/caimengyuan_six_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/caimengyuan_six_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/caimengyuan_snap_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/caimengyuan_snap_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/caimengyuan_spread_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/caimengyuan_spread_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/caimengyuan_wavein_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/caimengyuan_wavein_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/caimengyuan_waveout_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/caimengyuan_waveout_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/caimengyuan_yes_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/caimengyuan_yes_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/chenhuiwen_double_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/chenhuiwen_double_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/chenhuiwen_finger_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/chenhuiwen_finger_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/chenhuiwen_fist_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/chenhuiwen_fist_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/chenhuiwen_no_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/chenhuiwen_no_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/chenhuiwen_six_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/chenhuiwen_six_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/chenhuiwen_snap_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/chenhuiwen_snap_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/chenhuiwen_spread_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/chenhuiwen_spread_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/chenhuiwen_wavein_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/chenhuiwen_wavein_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/chenhuiwen_waveout_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/chenhuiwen_waveout_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/chenhuiwen_yes_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/chenhuiwen_yes_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/dingyazhuo_double_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/dingyazhuo_double_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/dingyazhuo_finger_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/dingyazhuo_finger_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/dingyazhuo_fist_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/dingyazhuo_fist_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/dingyazhuo_no_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/dingyazhuo_no_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/dingyazhuo_six_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/dingyazhuo_six_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/dingyazhuo_snap_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/dingyazhuo_snap_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/dingyazhuo_spread_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/dingyazhuo_spread_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/dingyazhuo_wavein_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/dingyazhuo_wavein_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/dingyazhuo_waveout_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/dingyazhuo_waveout_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/dingyazhuo_yes_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/dingyazhuo_yes_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/duqin_double_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/duqin_double_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/duqin_finger_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/duqin_finger_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/duqin_fist_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/duqin_fist_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/duqin_no_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/duqin_no_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/duqin_six_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/duqin_six_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/duqin_snap_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/duqin_snap_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/duqin_spread_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/duqin_spread_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/duqin_wavein_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/duqin_wavein_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/duqin_waveout_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/duqin_waveout_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/duqin_yes_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/duqin_yes_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/gaoyan_double_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/gaoyan_double_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/gaoyan_finger_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/gaoyan_finger_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/gaoyan_fist_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/gaoyan_fist_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/gaoyan_no_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/gaoyan_no_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/gaoyan_six_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/gaoyan_six_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/gaoyan_snap_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/gaoyan_snap_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/gaoyan_spread_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/gaoyan_spread_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/gaoyan_wavein_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/gaoyan_wavein_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/gaoyan_waveout_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/gaoyan_waveout_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/gaoyan_yes_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/gaoyan_yes_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/huangmingyu_double_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/huangmingyu_double_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/huangmingyu_finger_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/huangmingyu_finger_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/huangmingyu_fist_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/huangmingyu_fist_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/huangmingyu_no_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/huangmingyu_no_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/huangmingyu_six_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/huangmingyu_six_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/huangmingyu_snap_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/huangmingyu_snap_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/huangmingyu_spread_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/huangmingyu_spread_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/huangmingyu_wavein_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/huangmingyu_wavein_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/huangmingyu_waveout_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/huangmingyu_waveout_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/huangmingyu_yes_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/huangmingyu_yes_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/hushuhan_double_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/hushuhan_double_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/hushuhan_finger_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/hushuhan_finger_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/hushuhan_fist_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/hushuhan_fist_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/hushuhan_no_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/hushuhan_no_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/hushuhan_six_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/hushuhan_six_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/hushuhan_snap_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/hushuhan_snap_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/hushuhan_spread_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/hushuhan_spread_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/hushuhan_wavein_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/hushuhan_wavein_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/hushuhan_waveout_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/hushuhan_waveout_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/hushuhan_yes_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/hushuhan_yes_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/liangxiaohe_double_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/liangxiaohe_double_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/liangxiaohe_finger_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/liangxiaohe_finger_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/liangxiaohe_fist_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/liangxiaohe_fist_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/liangxiaohe_no_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/liangxiaohe_no_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/liangxiaohe_six_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/liangxiaohe_six_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/liangxiaohe_snap_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/liangxiaohe_snap_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/liangxiaohe_spread_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/liangxiaohe_spread_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/liangxiaohe_wavein_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/liangxiaohe_wavein_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/liangxiaohe_waveout_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/liangxiaohe_waveout_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/liangxiaohe_yes_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/liangxiaohe_yes_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/lihejia_double_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/lihejia_double_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/lihejia_finger_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/lihejia_finger_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/lihejia_fist_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/lihejia_fist_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/lihejia_no_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/lihejia_no_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/lihejia_six_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/lihejia_six_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/lihejia_snap_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/lihejia_snap_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/lihejia_spread_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/lihejia_spread_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/lihejia_wavein_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/lihejia_wavein_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/lihejia_waveout_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/lihejia_waveout_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/lihejia_yes_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/lihejia_yes_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/makaiyan_double_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/makaiyan_double_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/makaiyan_finger_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/makaiyan_finger_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/makaiyan_fist_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/makaiyan_fist_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/makaiyan_no_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/makaiyan_no_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/makaiyan_six_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/makaiyan_six_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/makaiyan_snap_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/makaiyan_snap_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/makaiyan_spread_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/makaiyan_spread_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/makaiyan_wavein_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/makaiyan_wavein_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/makaiyan_waveout_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/makaiyan_waveout_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/makaiyan_yes_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/makaiyan_yes_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/marui_double_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/marui_double_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/marui_finger_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/marui_finger_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/marui_fist_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/marui_fist_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/marui_six_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/marui_six_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/marui_snap_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/marui_snap_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/marui_spread_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/marui_spread_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/marui_wavein_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/marui_wavein_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/marui_waveout_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/marui_waveout_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/marui_yes_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/marui_yes_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/mayiming_double_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/mayiming_double_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/mayiming_finger_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/mayiming_finger_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/mayiming_fist_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/mayiming_fist_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/mayiming_no_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/mayiming_no_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/mayiming_six_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/mayiming_six_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/mayiming_snap_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/mayiming_snap_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/mayiming_spread_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/mayiming_spread_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/mayiming_wavein_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/mayiming_wavein_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/mayiming_waveout_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/mayiming_waveout_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/mayiming_yes_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/mayiming_yes_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/pengdongmei_double_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/pengdongmei_double_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/pengdongmei_finger_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/pengdongmei_finger_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/pengdongmei_fist_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/pengdongmei_fist_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/pengdongmei_no_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/pengdongmei_no_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/pengdongmei_six_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/pengdongmei_six_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/pengdongmei_snap_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/pengdongmei_snap_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/pengdongmei_spread_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/pengdongmei_spread_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/pengdongmei_wavein_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/pengdongmei_wavein_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/pengdongmei_waveout_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/pengdongmei_waveout_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/pengdongmei_yes_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/pengdongmei_yes_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/shechen_double_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/shechen_double_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/shechen_finger_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/shechen_finger_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/shechen_fist_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/shechen_fist_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/shechen_no_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/shechen_no_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/shechen_six_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/shechen_six_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/shechen_snap_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/shechen_snap_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/shechen_spread_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/shechen_spread_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/shechen_wavein_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/shechen_wavein_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/shechen_waveout_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/shechen_waveout_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/shechen_yes_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/shechen_yes_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/shenshenyuan_double_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/shenshenyuan_double_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/shenshenyuan_finger_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/shenshenyuan_finger_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/shenshenyuan_fist_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/shenshenyuan_fist_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/shenshenyuan_no_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/shenshenyuan_no_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/shenshenyuan_six_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/shenshenyuan_six_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/shenshenyuan_snap_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/shenshenyuan_snap_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/shenshenyuan_spread_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/shenshenyuan_spread_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/shenshenyuan_wavein_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/shenshenyuan_wavein_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/shenshenyuan_waveout_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/shenshenyuan_waveout_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/shenshenyuan_yes_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/shenshenyuan_yes_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/simengbin_double_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/simengbin_double_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/simengbin_finger_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/simengbin_finger_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/simengbin_fist_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/simengbin_fist_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/simengbin_no_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/simengbin_no_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/simengbin_six_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/simengbin_six_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/simengbin_snap_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/simengbin_snap_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/simengbin_spread_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/simengbin_spread_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/simengbin_wavein_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/simengbin_wavein_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/simengbin_waveout_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/simengbin_waveout_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/simengbin_yes_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/simengbin_yes_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/taozi_double_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/taozi_double_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/taozi_finger_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/taozi_finger_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/taozi_fist_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/taozi_fist_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/taozi_no_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/taozi_no_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/taozi_six_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/taozi_six_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/taozi_snap_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/taozi_snap_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/taozi_spread_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/taozi_spread_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/taozi_wavein_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/taozi_wavein_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/taozi_waveout_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/taozi_waveout_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/taozi_yes_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/taozi_yes_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangchuhan_double_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangchuhan_double_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangchuhan_finger_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangchuhan_finger_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangchuhan_fist_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangchuhan_fist_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangchuhan_no_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangchuhan_no_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangchuhan_six_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangchuhan_six_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangchuhan_snap_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangchuhan_snap_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangchuhan_spread_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangchuhan_spread_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangchuhan_wavein_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangchuhan_wavein_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangchuhan_waveout_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangchuhan_waveout_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangchuhan_yes_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangchuhan_yes_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangruyu_double_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangruyu_double_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangruyu_finger_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangruyu_finger_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangruyu_fist_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangruyu_fist_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangruyu_no_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangruyu_no_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangruyu_six_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangruyu_six_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangruyu_snap_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangruyu_snap_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangruyu_spread_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangruyu_spread_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangruyu_wavein_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangruyu_wavein_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangruyu_waveout_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangruyu_waveout_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangruyu_yes_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangruyu_yes_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangshen_double_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangshen_double_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangshen_finger_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangshen_finger_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangshen_fist_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangshen_fist_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangshen_no_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangshen_no_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangshen_six_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangshen_six_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangshen_spread_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangshen_spread_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangshen_wavein_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangshen_wavein_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangshen_waveout_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangshen_waveout_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangshen_yes_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangshen_yes_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangzhaodong_double_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangzhaodong_double_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangzhaodong_finger_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangzhaodong_finger_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangzhaodong_fist_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangzhaodong_fist_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangzhaodong_no_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangzhaodong_no_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangzhaodong_six_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangzhaodong_six_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangzhaodong_snap_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangzhaodong_snap_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangzhaodong_spread_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangzhaodong_spread_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangzhaodong_wavein_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangzhaodong_wavein_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangzhaodong_waveout_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangzhaodong_waveout_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangzhaodong_yes_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangzhaodong_yes_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangzihan_double_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangzihan_double_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangzihan_finger_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangzihan_finger_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangzihan_fist_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangzihan_fist_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangzihan_no_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangzihan_no_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangzihan_six_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangzihan_six_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangzihan_snap_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangzihan_snap_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangzihan_spread_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangzihan_spread_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangzihan_wavein_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangzihan_wavein_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangzihan_waveout_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangzihan_waveout_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangzihan_yes_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wangzihan_yes_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wanyuanqiang_double_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wanyuanqiang_double_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wanyuanqiang_finger_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wanyuanqiang_finger_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wanyuanqiang_fist_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wanyuanqiang_fist_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wanyuanqiang_no_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wanyuanqiang_no_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wanyuanqiang_six_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wanyuanqiang_six_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wanyuanqiang_snap_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wanyuanqiang_snap_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wanyuanqiang_spread_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wanyuanqiang_spread_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wanyuanqiang_wavein_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wanyuanqiang_wavein_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wanyuanqiang_waveout_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wanyuanqiang_waveout_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wanyuanqiang_yes_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wanyuanqiang_yes_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wuhuishuang_double_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wuhuishuang_double_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wuhuishuang_finger_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wuhuishuang_finger_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wuhuishuang_fist_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wuhuishuang_fist_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wuhuishuang_no_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wuhuishuang_no_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wuhuishuang_six_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wuhuishuang_six_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wuhuishuang_snap_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wuhuishuang_snap_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wuhuishuang_spread_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wuhuishuang_spread_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wuhuishuang_wavein_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wuhuishuang_wavein_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wuhuishuang_waveout_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wuhuishuang_waveout_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wuhuishuang_yes_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wuhuishuang_yes_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wujing_double_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wujing_double_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wujing_finger_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wujing_finger_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wujing_fist_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wujing_fist_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wujing_no_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wujing_no_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wujing_six_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wujing_six_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wujing_snap_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wujing_snap_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wujing_spread_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wujing_spread_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wujing_wavein_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wujing_wavein_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wujing_waveout_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wujing_waveout_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wujing_yes_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wujing_yes_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wupanhao_double_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wupanhao_double_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wupanhao_finger_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wupanhao_finger_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wupanhao_fist_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wupanhao_fist_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wupanhao_no_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wupanhao_no_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wupanhao_six_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wupanhao_six_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wupanhao_snap_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wupanhao_snap_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wupanhao_spread_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wupanhao_spread_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wupanhao_wavein_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wupanhao_wavein_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wupanhao_waveout_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wupanhao_waveout_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wupanhao_yes_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wupanhao_yes_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wuxinmei_double_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wuxinmei_double_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wuxinmei_finger_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wuxinmei_finger_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wuxinmei_fist_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wuxinmei_fist_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wuxinmei_no_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wuxinmei_no_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wuxinmei_six_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wuxinmei_six_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wuxinmei_snap_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wuxinmei_snap_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wuxinmei_spread_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wuxinmei_spread_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wuxinmei_wavein_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wuxinmei_wavein_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wuxinmei_waveout_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wuxinmei_waveout_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wuxinmei_yes_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/wuxinmei_yes_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/xiejiabao_double_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/xiejiabao_double_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/xiejiabao_finger_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/xiejiabao_finger_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/xiejiabao_fist_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/xiejiabao_fist_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/xiejiabao_no_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/xiejiabao_no_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/xiejiabao_six_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/xiejiabao_six_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/xiejiabao_snap_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/xiejiabao_snap_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/xiejiabao_spread_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/xiejiabao_spread_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/xiejiabao_wavein_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/xiejiabao_wavein_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/xiejiabao_waveout_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/xiejiabao_waveout_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/xiejiabao_yes_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/xiejiabao_yes_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/yanxin_double_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/yanxin_double_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/yanxin_finger_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/yanxin_finger_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/yanxin_fist_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/yanxin_fist_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/yanxin_no_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/yanxin_no_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/yanxin_six_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/yanxin_six_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/yanxin_snap_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/yanxin_snap_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/yanxin_spread_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/yanxin_spread_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/yanxin_wavein_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/yanxin_wavein_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/yanxin_waveout_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/yanxin_waveout_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/yanxin_yes_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/yanxin_yes_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/yinhuiqi_double_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/yinhuiqi_double_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/yinhuiqi_finger_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/yinhuiqi_finger_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/yinhuiqi_fist_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/yinhuiqi_fist_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/yinhuiqi_no_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/yinhuiqi_no_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/yinhuiqi_six_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/yinhuiqi_six_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/yinhuiqi_snap_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/yinhuiqi_snap_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/yinhuiqi_spread_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/yinhuiqi_spread_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/yinhuiqi_wavein_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/yinhuiqi_wavein_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/yinhuiqi_waveout_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/yinhuiqi_waveout_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/yinhuiqi_yes_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/yinhuiqi_yes_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/zhangqijian_double_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/zhangqijian_double_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/zhangqijian_finger_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/zhangqijian_finger_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/zhangqijian_fist_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/zhangqijian_fist_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/zhangqijian_no_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/zhangqijian_no_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/zhangqijian_six_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/zhangqijian_six_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/zhangqijian_snap_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/zhangqijian_snap_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/zhangqijian_spread_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/zhangqijian_spread_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/zhangqijian_wavein_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/zhangqijian_wavein_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/zhangqijian_waveout_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/zhangqijian_waveout_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/zhangqijian_yes_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/zhangqijian_yes_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/zhangwenxin_double_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/zhangwenxin_double_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/zhangwenxin_finger_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/zhangwenxin_finger_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/zhangwenxin_fist_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/zhangwenxin_fist_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/zhangwenxin_no_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/zhangwenxin_no_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/zhangwenxin_six_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/zhangwenxin_six_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/zhangwenxin_snap_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/zhangwenxin_snap_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/zhangwenxin_spread_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/zhangwenxin_spread_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/zhangwenxin_wavein_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/zhangwenxin_wavein_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/zhangwenxin_waveout_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/zhangwenxin_waveout_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/zhangwenxin_yes_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/zhangwenxin_yes_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/zhangyali_double_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/zhangyali_double_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/zhangyali_finger_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/wtdata/zhangyali_finger_c.txt" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data_pre/alldata.py" afterPath="$PROJECT_DIR$/data_pre/alldata.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lstm_0405_kfold.py" afterPath="$PROJECT_DIR$/lstm_0405_kfold.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lstm_0410_emgandwavelet.py" afterPath="$PROJECT_DIR$/lstm_0410_emgandwavelet.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/all_lstm.py" afterPath="$PROJECT_DIR$/all_lstm.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -689,8 +46,8 @@
       <file leaf-file-name="lstm_0405_kfold.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lstm_0405_kfold.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="9">
-              <caret line="171" column="65" lean-forward="true" selection-start-line="171" selection-start-column="65" selection-end-line="171" selection-end-column="65" />
+            <state relative-caret-position="309">
+              <caret line="153" column="81" lean-forward="false" selection-start-line="153" selection-start-column="81" selection-end-line="153" selection-end-column="81" />
               <folding>
                 <element signature="e#20#50#0" expanded="true" />
                 <element signature="e#3812#4748#0" expanded="false" />
@@ -756,11 +113,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="all_lstm.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="all_lstm.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/all_lstm.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="286" column="44" lean-forward="true" selection-start-line="286" selection-start-column="44" selection-end-line="286" selection-end-column="44" />
+            <state relative-caret-position="350">
+              <caret line="276" column="42" lean-forward="false" selection-start-line="276" selection-start-column="42" selection-end-line="276" selection-end-column="42" />
               <folding>
                 <element signature="e#20#50#0" expanded="true" />
                 <element signature="e#1434#3889#0" expanded="false" />
@@ -770,10 +127,24 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="all_two_lstm.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/all_two_lstm.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-5146">
+              <caret line="282" column="26" lean-forward="true" selection-start-line="282" selection-start-column="26" selection-end-line="282" selection-end-column="26" />
+              <folding>
+                <element signature="e#20#50#0" expanded="true" />
+                <element signature="e#1434#3889#0" expanded="false" />
+                <element signature="e#10658#11594#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="dwt_lstm.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dwt_lstm.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-50">
+            <state relative-caret-position="1825">
               <caret line="124" column="61" lean-forward="true" selection-start-line="124" selection-start-column="61" selection-end-line="124" selection-end-column="61" />
               <folding>
                 <element signature="e#20#50#0" expanded="true" />
@@ -881,9 +252,10 @@
         <option value="$PROJECT_DIR$/dwt_lstm.py" />
         <option value="$PROJECT_DIR$/tmp_trans_wavelet.py" />
         <option value="$PROJECT_DIR$/lstm_0410_emgandwavelet.py" />
-        <option value="$PROJECT_DIR$/all_lstm.py" />
         <option value="$PROJECT_DIR$/data_pre/alldata.py" />
         <option value="$PROJECT_DIR$/lstm_0405_kfold.py" />
+        <option value="$PROJECT_DIR$/all_lstm.py" />
+        <option value="$PROJECT_DIR$/all_two_lstm.py" />
       </list>
     </option>
   </component>
@@ -1090,7 +462,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39384118" sideWeight="0.49546143" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.43598056" sideWeight="0.49319214" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28200972" sideWeight="0.49319214" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28038898" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1139,7 +511,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/lstm_newown2.py" />
     <entry file="file://$PROJECT_DIR$/bilstm_newown.py" />
     <entry file="file://$PROJECT_DIR$/lstm_twof.py" />
     <entry file="file://$PROJECT_DIR$/lstm_newown3.py" />
@@ -1417,44 +788,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dwt_lstm.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-50">
-          <caret line="124" column="61" lean-forward="true" selection-start-line="124" selection-start-column="61" selection-end-line="124" selection-end-column="61" />
-          <folding>
-            <element signature="e#20#50#0" expanded="true" />
-            <element signature="e#1405#3860#0" expanded="false" />
-            <element signature="e#7484#8420#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tmp_trans_wavelet.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
           <caret line="63" column="22" lean-forward="true" selection-start-line="63" selection-start-column="22" selection-end-line="63" selection-end-column="22" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lstm_0410_emgandwavelet.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="77" column="42" lean-forward="true" selection-start-line="77" selection-start-column="42" selection-end-line="77" selection-end-column="42" />
-          <folding>
-            <element signature="e#48#78#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lstm_0405_kfold.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9">
-          <caret line="171" column="65" lean-forward="true" selection-start-line="171" selection-start-column="65" selection-end-line="171" selection-end-column="65" />
-          <folding>
-            <element signature="e#20#50#0" expanded="true" />
-            <element signature="e#3812#4748#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1491,14 +829,59 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/dwt_lstm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1825">
+          <caret line="124" column="61" lean-forward="true" selection-start-line="124" selection-start-column="61" selection-end-line="124" selection-end-column="61" />
+          <folding>
+            <element signature="e#20#50#0" expanded="true" />
+            <element signature="e#1405#3860#0" expanded="false" />
+            <element signature="e#7484#8420#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lstm_0405_kfold.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="153" column="81" lean-forward="false" selection-start-line="153" selection-start-column="81" selection-end-line="153" selection-end-column="81" />
+          <folding>
+            <element signature="e#20#50#0" expanded="true" />
+            <element signature="e#3812#4748#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lstm_0410_emgandwavelet.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="77" column="42" lean-forward="true" selection-start-line="77" selection-start-column="42" selection-end-line="77" selection-end-column="42" />
+          <folding>
+            <element signature="e#48#78#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/all_lstm.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="286" column="44" lean-forward="true" selection-start-line="286" selection-start-column="44" selection-end-line="286" selection-end-column="44" />
+        <state relative-caret-position="350">
+          <caret line="276" column="42" lean-forward="false" selection-start-line="276" selection-start-column="42" selection-end-line="276" selection-end-column="42" />
           <folding>
             <element signature="e#20#50#0" expanded="true" />
             <element signature="e#1434#3889#0" expanded="false" />
             <element signature="e#10531#11467#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/all_two_lstm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5146">
+          <caret line="282" column="26" lean-forward="true" selection-start-line="282" selection-start-column="26" selection-end-line="282" selection-end-column="26" />
+          <folding>
+            <element signature="e#20#50#0" expanded="true" />
+            <element signature="e#1434#3889#0" expanded="false" />
+            <element signature="e#10658#11594#0" expanded="false" />
           </folding>
         </state>
       </provider>

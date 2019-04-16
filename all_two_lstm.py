@@ -131,18 +131,18 @@ def LSTM_RNN_tmp(x0,x1,x2,x3,x4,x5,x6,x7,x8,
         lstm_cells = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2])
         outputs, _ = tf.nn.dynamic_rnn(lstm_cells, inputs=x6, sequence_length=tf.to_int32(seq6), dtype=tf.float32)
         lstm_out6 = tf.divide(tf.reduce_sum(outputs, 1), seq6[:, None])
-    with tf.variable_scope('zeros'):
+    with tf.variable_scope('wtchange'):
         lstm_cell_1 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
         lstm_cell_2 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
         lstm_cells = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2])
         outputs, _ = tf.nn.dynamic_rnn(lstm_cells, inputs=x7, sequence_length=tf.to_int32(seq7), dtype=tf.float32)
         lstm_out7 = tf.divide(tf.reduce_sum(outputs, 1), seq7[:, None])
-    with tf.variable_scope('fft'):
-        lstm_cell_1 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
-        lstm_cell_2 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
-        lstm_cells = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2])
-        outputs, _ = tf.nn.dynamic_rnn(lstm_cells, inputs=x8, sequence_length=tf.to_int32(seq8), dtype=tf.float32)
-        lstm_out8 = tf.divide(tf.reduce_sum(outputs, 1), seq8[:, None])
+    # with tf.variable_scope('fft'):
+    #     lstm_cell_1 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
+    #     lstm_cell_2 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
+    #     lstm_cells = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2])
+    #     outputs, _ = tf.nn.dynamic_rnn(lstm_cells, inputs=x8, sequence_length=tf.to_int32(seq8), dtype=tf.float32)
+    #     lstm_out8 = tf.divide(tf.reduce_sum(outputs, 1), seq8[:, None])
 
     # print(type(lstm_out0.shape))
     # print(type(lstm_out1.shape))
@@ -151,21 +151,23 @@ def LSTM_RNN_tmp(x0,x1,x2,x3,x4,x5,x6,x7,x8,
     lstm_out0 = tf.concat([lstm_out0, lstm_out1], 1)
     lstm_out0 = tf.concat([lstm_out0, lstm_out2], 1)
     lstm_out0 = tf.concat([lstm_out0, lstm_out3], 1)
-    lstm_out0 = tf.concat([lstm_out0, lstm_out4], 1)
-    lstm_out0 = tf.concat([lstm_out0, lstm_out5], 1)
-    lstm_out0 = tf.concat([lstm_out0, lstm_out6], 1)
-    lstm_out0 = tf.concat([lstm_out0, lstm_out7], 1)
-    lstm_out0 = tf.concat([lstm_out0, lstm_out8], 1)
     lstm_out0 = tf.nn.dropout(lstm_out0, keep_prob=0.5)
-    # lstm_out0 = tf.reshape(lstm_out0, [-1, 200])
-    with tf.variable_scope('fullConnect'):
+    with tf.variable_scope('fullConnect1'):
         lstm_out = tf.layers.dense(lstm_out0, 400)
         lstm_out = tf.nn.dropout(lstm_out, keep_prob=0.5)
         lstm_out = tf.layers.dense(lstm_out, 50)
-        lstm_out = tf.nn.dropout(lstm_out, keep_prob=0.5)
-        lstm_out = tf.layers.dense(lstm_out, 10)
+        lstm_out1 = tf.layers.dense(lstm_out, 10)
+    with tf.variable_scope('fullConnect2'):
+        lstm_out2 = tf.layers.dense(lstm_out4, 10)
+    lstm_out5 = tf.concat([lstm_out5, lstm_out6], 1)
+    lstm_out5 = tf.concat([lstm_out5, lstm_out7], 1)
+    lstm_out5 = tf.nn.dropout(lstm_out5, keep_prob=0.5)
+    with tf.variable_scope('fullConnect3'):
+        lstm_out3 = tf.layers.dense(lstm_out5, 50)
+        lstm_out3 = tf.nn.dropout(lstm_out3, keep_prob=0.5)
+        lstm_out3 = tf.layers.dense(lstm_out3, 10)
 
-    return lstm_out
+    return lstm_out1,lstm_out2,lstm_out3
     # return tf.matmul(lstm_out, _weight['out']) + _bias['out']
 
 
@@ -258,7 +260,7 @@ def main():
     #     'out': tf.Variable(tf.random_normal([n_classes]))
     # }
 
-    pred = LSTM_RNN_tmp(x0,x1,x2,x3,x4,x5,x6,x7,x8,
+    pred1,pred2,pred3 = LSTM_RNN_tmp(x0,x1,x2,x3,x4,x5,x6,x7,x8,
                         seq_len0,seq_len1,seq_len2,seq_len3,
                         seq_len4, seq_len5, seq_len6, seq_len7,seq_len8)
 
@@ -267,10 +269,13 @@ def main():
         tf.nn.l2_loss(tf_var) for tf_var in tf.trainable_variables()
     )
     # L2 loss prevents this overkill neural network to overfit the data
-
-    cost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits_v2(labels=y, logits=pred)) + l2  # Softmax loss
+    cost1 = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits_v2(labels=y, logits=pred1))
+    cost2 = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits_v2(labels=y, logits=pred2))
+    cost3 = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits_v2(labels=y, logits=pred3))
+    cost = cost1+cost2+cost3+l2  # Softmax loss
     optimizer = tf.train.AdamOptimizer(learning_rate=learning_rate).minimize(cost)  # Adam Optimizer
 
+    pred = pred1+pred2+pred3
     correct_pred = tf.equal(tf.argmax(pred, 1), tf.argmax(y, 1))
     accuracy = tf.reduce_mean(tf.cast(correct_pred, tf.float32))
 
