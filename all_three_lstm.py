@@ -30,7 +30,7 @@ batch_size = 400
 display_iter = 2000  # To show test set accuracy during training
 model_save = 20
 
-k_fold_num = 4
+k_fold_num = 3
 fold = './data/actdata/'
 savename = '_mergeall_kfold'+str(k_fold_num)
 LABELS = ['double', 'fist', 'spread', 'six', 'wavein', 'waveout', 'yes', 'no', 'finger', 'snap']
@@ -109,7 +109,7 @@ def LSTM_RNN_tmp(x0,x1,x2,x3,x4,x5,x6,x7,x8,
         lstm_cells = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2])
         outputs, _ = tf.nn.dynamic_rnn(lstm_cells, inputs=x2, sequence_length=tf.to_int32(seq2), dtype=tf.float32)
         lstm_out2 = tf.divide(tf.reduce_sum(outputs, 1), seq2[:, None])
-        lstm_out2 = tf.nn.dropout(lstm_out2, keep_prob=0.8)
+        lstm_out2 = tf.nn.dropout(lstm_out2, keep_prob=0.5)
         lstm_out2 = tf.layers.dense(lstm_out2, 10)
     with tf.variable_scope('dwt3'):
         lstm_cell_1 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
@@ -117,7 +117,7 @@ def LSTM_RNN_tmp(x0,x1,x2,x3,x4,x5,x6,x7,x8,
         lstm_cells = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2])
         outputs, _ = tf.nn.dynamic_rnn(lstm_cells, inputs=x3, sequence_length=tf.to_int32(seq3), dtype=tf.float32)
         lstm_out3 = tf.divide(tf.reduce_sum(outputs, 1), seq3[:, None])
-        lstm_out3 = tf.nn.dropout(lstm_out3, keep_prob=0.8)
+        lstm_out3 = tf.nn.dropout(lstm_out3, keep_prob=0.5)
         lstm_out3 = tf.layers.dense(lstm_out3, 10)
 
     # time domain
@@ -143,7 +143,7 @@ def LSTM_RNN_tmp(x0,x1,x2,x3,x4,x5,x6,x7,x8,
         lstm_cells = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2])
         outputs, _ = tf.nn.dynamic_rnn(lstm_cells, inputs=x6, sequence_length=tf.to_int32(seq6), dtype=tf.float32)
         lstm_out6 = tf.divide(tf.reduce_sum(outputs, 1), seq6[:, None])
-        lstm_out6 = tf.nn.dropout(lstm_out6, keep_prob=0.8)
+        lstm_out6 = tf.nn.dropout(lstm_out6, keep_prob=0.6)
         lstm_out6 = tf.layers.dense(lstm_out6, 10)
     with tf.variable_scope('wtchange'):
         lstm_cell_1 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
@@ -151,7 +151,7 @@ def LSTM_RNN_tmp(x0,x1,x2,x3,x4,x5,x6,x7,x8,
         lstm_cells = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2])
         outputs, _ = tf.nn.dynamic_rnn(lstm_cells, inputs=x7, sequence_length=tf.to_int32(seq7), dtype=tf.float32)
         lstm_out7 = tf.divide(tf.reduce_sum(outputs, 1), seq7[:, None])
-        lstm_out7 = tf.nn.dropout(lstm_out7, keep_prob=0.8)
+        lstm_out7 = tf.nn.dropout(lstm_out7, keep_prob=0.5)
         lstm_out7 = tf.layers.dense(lstm_out7, 10)
     with tf.variable_scope('fft'):
         lstm_cell_1 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
@@ -159,7 +159,7 @@ def LSTM_RNN_tmp(x0,x1,x2,x3,x4,x5,x6,x7,x8,
         lstm_cells = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2])
         outputs, _ = tf.nn.dynamic_rnn(lstm_cells, inputs=x8, sequence_length=tf.to_int32(seq8), dtype=tf.float32)
         lstm_out8 = tf.divide(tf.reduce_sum(outputs, 1), seq8[:, None])
-        lstm_out8 = tf.nn.dropout(lstm_out8, keep_prob=0.8)
+        lstm_out8 = tf.nn.dropout(lstm_out8, keep_prob=0.5)
         lstm_out8 = tf.layers.dense(lstm_out8, 10)
 
     return [lstm_out0,lstm_out1,lstm_out2,lstm_out3,lstm_out4,lstm_out5,lstm_out6,lstm_out7,lstm_out8]
