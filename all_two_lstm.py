@@ -30,7 +30,7 @@ batch_size = 400
 display_iter = 2000  # To show test set accuracy during training
 model_save = 80
 
-k_fold_num = 3
+k_fold_num = 0
 fold = './data/actdata/'
 savename = '_mergeall_two_kfold'+str(k_fold_num)
 LABELS = ['double', 'fist', 'spread', 'six', 'wavein', 'waveout', 'yes', 'no', 'finger', 'snap']
@@ -289,9 +289,9 @@ def main():
 
     # Launch the graph
     sess = tf.InteractiveSession(config=tf.ConfigProto(log_device_placement=False))
-    # init = tf.global_variables_initializer()
-    # sess.run(init)
-    saver.restore(sess, "./lstm/model{}.ckpt-900".format(savename))
+    init = tf.global_variables_initializer()
+    sess.run(init)
+    # saver.restore(sess, "./lstm/model{}.ckpt-900".format(savename))
     # Perform Training steps with "batch_size" amount of example data at each loop
     step = 1
     print("Start train!")

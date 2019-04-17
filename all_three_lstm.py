@@ -28,7 +28,7 @@ lambda_loss_amount = 0.0055
 training_iters = 300  # Loop 1000 times on the dataset
 batch_size = 400
 display_iter = 2000  # To show test set accuracy during training
-model_save = 80
+model_save = 20
 
 k_fold_num = 4
 fold = './data/actdata/'
@@ -153,8 +153,16 @@ def LSTM_RNN_tmp(x0,x1,x2,x3,x4,x5,x6,x7,x8,
         lstm_out7 = tf.divide(tf.reduce_sum(outputs, 1), seq7[:, None])
         lstm_out7 = tf.nn.dropout(lstm_out7, keep_prob=0.8)
         lstm_out7 = tf.layers.dense(lstm_out7, 10)
+    with tf.variable_scope('fft'):
+        lstm_cell_1 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
+        lstm_cell_2 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
+        lstm_cells = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2])
+        outputs, _ = tf.nn.dynamic_rnn(lstm_cells, inputs=x8, sequence_length=tf.to_int32(seq8), dtype=tf.float32)
+        lstm_out8 = tf.divide(tf.reduce_sum(outputs, 1), seq8[:, None])
+        lstm_out8 = tf.nn.dropout(lstm_out8, keep_prob=0.8)
+        lstm_out8 = tf.layers.dense(lstm_out8, 10)
 
-    return [lstm_out0,lstm_out1,lstm_out2,lstm_out3,lstm_out4,lstm_out5,lstm_out6,lstm_out7]
+    return [lstm_out0,lstm_out1,lstm_out2,lstm_out3,lstm_out4,lstm_out5,lstm_out6,lstm_out7,lstm_out8]
     # return tf.matmul(lstm_out, _weight['out']) + _bias['out']
 
 
@@ -251,7 +259,7 @@ def main():
                         seq_len0,seq_len1,seq_len2,seq_len3,
                         seq_len4, seq_len5, seq_len6, seq_len7,seq_len8)
     costs = []
-    for i_preds in range(8):
+    for i_preds in range(len(preds)):
         costs.append(tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits_v2(labels=y, logits=preds[i_preds])))
 
     # Loss, optimizer and evaluation
@@ -356,9 +364,9 @@ def main():
                   ", Accuracy = {}".format(acc))
 
         # save the model:
-        if (step * batch_size % (display_iter * 20) == 0) or (
+        if (step * batch_size % (display_iter * model_save) == 0) or (
                         step * batch_size > training_iters * train_data_len):
-            save_path = saver.save(sess, "./lstm/model{}.ckpt".format(savename), global_step=step)
+            save_path = saver.save(sess, "./lstm2/model{}.ckpt".format(savename), global_step=step)
             print("Model saved in file: %s" % save_path)
         step += 1
 
@@ -398,7 +406,7 @@ def main():
           "Batch Loss = {}".format(final_loss) + \
           ", Accuracy = {}".format(accuracy))
     print("All train time = {}".format(time.time() - time1))
-    save_path = saver.save(sess, "./lstm/model{}.ckpt-final".format(savename))
+    save_path = saver.save(sess, "./lstm2/model{}.ckpt-final".format(savename))
     print("Final Model saved in file: %s" % save_path)
 
     font = {
@@ -427,19 +435,19 @@ def main():
     plt.legend(loc='upper right', shadow=True)
     plt.ylabel('Training Progress (Loss or Accuracy values)')
     plt.xlabel('Training iteration')
-    plt.savefig('./loss_dir/accloss_{}.png'.format(savename), dpi=600, bbox_inches='tight')
+    plt.savefig('./loss_dir2/accloss_{}.png'.format(savename), dpi=600, bbox_inches='tight')
 
     # plt.show()
 
     # save and load
     Matrix_to_CSV(
-        './loss_dir/{}_hd{}iter{}ba{}lr{}train_loss.txt'.format(savename, n_hidden, training_iters, batch_size,
+        './loss_dir2/{}_hd{}iter{}ba{}lr{}train_loss.txt'.format(savename, n_hidden, training_iters, batch_size,
                                                                 learning_rate), train_losses)
-    Matrix_to_CSV('./loss_dir/{}_hd{}iter{}ba{}lr{}train_acc.txt'.format(savename, n_hidden, training_iters, batch_size,
+    Matrix_to_CSV('./loss_dir2/{}_hd{}iter{}ba{}lr{}train_acc.txt'.format(savename, n_hidden, training_iters, batch_size,
                                                                          learning_rate), train_accuracies)
-    Matrix_to_CSV('./loss_dir/{}_hd{}iter{}ba{}lr{}test_loss.txt'.format(savename, n_hidden, training_iters, batch_size,
+    Matrix_to_CSV('./loss_dir2/{}_hd{}iter{}ba{}lr{}test_loss.txt'.format(savename, n_hidden, training_iters, batch_size,
                                                                          learning_rate), test_losses)
-    Matrix_to_CSV('./loss_dir/{}_hd{}iter{}ba{}lr{}test_acc.txt'.format(savename, n_hidden, training_iters, batch_size,
+    Matrix_to_CSV('./loss_dir2/{}_hd{}iter{}ba{}lr{}test_acc.txt'.format(savename, n_hidden, training_iters, batch_size,
                                                                         learning_rate), test_accuracies)
     # train_losses = np.loadtxt('./loss_dir/train_loss.txt')
     # train_accuracies = np.loadtxt('../loss_dir/train_acc.txt')
@@ -477,7 +485,7 @@ def main():
     plt.colorbar()
     tick_marks = np.arange(n_classes)
     plt.yticks(tick_marks, LABELS)
-    plt.savefig('./loss_dir/Matrix{}.png'.format(savename), dpi=600, bbox_inches='tight')
+    plt.savefig('./loss_dir2/Matrix{}.png'.format(savename), dpi=600, bbox_inches='tight')
 
     sess.close()
 
