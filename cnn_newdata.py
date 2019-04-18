@@ -12,15 +12,15 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'  # just error no warning
 # All hyperparameters
 n_hidden = 50  # Hidden layer num of features
 n_classes = 10  # Total classes (should go up, or should go down)
-n_inputs = 10
+n_inputs = 8
 max_seq = 800
 
 # Training
 learning_rate = 0.0025
 lambda_loss_amount = 0.0015
 training_iters = 500  # Loop 200 times on the dataset
-batch_size = 100
-display_iter = 1000  # To show test set accuracy during training
+batch_size = 400
+display_iter = 4000  # To show test set accuracy during training
 model_save = 100
 
 res_fold = './data/actdata/'
@@ -30,7 +30,7 @@ LABELS = ['double', 'fist', 'spread', 'six', 'wavein', 'waveout', 'yes', 'no', '
 
 
 def Matrix_to_CSV(filename, data):
-    with open(filename, "a", newline='', ) as csvfile:
+    with open(filename, "w", newline='', ) as csvfile:
         writer = csv.writer(csvfile)
         # 先写入columns_name
         # writer.writerow(["emg1", "emg2", "emg3", "emg4", "emg5", "emg6", "emg7", "emg8", "label"])
@@ -91,7 +91,7 @@ def CNNnet2(inputs,keep_pro):
         conv1 = tf.nn.conv2d(input=inputs, filter=w_conv1, strides=[1, 1, 1, 1], padding='VALID')
         conv1 = tf.nn.relu(conv1+b_conv1)
         conv1 = tf.nn.max_pool(conv1, ksize=[1,2,1,1], strides=[1,2,1,1],padding='VALID')
-        conv1 = tf.nn.dropout(conv1, keep_pro)
+        # conv1 = tf.nn.dropout(conv1, keep_pro)
 
     # 第二层卷积
     with tf.name_scope('conv2'):
@@ -216,14 +216,15 @@ def main():
             feed_dict={
                 x: batch_xs,
                 y: batch_ys,
-                seq_len: batch_seq_len
+                seq_len: batch_seq_len,
+                keep_prob: 0.7
             }
         )
         train_losses.append(loss)
         train_accuracies.append(acc)
 
         # Evaluate network only at some steps for faster training:
-        if (step * batch_size % display_iter == 0) or (step == 1) or (
+        if (step * batch_size % (display_iter*20) == 0) or (step == 1) or (
                 step * batch_size > training_iters * train_data_len):
             # To not spam console, show training accuracy/loss in this "if"
             print("Training iter #" + str(step * batch_size) + \
@@ -236,7 +237,8 @@ def main():
                 feed_dict={
                     x: test_sets.all_data,
                     y: test_sets.all_label,
-                    seq_len: test_sets.all_seq_len
+                    seq_len: test_sets.all_seq_len,
+                    keep_prob: 1.0
                 }
             )
             test_losses.append(loss)
@@ -250,6 +252,18 @@ def main():
                         step * batch_size > training_iters * train_data_len):
             save_path = saver.save(sess, "./lstm/model{}.ckpt".format(savename), global_step=step)
             print("Model saved in file: %s" % save_path)
+            Matrix_to_CSV(
+                './loss_dir/{}_hd{}iter{}ba{}lr{}train_loss.txt'.format(savename, n_hidden, training_iters, batch_size,
+                                                                        learning_rate), train_losses)
+            Matrix_to_CSV(
+                './loss_dir/{}_hd{}iter{}ba{}lr{}train_acc.txt'.format(savename, n_hidden, training_iters, batch_size,
+                                                                       learning_rate), train_accuracies)
+            Matrix_to_CSV(
+                './loss_dir/{}_hd{}iter{}ba{}lr{}test_loss.txt'.format(savename, n_hidden, training_iters, batch_size,
+                                                                       learning_rate), test_losses)
+            Matrix_to_CSV(
+                './loss_dir/{}_hd{}iter{}ba{}lr{}test_acc.txt'.format(savename, n_hidden, training_iters, batch_size,
+                                                                      learning_rate), test_accuracies)
         step += 1
 
     print("Optimization Finished!")
@@ -261,7 +275,8 @@ def main():
         feed_dict={
             x: test_sets.all_data,
             y: test_sets.all_label,
-            seq_len: test_sets.all_seq_len
+            seq_len: test_sets.all_seq_len,
+            keep_prob: 1.0
         }
     )
 

@@ -85,7 +85,8 @@ def LSTM_RNN(_X, seqlen, _weight, _bias):
 
 
 def LSTM_RNN_tmp(x0,x1,x2,x3,x4,x5,x6,x7,x8,
-                 seq0,seq1,seq2,seq3,seq4,seq5,seq6,seq7,seq8):
+                 seq0,seq1,seq2,seq3,seq4,seq5,seq6,seq7,seq8,
+                 keep_pro):
     # dwt
     with tf.variable_scope('dwt0'):
         lstm_cell_1 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
@@ -156,13 +157,14 @@ def LSTM_RNN_tmp(x0,x1,x2,x3,x4,x5,x6,x7,x8,
     lstm_out0 = tf.concat([lstm_out0, lstm_out6], 1)
     lstm_out0 = tf.concat([lstm_out0, lstm_out7], 1)
     lstm_out0 = tf.concat([lstm_out0, lstm_out8], 1)
-    lstm_out0 = tf.nn.dropout(lstm_out0, keep_prob=0.5)
     # lstm_out0 = tf.reshape(lstm_out0, [-1, 200])
     with tf.variable_scope('fullConnect'):
-        lstm_out = tf.layers.dense(lstm_out0, 400)
-        lstm_out = tf.nn.dropout(lstm_out, keep_prob=0.5)
-        lstm_out = tf.layers.dense(lstm_out, 50)
-        lstm_out = tf.nn.dropout(lstm_out, keep_prob=0.5)
+        lstm_out = tf.nn.dropout(lstm_out0, keep_prob=keep_pro)
+        lstm_out = tf.layers.dense(lstm_out, 512)
+        lstm_out = tf.nn.dropout(lstm_out, keep_prob=keep_pro)
+        lstm_out = tf.layers.dense(lstm_out, 512)
+        lstm_out = tf.nn.dropout(lstm_out, keep_prob=keep_pro)
+        lstm_out = tf.layers.dense(lstm_out, 128)
         lstm_out = tf.layers.dense(lstm_out, 10)
 
     return lstm_out
@@ -240,6 +242,7 @@ def main():
     seq_len7 = tf.placeholder(tf.float32, [None])
     seq_len8 = tf.placeholder(tf.float32, [None])
     y = tf.placeholder(tf.float32, [None, n_classes])
+    keep_prob = tf.placeholder(tf.float32)
 
     # Graph weights
     # weights = {
@@ -260,7 +263,8 @@ def main():
 
     pred = LSTM_RNN_tmp(x0,x1,x2,x3,x4,x5,x6,x7,x8,
                         seq_len0,seq_len1,seq_len2,seq_len3,
-                        seq_len4, seq_len5, seq_len6, seq_len7,seq_len8)
+                        seq_len4, seq_len5, seq_len6, seq_len7,seq_len8,
+                        keep_prob)
 
     # Loss, optimizer and evaluation
     l2 = lambda_loss_amount * sum(
@@ -312,7 +316,8 @@ def main():
             seq_len5: batch_seq_len[5],
             seq_len6: batch_seq_len[6],
             seq_len7: batch_seq_len[7],
-            seq_len8: batch_seq_len[8]
+            seq_len8: batch_seq_len[8],
+            keep_prob: 0.5
         }
         # Fit training using batch data
         _, loss, acc = sess.run(
@@ -348,7 +353,8 @@ def main():
                 seq_len5: test_sets.seqlen[5],
                 seq_len6: test_sets.seqlen[6],
                 seq_len7: test_sets.seqlen[7],
-                seq_len8: test_sets.seqlen[8]
+                seq_len8: test_sets.seqlen[8],
+                keep_prob: 1.0
             }
 
             # Evaluation on the test set (no learning made here - just evaluation for diagnosis)
@@ -391,7 +397,8 @@ def main():
         seq_len5: test_sets.seqlen[5],
         seq_len6: test_sets.seqlen[6],
         seq_len7: test_sets.seqlen[7],
-        seq_len8: test_sets.seqlen[8]
+        seq_len8: test_sets.seqlen[8],
+        keep_prob: 1.0
     }
     one_hot_predictions, accuracy, final_loss = sess.run(
         [pred, accuracy, cost],
