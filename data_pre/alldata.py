@@ -122,6 +122,17 @@ def wavelet_trans_data(data):
     return t
 
 
+def data_len_get(longs,trains):
+    tmp = int(longs*0.8)
+    if trains:
+        lst = 0
+        rend = tmp
+    else:
+        lst = tmp
+        rend = longs
+    return lst, rend
+
+
 def fft_trans(data):
     # data = data.T
     wave_let = pywt.Wavelet('sym4')
@@ -1072,6 +1083,107 @@ class CNNData2(object):
         batch_seq_len = self.all_seq_len[self.batch_id:min(self.batch_id + batch_size, len(self.all_seq_len))]
         self.batch_id = min(self.batch_id + batch_size, len(self.all_seq_len))
         return batch_data, batch_labels, batch_seq_len
+
+
+class All_data_merge_self(object):
+    '''
+    生成数据用于自身测试
+    '''
+    def __init__(self, foldname, max_seq=800, num_class=10, trainable=False, kfold_num=0):
+        '''
+        数据初始化函数,主要是生成RNN格式的训练数据与测试数据,判断依据是trainable与kfold_num
+        :param foldname: 数据集合
+        :param max_seq:
+        :param num_class: 分类的数量
+        :param trainable:
+        :param kfold_num:
+        '''
+        train_person,test_person = getPersons(foldname, kfold_num)
+        __person = train_person if trainable else test_person
+        # __person = ['zhouxufeng']
+        if not trainable:print(__person)
+        self.batch_id = 0  # use for batch_get
+        self.all_label = []  # only one use
+        # 对应 dwt4层,ori,mean,std,zeros
+        tmp_use_len = [150, 150, 250, 450, 800, 800, 800, 800, 400]
+        self.data = {}
+        self.seqlen = {}
+        # 开始生产序列信号,存储于字典中
+        for i_initdict in range(len(tmp_use_len)):
+            self.data[i_initdict] = []
+            self.seqlen[i_initdict] = []
+        for filename in os.listdir(foldname):
+            oa, ob, oc = filename.split('_')
+            if oc == 'b.txt' and get_lei(ob) < num_class and oa in __person:
+                filename = foldname + filename
+                data = Read__mean_2(filename)
+                cutting = Read__mean_2(foldname + oa + '_' + ob + '_c.txt')
+                _starts,_ends = data_len_get(len(cutting),trainable)
+                for cut in range(_starts, _ends):
+                    if cut == 0:
+                        tmp_data = data[0:cutting[cut], :]
+                    else:
+                        tmp_data = data[cutting[cut - 1]:cutting[cut], :]
+                    _len = tmp_data.shape[0]
+                    # 读取数据
+                    if _len >= max_seq:
+                        pass
+                    else:
+                        # 生成数据
+                        self.all_label.append(get_label(get_lei(ob), num_classes=num_class))
+                        # others data
+                        coeffs = wavelet_trans_data(tmp_data)
+                        for i_coeffs in range(len(coeffs)):
+                            _len = coeffs[i_coeffs].shape[0]
+                            self.seqlen[i_coeffs].append(_len)
+                            s_tmp = np.zeros((tmp_use_len[i_coeffs], 8))
+                            s_tmp[0:_len, :] = coeffs[i_coeffs]
+                            self.data[i_coeffs].append(s_tmp)
+                        # 时域四层
+                        coeffs = time_trans(tmp_data)
+                        for i_coeffs in range(len(coeffs)):
+                            _len = coeffs[i_coeffs].shape[0]
+                            self.seqlen[i_coeffs+4].append(_len)
+                            s_tmp = np.zeros((tmp_use_len[i_coeffs+4], 8))
+                            s_tmp[0:_len, :] = coeffs[i_coeffs]
+                            self.data[i_coeffs+4].append(s_tmp)
+
+        for i_toarray in range(len(tmp_use_len)):
+            self.seqlen[i_toarray] = np.array(self.seqlen[i_toarray]).astype('float32')
+            # print(i_toarray)
+            # for a in self.data[0]:
+            #     print(a.shape)
+            self.data[i_toarray] = np.array(self.data[i_toarray]).astype('float32')
+        self.all_label = np.array(self.all_label).astype('float32')
+
+        # 打乱数据
+        if trainable:
+            _per = np.random.permutation(len(self.all_label))  # 打乱后的行号
+            self.all_label = self.all_label[_per, :]
+            for i_shuffle in range(len(tmp_use_len)):
+                self.data[i_shuffle] = self.data[i_shuffle][_per, :, :]
+                self.seqlen[i_shuffle] = self.seqlen[i_shuffle][_per]
+
+    def _shuffle_data(self):
+        _per = np.random.permutation(len(self.all_label))  # 打乱后的行号
+        self.all_label = self.all_label[_per, :]
+        for i_shuffle in range(9):
+            self.data[i_shuffle] = self.data[i_shuffle][_per, :, :]
+            self.seqlen[i_shuffle] = self.seqlen[i_shuffle][_per]
+
+    def next(self, batch_size, shuffle=True):
+        if self.batch_id == len(self.all_label):
+            self.batch_id = 0
+            if shuffle:
+                self._shuffle_data()
+        batch_labels = self.all_label[self.batch_id:min(self.batch_id + batch_size, len(self.all_label))]
+        batch_data = []
+        batch_seq_len = []
+        for i_batch in range(9):
+            batch_seq_len.append(self.seqlen[i_batch][self.batch_id:min(self.batch_id + batch_size, len(self.all_label))])
+            batch_data.append(self.data[i_batch][self.batch_id:min(self.batch_id + batch_size, len(self.all_label))])
+        self.batch_id = min(self.batch_id + batch_size, len(self.all_label))
+        return batch_labels, batch_data, batch_seq_len
 
 
 if __name__ == '__main__':
