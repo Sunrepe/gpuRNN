@@ -997,6 +997,83 @@ class All_data_merge(object):
         self.batch_id = min(self.batch_id + batch_size, len(self.all_label))
         return batch_labels, batch_data, batch_seq_len
 
+
+class CNNData2(object):
+    '''
+    使用CNN网络进行特征提取
+    注意其中使用卷积过程是长设置为1
+    不进行通道融合。
+
+    细节:
+        1,注意去除新数据中len>max_seq 的数据(该数据假设为动作分割不标准)
+        2,注意使用了所有10类数据
+
+    '''
+
+    def __init__(self, foldname, max_seq=700, num_class=10, trainable=False, kfold_num=0):
+        train_person, test_person = getPersons(foldname, kfold_num)
+        __person = train_person if trainable else test_person
+        __person = ['zhouxufeng']
+        if not trainable:print(__person)
+        self.all_data = []
+        self.all_label = []
+        self.all_seq_len = []
+        self.batch_id = 0
+        for filename in os.listdir(foldname):
+            oa, ob, oc = filename.split('_')
+            if oc == 'b.txt' and get_lei(ob) < num_class and oa in __person:
+                filename = foldname + filename
+                data = Read__mean_2(filename)
+                cutting = Read__mean_2(foldname + oa + '_' + ob + '_c.txt')
+                for cut in range(0, len(cutting)):
+                    if cut == 0:
+                        tmp_data = data[0:cutting[cut], :]
+                    else:
+                        tmp_data = data[cutting[cut - 1]:cutting[cut], :]
+                    # _per = [i for i in range(0, tmp_data.shape[0], 4)]
+                    # tmp_data = tmp_data[_per, :]
+                    tmp_data = z_score(tmp_data)
+                    _len = tmp_data.shape[0]
+                    # 读取数据
+                    if _len >= max_seq:
+                        pass
+                    else:
+                        # 生成数据
+                        self.all_label.append(get_label(get_lei(ob), num_classes=num_class))
+                        self.all_seq_len.append(int(_len/4.0)-3)
+                        s_tmp = np.zeros((max_seq, 8))
+                        s_tmp[0:_len, :] = tmp_data
+                        self.all_data.append(s_tmp[:, :, np.newaxis])
+
+        self.all_data = np.array(self.all_data).astype('float32')
+        self.all_label = np.array(self.all_label).astype('float32')
+        self.all_seq_len = np.array(self.all_seq_len).astype('float32')
+        # print('shape:',self.all_data.shape)
+        # 打乱数据
+        if trainable:
+            _per = np.random.permutation(len(self.all_label))  # 打乱后的行号
+            self.all_data = self.all_data[_per, :, :, :]
+            self.all_label = self.all_label[_per, :]
+            self.all_seq_len = self.all_seq_len[_per]
+
+    def _shuffle_data(self):
+        _per = np.random.permutation(len(self.all_seq_len))  # 打乱后的行号
+        self.all_data = self.all_data[_per, :, :]
+        self.all_label = self.all_label[_per, :]
+        self.all_seq_len = self.all_seq_len[_per]
+
+    def next(self, batch_size, shuffle=True):
+        if self.batch_id == len(self.all_seq_len):
+            self.batch_id = 0
+            if shuffle:
+                self._shuffle_data()
+        batch_data = self.all_data[self.batch_id:min(self.batch_id + batch_size, len(self.all_seq_len))]
+        batch_labels = self.all_label[self.batch_id:min(self.batch_id + batch_size, len(self.all_seq_len))]
+        batch_seq_len = self.all_seq_len[self.batch_id:min(self.batch_id + batch_size, len(self.all_seq_len))]
+        self.batch_id = min(self.batch_id + batch_size, len(self.all_seq_len))
+        return batch_data, batch_labels, batch_seq_len
+
+
 if __name__ == '__main__':
     train_sets = All_data_merge(foldname='../data/actdata/', max_seq=800,
                                 num_class=10, trainable=True, kfold_num=4)

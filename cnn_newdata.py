@@ -23,6 +23,7 @@ batch_size = 100
 display_iter = 1000  # To show test set accuracy during training
 model_save = 100
 
+res_fold = './data/actdata/'
 k_fold_num = 0
 savename = 'emgandwavelet_CNN_kfold'+str(k_fold_num)
 LABELS = ['double', 'fist', 'spread', 'six', 'wavein', 'waveout', 'yes', 'no', 'finger', 'snap']
@@ -76,6 +77,41 @@ def CNNnet(inputs):
     return tf.reshape(h_conv2, [-1, _a[1], 16])
 
 
+def CNNnet2(inputs,keep_pro):
+    '''
+    CNN网络,用于获得动态长度的数据,之后交给RNN网络
+    :param inputs:
+    :return:
+    '''
+    # 第一层卷积
+
+    with tf.name_scope('conv1'):
+        w_conv1 = weight_init([5, 1, 1, 4], 'conv1_w')
+        b_conv1 = bias_init([4], 'conv1_b')
+        conv1 = tf.nn.conv2d(input=inputs, filter=w_conv1, strides=[1, 1, 1, 1], padding='VALID')
+        conv1 = tf.nn.relu(conv1+b_conv1)
+        conv1 = tf.nn.max_pool(conv1, ksize=[1,2,1,1], strides=[1,2,1,1],padding='VALID')
+        conv1 = tf.nn.dropout(conv1, keep_pro)
+
+    # 第二层卷积
+    with tf.name_scope('conv2'):
+        w_conv2 = weight_init([10, 1, 4, 4], 'conv2_w')
+        b_conv2 = bias_init([4], 'conv2_b')
+        conv2 = tf.nn.conv2d(input=conv1, filter=w_conv2, strides=[1,2,1,1], padding='VALID')
+        conv2 = tf.nn.relu(conv2+b_conv2)
+        conv2 = tf.nn.dropout(conv2,keep_pro)
+        # h_pool2 = tf.nn.max_pool(h_conv2, ksize=[1,2,2,1], strides=[1,2,2,1],padding='VALID')
+
+    with tf.name_scope('conv3'):
+        w_conv3 = weight_init([10, 1, 4, 2], 'conv3_w')
+        b_conv3 = bias_init([2], 'conv3_b')
+        conv3 = tf.nn.conv2d(input=conv2, filter=w_conv3, strides=[1,2,1,1], padding='VALID')
+        conv3 = tf.nn.relu(conv3+b_conv3)
+
+    _a = conv3.shape
+    return tf.reshape(conv3, [-1, _a[1], 16])
+
+
 def LSTM_RNN(_X, seqlen, _weight, _bias):
     lstm_cell_1 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
     lstm_cell_2 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
@@ -93,12 +129,43 @@ def LSTM_RNN(_X, seqlen, _weight, _bias):
     return tf.matmul(lstm_out, _weight['out']) + _bias['out']
 
 
+def BiLSTM_RNN(_X, seqlen, keep_pro):
+    # net
+    lstm_cell_1 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
+    lstm_cell_2 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
+    lstm_cells_fw = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2])
+    # backword
+    lstm_cell_1_bw = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
+    lstm_cell_2_bw = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
+    lstm_cells_bw = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1_bw, lstm_cell_2_bw])
+    # Get LSTM cell output
+    outputs, _ = tf.nn.bidirectional_dynamic_rnn(cell_fw=lstm_cells_fw,
+                                                 cell_bw=lstm_cells_bw,
+                                                 inputs=_X,
+                                                 sequence_length=tf.to_int32(seqlen),
+                                                 dtype=tf.float32)
+    _out1, _out2 = outputs
+    # 方案一
+    # tf.reshape(tf.batch_gather(outputs, tf.to_int32(seqlen[:, None] - 1)), [-1, n_hidden])
+    #
+    # lstm_out_1 = tf.reshape(tf.batch_gather(_out1, tf.to_int32(seqlen[:, None] - 2)), [-1, n_hidden])
+    # lstm_out_2 = tf.reshape(tf.batch_gather(_out2, tf.to_int32(seqlen[:, None] - 2)), [-1, n_hidden])
+    # 方案二
+    lstm_out_1 = tf.divide(tf.reduce_sum(_out1, 1), seqlen[:, None])
+    lstm_out_2 = tf.divide(tf.reduce_sum(_out2, 1), seqlen[:, None])
+    _out_last = tf.concat([lstm_out_1, lstm_out_2], 1)
+    _out_last = tf.nn.dropout(_out_last, keep_prob=keep_pro)
+    _out_last = tf.layers.dense(_out_last, 10)
+
+    return _out_last
+
+
 def main():
     time1 = time.time()
     print('loading data...')
-    train_sets = CNNData(foldname='./data/meanfilter_data/', max_seq=max_seq,
+    train_sets = CNNData2(foldname=res_fold, max_seq=max_seq,
                              num_class=n_classes, trainable=True, kfold_num=k_fold_num)
-    test_sets = CNNData(foldname='./data/meanfilter_data/', max_seq=max_seq,
+    test_sets = CNNData2(foldname=res_fold, max_seq=max_seq,
                             num_class=n_classes, trainable=False, kfold_num=k_fold_num)
     train_data_len = len(train_sets.all_seq_len)
     print('train:', len(train_sets.all_seq_len), 'test:', len(test_sets.all_seq_len))
@@ -108,17 +175,11 @@ def main():
     x = tf.placeholder(tf.float32, [None, max_seq, n_inputs, 1])
     y = tf.placeholder(tf.float32, [None, n_classes])
     seq_len = tf.placeholder(tf.float32, [None])
+    keep_prob = tf.placeholder(tf.float32)
 
-    # Graph weights
-    weights = {
-        'out': tf.Variable(tf.random_normal([n_hidden, n_classes], mean=1.0))
-    }
-    biases = {
-        'out': tf.Variable(tf.random_normal([n_classes]))
-    }
 
-    CNN_res = CNNnet(x)
-    pred = LSTM_RNN(CNN_res, seq_len, weights, biases)
+    CNN_res = CNNnet2(x, keep_prob)
+    pred = BiLSTM_RNN(CNN_res, seq_len, keep_prob)
 
     # Loss, optimizer and evaluation
     l2 = lambda_loss_amount * sum(
