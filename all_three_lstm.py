@@ -30,14 +30,18 @@ batch_size = 400
 display_iter = 2000  # To show test set accuracy during training
 model_save = 20
 
+<<<<<<< HEAD
 k_fold_num = 1 
+=======
+k_fold_num = 4
+>>>>>>> a406843f8f38f8204ea6eb7f244a0ead6c1fee51
 fold = './data/actdata/'
 savename = '_mergeall_kfold'+str(k_fold_num)
 LABELS = ['double', 'fist', 'spread', 'six', 'wavein', 'waveout', 'yes', 'no', 'finger', 'snap']
 
 
 def Matrix_to_CSV(filename, data):
-    with open(filename, "a", newline='', ) as csvfile:
+    with open(filename, "w", newline='', ) as csvfile:
         writer = csv.writer(csvfile)
         # 先写入columns_name
         # writer.writerow(["emg1", "emg2", "emg3", "emg4", "emg5", "emg6", "emg7", "emg8", "label"])
@@ -209,9 +213,9 @@ def main():
     time1 = time.time()
     # tmp_trans_wavelet.main_datatrans(fold)
     print('loading data...')
-    train_sets = All_data_merge(foldname=fold, max_seq=max_seq,
+    train_sets = All_data_merge_self(foldname=fold, max_seq=max_seq,
                                 num_class=n_classes, trainable=True, kfold_num=k_fold_num)
-    test_sets = All_data_merge(foldname=fold, max_seq=max_seq,
+    test_sets = All_data_merge_self(foldname=fold, max_seq=max_seq,
                                num_class=n_classes, trainable=False, kfold_num=k_fold_num)
     train_data_len = len(train_sets.all_label)
     print('train:', len(train_sets.all_label), 'test:', len(test_sets.all_label))
@@ -368,6 +372,20 @@ def main():
                         step * batch_size > training_iters * train_data_len):
             save_path = saver.save(sess, "./lstm2/model{}.ckpt".format(savename), global_step=step)
             print("Model saved in file: %s" % save_path)
+            # save loss and acc
+            # save and load
+            Matrix_to_CSV(
+                './loss_dir2/{}_hd{}iter{}ba{}lr{}train_loss.txt'.format(savename, n_hidden, training_iters, batch_size,
+                                                                         learning_rate), train_losses)
+            Matrix_to_CSV(
+                './loss_dir2/{}_hd{}iter{}ba{}lr{}train_acc.txt'.format(savename, n_hidden, training_iters, batch_size,
+                                                                        learning_rate), train_accuracies)
+            Matrix_to_CSV(
+                './loss_dir2/{}_hd{}iter{}ba{}lr{}test_loss.txt'.format(savename, n_hidden, training_iters, batch_size,
+                                                                        learning_rate), test_losses)
+            Matrix_to_CSV(
+                './loss_dir2/{}_hd{}iter{}ba{}lr{}test_acc.txt'.format(savename, n_hidden, training_iters, batch_size,
+                                                                       learning_rate), test_accuracies)
         step += 1
 
     print("Optimization Finished!")
@@ -401,6 +419,18 @@ def main():
 
     test_losses.append(final_loss)
     test_accuracies.append(accuracy)
+    # save and load
+    Matrix_to_CSV(
+        './loss_dir2/{}_hd{}iter{}ba{}lr{}train_loss.txt'.format(savename, n_hidden, training_iters, batch_size,
+                                                                 learning_rate), train_losses)
+    Matrix_to_CSV(
+        './loss_dir2/{}_hd{}iter{}ba{}lr{}train_acc.txt'.format(savename, n_hidden, training_iters, batch_size,
+                                                                learning_rate), train_accuracies)
+    Matrix_to_CSV(
+        './loss_dir2/{}_hd{}iter{}ba{}lr{}test_loss.txt'.format(savename, n_hidden, training_iters, batch_size,
+                                                                learning_rate), test_losses)
+    Matrix_to_CSV('./loss_dir2/{}_hd{}iter{}ba{}lr{}test_acc.txt'.format(savename, n_hidden, training_iters, batch_size,
+                                                                         learning_rate), test_accuracies)
 
     print("FINAL RESULT: " + \
           "Batch Loss = {}".format(final_loss) + \
@@ -409,46 +439,9 @@ def main():
     save_path = saver.save(sess, "./lstm2/model{}.ckpt-final".format(savename))
     print("Final Model saved in file: %s" % save_path)
 
-    font = {
-        'family': 'Times New Roman',
-        'weight': 'bold',
-        'size': 18
-    }
-    matplotlib.rc('font', **font)
-    # matplotlib.use('Agg')
-    width = 12
-    height = 12
-    plt.figure(figsize=(width, height))
-
-    indep_train_axis = np.array(range(batch_size, (len(train_losses) + 1) * batch_size, batch_size))
-    plt.plot(indep_train_axis, np.array(train_losses), "b--", label="Train losses")
-    plt.plot(indep_train_axis, np.array(train_accuracies), "g--", label="Train accuracies")
-
-    indep_test_axis = np.append(
-        np.array(range(batch_size, len(test_losses) * display_iter, display_iter)[:-1]),
-        [training_iters * train_data_len]
-    )
-    plt.plot(indep_test_axis, np.array(test_losses), "b-", label="Test losses")
-    plt.plot(indep_test_axis, np.array(test_accuracies), "g-", label="Test accuracies")
-
-    plt.title("Training session's progress over iterations")
-    plt.legend(loc='upper right', shadow=True)
-    plt.ylabel('Training Progress (Loss or Accuracy values)')
-    plt.xlabel('Training iteration')
-    plt.savefig('./loss_dir2/accloss_{}.png'.format(savename), dpi=600, bbox_inches='tight')
 
     # plt.show()
 
-    # save and load
-    Matrix_to_CSV(
-        './loss_dir2/{}_hd{}iter{}ba{}lr{}train_loss.txt'.format(savename, n_hidden, training_iters, batch_size,
-                                                                learning_rate), train_losses)
-    Matrix_to_CSV('./loss_dir2/{}_hd{}iter{}ba{}lr{}train_acc.txt'.format(savename, n_hidden, training_iters, batch_size,
-                                                                         learning_rate), train_accuracies)
-    Matrix_to_CSV('./loss_dir2/{}_hd{}iter{}ba{}lr{}test_loss.txt'.format(savename, n_hidden, training_iters, batch_size,
-                                                                         learning_rate), test_losses)
-    Matrix_to_CSV('./loss_dir2/{}_hd{}iter{}ba{}lr{}test_acc.txt'.format(savename, n_hidden, training_iters, batch_size,
-                                                                        learning_rate), test_accuracies)
     # train_losses = np.loadtxt('./loss_dir/train_loss.txt')
     # train_accuracies = np.loadtxt('../loss_dir/train_acc.txt')
     # test_losses = np.loadtxt('../loss_dir/test_loss.txt')
@@ -486,6 +479,35 @@ def main():
     tick_marks = np.arange(n_classes)
     plt.yticks(tick_marks, LABELS)
     plt.savefig('./loss_dir2/Matrix{}.png'.format(savename), dpi=600, bbox_inches='tight')
+
+
+    font = {
+        'family': 'Times New Roman',
+        'weight': 'bold',
+        'size': 18
+    }
+    matplotlib.rc('font', **font)
+    # matplotlib.use('Agg')
+    width = 12
+    height = 12
+    plt.figure(figsize=(width, height))
+
+    indep_train_axis = np.array(range(batch_size, (len(train_losses) + 1) * batch_size, batch_size))
+    plt.plot(indep_train_axis, np.array(train_losses), "b--", label="Train losses")
+    plt.plot(indep_train_axis, np.array(train_accuracies), "g--", label="Train accuracies")
+
+    indep_test_axis = np.append(
+        np.array(range(batch_size, len(test_losses) * display_iter, display_iter)[:-1]),
+        [training_iters * train_data_len]
+    )
+    plt.plot(indep_test_axis, np.array(test_losses), "b-", label="Test losses")
+    plt.plot(indep_test_axis, np.array(test_accuracies), "g-", label="Test accuracies")
+
+    plt.title("Training session's progress over iterations")
+    plt.legend(loc='upper right', shadow=True)
+    plt.ylabel('Training Progress (Loss or Accuracy values)')
+    plt.xlabel('Training iteration')
+    plt.savefig('./loss_dir2/accloss_{}.png'.format(savename), dpi=600, bbox_inches='tight')
 
     sess.close()
 
