@@ -122,15 +122,10 @@ def wavelet_trans_data(data):
     return t
 
 
-def data_len_get(longs,trains):
-    tmp = int(longs*0.8)
-    if trains:
-        lst = 0
-        rend = tmp
-    else:
-        lst = tmp
-        rend = longs
-    return lst, rend
+def data_len_get(longs, kfold_num):
+    l = int(longs*kfold_num/5.0)
+    r = int(longs*(kfold_num+1)/5.0)
+    return l, r
 
 
 def fft_trans(data):
@@ -1118,35 +1113,71 @@ class All_data_merge_self(object):
                 filename = foldname + filename
                 data = Read__mean_2(filename)
                 cutting = Read__mean_2(foldname + oa + '_' + ob + '_c.txt')
-                _starts, _ends = data_len_get(len(cutting),trainable)
+                _starts, _ends = data_len_get(len(cutting), kfold_num)  # 确定该区间范围
                 for cut in range(_starts, _ends):
-                    if cut == 0:
-                        tmp_data = data[0:cutting[cut], :]
+                    # 根据是否可训练进行判断，选择
+                    if trainable:
+                        if cut<_starts or cut>=_ends:
+                            if cut == 0:
+                                tmp_data = data[0:cutting[cut], :]
+                            else:
+                                tmp_data = data[cutting[cut - 1]:cutting[cut], :]
+                            _len = tmp_data.shape[0]
+                            # 读取数据
+                            if _len >= max_seq:
+                                pass
+                            else:
+                                # 生成数据
+                                self.all_label.append(get_label(get_lei(ob), num_classes=num_class))
+                                # others data
+                                coeffs = wavelet_trans_data(tmp_data)
+                                for i_coeffs in range(len(coeffs)):
+                                    _len = coeffs[i_coeffs].shape[0]
+                                    self.seqlen[i_coeffs].append(_len)
+                                    s_tmp = np.zeros((tmp_use_len[i_coeffs], 8))
+                                    s_tmp[0:_len, :] = coeffs[i_coeffs]
+                                    self.data[i_coeffs].append(s_tmp)
+                                # 时域四层
+                                coeffs = time_trans(tmp_data)
+                                for i_coeffs in range(len(coeffs)):
+                                    _len = coeffs[i_coeffs].shape[0]
+                                    self.seqlen[i_coeffs + 4].append(_len)
+                                    s_tmp = np.zeros((tmp_use_len[i_coeffs + 4], 8))
+                                    s_tmp[0:_len, :] = coeffs[i_coeffs]
+                                    self.data[i_coeffs + 4].append(s_tmp)
+                        else:
+                            pass
                     else:
-                        tmp_data = data[cutting[cut - 1]:cutting[cut], :]
-                    _len = tmp_data.shape[0]
-                    # 读取数据
-                    if _len >= max_seq:
-                        pass
-                    else:
-                        # 生成数据
-                        self.all_label.append(get_label(get_lei(ob), num_classes=num_class))
-                        # others data
-                        coeffs = wavelet_trans_data(tmp_data)
-                        for i_coeffs in range(len(coeffs)):
-                            _len = coeffs[i_coeffs].shape[0]
-                            self.seqlen[i_coeffs].append(_len)
-                            s_tmp = np.zeros((tmp_use_len[i_coeffs], 8))
-                            s_tmp[0:_len, :] = coeffs[i_coeffs]
-                            self.data[i_coeffs].append(s_tmp)
-                        # 时域四层
-                        coeffs = time_trans(tmp_data)
-                        for i_coeffs in range(len(coeffs)):
-                            _len = coeffs[i_coeffs].shape[0]
-                            self.seqlen[i_coeffs+4].append(_len)
-                            s_tmp = np.zeros((tmp_use_len[i_coeffs+4], 8))
-                            s_tmp[0:_len, :] = coeffs[i_coeffs]
-                            self.data[i_coeffs+4].append(s_tmp)
+                        if cut>=_starts and cut<_ends:
+                            if cut == 0:
+                                tmp_data = data[0:cutting[cut], :]
+                            else:
+                                tmp_data = data[cutting[cut - 1]:cutting[cut], :]
+                            _len = tmp_data.shape[0]
+                            # 读取数据
+                            if _len >= max_seq:
+                                pass
+                            else:
+                                # 生成数据
+                                self.all_label.append(get_label(get_lei(ob), num_classes=num_class))
+                                # others data
+                                coeffs = wavelet_trans_data(tmp_data)
+                                for i_coeffs in range(len(coeffs)):
+                                    _len = coeffs[i_coeffs].shape[0]
+                                    self.seqlen[i_coeffs].append(_len)
+                                    s_tmp = np.zeros((tmp_use_len[i_coeffs], 8))
+                                    s_tmp[0:_len, :] = coeffs[i_coeffs]
+                                    self.data[i_coeffs].append(s_tmp)
+                                # 时域四层
+                                coeffs = time_trans(tmp_data)
+                                for i_coeffs in range(len(coeffs)):
+                                    _len = coeffs[i_coeffs].shape[0]
+                                    self.seqlen[i_coeffs + 4].append(_len)
+                                    s_tmp = np.zeros((tmp_use_len[i_coeffs + 4], 8))
+                                    s_tmp[0:_len, :] = coeffs[i_coeffs]
+                                    self.data[i_coeffs + 4].append(s_tmp)
+                        else:
+                            pass
 
         for i_toarray in range(len(tmp_use_len)):
             self.seqlen[i_toarray] = np.array(self.seqlen[i_toarray]).astype('float32')
