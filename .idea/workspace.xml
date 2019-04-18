@@ -2,45 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e51bf105-f34c-4031-aa58-28fd3cc5807c" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/actdata/marui_double_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/actdata/marui_double_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/actdata/marui_finger_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/actdata/marui_finger_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/actdata/marui_fist_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/actdata/marui_fist_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/actdata/marui_six_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/actdata/marui_six_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/actdata/marui_snap_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/actdata/marui_snap_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/actdata/marui_spread_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/actdata/marui_spread_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/actdata/marui_wavein_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/actdata/marui_wavein_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/actdata/marui_waveout_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/actdata/marui_waveout_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/actdata/marui_yes_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/actdata/marui_yes_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/actdata/zhangyixuan_double_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/actdata/zhangyixuan_double_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/actdata/zhangyixuan_finger_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/actdata/zhangyixuan_finger_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/actdata/zhangyixuan_fist_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/actdata/zhangyixuan_fist_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/actdata/zhangyixuan_no_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/actdata/zhangyixuan_no_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/actdata/zhangyixuan_six_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/actdata/zhangyixuan_six_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/actdata/zhangyixuan_snap_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/actdata/zhangyixuan_snap_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/actdata/zhangyixuan_spread_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/actdata/zhangyixuan_spread_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/actdata/zhangyixuan_waveout_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/actdata/zhangyixuan_waveout_c.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/actdata/zhangyixuan_yes_b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/actdata/zhangyixuan_yes_c.txt" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/all_lstm.py" afterPath="$PROJECT_DIR$/all_lstm.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/all_three_lstm.py" afterPath="$PROJECT_DIR$/all_three_lstm.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data_pre/alldata.py" afterPath="$PROJECT_DIR$/data_pre/alldata.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/all_model3_kfold0.zip" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/all_model3_kfold1.zip" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/all_model3_kfold2.zip" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -119,8 +84,8 @@
       <file leaf-file-name="alldata.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/data_pre/alldata.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="56" column="21" lean-forward="true" selection-start-line="56" selection-start-column="21" selection-end-line="56" selection-end-column="21" />
+            <state relative-caret-position="230">
+              <caret line="116" column="0" lean-forward="true" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
               <folding>
                 <element signature="e#74#291#0" expanded="false" />
                 <element signature="e#315#439#0" expanded="false" />
@@ -186,12 +151,10 @@
       <file leaf-file-name="all_three_lstm.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/all_three_lstm.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="211" column="32" lean-forward="false" selection-start-line="211" selection-start-column="32" selection-end-line="211" selection-end-column="32" />
+            <state relative-caret-position="1688">
+              <caret line="215" column="32" lean-forward="false" selection-start-line="215" selection-start-column="32" selection-end-line="215" selection-end-column="32" />
               <folding>
                 <element signature="e#20#50#0" expanded="true" />
-                <element signature="e#1434#3889#0" expanded="false" />
-                <element signature="e#10636#11572#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -512,7 +475,7 @@
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1762481" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14750378" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901135" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28687197" sideWeight="0.50680786" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -914,20 +877,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/all_three_lstm.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="211" column="32" lean-forward="false" selection-start-line="211" selection-start-column="32" selection-end-line="211" selection-end-column="32" />
+        <state relative-caret-position="1688">
+          <caret line="215" column="32" lean-forward="false" selection-start-line="215" selection-start-column="32" selection-end-line="215" selection-end-column="32" />
           <folding>
             <element signature="e#20#50#0" expanded="true" />
-            <element signature="e#1434#3889#0" expanded="false" />
-            <element signature="e#10636#11572#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/data_pre/alldata.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="56" column="21" lean-forward="true" selection-start-line="56" selection-start-column="21" selection-end-line="56" selection-end-column="21" />
+        <state relative-caret-position="230">
+          <caret line="116" column="0" lean-forward="true" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
           <folding>
             <element signature="e#74#291#0" expanded="false" />
             <element signature="e#315#439#0" expanded="false" />
