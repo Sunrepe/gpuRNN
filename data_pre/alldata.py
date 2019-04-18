@@ -1098,10 +1098,10 @@ class All_data_merge_self(object):
         :param trainable:
         :param kfold_num:
         '''
-        train_person,test_person = getPersons(foldname, kfold_num)
-        __person = train_person if trainable else test_person
+        # train_person,test_person = getPersons(foldname, kfold_num)
+        # __person = train_person if trainable else test_person
         # __person = ['zhouxufeng']
-        if not trainable:print(__person)
+        # if not trainable:print(__person)
         self.batch_id = 0  # use for batch_get
         self.all_label = []  # only one use
         # 对应 dwt4层,ori,mean,std,zeros
@@ -1114,11 +1114,11 @@ class All_data_merge_self(object):
             self.seqlen[i_initdict] = []
         for filename in os.listdir(foldname):
             oa, ob, oc = filename.split('_')
-            if oc == 'b.txt' and get_lei(ob) < num_class and oa in __person:
+            if oc == 'b.txt':
                 filename = foldname + filename
                 data = Read__mean_2(filename)
                 cutting = Read__mean_2(foldname + oa + '_' + ob + '_c.txt')
-                _starts,_ends = data_len_get(len(cutting),trainable)
+                _starts, _ends = data_len_get(len(cutting),trainable)
                 for cut in range(_starts, _ends):
                     if cut == 0:
                         tmp_data = data[0:cutting[cut], :]

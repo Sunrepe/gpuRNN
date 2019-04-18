@@ -290,7 +290,7 @@ def main():
     sess = tf.InteractiveSession(config=tf.ConfigProto(log_device_placement=False))
     init = tf.global_variables_initializer()
     sess.run(init)
-    # saver.restore(sess, "./lstm/model_mergeall_kfold4.ckpt-200")
+    # saver.restore(sess, "./lstm2/model_mergeall_kfold1.ckpt-100")
     # Perform Training steps with "batch_size" amount of example data at each loop
     step = 1
     print("Start train!")
