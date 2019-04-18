@@ -30,11 +30,7 @@ batch_size = 400
 display_iter = 2000  # To show test set accuracy during training
 model_save = 20
 
-<<<<<<< HEAD
-k_fold_num = 1 
-=======
-k_fold_num = 4
->>>>>>> a406843f8f38f8204ea6eb7f244a0ead6c1fee51
+k_fold_num = 1
 fold = './data/actdata/'
 savename = '_mergeall_kfold'+str(k_fold_num)
 LABELS = ['double', 'fist', 'spread', 'six', 'wavein', 'waveout', 'yes', 'no', 'finger', 'snap']
