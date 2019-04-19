@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="e51bf105-f34c-4031-aa58-28fd3cc5807c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/all_three_lstm.py" afterPath="$PROJECT_DIR$/all_three_lstm.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data_pre/alldata.py" afterPath="$PROJECT_DIR$/data_pre/alldata.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data_pre/dataFortest.py" afterPath="$PROJECT_DIR$/data_pre/dataFortest.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,6 +27,7 @@
     <SUITE FILE_PATH="coverage/gpuRNN$PicandMatrix.coverage" NAME="PicandMatrix Coverage Results" MODIFIED="1553741226742" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$testEveryRNNCNN.coverage" NAME="testEveryRNNCNN Coverage Results" MODIFIED="1554341944489" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$testEveryoneBilstm.coverage" NAME="testEveryoneBilstm Coverage Results" MODIFIED="1554296989267" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/gpuRNN$allmodel3_testEveryone.coverage" NAME="allmodel3_testEveryone Coverage Results" MODIFIED="1555653763645" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$cnntest.coverage" NAME="cnntest Coverage Results" MODIFIED="1553865292101" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$lstm_newdata04.coverage" NAME="lstm_newdata04 Coverage Results" MODIFIED="1554306706690" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$test.coverage" NAME="test Coverage Results" MODIFIED="1554866932644" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data_pre" />
@@ -43,76 +46,55 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="lstm_0405_kfold.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lstm_0405_kfold.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3425">
-              <caret line="153" column="81" lean-forward="false" selection-start-line="153" selection-start-column="81" selection-end-line="153" selection-end-column="81" />
-              <folding>
-                <element signature="e#20#50#0" expanded="true" />
-                <element signature="e#3812#4748#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tmp_trans_wavelet.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tmp_trans_wavelet.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1450">
-              <caret line="63" column="22" lean-forward="false" selection-start-line="63" selection-start-column="22" selection-end-line="63" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="lstm_0410_emgandwavelet.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lstm_0410_emgandwavelet.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1700">
-              <caret line="77" column="42" lean-forward="false" selection-start-line="77" selection-start-column="42" selection-end-line="77" selection-end-column="42" />
-              <folding>
-                <element signature="e#48#78#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="alldata.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data_pre/alldata.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1250">
-              <caret line="1123" column="33" lean-forward="true" selection-start-line="1123" selection-start-column="33" selection-end-line="1123" selection-end-column="33" />
+            <state relative-caret-position="286">
+              <caret line="42" column="4" lean-forward="false" selection-start-line="42" selection-start-column="4" selection-end-line="42" selection-end-column="4" />
               <folding>
                 <element signature="e#74#291#0" expanded="false" />
                 <element signature="e#315#439#0" expanded="false" />
                 <element signature="e#466#727#0" expanded="false" />
                 <element signature="e#769#799#0" expanded="false" />
                 <element signature="e#838#922#0" expanded="false" />
-                <element signature="e#966#1459#0" expanded="false" />
-                <element signature="e#1491#2222#0" expanded="false" />
-                <element signature="e#2251#3029#0" expanded="false" />
-                <element signature="e#3316#4047#0" expanded="false" />
-                <element signature="e#4077#7518#0" expanded="false" />
-                <element signature="e#7548#10552#0" expanded="false" />
-                <element signature="e#9635#9845#0" expanded="false" />
-                <element signature="e#9902#10493#0" expanded="false" />
-                <element signature="e#10587#13615#0" expanded="false" />
-                <element signature="e#12698#12908#0" expanded="false" />
-                <element signature="e#12965#13556#0" expanded="false" />
-                <element signature="e#13650#16713#0" expanded="false" />
-                <element signature="e#15796#16006#0" expanded="false" />
-                <element signature="e#16063#16654#0" expanded="false" />
-                <element signature="e#16748#19832#0" expanded="false" />
-                <element signature="e#18915#19125#0" expanded="false" />
-                <element signature="e#19182#19773#0" expanded="false" />
-                <element signature="e#19866#23155#0" expanded="false" />
-                <element signature="e#23193#26454#0" expanded="false" />
-                <element signature="e#26487#29328#0" expanded="false" />
-                <element signature="e#29369#33280#0" expanded="false" />
-                <element signature="e#33314#37272#0" expanded="false" />
-                <element signature="e#37331#41927#0" expanded="false" />
-                <element signature="e#41958#45221#0" expanded="false" />
+                <element signature="e#1473#2204#0" expanded="false" />
+                <element signature="e#2233#3011#0" expanded="false" />
+                <element signature="e#3298#4029#0" expanded="false" />
+                <element signature="e#4059#7500#0" expanded="false" />
+                <element signature="e#7530#10534#0" expanded="false" />
+                <element signature="e#9617#9827#0" expanded="false" />
+                <element signature="e#9884#10475#0" expanded="false" />
+                <element signature="e#10569#13597#0" expanded="false" />
+                <element signature="e#12680#12890#0" expanded="false" />
+                <element signature="e#12947#13538#0" expanded="false" />
+                <element signature="e#13632#16695#0" expanded="false" />
+                <element signature="e#15778#15988#0" expanded="false" />
+                <element signature="e#16045#16636#0" expanded="false" />
+                <element signature="e#16730#19814#0" expanded="false" />
+                <element signature="e#18897#19107#0" expanded="false" />
+                <element signature="e#19164#19755#0" expanded="false" />
+                <element signature="e#19848#23137#0" expanded="false" />
+                <element signature="e#23175#26436#0" expanded="false" />
+                <element signature="e#26469#29310#0" expanded="false" />
+                <element signature="e#29351#33262#0" expanded="false" />
+                <element signature="e#33296#37254#0" expanded="false" />
+                <element signature="e#41940#45203#0" expanded="false" />
+                <element signature="e#45245#52046#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dataFortest.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data_pre/dataFortest.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2302">
+              <caret line="9" column="11" lean-forward="false" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
+              <folding>
+                <element signature="e#83#101#0" expanded="true" />
+                <element signature="e#1039#1817#0" expanded="false" />
+                <element signature="e#3879#5547#0" expanded="false" />
+                <element signature="e#5587#8618#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -121,7 +103,7 @@
       <file leaf-file-name="all_lstm.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/all_lstm.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4000">
+            <state relative-caret-position="2575">
               <caret line="212" column="11" lean-forward="false" selection-start-line="212" selection-start-column="11" selection-end-line="212" selection-end-column="11" />
               <folding>
                 <element signature="e#20#50#0" expanded="true" />
@@ -136,7 +118,7 @@
       <file leaf-file-name="all_two_lstm.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/all_two_lstm.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
+            <state relative-caret-position="25">
               <caret line="18" column="45" lean-forward="false" selection-start-line="18" selection-start-column="45" selection-end-line="18" selection-end-column="45" />
               <folding>
                 <element signature="e#20#50#0" expanded="true" />
@@ -150,10 +132,46 @@
       <file leaf-file-name="all_three_lstm.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/all_three_lstm.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="500">
-              <caret line="32" column="14" lean-forward="true" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
+            <state relative-caret-position="200">
+              <caret line="32" column="14" lean-forward="false" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
               <folding>
                 <element signature="e#20#50#0" expanded="true" />
+                <element signature="e#4005#9589#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="allmodel3_testEveryone.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/allmodel3_testEveryone.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-338">
+              <caret line="45" column="24" lean-forward="true" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
+              <folding>
+                <element signature="e#63#97#0" expanded="true" />
+                <element signature="e#2467#8051#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="datadescribe.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/datadescribe.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1116">
+              <caret line="173" column="0" lean-forward="false" selection-start-line="173" selection-start-column="0" selection-end-line="173" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="testEveryone.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testEveryone.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="634">
+              <caret line="101" column="0" lean-forward="false" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
+              <folding>
+                <element signature="e#70#104#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -177,20 +195,6 @@
             <state relative-caret-position="1625">
               <caret line="73" column="20" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="73" selection-end-column="20" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dwt_lstm.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dwt_lstm.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2200">
-              <caret line="124" column="61" lean-forward="false" selection-start-line="124" selection-start-column="61" selection-end-line="124" selection-end-column="61" />
-              <folding>
-                <element signature="e#20#50#0" expanded="true" />
-                <element signature="e#1405#3860#0" expanded="false" />
-                <element signature="e#7484#8420#0" expanded="false" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -259,7 +263,6 @@
         <option value="$PROJECT_DIR$/tmp_lstm.py" />
         <option value="$PROJECT_DIR$/data_pre/test.py" />
         <option value="$PROJECT_DIR$/datadescribe.py" />
-        <option value="$PROJECT_DIR$/data_pre/dataFortest.py" />
         <option value="$PROJECT_DIR$/testEveryone.py" />
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/fft_lstm.py" />
@@ -272,6 +275,8 @@
         <option value="$PROJECT_DIR$/cnn_newdata.py" />
         <option value="$PROJECT_DIR$/all_lstm.py" />
         <option value="$PROJECT_DIR$/data_pre/alldata.py" />
+        <option value="$PROJECT_DIR$/data_pre/dataFortest.py" />
+        <option value="$PROJECT_DIR$/allmodel3_testEveryone.py" />
         <option value="$PROJECT_DIR$/all_three_lstm.py" />
       </list>
     </option>
@@ -311,6 +316,11 @@
               <item name="gpuRNN" type="b2602c69:ProjectViewProjectNode" />
               <item name="gpuRNN" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="gpuRNN" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gpuRNN" type="462c0819:PsiDirectoryNode" />
+              <item name="data_pre" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -340,7 +350,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.alldata">
+  <component name="RunManager" selected="Python.allmodel3_testEveryone">
     <configuration name="all_lstm" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -377,6 +387,24 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
+    <configuration name="allmodel3_testEveryone" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="gpuRNN" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/allmodel3_testEveryone.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
     <configuration name="dwt_lstm" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -391,24 +419,6 @@
       <module name="gpuRNN" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dwt_lstm.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-    </configuration>
-    <configuration name="fft_lstm" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="gpuRNN" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/fft_lstm.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -432,19 +442,19 @@
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.fft_lstm" />
-      <item index="1" class="java.lang.String" itemvalue="Python.dwt_lstm" />
-      <item index="2" class="java.lang.String" itemvalue="Python.lstm_0405_kfold" />
-      <item index="3" class="java.lang.String" itemvalue="Python.all_lstm" />
-      <item index="4" class="java.lang.String" itemvalue="Python.alldata" />
+      <item index="0" class="java.lang.String" itemvalue="Python.dwt_lstm" />
+      <item index="1" class="java.lang.String" itemvalue="Python.lstm_0405_kfold" />
+      <item index="2" class="java.lang.String" itemvalue="Python.all_lstm" />
+      <item index="3" class="java.lang.String" itemvalue="Python.alldata" />
+      <item index="4" class="java.lang.String" itemvalue="Python.allmodel3_testEveryone" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.alldata" />
-        <item index="1" class="java.lang.String" itemvalue="Python.all_lstm" />
-        <item index="2" class="java.lang.String" itemvalue="Python.lstm_0405_kfold" />
-        <item index="3" class="java.lang.String" itemvalue="Python.dwt_lstm" />
-        <item index="4" class="java.lang.String" itemvalue="Python.fft_lstm" />
+        <item index="0" class="java.lang.String" itemvalue="Python.allmodel3_testEveryone" />
+        <item index="1" class="java.lang.String" itemvalue="Python.alldata" />
+        <item index="2" class="java.lang.String" itemvalue="Python.all_lstm" />
+        <item index="3" class="java.lang.String" itemvalue="Python.lstm_0405_kfold" />
+        <item index="4" class="java.lang.String" itemvalue="Python.dwt_lstm" />
       </list>
     </recent_temporary>
   </component>
@@ -474,13 +484,13 @@
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14977308" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13615733" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901135" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28687197" sideWeight="0.50680786" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39384118" sideWeight="0.49546143" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41491085" sideWeight="0.49319214" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25121555" sideWeight="0.49546143" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2560778" sideWeight="0.49319214" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28038898" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -508,7 +518,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/lstm_twof.py" />
     <entry file="file://$PROJECT_DIR$/lstm_newown3.py" />
     <entry file="file://$PROJECT_DIR$/lstm_newown.py" />
     <entry file="file://$PROJECT_DIR$/lstm_fourf.py" />
@@ -696,27 +705,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/datadescribe.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="173" column="0" lean-forward="false" selection-start-line="173" selection-start-column="0" selection-end-line="173" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data_pre/dataFortest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="103" column="71" lean-forward="false" selection-start-line="103" selection-start-column="71" selection-end-line="103" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testEveryone.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="11" column="19" lean-forward="false" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/Program/Anaconda/Lib/site-packages/tensorflow/python/ops/gradients_impl.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1145">
@@ -774,7 +762,7 @@
         <state relative-caret-position="3425">
           <caret line="153" column="81" lean-forward="false" selection-start-line="153" selection-start-column="81" selection-end-line="153" selection-end-column="81" />
           <folding>
-            <element signature="e#20#50#0" expanded="true" />
+            <element signature="e#20#50#0" expanded="false" />
             <element signature="e#3812#4748#0" expanded="false" />
           </folding>
         </state>
@@ -785,7 +773,7 @@
         <state relative-caret-position="1700">
           <caret line="77" column="42" lean-forward="false" selection-start-line="77" selection-start-column="42" selection-end-line="77" selection-end-column="42" />
           <folding>
-            <element signature="e#48#78#0" expanded="true" />
+            <element signature="e#48#78#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -795,7 +783,7 @@
         <state relative-caret-position="2200">
           <caret line="124" column="61" lean-forward="false" selection-start-line="124" selection-start-column="61" selection-end-line="124" selection-end-column="61" />
           <folding>
-            <element signature="e#20#50#0" expanded="true" />
+            <element signature="e#20#50#0" expanded="false" />
             <element signature="e#1405#3860#0" expanded="false" />
             <element signature="e#7484#8420#0" expanded="false" />
           </folding>
@@ -822,7 +810,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/all_two_lstm.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
+        <state relative-caret-position="25">
           <caret line="18" column="45" lean-forward="false" selection-start-line="18" selection-start-column="45" selection-end-line="18" selection-end-column="45" />
           <folding>
             <element signature="e#20#50#0" expanded="true" />
@@ -832,9 +820,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/testEveryone.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="634">
+          <caret line="101" column="0" lean-forward="false" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
+          <folding>
+            <element signature="e#70#104#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datadescribe.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1116">
+          <caret line="173" column="0" lean-forward="false" selection-start-line="173" selection-start-column="0" selection-end-line="173" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/all_lstm.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4000">
+        <state relative-caret-position="2575">
           <caret line="212" column="11" lean-forward="false" selection-start-line="212" selection-start-column="11" selection-end-line="212" selection-end-column="11" />
           <folding>
             <element signature="e#20#50#0" expanded="true" />
@@ -845,50 +851,74 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/data_pre/dataFortest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2302">
+          <caret line="9" column="11" lean-forward="false" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
+          <folding>
+            <element signature="e#83#101#0" expanded="true" />
+            <element signature="e#1039#1817#0" expanded="false" />
+            <element signature="e#3879#5547#0" expanded="false" />
+            <element signature="e#5587#8618#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/allmodel3_testEveryone.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-338">
+          <caret line="45" column="24" lean-forward="true" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
+          <folding>
+            <element signature="e#63#97#0" expanded="true" />
+            <element signature="e#2467#8051#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/data_pre/alldata.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1250">
-          <caret line="1123" column="33" lean-forward="true" selection-start-line="1123" selection-start-column="33" selection-end-line="1123" selection-end-column="33" />
+        <state relative-caret-position="286">
+          <caret line="42" column="4" lean-forward="false" selection-start-line="42" selection-start-column="4" selection-end-line="42" selection-end-column="4" />
           <folding>
             <element signature="e#74#291#0" expanded="false" />
             <element signature="e#315#439#0" expanded="false" />
             <element signature="e#466#727#0" expanded="false" />
             <element signature="e#769#799#0" expanded="false" />
             <element signature="e#838#922#0" expanded="false" />
-            <element signature="e#966#1459#0" expanded="false" />
-            <element signature="e#1491#2222#0" expanded="false" />
-            <element signature="e#2251#3029#0" expanded="false" />
-            <element signature="e#3316#4047#0" expanded="false" />
-            <element signature="e#4077#7518#0" expanded="false" />
-            <element signature="e#7548#10552#0" expanded="false" />
-            <element signature="e#9635#9845#0" expanded="false" />
-            <element signature="e#9902#10493#0" expanded="false" />
-            <element signature="e#10587#13615#0" expanded="false" />
-            <element signature="e#12698#12908#0" expanded="false" />
-            <element signature="e#12965#13556#0" expanded="false" />
-            <element signature="e#13650#16713#0" expanded="false" />
-            <element signature="e#15796#16006#0" expanded="false" />
-            <element signature="e#16063#16654#0" expanded="false" />
-            <element signature="e#16748#19832#0" expanded="false" />
-            <element signature="e#18915#19125#0" expanded="false" />
-            <element signature="e#19182#19773#0" expanded="false" />
-            <element signature="e#19866#23155#0" expanded="false" />
-            <element signature="e#23193#26454#0" expanded="false" />
-            <element signature="e#26487#29328#0" expanded="false" />
-            <element signature="e#29369#33280#0" expanded="false" />
-            <element signature="e#33314#37272#0" expanded="false" />
-            <element signature="e#37331#41927#0" expanded="false" />
-            <element signature="e#41958#45221#0" expanded="false" />
+            <element signature="e#1473#2204#0" expanded="false" />
+            <element signature="e#2233#3011#0" expanded="false" />
+            <element signature="e#3298#4029#0" expanded="false" />
+            <element signature="e#4059#7500#0" expanded="false" />
+            <element signature="e#7530#10534#0" expanded="false" />
+            <element signature="e#9617#9827#0" expanded="false" />
+            <element signature="e#9884#10475#0" expanded="false" />
+            <element signature="e#10569#13597#0" expanded="false" />
+            <element signature="e#12680#12890#0" expanded="false" />
+            <element signature="e#12947#13538#0" expanded="false" />
+            <element signature="e#13632#16695#0" expanded="false" />
+            <element signature="e#15778#15988#0" expanded="false" />
+            <element signature="e#16045#16636#0" expanded="false" />
+            <element signature="e#16730#19814#0" expanded="false" />
+            <element signature="e#18897#19107#0" expanded="false" />
+            <element signature="e#19164#19755#0" expanded="false" />
+            <element signature="e#19848#23137#0" expanded="false" />
+            <element signature="e#23175#26436#0" expanded="false" />
+            <element signature="e#26469#29310#0" expanded="false" />
+            <element signature="e#29351#33262#0" expanded="false" />
+            <element signature="e#33296#37254#0" expanded="false" />
+            <element signature="e#41940#45203#0" expanded="false" />
+            <element signature="e#45245#52046#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/all_three_lstm.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="32" column="14" lean-forward="true" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
+        <state relative-caret-position="200">
+          <caret line="32" column="14" lean-forward="false" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
           <folding>
             <element signature="e#20#50#0" expanded="true" />
+            <element signature="e#4005#9589#0" expanded="false" />
           </folding>
         </state>
       </provider>

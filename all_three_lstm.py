@@ -30,8 +30,8 @@ batch_size = 400
 display_iter = 2000  # To show test set accuracy during training
 model_save = 20
 
-k_fold_num = 3
-fold = './data/tmpdata/'
+k_fold_num = 0
+fold = './data/actdata/'
 savename = '_selftest_kfold'+str(k_fold_num)
 LABELS = ['double', 'fist', 'spread', 'six', 'wavein', 'waveout', 'yes', 'no', 'finger', 'snap']
 
@@ -209,9 +209,9 @@ def main():
     time1 = time.time()
     # tmp_trans_wavelet.main_datatrans(fold)
     print('loading data...')
-    train_sets = All_data_merge_self(foldname=fold, max_seq=max_seq,
+    train_sets = All_data_merge(foldname=fold, max_seq=max_seq,
                                 num_class=n_classes, trainable=True, kfold_num=k_fold_num)
-    test_sets = All_data_merge_self(foldname=fold, max_seq=max_seq,
+    test_sets = All_data_merge(foldname=fold, max_seq=max_seq,
                                num_class=n_classes, trainable=False, kfold_num=k_fold_num)
     train_data_len = len(train_sets.all_label)
     print('train:', len(train_sets.all_label), 'test:', len(test_sets.all_label))

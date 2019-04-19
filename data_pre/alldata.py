@@ -50,10 +50,10 @@ def getPersons(foldname, kfold_num):
         _person.add(oa)
     _person = list(_person)
     _person.sort()
-    _person.remove('marui')
-    _person.remove('zhangyixuan')
+    # _person.remove('marui')
+    # _person.remove('zhangyixuan')
     test_p = _person[7*kfold_num:7*(kfold_num+1)]
-    train_p = ['marui', 'zhangyixuan']
+    train_p = []
     for i in _person:
         if i not in test_p:
             train_p.append(i)
