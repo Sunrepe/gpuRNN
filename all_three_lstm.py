@@ -25,12 +25,12 @@ tmp_use_len = [150, 150, 250, 450, 800, 800, 800, 800, 400]
 # Training
 learning_rate = 0.0025
 lambda_loss_amount = 0.0055
-training_iters = 300  # Loop 1000 times on the dataset
+training_iters = 150  # Loop 1000 times on the dataset
 batch_size = 400
 display_iter = 2000  # To show test set accuracy during training
 model_save = 20
 
-k_fold_num = 0
+k_fold_num = 3
 fold = './data/tmpdata/'
 savename = '_selftest_kfold'+str(k_fold_num)
 LABELS = ['double', 'fist', 'spread', 'six', 'wavein', 'waveout', 'yes', 'no', 'finger', 'snap']
