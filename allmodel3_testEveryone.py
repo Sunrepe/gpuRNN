@@ -20,11 +20,11 @@ n_hidden = 50  # Hidden layer num of features
 n_classes = 10  # Total classes (should go up, or should go down)
 n_inputs = 8
 max_seq = 800
-k_fold_num = 1
+k_fold_num = 0
 # model_name = 'E:/Research-bachelor/storeMODELs/5kfold/lstmkfold{}/lstm/model_LSTM_kfold{}.ckpt-final'.format(k_fold_num,k_fold_num)
 
 model_name = "E:/Research-bachelor/storeMODELs/all_lstm_3/all_model3_kfold{}/" \
-             "model_mergeall_kfold{}.ckpt-4400".format(k_fold_num,k_fold_num)
+             "model_selftest_kfold0.ckpt-4100".format(k_fold_num,k_fold_num)
 foldname = './data/actdata/'
 matrix_save_path = "E:/Research-bachelor/storeMODELs/all_lstm_3/all_model3Matrix_kfold{}.txt".format(k_fold_num)
 
@@ -276,8 +276,10 @@ def main():
         confusion_matrix = metrics.confusion_matrix(result_labels, predictions)
         print(confusion_matrix)
         every_stream_matrix[9] += confusion_matrix
+    print("All stream matrix:")
     for i_st in range(10):
-        every_stream_matrix[i_st].astype('int32')
+        print(every_stream_matrix[i_st])
+        every_stream_matrix[i_st] = every_stream_matrix[i_st].astype('int32')
         Matrix_to_CSV(matrix_save_path, every_stream_matrix[i_st])
     # person_list.append('allperson_kfold{}'.format(k_fold_num))
     # df = pd.DataFrame(every_stream_precision[0], index=person_list, columns=["S"])
