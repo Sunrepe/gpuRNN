@@ -1114,7 +1114,8 @@ class All_data_merge_self(object):
                 data = Read__mean_2(filename)
                 cutting = Read__mean_2(foldname + oa + '_' + ob + '_c.txt')
                 _starts, _ends = data_len_get(len(cutting), kfold_num)  # 确定该区间范围
-                for cut in range(_starts, _ends):
+                # print('l:',_starts,'\tr:',_ends)
+                for cut in range(0, len(cutting)):
                     # 根据是否可训练进行判断，选择
                     if trainable:
                         if cut<_starts or cut>=_ends:
@@ -1181,9 +1182,6 @@ class All_data_merge_self(object):
 
         for i_toarray in range(len(tmp_use_len)):
             self.seqlen[i_toarray] = np.array(self.seqlen[i_toarray]).astype('float32')
-            # print(i_toarray)
-            # for a in self.data[0]:
-            #     print(a.shape)
             self.data[i_toarray] = np.array(self.data[i_toarray]).astype('float32')
         self.all_label = np.array(self.all_label).astype('float32')
 
@@ -1218,5 +1216,5 @@ class All_data_merge_self(object):
 
 
 if __name__ == '__main__':
-    train_sets = All_data_merge(foldname='../data/actdata/', max_seq=800,
+    train_sets = All_data_merge_self(foldname='../data/tmpdata/', max_seq=800,
                                 num_class=10, trainable=True, kfold_num=4)

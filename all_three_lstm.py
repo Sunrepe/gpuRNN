@@ -31,7 +31,7 @@ display_iter = 2000  # To show test set accuracy during training
 model_save = 20
 
 k_fold_num = 0
-fold = './data/actdata/'
+fold = './data/tmpdata/'
 savename = '_selftest_kfold'+str(k_fold_num)
 LABELS = ['double', 'fist', 'spread', 'six', 'wavein', 'waveout', 'yes', 'no', 'finger', 'snap']
 
