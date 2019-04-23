@@ -20,11 +20,11 @@ n_hidden = 50  # Hidden layer num of features
 n_classes = 10  # Total classes (should go up, or should go down)
 n_inputs = 8
 max_seq = 800
-k_fold_num = 0
+k_fold_num = 4
 # model_name = 'E:/Research-bachelor/storeMODELs/5kfold/lstmkfold{}/lstm/model_LSTM_kfold{}.ckpt-final'.format(k_fold_num,k_fold_num)
 
 model_name = "E:/Research-bachelor/storeMODELs/all_lstm_3/all_model3_kfold{}/" \
-             "model_selftest_kfold0.ckpt-4100".format(k_fold_num,k_fold_num)
+             "model_mergeall_kfold4.ckpt-3600".format(k_fold_num,k_fold_num)
 foldname = './data/actdata/'
 matrix_save_path = "E:/Research-bachelor/storeMODELs/all_lstm_3/all_model3Matrix_kfold{}.txt".format(k_fold_num)
 

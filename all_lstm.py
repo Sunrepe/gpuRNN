@@ -317,7 +317,7 @@ def main():
             seq_len6: batch_seq_len[6],
             seq_len7: batch_seq_len[7],
             seq_len8: batch_seq_len[8],
-            keep_prob: 0.5
+            keep_prob: 1.0
         }
         # Fit training using batch data
         _, loss, acc = sess.run(

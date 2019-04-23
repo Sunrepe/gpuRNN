@@ -7,6 +7,14 @@ import numpy as np
 from sklearn import metrics
 
 
+def Matrix_to_CSV(filename, data):
+    with open(filename, "a", newline='', ) as csvfile:
+        writer = csv.writer(csvfile)
+        # 先写入columns_name
+        # writer.writerow(["emg1", "emg2", "emg3", "emg4", "emg5", "emg6", "emg7", "emg8", "label"])
+        for row in data:
+            writer.writerow(row)
+
 
 def f1scores(maxix,rangese):
     recdi = np.sum(maxix,axis=1)
@@ -41,14 +49,17 @@ def Read__mean_2(filename):
 def main():
     fold = './matrix/all_3/'
     stream = ["原始信号", "均值", "标准差", "波长变化", "dwt1", "dwt2", "dwt3", "dwt4", "fft", "融合"]
+    matrix_save_path = fold+'Matrix.txt'
     allfile = os.listdir(fold)
     z = np.zeros([100, 10])
     for file in allfile:
         tmp = Read__mean_2(fold+file)
         z += tmp
-    z=z.astype('int')
+    z = z.astype('int')
+    Matrix_to_CSV(matrix_save_path,z)
     print(z)
-    print("-------------------------")
+    print("------------------------------")
+    print("所有的不同特征拓展方案的混淆矩阵")
     # for i in range(10):
     #     print(stream[i])
     #     co = z[i * 10:(i + 1) * 10, :]
@@ -58,10 +69,12 @@ def main():
         co = z[i*10:(i+1)*10, :]
         print(co)
         f1sc = f1scores(co, 10)
-        print(f1sc[0])
-        print(f1sc[1])
-        print(f1sc[2])
-        print('Accuracy:', f1sc[3])
+        # print(f1sc[0])
+        # print(f1sc[1])
+        # print(f1sc[2])
+        print('Accuracy:{}%'.format(f1sc[3]/100))
+
+        print("------------------------------")
         # Matrix_to_CSV('./data/resd/'+kk+'.txt', co)
         # Matrix_to_CSV('./data/resd/shishi.txt', co)
 
