@@ -128,6 +128,10 @@ def data_len_get(longs, kfold_num):
     return l, r
 
 
+def get_last_dconvlen(real_len):
+    return int(int((int((real_len-5)/2)-9)/2-9)/2)-4
+
+
 def fft_trans(data):
     # data = data.T
     wave_let = pywt.Wavelet('sym4')
@@ -1046,7 +1050,7 @@ class CNNData2(object):
                     else:
                         # 生成数据
                         self.all_label.append(get_label(get_lei(ob), num_classes=num_class))
-                        self.all_seq_len.append(int(_len/4.0)-3)
+                        self.all_seq_len.append(get_last_dconvlen(_len))  # 计算经过CNN网络后的长度
                         s_tmp = np.zeros((max_seq, 8))
                         s_tmp[0:_len, :] = tmp_data
                         self.all_data.append(s_tmp[:, :, np.newaxis])

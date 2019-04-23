@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e51bf105-f34c-4031-aa58-28fd3cc5807c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/all_lstm.py" afterPath="$PROJECT_DIR$/all_lstm.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/allmodel3_selfEveryone.py" afterPath="$PROJECT_DIR$/allmodel3_selfEveryone.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/allmodel3_testEveryone.py" afterPath="$PROJECT_DIR$/allmodel3_testEveryone.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cnn_newdata.py" afterPath="$PROJECT_DIR$/cnn_newdata.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data_pre/alldata.py" afterPath="$PROJECT_DIR$/data_pre/alldata.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/load_all_confusionMatrix.py" afterPath="$PROJECT_DIR$/load_all_confusionMatrix.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test.py" afterPath="$PROJECT_DIR$/test.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -41,8 +36,8 @@
     <SUITE FILE_PATH="coverage/gpuRNN$testtmp.coverage" NAME="testtmp Coverage Results" MODIFIED="1554607652627" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$test__1_.coverage" NAME="test (1) Coverage Results" MODIFIED="1555156105515" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$gru_8pose.coverage" NAME="gru_8pose Coverage Results" MODIFIED="1553775162284" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/gpuRNN$cnn_newdata.coverage" NAME="cnn_newdata Coverage Results" MODIFIED="1554607822715" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$alldata.coverage" NAME="alldata Coverage Results" MODIFIED="1555594022822" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data_pre" />
+    <SUITE FILE_PATH="coverage/gpuRNN$cnn_newdata.coverage" NAME="cnn_newdata Coverage Results" MODIFIED="1556005913272" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$lstm_testMerge.coverage" NAME="lstm_testMerge Coverage Results" MODIFIED="1553927273515" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$wavelet_trans.coverage" NAME="wavelet_trans Coverage Results" MODIFIED="1554862420513" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data_pre" />
     <SUITE FILE_PATH="coverage/gpuRNN$lstm_testNEWOLD.coverage" NAME="lstm_testNEWOLD Coverage Results" MODIFIED="1553927643948" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -53,11 +48,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="alldata.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="alldata.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data_pre/alldata.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1801">
-              <caret line="910" column="8" lean-forward="false" selection-start-line="910" selection-start-column="8" selection-end-line="910" selection-end-column="8" />
+            <state relative-caret-position="219">
+              <caret line="1025" column="35" lean-forward="true" selection-start-line="1025" selection-start-column="35" selection-end-line="1025" selection-end-column="35" />
               <folding>
                 <element signature="e#74#291#0" expanded="false" />
                 <element signature="e#315#439#0" expanded="false" />
@@ -65,28 +60,37 @@
                 <element signature="e#769#799#0" expanded="false" />
                 <element signature="e#838#922#0" expanded="false" />
                 <element signature="e#1473#2204#0" expanded="false" />
-                <element signature="e#3298#4029#0" expanded="false" />
-                <element signature="e#4059#7500#0" expanded="false" />
-                <element signature="e#7530#10534#0" expanded="false" />
-                <element signature="e#9617#9827#0" expanded="false" />
-                <element signature="e#9884#10475#0" expanded="false" />
-                <element signature="e#10569#13597#0" expanded="false" />
-                <element signature="e#12680#12890#0" expanded="false" />
-                <element signature="e#12947#13538#0" expanded="false" />
-                <element signature="e#13632#16695#0" expanded="false" />
-                <element signature="e#15778#15988#0" expanded="false" />
-                <element signature="e#16045#16636#0" expanded="false" />
-                <element signature="e#16730#19814#0" expanded="false" />
-                <element signature="e#18897#19107#0" expanded="false" />
-                <element signature="e#19164#19755#0" expanded="false" />
-                <element signature="e#19848#23137#0" expanded="false" />
-                <element signature="e#23175#26436#0" expanded="false" />
-                <element signature="e#26469#29310#0" expanded="false" />
-                <element signature="e#29351#33262#0" expanded="false" />
-                <element signature="e#33296#37254#0" expanded="false" />
-                <element signature="e#41940#45203#0" expanded="false" />
-                <element signature="e#45245#52046#0" expanded="false" />
+                <element signature="e#3386#4117#0" expanded="false" />
+                <element signature="e#4147#7588#0" expanded="false" />
+                <element signature="e#7618#10622#0" expanded="false" />
+                <element signature="e#9705#9915#0" expanded="false" />
+                <element signature="e#9972#10563#0" expanded="false" />
+                <element signature="e#10657#13685#0" expanded="false" />
+                <element signature="e#12768#12978#0" expanded="false" />
+                <element signature="e#13035#13626#0" expanded="false" />
+                <element signature="e#13720#16783#0" expanded="false" />
+                <element signature="e#15866#16076#0" expanded="false" />
+                <element signature="e#16133#16724#0" expanded="false" />
+                <element signature="e#16818#19902#0" expanded="false" />
+                <element signature="e#18985#19195#0" expanded="false" />
+                <element signature="e#19252#19843#0" expanded="false" />
+                <element signature="e#19936#23225#0" expanded="false" />
+                <element signature="e#23263#26524#0" expanded="false" />
+                <element signature="e#26557#29398#0" expanded="false" />
+                <element signature="e#29439#33350#0" expanded="false" />
+                <element signature="e#33384#37342#0" expanded="false" />
+                <element signature="e#45358#52159#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ops.py" pinned="false" current-in-tab="false">
+        <entry file="file://C:/Program/Anaconda/Lib/site-packages/tensorflow/python/framework/ops.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="95">
+              <caret line="1630" column="0" lean-forward="false" selection-start-line="1630" selection-start-column="0" selection-end-line="1630" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -121,8 +125,18 @@
       <file leaf-file-name="all_lstm.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/all_lstm.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="229">
+            <state relative-caret-position="304">
               <caret line="216" column="27" lean-forward="true" selection-start-line="216" selection-start-column="27" selection-end-line="216" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cnn_newdata.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/cnn_newdata.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="250">
+              <caret line="171" column="20" lean-forward="false" selection-start-line="171" selection-start-column="20" selection-end-line="171" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -200,17 +214,17 @@
         <option value="$PROJECT_DIR$/lstm_0405_kfold.py" />
         <option value="$PROJECT_DIR$/all_two_lstm.py" />
         <option value="$PROJECT_DIR$/bilstm_0402.py" />
-        <option value="$PROJECT_DIR$/cnn_newdata.py" />
         <option value="$PROJECT_DIR$/data_pre/dataFortest.py" />
         <option value="$PROJECT_DIR$/all_three_lstm.py" />
         <option value="$PROJECT_DIR$/allmodel3_selfEveryone.py" />
         <option value="$PROJECT_DIR$/allmodel3_testEveryone.py" />
-        <option value="$PROJECT_DIR$/data_pre/alldata.py" />
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/load_all_confusionMatrix.py" />
         <option value="$PROJECT_DIR$/forPICS/dt.txt" />
         <option value="$PROJECT_DIR$/forPICS/oriandsmooth.py" />
         <option value="$PROJECT_DIR$/all_lstm.py" />
+        <option value="$PROJECT_DIR$/data_pre/alldata.py" />
+        <option value="$PROJECT_DIR$/cnn_newdata.py" />
       </list>
     </option>
   </component>
@@ -280,7 +294,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.oriandsmooth">
+  <component name="RunManager" selected="Python.cnn_newdata">
     <configuration name="allmodel3_selfEveryone" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -299,7 +313,7 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <configuration name="allmodel3_testEveryone" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="cnn_newdata" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -312,7 +326,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="gpuRNN" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/allmodel3_testEveryone.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/cnn_newdata.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -372,19 +386,19 @@
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.allmodel3_testEveryone" />
-      <item index="1" class="java.lang.String" itemvalue="Python.load_all_confusionMatrix" />
-      <item index="2" class="java.lang.String" itemvalue="Python.allmodel3_selfEveryone" />
-      <item index="3" class="java.lang.String" itemvalue="Python.test" />
-      <item index="4" class="java.lang.String" itemvalue="Python.oriandsmooth" />
+      <item index="0" class="java.lang.String" itemvalue="Python.load_all_confusionMatrix" />
+      <item index="1" class="java.lang.String" itemvalue="Python.allmodel3_selfEveryone" />
+      <item index="2" class="java.lang.String" itemvalue="Python.test" />
+      <item index="3" class="java.lang.String" itemvalue="Python.oriandsmooth" />
+      <item index="4" class="java.lang.String" itemvalue="Python.cnn_newdata" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.oriandsmooth" />
-        <item index="1" class="java.lang.String" itemvalue="Python.load_all_confusionMatrix" />
-        <item index="2" class="java.lang.String" itemvalue="Python.test" />
-        <item index="3" class="java.lang.String" itemvalue="Python.allmodel3_selfEveryone" />
-        <item index="4" class="java.lang.String" itemvalue="Python.allmodel3_testEveryone" />
+        <item index="0" class="java.lang.String" itemvalue="Python.cnn_newdata" />
+        <item index="1" class="java.lang.String" itemvalue="Python.oriandsmooth" />
+        <item index="2" class="java.lang.String" itemvalue="Python.load_all_confusionMatrix" />
+        <item index="3" class="java.lang.String" itemvalue="Python.test" />
+        <item index="4" class="java.lang.String" itemvalue="Python.allmodel3_selfEveryone" />
       </list>
     </recent_temporary>
   </component>
@@ -420,7 +434,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33225283" sideWeight="0.49546143" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1815235" sideWeight="0.49319214" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21717991" sideWeight="0.49319214" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28038898" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -638,13 +652,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Program/Anaconda/Lib/site-packages/tensorflow/python/framework/ops.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="1630" column="0" lean-forward="false" selection-start-line="1630" selection-start-column="0" selection-end-line="1630" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/Program/Anaconda/Lib/site-packages/tensorflow/python/client/session.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-15">
@@ -695,13 +702,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cnn_newdata.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3600">
-          <caret line="177" column="42" lean-forward="false" selection-start-line="176" selection-start-column="48" selection-end-line="177" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testEveryone.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2325">
@@ -736,7 +736,7 @@
         <state relative-caret-position="405">
           <caret line="184" column="22" lean-forward="false" selection-start-line="184" selection-start-column="22" selection-end-line="184" selection-end-column="22" />
           <folding>
-            <element signature="e#63#97#0" expanded="true" />
+            <element signature="e#63#97#0" expanded="false" />
             <element signature="e#2466#8050#0" expanded="false" />
           </folding>
         </state>
@@ -765,7 +765,7 @@
         <state relative-caret-position="25">
           <caret line="15" column="25" lean-forward="false" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
           <folding>
-            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#0#9#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -775,7 +775,7 @@
         <state relative-caret-position="405">
           <caret line="36" column="22" lean-forward="false" selection-start-line="36" selection-start-column="22" selection-end-line="36" selection-end-column="22" />
           <folding>
-            <element signature="e#63#93#0" expanded="true" />
+            <element signature="e#63#93#0" expanded="false" />
             <element signature="e#2367#7951#0" expanded="false" />
           </folding>
         </state>
@@ -786,7 +786,7 @@
         <state relative-caret-position="405">
           <caret line="60" column="49" lean-forward="false" selection-start-line="60" selection-start-column="49" selection-end-line="60" selection-end-column="49" />
           <folding>
-            <element signature="e#63#93#0" expanded="true" />
+            <element signature="e#63#93#0" expanded="false" />
             <element signature="e#2289#7873#0" expanded="false" />
           </folding>
         </state>
@@ -817,16 +817,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/all_lstm.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
+        <state relative-caret-position="304">
           <caret line="216" column="27" lean-forward="true" selection-start-line="216" selection-start-column="27" selection-end-line="216" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Program/Anaconda/Lib/site-packages/tensorflow/python/framework/ops.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="1630" column="0" lean-forward="false" selection-start-line="1630" selection-start-column="0" selection-end-line="1630" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/data_pre/alldata.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1801">
-          <caret line="910" column="8" lean-forward="false" selection-start-line="910" selection-start-column="8" selection-end-line="910" selection-end-column="8" />
+        <state relative-caret-position="219">
+          <caret line="1025" column="35" lean-forward="true" selection-start-line="1025" selection-start-column="35" selection-end-line="1025" selection-end-column="35" />
           <folding>
             <element signature="e#74#291#0" expanded="false" />
             <element signature="e#315#439#0" expanded="false" />
@@ -834,28 +842,35 @@
             <element signature="e#769#799#0" expanded="false" />
             <element signature="e#838#922#0" expanded="false" />
             <element signature="e#1473#2204#0" expanded="false" />
-            <element signature="e#3298#4029#0" expanded="false" />
-            <element signature="e#4059#7500#0" expanded="false" />
-            <element signature="e#7530#10534#0" expanded="false" />
-            <element signature="e#9617#9827#0" expanded="false" />
-            <element signature="e#9884#10475#0" expanded="false" />
-            <element signature="e#10569#13597#0" expanded="false" />
-            <element signature="e#12680#12890#0" expanded="false" />
-            <element signature="e#12947#13538#0" expanded="false" />
-            <element signature="e#13632#16695#0" expanded="false" />
-            <element signature="e#15778#15988#0" expanded="false" />
-            <element signature="e#16045#16636#0" expanded="false" />
-            <element signature="e#16730#19814#0" expanded="false" />
-            <element signature="e#18897#19107#0" expanded="false" />
-            <element signature="e#19164#19755#0" expanded="false" />
-            <element signature="e#19848#23137#0" expanded="false" />
-            <element signature="e#23175#26436#0" expanded="false" />
-            <element signature="e#26469#29310#0" expanded="false" />
-            <element signature="e#29351#33262#0" expanded="false" />
-            <element signature="e#33296#37254#0" expanded="false" />
-            <element signature="e#41940#45203#0" expanded="false" />
-            <element signature="e#45245#52046#0" expanded="false" />
+            <element signature="e#3386#4117#0" expanded="false" />
+            <element signature="e#4147#7588#0" expanded="false" />
+            <element signature="e#7618#10622#0" expanded="false" />
+            <element signature="e#9705#9915#0" expanded="false" />
+            <element signature="e#9972#10563#0" expanded="false" />
+            <element signature="e#10657#13685#0" expanded="false" />
+            <element signature="e#12768#12978#0" expanded="false" />
+            <element signature="e#13035#13626#0" expanded="false" />
+            <element signature="e#13720#16783#0" expanded="false" />
+            <element signature="e#15866#16076#0" expanded="false" />
+            <element signature="e#16133#16724#0" expanded="false" />
+            <element signature="e#16818#19902#0" expanded="false" />
+            <element signature="e#18985#19195#0" expanded="false" />
+            <element signature="e#19252#19843#0" expanded="false" />
+            <element signature="e#19936#23225#0" expanded="false" />
+            <element signature="e#23263#26524#0" expanded="false" />
+            <element signature="e#26557#29398#0" expanded="false" />
+            <element signature="e#29439#33350#0" expanded="false" />
+            <element signature="e#33384#37342#0" expanded="false" />
+            <element signature="e#45358#52159#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cnn_newdata.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="171" column="20" lean-forward="false" selection-start-line="171" selection-start-column="20" selection-end-line="171" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>

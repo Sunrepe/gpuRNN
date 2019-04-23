@@ -16,8 +16,8 @@ n_inputs = 8
 max_seq = 800
 
 # Training
-learning_rate = 0.0025
-lambda_loss_amount = 0.0015
+learning_rate = 0.0015
+lambda_loss_amount = 0.0075
 training_iters = 500  # Loop 200 times on the dataset
 batch_size = 400
 display_iter = 4000  # To show test set accuracy during training
@@ -88,28 +88,34 @@ def CNNnet2(inputs,keep_pro):
     with tf.name_scope('conv1'):
         w_conv1 = weight_init([5, 1, 1, 4], 'conv1_w')
         b_conv1 = bias_init([4], 'conv1_b')
-        conv1 = tf.nn.conv2d(input=inputs, filter=w_conv1, strides=[1, 1, 1, 1], padding='VALID')
+        conv1 = tf.nn.conv2d(input=inputs, filter=w_conv1, strides=[1, 2, 1, 1], padding='VALID')
         conv1 = tf.nn.relu(conv1+b_conv1)
-        conv1 = tf.nn.max_pool(conv1, ksize=[1,2,1,1], strides=[1,2,1,1],padding='VALID')
+        # conv1 = tf.nn.max_pool(conv1, ksize=[1, 2, 1, 1], strides=[1, 2, 1, 1],padding='VALID')
         # conv1 = tf.nn.dropout(conv1, keep_pro)
 
     # 第二层卷积
     with tf.name_scope('conv2'):
-        w_conv2 = weight_init([10, 1, 4, 4], 'conv2_w')
+        w_conv2 = weight_init([5, 1, 4, 4], 'conv2_w')
         b_conv2 = bias_init([4], 'conv2_b')
         conv2 = tf.nn.conv2d(input=conv1, filter=w_conv2, strides=[1,2,1,1], padding='VALID')
         conv2 = tf.nn.relu(conv2+b_conv2)
-        conv2 = tf.nn.dropout(conv2,keep_pro)
+        # conv2 = tf.nn.dropout(conv2,keep_pro)
         # h_pool2 = tf.nn.max_pool(h_conv2, ksize=[1,2,2,1], strides=[1,2,2,1],padding='VALID')
 
     with tf.name_scope('conv3'):
-        w_conv3 = weight_init([10, 1, 4, 2], 'conv3_w')
-        b_conv3 = bias_init([2], 'conv3_b')
+        w_conv3 = weight_init([10, 1, 4, 4], 'conv3_w')
+        b_conv3 = bias_init([4], 'conv3_b')
         conv3 = tf.nn.conv2d(input=conv2, filter=w_conv3, strides=[1,2,1,1], padding='VALID')
         conv3 = tf.nn.relu(conv3+b_conv3)
 
-    _a = conv3.shape
-    return tf.reshape(conv3, [-1, _a[1], 16])
+    with tf.name_scope('conv4'):
+        w_conv4 = weight_init([5, 1, 4, 2], 'conv4_w')
+        b_conv4 = bias_init([2], 'conv4_b')
+        conv4 = tf.nn.conv2d(input=conv3, filter=w_conv4, strides=[1,1,1,1], padding='VALID')
+        # conv4 = tf.nn.relu()
+        conv4 = conv4+b_conv4
+    _a = conv4.shape
+    return tf.reshape(conv4, [-1, _a[1], 16])
 
 
 def LSTM_RNN(_X, seqlen, _weight, _bias):
@@ -121,10 +127,10 @@ def LSTM_RNN(_X, seqlen, _weight, _bias):
     # many to one 关键。两种方案，一个是选择最后的输出，一个是选择所有输出的均值
     # 方案一：
     #  获取数据,此时维度为[none,batch_size,n_hidden],需要进一步降维
-    lstm_out = tf.batch_gather(outputs, tf.to_int32(seqlen[:, None]-2))
-    lstm_out = tf.reshape(lstm_out, [-1, n_hidden])
+    # lstm_out = tf.batch_gather(outputs, tf.to_int32(seqlen[:, None]-2))
+    # lstm_out = tf.reshape(lstm_out, [-1, n_hidden])
     # 方案二：
-    # lstm_out = tf.divide(tf.reduce_sum(outputs, 1), seqlen[:, None])
+    lstm_out = tf.divide(tf.reduce_sum(outputs, 1), seqlen[:, None])
 
     return tf.matmul(lstm_out, _weight['out']) + _bias['out']
 
