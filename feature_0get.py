@@ -22,14 +22,14 @@ max_seq = 800
 tmp_use_len = [150, 150, 250, 450, 800, 800, 800, 800, 400]
 
 # Training
-learning_rate = 0.0025
+# learning_rate = 0.0001
 lambda_loss_amount = 0.0025
-training_iters = 150  # Loop 1000 times on the dataset
+training_iters = 230  # Loop 1000 times on the dataset
 batch_size = 400
 display_iter = 4000  # To show test set accuracy during training
 model_save = 20
 
-k_fold_num = 0
+k_fold_num = 3
 feature_num__s = 0
 fold = './data/actdata/'
 savename = '_feature{}_kfold{}'.format(feature_num__s, k_fold_num)
@@ -201,6 +201,8 @@ def main():
     # L2 loss prevents this overkill neural network to overfit the data
 
     cost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits_v2(labels=y, logits=pred)) + l2  # Softmax loss
+
+    learning_rate = tf.Variable(0.0025, dtype=tf.float32, trainable=False)
     optimizer = tf.train.AdamOptimizer(learning_rate=learning_rate).minimize(cost)  # Adam Optimizer
 
     correct_pred = tf.equal(tf.argmax(pred, 1), tf.argmax(y, 1))
@@ -218,12 +220,21 @@ def main():
     sess = tf.InteractiveSession(config=tf.ConfigProto(log_device_placement=False))
     init = tf.global_variables_initializer()
     sess.run(init)
-    # saver.restore(sess, './lstm/model_LSTMemg_kfold4.ckpt-final')
+    # saver.restore(sess, './lstm/model_feature0_kfold1.ckpt-2200')
     # Perform Training steps with "batch_size" amount of example data at each loop
     step = 1
     print("Start train!")
 
     while step * batch_size <= training_iters * train_data_len:
+        # 调整lr
+        if step < 800:
+            t = sess.run(tf.assign(learning_rate, 0.0025))
+        elif step < 1600:
+            t = sess.run(tf.assign(learning_rate, 0.00025))
+        else:
+            t = sess.run(tf.assign(learning_rate, 0.00008))
+
+        # learning_rate = cal_lr(learning_rate, step)
         batch_xs, batch_ys, batch_seq_len = train_sets.next(batch_size)
         # Fit training using batch data
         _, loss, acc = sess.run(
@@ -243,7 +254,8 @@ def main():
             # To not spam console, show training accuracy/loss in this "if"
             print("Training iter #" + str(step * batch_size) + \
                   ":   Batch Loss = " + "{:.6f}".format(loss) + \
-                  ", Accuracy = {}".format(acc))
+                  ", Accuracy = {}".format(acc) + \
+                  "lr = {}".format(t))
 
             # Evaluation on the test set (no learning made here - just evaluation for diagnosis)
             loss, acc = sess.run(
