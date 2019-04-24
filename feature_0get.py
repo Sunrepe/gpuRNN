@@ -23,7 +23,7 @@ tmp_use_len = [150, 150, 250, 450, 800, 800, 800, 800, 400]
 
 # Training
 # learning_rate = 0.0001
-lambda_loss_amount = 0.0025
+lambda_loss_amount = 0.0015
 training_iters = 230  # Loop 1000 times on the dataset
 batch_size = 400
 display_iter = 4000  # To show test set accuracy during training
@@ -230,9 +230,9 @@ def main():
         if step < 800:
             t = sess.run(tf.assign(learning_rate, 0.0025))
         elif step < 1600:
-            t = sess.run(tf.assign(learning_rate, 0.00025))
+            t = sess.run(tf.assign(learning_rate, 0.001))
         else:
-            t = sess.run(tf.assign(learning_rate, 0.00008))
+            t = sess.run(tf.assign(learning_rate, 0.00025))
 
         # learning_rate = cal_lr(learning_rate, step)
         batch_xs, batch_ys, batch_seq_len = train_sets.next(batch_size)
@@ -254,8 +254,8 @@ def main():
             # To not spam console, show training accuracy/loss in this "if"
             print("Training iter #" + str(step * batch_size) + \
                   ":   Batch Loss = " + "{:.6f}".format(loss) + \
-                  ", Accuracy = {}".format(acc) + \
-                  "lr = {}".format(t))
+                  ",  Accuracy = {:.6f}".format(acc) + \
+                  ",  lr = {:.6f}".format(t))
 
             # Evaluation on the test set (no learning made here - just evaluation for diagnosis)
             loss, acc = sess.run(
