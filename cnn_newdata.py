@@ -160,7 +160,7 @@ def BiLSTM_RNN(_X, seqlen, keep_pro):
     lstm_out_1 = tf.divide(tf.reduce_sum(_out1, 1), seqlen[:, None])
     lstm_out_2 = tf.divide(tf.reduce_sum(_out2, 1), seqlen[:, None])
     _out_last = tf.concat([lstm_out_1, lstm_out_2], 1)
-    _out_last = tf.nn.dropout(_out_last, keep_prob=keep_pro)
+    # _out_last = tf.nn.dropout(_out_last, keep_prob=keep_pro)
     _out_last = tf.layers.dense(_out_last, 10)
 
     return _out_last

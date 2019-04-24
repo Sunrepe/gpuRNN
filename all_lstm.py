@@ -8,7 +8,6 @@ import csv
 import matplotlib.pyplot as plt
 import numpy as np
 from sklearn import metrics
-import tmp_trans_wavelet
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'  # just error no warning
 # os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'  # warnings and errors
