@@ -29,7 +29,7 @@ batch_size = 400
 display_iter = 4000  # To show test set accuracy during training
 model_save = 20
 
-k_fold_num = 0
+k_fold_num = 1
 feature_num__s = 0
 fold = './data/actdata/'
 savename = '_feature{}_kfold{}'.format(feature_num__s, k_fold_num)
