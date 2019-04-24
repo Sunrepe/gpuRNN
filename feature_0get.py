@@ -29,7 +29,7 @@ batch_size = 400
 display_iter = 4000  # To show test set accuracy during training
 model_save = 20
 
-k_fold_num = 3
+k_fold_num = 0
 feature_num__s = 0
 fold = './data/actdata/'
 savename = '_feature{}_kfold{}'.format(feature_num__s, k_fold_num)
@@ -181,7 +181,7 @@ def main():
                      num_class=10, trainable=True, kfold_num=k_fold_num,
                      feature_num=feature_num__s)
     test_sets = All_data_feature(foldname=fold, max_seq=max_seq,
-                     num_class=10, trainable=True, kfold_num=k_fold_num,
+                     num_class=10, trainable=False, kfold_num=k_fold_num,
                      feature_num=feature_num__s)
     train_data_len = len(train_sets.all_seq_len)
     print('train:', len(train_sets.all_seq_len), 'test:', len(test_sets.all_seq_len))

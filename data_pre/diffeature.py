@@ -369,9 +369,11 @@ class All_data_feature(object):
         '''
         train_person, test_person = getPersons(foldname, kfold_num)
         __person = train_person if trainable else test_person
-        print(__person)
+        # print(__person)
         if not trainable:
-            print(__person)
+            print('testPersons:', __person)
+        else:
+            print('trainPersons:', __person)
         self.all_data = []
         self.all_label = []
         self.all_seq_len = []
