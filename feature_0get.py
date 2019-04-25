@@ -24,12 +24,12 @@ tmp_use_len = [150, 150, 250, 450, 800, 800, 800, 800, 400]
 # Training
 # learning_rate = 0.0001
 lambda_loss_amount = 0.0015
-training_iters = 230  # Loop 1000 times on the dataset
+training_iters = 150  # Loop 1000 times on the dataset
 batch_size = 400
 display_iter = 4000  # To show test set accuracy during training
 model_save = 20
 
-k_fold_num = 0
+k_fold_num = 2
 feature_num__s = 1
 fold = './data/actdata/'
 savename = '_feature{}_kfold{}'.format(feature_num__s, k_fold_num)
@@ -220,7 +220,7 @@ def main():
     sess = tf.InteractiveSession(config=tf.ConfigProto(log_device_placement=False))
     init = tf.global_variables_initializer()
     sess.run(init)
-    # saver.restore(sess, './lstm/model_feature0_kfold1.ckpt-2200')
+    # saver.restore(sess, './lstm/model_feature0_kfold4.ckpt-final')
     # Perform Training steps with "batch_size" amount of example data at each loop
     step = 1
     print("Start train!")

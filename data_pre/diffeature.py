@@ -396,6 +396,7 @@ class All_data_feature(object):
                     else:
                         # 生成数据
                         tmp_data = data_feature_transform(tmp_data, feature_num)[0]
+                        _len = tmp_data.shape[0]
                         tmp_data = z_score(tmp_data)
                         self.all_label.append(get_label(get_lei(ob), num_classes=num_class))
                         self.all_seq_len.append(_len)
