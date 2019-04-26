@@ -27,7 +27,7 @@ learning_rate = 0.0025
 lambda_loss_amount = 0.0055
 training_iters = 150  # Loop 1000 times on the dataset
 batch_size = 400
-display_iter = 2000  # To show test set accuracy during training
+display_iter = 4000  # To show test set accuracy during training
 model_save = 20
 
 k_fold_num = 0
