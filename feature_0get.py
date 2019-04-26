@@ -23,14 +23,14 @@ tmp_use_len = [150, 150, 250, 450, 800, 800, 800, 800, 400]
 
 # Training
 # learning_rate = 0.0001
-lambda_loss_amount = 0.0015
-training_iters = 300  # Loop 1000 times on the dataset
+lambda_loss_amount = 0.0025
+training_iters = 500  # Loop 1000 times on the dataset
 batch_size = 400
 display_iter = 4000  # To show test set accuracy during training
 model_save = 20
 
-k_fold_num = 0
-feature_num__s = 8
+k_fold_num = 3
+feature_num__s = 1
 fold = './data/actdata/'
 savename = '_feature{}_kfold{}'.format(feature_num__s, k_fold_num)
 LABELS = ['double', 'fist', 'spread', 'six', 'wavein', 'waveout', 'yes', 'no', 'finger', 'snap']
@@ -192,7 +192,7 @@ def main():
     y = tf.placeholder(tf.float32, [None, n_classes])
     seq_len = tf.placeholder(tf.float32, [None])
 
-    pred = LSTM_RNN_f8(x, seq_len)
+    pred = LSTM_RNN_f1(x, seq_len)
 
     # Loss, optimizer and evaluation
     l2 = lambda_loss_amount * sum(
@@ -227,12 +227,12 @@ def main():
 
     while step * batch_size <= training_iters * train_data_len:
         # 调整lr
-        if step < 800:
+        if step < 2000:
+            t = sess.run(tf.assign(learning_rate, 0.0025))
+        elif step < 4000:
             t = sess.run(tf.assign(learning_rate, 0.001))
-        elif step < 1600:
-            t = sess.run(tf.assign(learning_rate, 0.0005))
         else:
-            t = sess.run(tf.assign(learning_rate, 0.00025))
+            t = sess.run(tf.assign(learning_rate, 0.0005))
 
         # learning_rate = cal_lr(learning_rate, step)
         batch_xs, batch_ys, batch_seq_len = train_sets.next(batch_size)
