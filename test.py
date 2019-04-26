@@ -46,103 +46,36 @@ def Matrix_to_CSV(filename, data):
         for row in data:
             writer.writerow(row)
 
-
-def getPersons_every(foldname, kfold_num):
-    '''
-        根据文件夹获得获得所有人,并根据kfold_num将所有人分类为训练集/测试集人物
-    '''
-    _person = set()
-    for filename in os.listdir(foldname):
-        oa, ob, oc = filename.split('_')
-        _person.add(oa)
-    _person = list(_person)
-    _person.sort()
-
-    test_p = _person[7*kfold_num:7*(kfold_num+1)]
-
-    return test_p
-
-
-def LSTM_RNN_tmp(x0,x1,x2,x3,x4,x5,x6,x7,x8,
-                 seq0,seq1,seq2,seq3,seq4,seq5,seq6,seq7,seq8):
-    # dwt
-    with tf.variable_scope('dwt0'):
+def LSTM_RNN_tmp(x0,x1,x2,seq0,seq1,seq2):
+    with tf.variable_scope('ori'):
         lstm_cell_1 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
         lstm_cell_2 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
         lstm_cells = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2])
         outputs, _ = tf.nn.dynamic_rnn(lstm_cells, inputs=x0, sequence_length=tf.to_int32(seq0), dtype=tf.float32)
         lstm_out0 = tf.divide(tf.reduce_sum(outputs, 1), seq0[:, None])
-        lstm_out0 = tf.nn.dropout(lstm_out0, keep_prob=0.8)
-        lstm_out0 = tf.layers.dense(lstm_out0, 10)
-    with tf.variable_scope('dwt1'):
+
+    with tf.variable_scope('avg'):
         lstm_cell_1 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
         lstm_cell_2 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
         lstm_cells = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2])
         outputs, _ = tf.nn.dynamic_rnn(lstm_cells, inputs=x1, sequence_length=tf.to_int32(seq1), dtype=tf.float32)
         lstm_out1 = tf.divide(tf.reduce_sum(outputs, 1), seq1[:, None])
-        lstm_out1 = tf.nn.dropout(lstm_out1, keep_prob=0.8)
-        lstm_out1 = tf.layers.dense(lstm_out1, 10)
-    with tf.variable_scope('dwt2'):
+
+    with tf.variable_scope('std'):
         lstm_cell_1 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
         lstm_cell_2 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
         lstm_cells = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2])
         outputs, _ = tf.nn.dynamic_rnn(lstm_cells, inputs=x2, sequence_length=tf.to_int32(seq2), dtype=tf.float32)
         lstm_out2 = tf.divide(tf.reduce_sum(outputs, 1), seq2[:, None])
-        lstm_out2 = tf.nn.dropout(lstm_out2, keep_prob=0.5)
-        lstm_out2 = tf.layers.dense(lstm_out2, 10)
-    with tf.variable_scope('dwt3'):
-        lstm_cell_1 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
-        lstm_cell_2 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
-        lstm_cells = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2])
-        outputs, _ = tf.nn.dynamic_rnn(lstm_cells, inputs=x3, sequence_length=tf.to_int32(seq3), dtype=tf.float32)
-        lstm_out3 = tf.divide(tf.reduce_sum(outputs, 1), seq3[:, None])
-        lstm_out3 = tf.nn.dropout(lstm_out3, keep_prob=0.5)
-        lstm_out3 = tf.layers.dense(lstm_out3, 10)
 
-    # time domain
-    with tf.variable_scope('ori'):
-        lstm_cell_1 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
-        lstm_cell_2 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
-        lstm_cells = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2])
-        outputs, _ = tf.nn.dynamic_rnn(lstm_cells, inputs=x4, sequence_length=tf.to_int32(seq4), dtype=tf.float32)
-        lstm_out4 = tf.divide(tf.reduce_sum(outputs, 1), seq4[:, None])
-        lstm_out4 = tf.nn.dropout(lstm_out4, keep_prob=0.8)
-        lstm_out4 = tf.layers.dense(lstm_out4, 10)
-    with tf.variable_scope('mean'):
-        lstm_cell_1 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
-        lstm_cell_2 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
-        lstm_cells = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2])
-        outputs, _ = tf.nn.dynamic_rnn(lstm_cells, inputs=x5, sequence_length=tf.to_int32(seq5), dtype=tf.float32)
-        lstm_out5 = tf.divide(tf.reduce_sum(outputs, 1), seq5[:, None])
-        lstm_out5 = tf.nn.dropout(lstm_out5, keep_prob=0.8)
-        lstm_out5 = tf.layers.dense(lstm_out5, 10)
-    with tf.variable_scope('std'):
-        lstm_cell_1 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
-        lstm_cell_2 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
-        lstm_cells = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2])
-        outputs, _ = tf.nn.dynamic_rnn(lstm_cells, inputs=x6, sequence_length=tf.to_int32(seq6), dtype=tf.float32)
-        lstm_out6 = tf.divide(tf.reduce_sum(outputs, 1), seq6[:, None])
-        lstm_out6 = tf.nn.dropout(lstm_out6, keep_prob=0.6)
-        lstm_out6 = tf.layers.dense(lstm_out6, 10)
-    with tf.variable_scope('wtchange'):
-        lstm_cell_1 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
-        lstm_cell_2 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
-        lstm_cells = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2])
-        outputs, _ = tf.nn.dynamic_rnn(lstm_cells, inputs=x7, sequence_length=tf.to_int32(seq7), dtype=tf.float32)
-        lstm_out7 = tf.divide(tf.reduce_sum(outputs, 1), seq7[:, None])
-        lstm_out7 = tf.nn.dropout(lstm_out7, keep_prob=0.5)
-        lstm_out7 = tf.layers.dense(lstm_out7, 10)
-    with tf.variable_scope('fft'):
-        lstm_cell_1 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
-        lstm_cell_2 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
-        lstm_cells = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2])
-        outputs, _ = tf.nn.dynamic_rnn(lstm_cells, inputs=x8, sequence_length=tf.to_int32(seq8), dtype=tf.float32)
-        lstm_out8 = tf.divide(tf.reduce_sum(outputs, 1), seq8[:, None])
-        lstm_out8 = tf.nn.dropout(lstm_out8, keep_prob=0.5)
-        lstm_out8 = tf.layers.dense(lstm_out8, 10)
+    lstm_out0 = tf.concat([lstm_out0, lstm_out1], 1)
+    lstm_out0 = tf.concat([lstm_out0, lstm_out2], 1)
+    with tf.variable_scope('fullConnect'):
+        # lstm_out = tf.nn.dropout(lstm_out, keep_prob=0.8)
+        lstm_out = tf.layers.dense(lstm_out0, 10)
+    return lstm_out
 
-    return [lstm_out0,lstm_out1,lstm_out2,lstm_out3,lstm_out4,lstm_out5,lstm_out6,lstm_out7,lstm_out8]
-    # return tf.matmul(lstm_out, _weight['out']) + _bias['out']
+
 
 
 def main():
@@ -153,30 +86,18 @@ def main():
     x0 = tf.placeholder(tf.float32, [None, tmp_use_len[0], n_inputs])
     x1 = tf.placeholder(tf.float32, [None, tmp_use_len[1], n_inputs])
     x2 = tf.placeholder(tf.float32, [None, tmp_use_len[2], n_inputs])
-    x3 = tf.placeholder(tf.float32, [None, tmp_use_len[3], n_inputs])
-    x4 = tf.placeholder(tf.float32, [None, tmp_use_len[4], n_inputs])
-    x5 = tf.placeholder(tf.float32, [None, tmp_use_len[5], n_inputs])
-    x6 = tf.placeholder(tf.float32, [None, tmp_use_len[6], n_inputs])
-    x7 = tf.placeholder(tf.float32, [None, tmp_use_len[7], n_inputs])
-    x8 = tf.placeholder(tf.float32, [None, tmp_use_len[8], n_inputs])
     seq_len0 = tf.placeholder(tf.float32, [None])
     seq_len1 = tf.placeholder(tf.float32, [None])
     seq_len2 = tf.placeholder(tf.float32, [None])
-    seq_len3 = tf.placeholder(tf.float32, [None])
-    seq_len4 = tf.placeholder(tf.float32, [None])
-    seq_len5 = tf.placeholder(tf.float32, [None])
-    seq_len6 = tf.placeholder(tf.float32, [None])
-    seq_len7 = tf.placeholder(tf.float32, [None])
-    seq_len8 = tf.placeholder(tf.float32, [None])
     y = tf.placeholder(tf.float32, [None, n_classes])
 
-    preds = LSTM_RNN_tmp(x0, x1, x2, x3, x4, x5, x6, x7, x8,
-                         seq_len0, seq_len1, seq_len2, seq_len3,
-                         seq_len4, seq_len5, seq_len6, seq_len7, seq_len8)
+    preds = LSTM_RNN_tmp(x0, x1, x2, seq_len0, seq_len1, seq_len2)
     # Loss, optimizer and evaluation
     saver = tf.train.Saver()
     # start train and test
     # To keep track of training's performance
+
+
 
     # Launch the graph
     sess = tf.InteractiveSession(config=tf.ConfigProto(log_device_placement=False))
@@ -184,6 +105,11 @@ def main():
     saver.restore(sess, model_name)
     # load accomplished
     print('Model are loaded!\t{}s'.format(time.time()-time1))
+
+    var = tf.global_variables()  # 取出全局中所有的参数
+    var_flow_restore2 = [val for val in var if 'avg' in val.name]  # 取出名字中有‘flownet’的参数
+    saver2 = tf.train.Saver(var_flow_restore2)  # 这句话就是关键了，可以网Saver中传参数
+    saver2.restore(sess, './tmpmodel/1/model_feature1_kfold0.ckpt-3200')  # 然后就往sess对应的图中导入了参数（var_flow_restore
 
     # df_data = []
     print("Start test!")

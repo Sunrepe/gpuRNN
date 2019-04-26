@@ -370,6 +370,7 @@ class All_data_feature(object):
         train_person, test_person = getPersons(foldname, kfold_num)
         __person = train_person if trainable else test_person
         # print(__person)
+        print("feature NUM:", feature_num )
         if not trainable:
             print('testPersons:', __person)
         else:
