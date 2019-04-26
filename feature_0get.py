@@ -218,9 +218,9 @@ def main():
 
     # Launch the graph
     sess = tf.InteractiveSession(config=tf.ConfigProto(log_device_placement=False))
-    init = tf.global_variables_initializer()
-    sess.run(init)
-    # saver.restore(sess, './lstm/model_feature0_kfold4.ckpt-final')
+    # init = tf.global_variables_initializer()
+    # sess.run(init)
+    saver.restore(sess, './lstm_model/model_feature0_kfold3.ckpt-3600')
     # Perform Training steps with "batch_size" amount of example data at each loop
     step = 1
     print("Start train!")
@@ -228,9 +228,9 @@ def main():
     while step * batch_size <= training_iters * train_data_len:
         # 调整lr
         if step < 800:
-            t = sess.run(tf.assign(learning_rate, 0.0025))
-        elif step < 1600:
             t = sess.run(tf.assign(learning_rate, 0.001))
+        elif step < 1600:
+            t = sess.run(tf.assign(learning_rate, 0.0005))
         else:
             t = sess.run(tf.assign(learning_rate, 0.00025))
 
