@@ -192,7 +192,7 @@ def main():
     y = tf.placeholder(tf.float32, [None, n_classes])
     seq_len = tf.placeholder(tf.float32, [None])
 
-    pred = LSTM_RNN_f8(x, seq_len)
+    pred = LSTM_RNN_f1(x, seq_len)
 
     # Loss, optimizer and evaluation
     l2 = lambda_loss_amount * sum(
