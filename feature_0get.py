@@ -24,13 +24,13 @@ tmp_use_len = [150, 150, 250, 450, 800, 800, 800, 800, 400]
 # Training
 # learning_rate = 0.0001
 lambda_loss_amount = 0.0025
-training_iters = 200  # Loop 1000 times on the dataset
+training_iters = 400  # Loop 1000 times on the dataset
 batch_size = 400
 display_iter = 4000  # To show test set accuracy during training
 model_save = 20
 
-k_fold_num = 1
-feature_num__s = 2
+k_fold_num = 3
+feature_num__s = 1
 fold = './data/actdata/'
 savename = '_feature{}_kfold{}'.format(feature_num__s, k_fold_num)
 LABELS = ['double', 'fist', 'spread', 'six', 'wavein', 'waveout', 'yes', 'no', 'finger', 'snap']
@@ -202,7 +202,7 @@ def main():
     y = tf.placeholder(tf.float32, [None, n_classes])
     seq_len = tf.placeholder(tf.float32, [None])
 
-    pred = LSTM_RNN_f2(x, seq_len)
+    pred = LSTM_RNN_f1(x, seq_len)
     # pred = LSTM_RNN_f0(x, seq_len, weights, biases)
 
     # Loss, optimizer and evaluation
