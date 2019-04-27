@@ -30,7 +30,7 @@ display_iter = 4000  # To show test set accuracy during training
 model_save = 20
 
 k_fold_num = 4
-feature_num__s = 1
+feature_num__s = 0
 fold = './data/actdata/'
 savename = '_feature{}_kfold{}'.format(feature_num__s, k_fold_num)
 LABELS = ['double', 'fist', 'spread', 'six', 'wavein', 'waveout', 'yes', 'no', 'finger', 'snap']
@@ -45,7 +45,7 @@ def Matrix_to_CSV(filename, data):
             writer.writerow([row])
 
 
-def LSTM_RNN_f0(x, seq):
+def LSTM_RNN_f0(x, seq, _weight, _bias):
     # dwt
     with tf.variable_scope('ori'):
         lstm_cell_1 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
@@ -56,7 +56,7 @@ def LSTM_RNN_f0(x, seq):
 
     with tf.variable_scope('fullConnect'):
         # lstm_out = tf.nn.dropout(lstm_out, keep_prob=0.8)
-        lstm_out = tf.layers.dense(lstm_out, 10)
+        lstm_out = tf.matmul(lstm_out, _weight['out']) + _bias['out']
     return lstm_out
 
 
@@ -187,12 +187,22 @@ def main():
     print('train:', len(train_sets.all_seq_len), 'test:', len(test_sets.all_seq_len))
     print('load data time:', time.time() - time1)
 
+    # weight
+    # Graph weights
+    with tf.variable_scope("weight"):
+        weights = {
+            'out': tf.Variable(tf.random_normal([n_hidden, n_classes], mean=1.0))
+        }
+        biases = {
+            'out': tf.Variable(tf.random_normal([n_classes]))
+        }
+
     # Graph input/output
     x = tf.placeholder(tf.float32, [None, max_seq, n_inputs])
     y = tf.placeholder(tf.float32, [None, n_classes])
     seq_len = tf.placeholder(tf.float32, [None])
 
-    pred = LSTM_RNN_f1(x, seq_len)
+    pred = LSTM_RNN_f0(x, seq_len, weights, biases)
 
     # Loss, optimizer and evaluation
     l2 = lambda_loss_amount * sum(

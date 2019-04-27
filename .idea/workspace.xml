@@ -142,8 +142,8 @@
       <file leaf-file-name="allmodel3_testEveryone.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/allmodel3_testEveryone.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-25">
-              <caret line="187" column="35" lean-forward="false" selection-start-line="187" selection-start-column="4" selection-end-line="187" selection-end-column="35" />
+            <state relative-caret-position="250">
+              <caret line="138" column="34" lean-forward="true" selection-start-line="138" selection-start-column="34" selection-end-line="138" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -152,20 +152,31 @@
       <file leaf-file-name="feature_0get.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/feature_0get.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="25">
-              <caret line="31" column="14" lean-forward="false" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="14" />
+            <state relative-caret-position="403">
+              <caret line="393" column="0" lean-forward="true" selection-start-line="393" selection-start-column="0" selection-end-line="393" selection-end-column="0" />
               <folding>
                 <element signature="e#20#53#0" expanded="true" />
                 <element signature="e#1132#1406#0" expanded="false" />
-                <element signature="e#1438#2099#0" expanded="false" />
-                <element signature="e#2131#2792#0" expanded="false" />
-                <element signature="e#2824#3484#0" expanded="false" />
-                <element signature="e#3516#4176#0" expanded="false" />
-                <element signature="e#4208#4869#0" expanded="false" />
-                <element signature="e#4901#5563#0" expanded="false" />
-                <element signature="e#5595#6256#0" expanded="false" />
-                <element signature="e#6288#6949#0" expanded="false" />
-                <element signature="e#6981#7641#0" expanded="false" />
+                <element signature="e#2861#3521#0" expanded="false" />
+                <element signature="e#3553#4213#0" expanded="false" />
+                <element signature="e#4245#4906#0" expanded="false" />
+                <element signature="e#4938#5600#0" expanded="false" />
+                <element signature="e#5632#6293#0" expanded="false" />
+                <element signature="e#6325#6986#0" expanded="false" />
+                <element signature="e#7018#7678#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="lstm_0405_kfold.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lstm_0405_kfold.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="514">
+              <caret line="89" column="61" lean-forward="true" selection-start-line="89" selection-start-column="11" selection-end-line="89" selection-end-column="61" />
+              <folding>
+                <element signature="e#1375#2773#0" expanded="false" />
+                <element signature="e#3812#4748#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -852,14 +863,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lstm_0405_kfold.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="25" column="27" lean-forward="true" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/fcrnn.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -925,28 +928,37 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/allmodel3_testEveryone.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-25">
-          <caret line="187" column="35" lean-forward="false" selection-start-line="187" selection-start-column="4" selection-end-line="187" selection-end-column="35" />
+        <state relative-caret-position="250">
+          <caret line="138" column="34" lean-forward="true" selection-start-line="138" selection-start-column="34" selection-end-line="138" selection-end-column="34" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lstm_0405_kfold.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="514">
+          <caret line="89" column="61" lean-forward="true" selection-start-line="89" selection-start-column="11" selection-end-line="89" selection-end-column="61" />
+          <folding>
+            <element signature="e#1375#2773#0" expanded="false" />
+            <element signature="e#3812#4748#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/feature_0get.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="31" column="14" lean-forward="false" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="14" />
+        <state relative-caret-position="403">
+          <caret line="393" column="0" lean-forward="true" selection-start-line="393" selection-start-column="0" selection-end-line="393" selection-end-column="0" />
           <folding>
             <element signature="e#20#53#0" expanded="true" />
             <element signature="e#1132#1406#0" expanded="false" />
-            <element signature="e#1438#2099#0" expanded="false" />
-            <element signature="e#2131#2792#0" expanded="false" />
-            <element signature="e#2824#3484#0" expanded="false" />
-            <element signature="e#3516#4176#0" expanded="false" />
-            <element signature="e#4208#4869#0" expanded="false" />
-            <element signature="e#4901#5563#0" expanded="false" />
-            <element signature="e#5595#6256#0" expanded="false" />
-            <element signature="e#6288#6949#0" expanded="false" />
-            <element signature="e#6981#7641#0" expanded="false" />
+            <element signature="e#2861#3521#0" expanded="false" />
+            <element signature="e#3553#4213#0" expanded="false" />
+            <element signature="e#4245#4906#0" expanded="false" />
+            <element signature="e#4938#5600#0" expanded="false" />
+            <element signature="e#5632#6293#0" expanded="false" />
+            <element signature="e#6325#6986#0" expanded="false" />
+            <element signature="e#7018#7678#0" expanded="false" />
           </folding>
         </state>
       </provider>
