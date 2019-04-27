@@ -24,13 +24,13 @@ max_seq = 800
 # Training
 learning_rate = 0.0025
 lambda_loss_amount = 0.0015
-training_iters = 150  # Loop 1000 times on the dataset
+training_iters = 300  # Loop 1000 times on the dataset
 batch_size = 200
 display_iter = 4000  # To show test set accuracy during training
 model_save = 80
 
 k_fold_num = 4
-fold = './data/wtdata/'
+fold = './data/actdata/'
 savename = '_LSTMemg_kfold'+str(k_fold_num)
 LABELS = ['double', 'fist', 'spread', 'six', 'wavein', 'waveout', 'yes', 'no', 'finger', 'snap']
 
@@ -111,7 +111,7 @@ def LSTM_RNN_WT(_X, seqlen, _weight, _bias):
 
 def main():
     time1 = time.time()
-    tmp_trans_wavelet.main_datatrans(fold)
+    # tmp_trans_wavelet.main_datatrans(fold)
     print('loading data...')
     train_sets = AllData_RNN(foldname=fold, max_seq=max_seq,
                              num_class=n_classes, trainable=True, kfold_num=k_fold_num)
@@ -167,9 +167,9 @@ def main():
 
     # Launch the graph
     sess = tf.InteractiveSession(config=tf.ConfigProto(log_device_placement=False))
-    # init = tf.global_variables_initializer()
-    # sess.run(init)
-    saver.restore(sess, './lstm/model_LSTMemg_kfold4.ckpt-final')
+    init = tf.global_variables_initializer()
+    sess.run(init)
+    # saver.restore(sess, './lstm/model_LSTMemg_kfold4.ckpt-final')
     # Perform Training steps with "batch_size" amount of example data at each loop
     step = 1
     print("Start train!")
