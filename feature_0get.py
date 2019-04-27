@@ -29,7 +29,7 @@ batch_size = 400
 display_iter = 4000  # To show test set accuracy during training
 model_save = 20
 
-k_fold_num = 3
+k_fold_num = 0
 feature_num__s = 0
 fold = './data/actdata/'
 savename = '_feature{}_kfold{}'.format(feature_num__s, k_fold_num)
@@ -54,13 +54,14 @@ def LSTM_RNN_f0(x, seq, _weight, _bias):
         outputs, _ = tf.nn.dynamic_rnn(lstm_cells, inputs=x, sequence_length=tf.to_int32(seq), dtype=tf.float32)
         lstm_out = tf.divide(tf.reduce_sum(outputs, 1), seq[:, None])
 
-    with tf.variable_scope('fullConnect'):
+    with tf.name_scope('fullConnect'):
         # lstm_out = tf.nn.dropout(lstm_out, keep_prob=0.8)
+        # lstm_out = tf.layers.dense(lstm_out, 10)
         lstm_out = tf.matmul(lstm_out, _weight['out']) + _bias['out']
     return lstm_out
 
 
-def LSTM_RNN_f1(x, seq):
+def LSTM_RNN_f1(x, seq, _weight, _bias):
     # dwt
     with tf.variable_scope('avg'):
         lstm_cell_1 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
@@ -69,13 +70,13 @@ def LSTM_RNN_f1(x, seq):
         outputs, _ = tf.nn.dynamic_rnn(lstm_cells, inputs=x, sequence_length=tf.to_int32(seq), dtype=tf.float32)
         lstm_out = tf.divide(tf.reduce_sum(outputs, 1), seq[:, None])
 
-    with tf.variable_scope('fullConnect'):
+    with tf.name_scope('fullConnect'):
         # lstm_out = tf.nn.dropout(lstm_out, keep_prob=0.8)
-        lstm_out = tf.layers.dense(lstm_out, 10)
+        lstm_out = tf.matmul(lstm_out, _weight['out']) + _bias['out']
     return lstm_out
 
 
-def LSTM_RNN_f2(x, seq):
+def LSTM_RNN_f2(x, seq, _weight, _bias):
     # dwt
     with tf.variable_scope('std'):
         lstm_cell_1 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
@@ -83,13 +84,13 @@ def LSTM_RNN_f2(x, seq):
         lstm_cells = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2])
         outputs, _ = tf.nn.dynamic_rnn(lstm_cells, inputs=x, sequence_length=tf.to_int32(seq), dtype=tf.float32)
         lstm_out = tf.divide(tf.reduce_sum(outputs, 1), seq[:, None])
-    with tf.variable_scope('fullConnect'):
+    with tf.name_scope('fullConnect'):
         # lstm_out = tf.nn.dropout(lstm_out, keep_prob=0.8)
-        lstm_out = tf.layers.dense(lstm_out, 10)
+        lstm_out = tf.matmul(lstm_out, _weight['out']) + _bias['out']
     return lstm_out
 
 
-def LSTM_RNN_f3(x, seq):
+def LSTM_RNN_f3(x, seq, _weight, _bias):
     # dwt
     with tf.variable_scope('wlc'):
         lstm_cell_1 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
@@ -97,13 +98,13 @@ def LSTM_RNN_f3(x, seq):
         lstm_cells = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2])
         outputs, _ = tf.nn.dynamic_rnn(lstm_cells, inputs=x, sequence_length=tf.to_int32(seq), dtype=tf.float32)
         lstm_out = tf.divide(tf.reduce_sum(outputs, 1), seq[:, None])
-    with tf.variable_scope('fullConnect'):
+    with tf.name_scope('fullConnect'):
         # lstm_out = tf.nn.dropout(lstm_out, keep_prob=0.8)
-        lstm_out = tf.layers.dense(lstm_out, 10)
+        lstm_out = tf.matmul(lstm_out, _weight['out']) + _bias['out']
     return lstm_out
 
 
-def LSTM_RNN_f4(x, seq):
+def LSTM_RNN_f4(x, seq, _weight, _bias):
     # dwt
     with tf.variable_scope('dwt1'):
         lstm_cell_1 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
@@ -111,13 +112,13 @@ def LSTM_RNN_f4(x, seq):
         lstm_cells = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2])
         outputs, _ = tf.nn.dynamic_rnn(lstm_cells, inputs=x, sequence_length=tf.to_int32(seq), dtype=tf.float32)
         lstm_out = tf.divide(tf.reduce_sum(outputs, 1), seq[:, None])
-    with tf.variable_scope('fullConnect'):
-        # lstm_out = tf.nn.dropout(lstm_out, keep_prob=0.8)
-        lstm_out = tf.layers.dense(lstm_out, 10)
+
+    with tf.name_scope('fullConnect'):
+        lstm_out = tf.matmul(lstm_out, _weight['out']) + _bias['out']
     return lstm_out
 
 
-def LSTM_RNN_f5(x, seq):
+def LSTM_RNN_f5(x, seq, _weight, _bias):
     # dwt
     with tf.variable_scope('dwt2'):
         lstm_cell_1 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
@@ -126,13 +127,12 @@ def LSTM_RNN_f5(x, seq):
         outputs, _ = tf.nn.dynamic_rnn(lstm_cells, inputs=x, sequence_length=tf.to_int32(seq), dtype=tf.float32)
         lstm_out = tf.divide(tf.reduce_sum(outputs, 1), seq[:, None])
 
-    with tf.variable_scope('fullConnect'):
-        # lstm_out = tf.nn.dropout(lstm_out, keep_prob=0.8)
-        lstm_out = tf.layers.dense(lstm_out, 10)
+    with tf.name_scope('fullConnect'):
+        lstm_out = tf.matmul(lstm_out, _weight['out']) + _bias['out']
     return lstm_out
 
 
-def LSTM_RNN_f6(x, seq):
+def LSTM_RNN_f6(x, seq, _weight, _bias):
     # dwt
     with tf.variable_scope('dwt3'):
         lstm_cell_1 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
@@ -140,13 +140,13 @@ def LSTM_RNN_f6(x, seq):
         lstm_cells = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2])
         outputs, _ = tf.nn.dynamic_rnn(lstm_cells, inputs=x, sequence_length=tf.to_int32(seq), dtype=tf.float32)
         lstm_out = tf.divide(tf.reduce_sum(outputs, 1), seq[:, None])
-    with tf.variable_scope('fullConnect'):
+    with tf.name_scope('fullConnect'):
         # lstm_out = tf.nn.dropout(lstm_out, keep_prob=0.8)
-        lstm_out = tf.layers.dense(lstm_out, 10)
+        lstm_out = tf.matmul(lstm_out, _weight['out']) + _bias['out']
     return lstm_out
 
 
-def LSTM_RNN_f7(x, seq):
+def LSTM_RNN_f7(x, seq, _weight, _bias):
     # dwt
     with tf.variable_scope('dwt4'):
         lstm_cell_1 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
@@ -154,13 +154,13 @@ def LSTM_RNN_f7(x, seq):
         lstm_cells = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2])
         outputs, _ = tf.nn.dynamic_rnn(lstm_cells, inputs=x, sequence_length=tf.to_int32(seq), dtype=tf.float32)
         lstm_out = tf.divide(tf.reduce_sum(outputs, 1), seq[:, None])
-    with tf.variable_scope('fullConnect'):
+    with tf.name_scope('fullConnect'):
         # lstm_out = tf.nn.dropout(lstm_out, keep_prob=0.8)
-        lstm_out = tf.layers.dense(lstm_out, 10)
+        lstm_out = tf.matmul(lstm_out, _weight['out']) + _bias['out']
     return lstm_out
 
 
-def LSTM_RNN_f8(x, seq):
+def LSTM_RNN_f8(x, seq, _weight, _bias):
     # dwt
     with tf.variable_scope('fft'):
         lstm_cell_1 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
@@ -168,9 +168,9 @@ def LSTM_RNN_f8(x, seq):
         lstm_cells = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2])
         outputs, _ = tf.nn.dynamic_rnn(lstm_cells, inputs=x, sequence_length=tf.to_int32(seq), dtype=tf.float32)
         lstm_out = tf.divide(tf.reduce_sum(outputs, 1), seq[:, None])
-    with tf.variable_scope('fullConnect'):
-        # lstm_out = tf.nn.dropout(lstm_out, keep_prob=0.8)
-        lstm_out = tf.layers.dense(lstm_out, 10)
+
+    with tf.name_scope('fullConnect'):
+        lstm_out = tf.matmul(lstm_out, _weight['out']) + _bias['out']
     return lstm_out
 
 
@@ -237,9 +237,9 @@ def main():
 
     while step * batch_size <= training_iters * train_data_len:
         # 调整lr
-        if step < 2000:
+        if step < 1600:
             t = sess.run(tf.assign(learning_rate, 0.0025))
-        elif step < 4000:
+        elif step < 2400:
             t = sess.run(tf.assign(learning_rate, 0.001))
         else:
             t = sess.run(tf.assign(learning_rate, 0.0005))
@@ -387,7 +387,6 @@ def main():
     plt.savefig('./loss_dir/Matrix{}.png'.format(savename), dpi=600, bbox_inches='tight')
 
     sess.close()
-
 
 if __name__ == '__main__':
     main()
