@@ -30,7 +30,7 @@ display_iter = 4000  # To show test set accuracy during training
 model_save = 20
 
 k_fold_num = 4
-feature_num__s = 2
+feature_num__s = 3
 fold = './data/actdata/'
 savename = '_feature{}_kfold{}'.format(feature_num__s, k_fold_num)
 LABELS = ['double', 'fist', 'spread', 'six', 'wavein', 'waveout', 'yes', 'no', 'finger', 'snap']
