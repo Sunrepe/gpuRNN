@@ -30,7 +30,7 @@ display_iter = 4000  # To show test set accuracy during training
 model_save = 20
 
 k_fold_num = 4
-feature_num__s = 6
+feature_num__s = 7
 fold = './data/actdata/'
 savename = '_feature{}_kfold{}'.format(feature_num__s, k_fold_num)
 LABELS = ['double', 'fist', 'spread', 'six', 'wavein', 'waveout', 'yes', 'no', 'finger', 'snap']
@@ -202,7 +202,7 @@ def main():
     seq_len = tf.placeholder(tf.float32, [None])
 
     # pred = LSTM_RNN_f1(x, seq_len)
-    pred = LSTM_RNN_f6(x, seq_len, weights, biases)
+    pred = LSTM_RNN_f7(x, seq_len, weights, biases)
 
     # Loss, optimizer and evaluation
     l2 = lambda_loss_amount * sum(
@@ -237,9 +237,9 @@ def main():
 
     while step * batch_size <= training_iters * train_data_len:
         # 调整lr
-        if step < 1600:
+        if step < 2000:
             t = sess.run(tf.assign(learning_rate, 0.0025))
-        elif step < 2400:
+        elif step < 3200:
             t = sess.run(tf.assign(learning_rate, 0.001))
         else:
             t = sess.run(tf.assign(learning_rate, 0.0005))
