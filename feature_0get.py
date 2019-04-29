@@ -30,7 +30,7 @@ display_iter = 4000  # To show test set accuracy during training
 model_save = 20
 
 k_fold_num = 1
-feature_num__s = 0
+feature_num__s = 1
 fold = './data/actdata/'
 savename = '_feature{}_kfold{}'.format(feature_num__s, k_fold_num)
 LABELS = ['double', 'fist', 'spread', 'six', 'wavein', 'waveout', 'yes', 'no', 'finger', 'snap']
@@ -202,7 +202,7 @@ def main():
     seq_len = tf.placeholder(tf.float32, [None])
 
     # pred = LSTM_RNN_f1(x, seq_len)
-    pred = LSTM_RNN_f0(x, seq_len, weights, biases)
+    pred = LSTM_RNN_f1(x, seq_len, weights, biases)
 
     # Loss, optimizer and evaluation
     l2 = lambda_loss_amount * sum(
@@ -228,9 +228,9 @@ def main():
 
     # Launch the graph
     sess = tf.InteractiveSession(config=tf.ConfigProto(log_device_placement=False))
-    # init = tf.global_variables_initializer()
-    # sess.run(init)
-    saver.restore(sess, './lstm/model_feature0_kfold1.ckpt-800')
+    init = tf.global_variables_initializer()
+    sess.run(init)
+    # saver.restore(sess, './lstm/model_feature0_kfold1.ckpt-800')
     # Perform Training steps with "batch_size" amount of example data at each loop
     step = 801
     print("Start train!")
