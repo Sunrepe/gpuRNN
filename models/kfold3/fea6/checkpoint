@@ -1,0 +1,2 @@
+model_checkpoint_path: "model_kfold3.ckpt"
+all_model_checkpoint_paths: "model_kfold3.ckpt"

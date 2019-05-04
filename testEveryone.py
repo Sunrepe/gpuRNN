@@ -106,7 +106,7 @@ def main():
 
     df_data = []
     print("Start test!")
-    person_list = getPersons(foldname,k_fold_num)
+    person_list = getPersons(foldname, k_fold_num)
     print("person:",person_list)
     for person in person_list:
         print(person)

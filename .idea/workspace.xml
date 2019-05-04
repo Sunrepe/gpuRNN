@@ -3,8 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="e51bf105-f34c-4031-aa58-28fd3cc5807c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data_pre/alldata.py" afterPath="$PROJECT_DIR$/data_pre/alldata.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data_pre/diffeature.py" afterPath="$PROJECT_DIR$/data_pre/diffeature.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/feature_0get.py" afterPath="$PROJECT_DIR$/feature_0get.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/load_all_confusionMatrix.py" afterPath="$PROJECT_DIR$/load_all_confusionMatrix.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rename_models.py" afterPath="$PROJECT_DIR$/rename_models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res_mid_recode.py" afterPath="$PROJECT_DIR$/res_mid_recode.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testEveryone.py" afterPath="$PROJECT_DIR$/testEveryone.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,14 +21,16 @@
     <SUITE FILE_PATH="coverage/gpuRNN$oriandsmooth.coverage" NAME="oriandsmooth Coverage Results" MODIFIED="1555917186958" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/forPICS" />
     <SUITE FILE_PATH="coverage/gpuRNN$lstm_0410_emgandwavelet.coverage" NAME="lstm_0410_emgandwavelet Coverage Results" MODIFIED="1555037799100" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$lstm_0405_kfold.coverage" NAME="lstm_0405_kfold Coverage Results" MODIFIED="1555307258176" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/gpuRNN$load_all_confusionMatrix.coverage" NAME="load_all_confusionMatrix Coverage Results" MODIFIED="1555761099853" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/gpuRNN$load_all_confusionMatrix.coverage" NAME="load_all_confusionMatrix Coverage Results" MODIFIED="1556611582687" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$bilstm_0402.coverage" NAME="bilstm_0402 Coverage Results" MODIFIED="1554211984148" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$testEveryone.coverage" NAME="testEveryone Coverage Results" MODIFIED="1554951599362" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/gpuRNN$fcrnn_cnn.coverage" NAME="fcrnn_cnn Coverage Results" MODIFIED="1556611776606" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/gpuRNN$rename_models.coverage" NAME="rename_models Coverage Results" MODIFIED="1556892269839" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$lstm_mfcctest.coverage" NAME="lstm_mfcctest Coverage Results" MODIFIED="1553744180019" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$lstm_8pose.coverage" NAME="lstm_8pose Coverage Results" MODIFIED="1554256648416" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$lstm_newown.coverage" NAME="lstm_newown Coverage Results" MODIFIED="1553529159829" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$tmp_trans_wavelet.coverage" NAME="tmp_trans_wavelet Coverage Results" MODIFIED="1554812606717" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/gpuRNN$res_mid_recode.coverage" NAME="res_mid_recode Coverage Results" MODIFIED="1556593157090" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/gpuRNN$res_mid_recode.coverage" NAME="res_mid_recode Coverage Results" MODIFIED="1556611240583" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$lstm_twof.coverage" NAME="lstm_twof Coverage Results" MODIFIED="1553686466089" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$fft_lstm.coverage" NAME="fft_lstm Coverage Results" MODIFIED="1555216311314" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$PicandMatrix.coverage" NAME="PicandMatrix Coverage Results" MODIFIED="1553741226742" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -40,8 +46,8 @@
     <SUITE FILE_PATH="coverage/gpuRNN$diffeature.coverage" NAME="diffeature Coverage Results" MODIFIED="1556099227889" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data_pre" />
     <SUITE FILE_PATH="coverage/gpuRNN$test__1_.coverage" NAME="test (1) Coverage Results" MODIFIED="1555156105515" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$gru_8pose.coverage" NAME="gru_8pose Coverage Results" MODIFIED="1553775162284" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/gpuRNN$alldata.coverage" NAME="alldata Coverage Results" MODIFIED="1555594022822" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data_pre" />
     <SUITE FILE_PATH="coverage/gpuRNN$cnn_newdata.coverage" NAME="cnn_newdata Coverage Results" MODIFIED="1556005913272" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/gpuRNN$alldata.coverage" NAME="alldata Coverage Results" MODIFIED="1556605025039" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data_pre" />
     <SUITE FILE_PATH="coverage/gpuRNN$lstm_testMerge.coverage" NAME="lstm_testMerge Coverage Results" MODIFIED="1553927273515" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$wavelet_trans.coverage" NAME="wavelet_trans Coverage Results" MODIFIED="1554862420513" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data_pre" />
     <SUITE FILE_PATH="coverage/gpuRNN$lstm_testNEWOLD.coverage" NAME="lstm_testNEWOLD Coverage Results" MODIFIED="1553927643948" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -49,39 +55,15 @@
     <SUITE FILE_PATH="coverage/gpuRNN$cnnOLD.coverage" NAME="cnnOLD Coverage Results" MODIFIED="1553865280485" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$dwt_lstm.coverage" NAME="dwt_lstm Coverage Results" MODIFIED="1555292818349" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$all_lstm.coverage" NAME="all_lstm Coverage Results" MODIFIED="1555322640850" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/gpuRNN$getRes50and10.coverage" NAME="getRes50and10 Coverage Results" MODIFIED="1556954542539" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="all_three_lstm.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/all_three_lstm.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-              <folding>
-                <element signature="e#20#50#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="all_lstm.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/all_lstm.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1450">
-              <caret line="94" column="44" lean-forward="false" selection-start-line="94" selection-start-column="44" selection-end-line="94" selection-end-column="44" />
-              <folding>
-                <element signature="e#20#50#0" expanded="true" />
-                <element signature="e#1409#3864#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="diffeature.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data_pre/diffeature.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="440" column="8" lean-forward="false" selection-start-line="440" selection-start-column="8" selection-end-line="440" selection-end-column="8" />
+            <state relative-caret-position="-200">
+              <caret line="523" column="8" lean-forward="false" selection-start-line="523" selection-start-column="8" selection-end-line="523" selection-end-column="8" />
               <folding>
                 <element signature="e#74#291#0" expanded="false" />
                 <element signature="e#315#439#0" expanded="false" />
@@ -94,29 +76,106 @@
                 <element signature="e#3386#4117#0" expanded="false" />
                 <element signature="e#7404#11652#0" expanded="false" />
                 <element signature="e#11691#15184#0" expanded="false" />
+                <element signature="e#15228#18767#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="res_mid_recode.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="res_mid_recode.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res_mid_recode.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="262" column="28" lean-forward="true" selection-start-line="262" selection-start-column="28" selection-end-line="262" selection-end-column="28" />
+            <state relative-caret-position="97">
+              <caret line="269" column="36" lean-forward="true" selection-start-line="269" selection-start-column="36" selection-end-line="269" selection-end-column="36" />
               <folding>
                 <element signature="e#20#53#0" expanded="true" />
-                <element signature="e#1132#1277#0" expanded="false" />
-                <element signature="e#1319#4895#0" expanded="false" />
-                <element signature="e#4943#5452#0" expanded="false" />
-                <element signature="e#5500#6009#0" expanded="false" />
-                <element signature="e#6057#6566#0" expanded="false" />
-                <element signature="e#6614#7123#0" expanded="false" />
-                <element signature="e#7171#7681#0" expanded="false" />
-                <element signature="e#7729#8239#0" expanded="false" />
-                <element signature="e#8287#8797#0" expanded="false" />
-                <element signature="e#8845#9355#0" expanded="false" />
-                <element signature="e#9403#9912#0" expanded="false" />
+                <element signature="e#1098#1243#0" expanded="false" />
+                <element signature="e#1285#4861#0" expanded="false" />
+                <element signature="e#4909#5418#0" expanded="false" />
+                <element signature="e#5466#5975#0" expanded="false" />
+                <element signature="e#6023#6532#0" expanded="false" />
+                <element signature="e#6580#7089#0" expanded="false" />
+                <element signature="e#7137#7647#0" expanded="false" />
+                <element signature="e#7695#8205#0" expanded="false" />
+                <element signature="e#8253#8763#0" expanded="false" />
+                <element signature="e#8811#9321#0" expanded="false" />
+                <element signature="e#9369#9878#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="getRes50and10.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/getRes50and10.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1044">
+              <caret line="226" column="22" lean-forward="true" selection-start-line="226" selection-start-column="22" selection-end-line="226" selection-end-column="22" />
+              <folding>
+                <element signature="e#20#53#0" expanded="true" />
+                <element signature="e#1031#1176#0" expanded="false" />
+                <element signature="e#1218#4794#0" expanded="false" />
+                <element signature="e#4842#5351#0" expanded="false" />
+                <element signature="e#5399#5908#0" expanded="false" />
+                <element signature="e#5956#6465#0" expanded="false" />
+                <element signature="e#6513#7022#0" expanded="false" />
+                <element signature="e#7070#7580#0" expanded="false" />
+                <element signature="e#7628#8138#0" expanded="false" />
+                <element signature="e#8186#8696#0" expanded="false" />
+                <element signature="e#8744#9254#0" expanded="false" />
+                <element signature="e#9302#9811#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="testEveryRNNCNN.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testEveryRNNCNN.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="400">
+              <caret line="23" column="33" lean-forward="false" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="testEveryone.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testEveryone.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="450">
+              <caret line="26" column="54" lean-forward="false" selection-start-line="26" selection-start-column="54" selection-end-line="26" selection-end-column="54" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="testtmp.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testtmp.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2625">
+              <caret line="113" column="0" lean-forward="false" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="load_all_confusionMatrix.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/load_all_confusionMatrix.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1650">
+              <caret line="72" column="24" lean-forward="false" selection-start-line="72" selection-start-column="24" selection-end-line="72" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fcrnn_cnn.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fcrnn_cnn.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="490">
+              <caret line="259" column="0" lean-forward="true" selection-start-line="259" selection-start-column="0" selection-end-line="259" selection-end-column="0" />
+              <folding>
+                <element signature="e#20#50#0" expanded="true" />
+                <element signature="e#5557#5650#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -125,76 +184,19 @@
       <file leaf-file-name="rename_models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rename_models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="451">
-              <caret line="234" column="0" lean-forward="false" selection-start-line="234" selection-start-column="0" selection-end-line="234" selection-end-column="0" />
+            <state relative-caret-position="-416">
+              <caret line="337" column="45" lean-forward="false" selection-start-line="337" selection-start-column="45" selection-end-line="337" selection-end-column="45" />
               <folding>
-                <element signature="e#20#43#0" expanded="true" />
-                <element signature="e#479#624#0" expanded="false" />
-                <element signature="e#666#4242#0" expanded="false" />
-                <element signature="e#4290#4799#0" expanded="false" />
-                <element signature="e#4847#5356#0" expanded="false" />
-                <element signature="e#5404#5913#0" expanded="false" />
-                <element signature="e#5961#6470#0" expanded="false" />
-                <element signature="e#6518#7028#0" expanded="false" />
-                <element signature="e#7076#7586#0" expanded="false" />
-                <element signature="e#7634#8144#0" expanded="false" />
-                <element signature="e#8192#8702#0" expanded="false" />
-                <element signature="e#8750#9259#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="testEveryone.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testEveryone.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="25">
-              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="allmodel3_testEveryone.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/allmodel3_testEveryone.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4600">
-              <caret line="192" column="24" lean-forward="false" selection-start-line="192" selection-start-column="24" selection-end-line="192" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="feature_0get.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/feature_0get.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1500">
-              <caret line="146" column="0" lean-forward="false" selection-start-line="146" selection-start-column="0" selection-end-line="146" selection-end-column="0" />
-              <folding>
-                <element signature="e#20#53#0" expanded="true" />
-                <element signature="e#1132#1406#0" expanded="false" />
-                <element signature="e#1454#2183#0" expanded="false" />
-                <element signature="e#2231#2909#0" expanded="false" />
-                <element signature="e#2957#3634#0" expanded="false" />
-                <element signature="e#3682#4359#0" expanded="false" />
-                <element signature="e#4407#5026#0" expanded="false" />
-                <element signature="e#5074#5693#0" expanded="false" />
-                <element signature="e#5741#6419#0" expanded="false" />
-                <element signature="e#6467#7145#0" expanded="false" />
-                <element signature="e#7193#7811#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="lstm_0405_kfold.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lstm_0405_kfold.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="26" column="18" lean-forward="false" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="18" />
-              <folding>
-                <element signature="e#1376#2774#0" expanded="false" />
-                <element signature="e#3813#4749#0" expanded="false" />
+                <element signature="e#13136#13645#0" expanded="false" />
+                <element signature="e#13693#14202#0" expanded="false" />
+                <element signature="e#14250#14759#0" expanded="false" />
+                <element signature="e#14807#15316#0" expanded="false" />
+                <element signature="e#15364#15874#0" expanded="false" />
+                <element signature="e#15922#16432#0" expanded="false" />
+                <element signature="e#16480#16990#0" expanded="false" />
+                <element signature="e#17038#17548#0" expanded="false" />
+                <element signature="e#17596#18105#0" expanded="false" />
+                <element signature="e#18242#18436#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -234,8 +236,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/lstm_twof.py" />
-        <option value="$PROJECT_DIR$/lstm_fourf.py" />
         <option value="$PROJECT_DIR$/PicandMatrix.py" />
         <option value="$PROJECT_DIR$/lstm_mfcctest.py" />
         <option value="$PROJECT_DIR$/data_pre/mfccData.py" />
@@ -259,7 +259,6 @@
         <option value="$PROJECT_DIR$/tmp_lstm.py" />
         <option value="$PROJECT_DIR$/data_pre/test.py" />
         <option value="$PROJECT_DIR$/datadescribe.py" />
-        <option value="$PROJECT_DIR$/testEveryone.py" />
         <option value="$PROJECT_DIR$/fft_lstm.py" />
         <option value="$PROJECT_DIR$/dwt_lstm.py" />
         <option value="$PROJECT_DIR$/tmp_trans_wavelet.py" />
@@ -268,12 +267,10 @@
         <option value="$PROJECT_DIR$/bilstm_0402.py" />
         <option value="$PROJECT_DIR$/data_pre/dataFortest.py" />
         <option value="$PROJECT_DIR$/allmodel3_selfEveryone.py" />
-        <option value="$PROJECT_DIR$/load_all_confusionMatrix.py" />
         <option value="$PROJECT_DIR$/forPICS/dt.txt" />
         <option value="$PROJECT_DIR$/forPICS/oriandsmooth.py" />
         <option value="$PROJECT_DIR$/cnn_newdata.py" />
         <option value="$PROJECT_DIR$/data_pre/myo-sdk-win-0.9.0/diffeature.py" />
-        <option value="$PROJECT_DIR$/data_pre/alldata.py" />
         <option value="$PROJECT_DIR$/all_lstm.py" />
         <option value="$PROJECT_DIR$/allmodel3_testEveryone.py" />
         <option value="$PROJECT_DIR$/fcrnn.py" />
@@ -283,8 +280,13 @@
         <option value="$PROJECT_DIR$/feature_0get.py" />
         <option value="$PROJECT_DIR$/reget_modelpath.py" />
         <option value="$PROJECT_DIR$/data_pre/diffeature.py" />
+        <option value="$PROJECT_DIR$/data_pre/alldata.py" />
+        <option value="$PROJECT_DIR$/testEveryone.py" />
+        <option value="$PROJECT_DIR$/load_all_confusionMatrix.py" />
+        <option value="$PROJECT_DIR$/fcrnn_cnn.py" />
         <option value="$PROJECT_DIR$/rename_models.py" />
         <option value="$PROJECT_DIR$/res_mid_recode.py" />
+        <option value="$PROJECT_DIR$/getRes50and10.py" />
       </list>
     </option>
   </component>
@@ -295,8 +297,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="409" />
-    <option name="width" value="964" />
+    <option name="x" value="-7" />
+    <option name="width" value="697" />
     <option name="height" value="745" />
   </component>
   <component name="ProjectView">
@@ -323,6 +325,17 @@
               <item name="gpuRNN" type="b2602c69:ProjectViewProjectNode" />
               <item name="gpuRNN" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="gpuRNN" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gpuRNN" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gpuRNN" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gpuRNN" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="res10" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -335,12 +348,13 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Research-bachelor\python\gpuRNN\matrix\all3kfold0" />
+      <recent name="E:\Research-bachelor\python\gpuRNN\forPICS" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\Research-bachelor\python\gpuRNN\data_pre" />
       <recent name="E:\Research-bachelor\python\gpuRNN" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\Research-bachelor\python\gpuRNN\forPICS" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -355,8 +369,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.res_mid_recode">
-    <configuration name="cnn_newdata" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.getRes50and10">
+    <configuration name="fcrnn_cnn" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -369,30 +383,12 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="gpuRNN" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/cnn_newdata.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/fcrnn_cnn.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <configuration name="diffeature" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data_pre" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="gpuRNN" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data_pre/diffeature.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-    </configuration>
-    <configuration name="feature_0get" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="getRes50and10" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -405,25 +401,43 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="gpuRNN" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/feature_0get.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/getRes50and10.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <configuration name="oriandsmooth" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="load_all_confusionMatrix" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/forPICS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="gpuRNN" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/forPICS/oriandsmooth.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/load_all_confusionMatrix.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <configuration name="rename_models" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="gpuRNN" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/rename_models.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -447,19 +461,19 @@
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.oriandsmooth" />
-      <item index="1" class="java.lang.String" itemvalue="Python.cnn_newdata" />
-      <item index="2" class="java.lang.String" itemvalue="Python.diffeature" />
-      <item index="3" class="java.lang.String" itemvalue="Python.feature_0get" />
-      <item index="4" class="java.lang.String" itemvalue="Python.res_mid_recode" />
+      <item index="0" class="java.lang.String" itemvalue="Python.res_mid_recode" />
+      <item index="1" class="java.lang.String" itemvalue="Python.fcrnn_cnn" />
+      <item index="2" class="java.lang.String" itemvalue="Python.load_all_confusionMatrix" />
+      <item index="3" class="java.lang.String" itemvalue="Python.rename_models" />
+      <item index="4" class="java.lang.String" itemvalue="Python.getRes50and10" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.res_mid_recode" />
-        <item index="1" class="java.lang.String" itemvalue="Python.feature_0get" />
-        <item index="2" class="java.lang.String" itemvalue="Python.diffeature" />
-        <item index="3" class="java.lang.String" itemvalue="Python.cnn_newdata" />
-        <item index="4" class="java.lang.String" itemvalue="Python.oriandsmooth" />
+        <item index="0" class="java.lang.String" itemvalue="Python.getRes50and10" />
+        <item index="1" class="java.lang.String" itemvalue="Python.rename_models" />
+        <item index="2" class="java.lang.String" itemvalue="Python.fcrnn_cnn" />
+        <item index="3" class="java.lang.String" itemvalue="Python.load_all_confusionMatrix" />
+        <item index="4" class="java.lang.String" itemvalue="Python.res_mid_recode" />
       </list>
     </recent_temporary>
   </component>
@@ -487,19 +501,20 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18229954" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20045386" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901135" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28687197" sideWeight="0.50680786" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959481" sideWeight="0.49546143" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4262561" sideWeight="0.49319214" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17504051" sideWeight="0.49546143" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35008103" sideWeight="0.49319214" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28038898" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15885022" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -522,59 +537,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/lstm_model/bilstm_newown.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-150">
-          <caret line="67" column="10" lean-forward="true" selection-start-line="67" selection-start-column="10" selection-end-line="67" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Program/Anaconda/Lib/site-packages/tensorflow/python/keras/layers/recurrent.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2016">
-          <caret line="342" column="15" lean-forward="true" selection-start-line="342" selection-start-column="15" selection-end-line="342" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Program/Anaconda/Lib/site-packages/tensorflow/python/ops/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Program/Anaconda/Lib/site-packages/tensorflow/python/ops/nn.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="27" column="25" lean-forward="false" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Program/Anaconda/Lib/site-packages/tensorflow/_api/v1/nn/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="64" column="28" lean-forward="false" selection-start-line="64" selection-start-column="28" selection-end-line="64" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cnntest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4550">
-          <caret line="268" column="58" lean-forward="false" selection-start-line="268" selection-start-column="58" selection-end-line="268" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gru_8pose.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="400">
           <caret line="24" column="20" lean-forward="false" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testEveryRNNCNN.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="23" column="33" lean-forward="false" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -596,13 +562,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
           <caret line="30" column="28" lean-forward="false" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testtmp.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="113" column="0" lean-forward="false" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -652,14 +611,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-4">
           <caret line="1411" column="27" lean-forward="true" selection-start-line="1411" selection-start-column="27" selection-end-line="1411" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Program/Anaconda/Lib/site-packages/tensorflow/python/client/session.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-15">
-          <caret line="1038" column="42" lean-forward="true" selection-start-line="1038" selection-start-column="42" selection-end-line="1038" selection-end-column="42" />
           <folding />
         </state>
       </provider>
@@ -735,13 +686,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/load_all_confusionMatrix.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="15" column="25" lean-forward="false" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/allmodel3_selfEveryone.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
@@ -760,7 +704,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
           <caret line="1630" column="0" lean-forward="false" selection-start-line="1630" selection-start-column="0" selection-end-line="1630" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -771,13 +714,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data_pre/alldata.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3900">
-          <caret line="665" column="54" lean-forward="false" selection-start-line="665" selection-start-column="54" selection-end-line="665" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cnn_newdata.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="25">
@@ -785,37 +721,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fcrnn.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1350">
-          <caret line="172" column="63" lean-forward="false" selection-start-line="172" selection-start-column="63" selection-end-line="172" selection-end-column="63" />
-          <folding>
-            <element signature="e#58#91#0" expanded="false" />
-            <element signature="e#1450#3905#0" expanded="false" />
-            <element signature="e#4048#9595#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2775">
           <caret line="138" column="37" lean-forward="false" selection-start-line="138" selection-start-column="36" selection-end-line="138" selection-end-column="37" />
-          <folding>
-            <element signature="e#63#93#0" expanded="true" />
-            <element signature="e#1867#3605#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/all_lstm.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1450">
-          <caret line="94" column="44" lean-forward="false" selection-start-line="94" selection-start-column="44" selection-end-line="94" selection-end-column="44" />
-          <folding>
-            <element signature="e#20#50#0" expanded="true" />
-            <element signature="e#1409#3864#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -823,9 +732,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-          <folding>
-            <element signature="e#20#50#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -833,53 +739,183 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="26" column="18" lean-forward="false" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="18" />
-          <folding>
-            <element signature="e#1376#2774#0" expanded="false" />
-            <element signature="e#3813#4749#0" expanded="false" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/res10/test/fea0_kfold0">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reget_modelpath.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="152" column="59" lean-forward="true" selection-start-line="152" selection-start-column="59" selection-end-line="152" selection-end-column="59" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/allmodel3_testEveryone.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4600">
+        <state relative-caret-position="292">
           <caret line="192" column="24" lean-forward="false" selection-start-line="192" selection-start-column="24" selection-end-line="192" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/feature_0get.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1500">
-          <caret line="146" column="0" lean-forward="false" selection-start-line="146" selection-start-column="0" selection-end-line="146" selection-end-column="0" />
+        <state relative-caret-position="125">
+          <caret line="161" column="0" lean-forward="true" selection-start-line="161" selection-start-column="0" selection-end-line="161" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fcrnn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-125">
+          <caret line="172" column="63" lean-forward="false" selection-start-line="172" selection-start-column="63" selection-end-line="172" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Program/Anaconda/Lib/site-packages/tensorflow/python/client/session.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="61">
+          <caret line="1318" column="0" lean-forward="false" selection-start-line="1318" selection-start-column="0" selection-end-line="1318" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_pre/alldata.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3250">
+          <caret line="1245" column="42" lean-forward="false" selection-start-line="1245" selection-start-column="42" selection-end-line="1245" selection-end-column="42" />
           <folding>
-            <element signature="e#20#53#0" expanded="true" />
-            <element signature="e#1132#1406#0" expanded="false" />
-            <element signature="e#1454#2183#0" expanded="false" />
-            <element signature="e#2231#2909#0" expanded="false" />
-            <element signature="e#2957#3634#0" expanded="false" />
-            <element signature="e#3682#4359#0" expanded="false" />
-            <element signature="e#4407#5026#0" expanded="false" />
-            <element signature="e#5074#5693#0" expanded="false" />
-            <element signature="e#5741#6419#0" expanded="false" />
-            <element signature="e#6467#7145#0" expanded="false" />
-            <element signature="e#7193#7811#0" expanded="false" />
+            <element signature="e#74#291#0" expanded="false" />
+            <element signature="e#559#683#0" expanded="false" />
+            <element signature="e#710#971#0" expanded="false" />
+            <element signature="e#1013#1043#0" expanded="false" />
+            <element signature="e#1082#1166#0" expanded="false" />
+            <element signature="e#1210#1685#0" expanded="false" />
+            <element signature="e#1717#2448#0" expanded="false" />
+            <element signature="e#3292#3390#0" expanded="false" />
+            <element signature="e#3433#3514#0" expanded="false" />
+            <element signature="e#3554#3602#0" expanded="false" />
+            <element signature="e#3630#4361#0" expanded="false" />
+            <element signature="e#4391#7832#0" expanded="false" />
+            <element signature="e#7862#10866#0" expanded="false" />
+            <element signature="e#10901#13929#0" expanded="false" />
+            <element signature="e#13964#17027#0" expanded="false" />
+            <element signature="e#17062#20146#0" expanded="false" />
+            <element signature="e#20180#23469#0" expanded="false" />
+            <element signature="e#23507#26768#0" expanded="false" />
+            <element signature="e#26801#29642#0" expanded="false" />
+            <element signature="e#29683#33594#0" expanded="false" />
+            <element signature="e#33628#37586#0" expanded="false" />
+            <element signature="e#37645#42241#0" expanded="false" />
+            <element signature="e#42272#45560#0" expanded="false" />
+            <element signature="e#45602#52403#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/all_lstm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10850">
+          <caret line="470" column="27" lean-forward="false" selection-start-line="461" selection-start-column="4" selection-end-line="470" selection-end-column="27" />
+          <folding>
+            <element signature="e#20#50#0" expanded="true" />
+            <element signature="e#1409#3864#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testEveryRNNCNN.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="23" column="33" lean-forward="false" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PicandMatrix.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2126">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/matrix/all_3/all_model3Matrix_kfold0.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testtmp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2625">
+          <caret line="113" column="0" lean-forward="false" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/matrix/all3kfold0/all_model3Matrix_kfold0.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/load_all_confusionMatrix.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1650">
+          <caret line="72" column="24" lean-forward="false" selection-start-line="72" selection-start-column="24" selection-end-line="72" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/testEveryone.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        <state relative-caret-position="450">
+          <caret line="26" column="54" lean-forward="false" selection-start-line="26" selection-start-column="54" selection-end-line="26" selection-end-column="54" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rename_models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-416">
+          <caret line="337" column="45" lean-forward="false" selection-start-line="337" selection-start-column="45" selection-end-line="337" selection-end-column="45" />
+          <folding>
+            <element signature="e#13136#13645#0" expanded="false" />
+            <element signature="e#13693#14202#0" expanded="false" />
+            <element signature="e#14250#14759#0" expanded="false" />
+            <element signature="e#14807#15316#0" expanded="false" />
+            <element signature="e#15364#15874#0" expanded="false" />
+            <element signature="e#15922#16432#0" expanded="false" />
+            <element signature="e#16480#16990#0" expanded="false" />
+            <element signature="e#17038#17548#0" expanded="false" />
+            <element signature="e#17596#18105#0" expanded="false" />
+            <element signature="e#18242#18436#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fcrnn_cnn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="490">
+          <caret line="259" column="0" lean-forward="true" selection-start-line="259" selection-start-column="0" selection-end-line="259" selection-end-column="0" />
+          <folding>
+            <element signature="e#20#50#0" expanded="true" />
+            <element signature="e#5557#5650#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/data_pre/diffeature.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="440" column="8" lean-forward="false" selection-start-line="440" selection-start-column="8" selection-end-line="440" selection-end-column="8" />
+        <state relative-caret-position="-200">
+          <caret line="523" column="8" lean-forward="false" selection-start-line="523" selection-start-column="8" selection-end-line="523" selection-end-column="8" />
           <folding>
             <element signature="e#74#291#0" expanded="false" />
             <element signature="e#315#439#0" expanded="false" />
@@ -892,66 +928,57 @@
             <element signature="e#3386#4117#0" expanded="false" />
             <element signature="e#7404#11652#0" expanded="false" />
             <element signature="e#11691#15184#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/res10/test/fea0_kfold0">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reget_modelpath.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="152" column="59" lean-forward="true" selection-start-line="152" selection-start-column="59" selection-end-line="152" selection-end-column="59" />
-          <folding>
-            <element signature="e#20#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rename_models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
-          <caret line="234" column="0" lean-forward="false" selection-start-line="234" selection-start-column="0" selection-end-line="234" selection-end-column="0" />
-          <folding>
-            <element signature="e#20#43#0" expanded="true" />
-            <element signature="e#479#624#0" expanded="false" />
-            <element signature="e#666#4242#0" expanded="false" />
-            <element signature="e#4290#4799#0" expanded="false" />
-            <element signature="e#4847#5356#0" expanded="false" />
-            <element signature="e#5404#5913#0" expanded="false" />
-            <element signature="e#5961#6470#0" expanded="false" />
-            <element signature="e#6518#7028#0" expanded="false" />
-            <element signature="e#7076#7586#0" expanded="false" />
-            <element signature="e#7634#8144#0" expanded="false" />
-            <element signature="e#8192#8702#0" expanded="false" />
-            <element signature="e#8750#9259#0" expanded="false" />
+            <element signature="e#15228#18767#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res_mid_recode.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="262" column="28" lean-forward="true" selection-start-line="262" selection-start-column="28" selection-end-line="262" selection-end-column="28" />
+        <state relative-caret-position="97">
+          <caret line="269" column="36" lean-forward="true" selection-start-line="269" selection-start-column="36" selection-end-line="269" selection-end-column="36" />
           <folding>
             <element signature="e#20#53#0" expanded="true" />
-            <element signature="e#1132#1277#0" expanded="false" />
-            <element signature="e#1319#4895#0" expanded="false" />
-            <element signature="e#4943#5452#0" expanded="false" />
-            <element signature="e#5500#6009#0" expanded="false" />
-            <element signature="e#6057#6566#0" expanded="false" />
-            <element signature="e#6614#7123#0" expanded="false" />
-            <element signature="e#7171#7681#0" expanded="false" />
-            <element signature="e#7729#8239#0" expanded="false" />
-            <element signature="e#8287#8797#0" expanded="false" />
-            <element signature="e#8845#9355#0" expanded="false" />
-            <element signature="e#9403#9912#0" expanded="false" />
+            <element signature="e#1098#1243#0" expanded="false" />
+            <element signature="e#1285#4861#0" expanded="false" />
+            <element signature="e#4909#5418#0" expanded="false" />
+            <element signature="e#5466#5975#0" expanded="false" />
+            <element signature="e#6023#6532#0" expanded="false" />
+            <element signature="e#6580#7089#0" expanded="false" />
+            <element signature="e#7137#7647#0" expanded="false" />
+            <element signature="e#7695#8205#0" expanded="false" />
+            <element signature="e#8253#8763#0" expanded="false" />
+            <element signature="e#8811#9321#0" expanded="false" />
+            <element signature="e#9369#9878#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/res10/testLabel_kfold0">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1725">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/getRes50and10.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1044">
+          <caret line="226" column="22" lean-forward="true" selection-start-line="226" selection-start-column="22" selection-end-line="226" selection-end-column="22" />
+          <folding>
+            <element signature="e#20#53#0" expanded="true" />
+            <element signature="e#1031#1176#0" expanded="false" />
+            <element signature="e#1218#4794#0" expanded="false" />
+            <element signature="e#4842#5351#0" expanded="false" />
+            <element signature="e#5399#5908#0" expanded="false" />
+            <element signature="e#5956#6465#0" expanded="false" />
+            <element signature="e#6513#7022#0" expanded="false" />
+            <element signature="e#7070#7580#0" expanded="false" />
+            <element signature="e#7628#8138#0" expanded="false" />
+            <element signature="e#8186#8696#0" expanded="false" />
+            <element signature="e#8744#9254#0" expanded="false" />
+            <element signature="e#9302#9811#0" expanded="false" />
           </folding>
         </state>
       </provider>

@@ -13,6 +13,17 @@ def Read__mean_2(filename):
     return my_matrix
 
 
+def Read_data_res(filename):
+    '''
+    获得所有且分点信息，同时将所有数据进行（绝对值、去噪操作）
+    :param filename:
+    :return: 组合的数据
+    '''
+    # f_csv = csv.reader(filename)
+    my_matrix = np.loadtxt(filename, dtype='float', delimiter=",")
+    return my_matrix
+
+
 def get_lei(sq):
     alllei = ['double', 'fist', 'spread', 'six', 'wavein', 'waveout', 'yes', 'no', 'finger', 'snap']
     return alllei.index(sq)
@@ -1219,6 +1230,56 @@ class All_data_merge_self(object):
         return batch_labels, batch_data, batch_seq_len
 
 
+class data_load_res(object):
+    def __init__(self, foldname, trainable=False, kfold_num=0):
+        '''
+        获得相关的中间过程。直接获得所有组合好的结果即可，不需要中间在训练过程中进行组合，加快训练速度。
+        :param foldname: 数据集合
+        :param max_seq:
+        :param num_class: 分类的数量
+        :param trainable:
+        :param kfold_num:
+        '''
+        # train_person,test_person = getPersons(foldname, kfold_num)
+        # __person = train_person if trainable else test_person
+        # __person = ['zhouxufeng']
+        # if not trainable:print(__person)
+        self.batch_id = 0  # use for batch_get
+        if trainable:
+            self.all_label = Read_data_res(foldname+'train/label_kfold{}'.format(kfold_num))  # only one use
+            self.data_res = Read_data_res(foldname + 'train/fea{}_kfold{}'.format(0, kfold_num))
+            for i_fea in range(1, 8):
+                tmp_data = Read_data_res(foldname + 'train/fea{}_kfold{}'.format(i_fea, kfold_num))
+                self.data_res = np.concatenate([self.data_res, tmp_data], 1)
+        else:
+            self.all_label = Read_data_res(foldname+'test/label_kfold{}'.format(kfold_num))  # only one use
+            self.data_res = Read_data_res(foldname + 'test/fea{}_kfold{}'.format(0, kfold_num))
+            for i_fea in range(1, 8):
+                tmp_data = Read_data_res(foldname + 'test/fea{}_kfold{}'.format(i_fea, kfold_num))
+                self.data_res = np.concatenate([self.data_res, tmp_data], 1)
+
+        # 打乱数据
+        if trainable:
+            _per = np.random.permutation(len(self.all_label))  # 打乱后的行号
+            self.all_label = self.all_label[_per, :]
+            self.data_res = self.data_res[_per, :]
+
+    def _shuffle_data(self):
+        _per = np.random.permutation(len(self.all_label))  # 打乱后的行号
+        self.all_label = self.all_label[_per, :]
+        self.data_res = self.data_res[_per, :]
+
+    def next(self, batch_size, shuffle=True):
+        if self.batch_id == len(self.all_label):
+            self.batch_id = 0
+            if shuffle:
+                self._shuffle_data()
+        batch_labels = self.all_label[self.batch_id:min(self.batch_id + batch_size, len(self.all_label))]
+        batch_data = self.data_res[self.batch_id:min(self.batch_id + batch_size, len(self.all_label))]
+        return batch_labels, batch_data
+
+
 if __name__ == '__main__':
-    train_sets = All_data_merge_self(foldname='../data/tmpdata/', max_seq=800,
-                                num_class=10, trainable=True, kfold_num=4)
+    train_sets = data_load_res(foldname='../data/res50/', trainable=False, kfold_num=0)
+    batch_ys, batch_xs = train_sets.next(10)
+    print(batch_xs.shape)

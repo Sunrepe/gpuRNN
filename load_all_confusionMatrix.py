@@ -47,7 +47,7 @@ def Read__mean_2(filename):
 
 
 def main():
-    fold = './matrix/all_3/'
+    fold = './matrix/all3kfold0/'
     stream = ["原始信号", "均值", "标准差", "波长变化", "dwt1", "dwt2", "dwt3", "dwt4", "fft", "融合"]
     matrix_save_path = fold+'Matrix.txt'
     allfile = os.listdir(fold)

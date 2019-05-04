@@ -15,8 +15,6 @@ tmp_use_len = [150, 150, 250, 450, 800, 800, 800, 800, 400]
 
 # Training
 
-k_fold_num = 0
-feature_num__s = 8
 fold = './data/actdata/'
 
 
@@ -68,19 +66,147 @@ def get_model(fea_num, kfold_num):
     elif fea_num == 0 and kfold_num == 1:
         model_path = 'E:/Research-bachelor/storeMODELs/2dif_feature/' \
                      '{}/allmerge_f{}_kfold{}/' \
-                     'model_feature{}_kfold{}.ckpt-3000'.format(fea_num,fea_num,kfold_num,fea_num,kfold_num)
+                     'model_feature{}_kfold{}.ckpt-2800'.format(fea_num,fea_num,kfold_num,fea_num,kfold_num)
     elif fea_num == 1 and kfold_num == 1:
         model_path = 'E:/Research-bachelor/storeMODELs/2dif_feature/' \
                      '{}/allmerge_f{}_kfold{}/' \
-                     'model_feature{}_kfold{}.ckpt-3000'.format(fea_num,fea_num,kfold_num,fea_num,kfold_num)
+                     'model_feature{}_kfold{}.ckpt-final'.format(fea_num,fea_num,kfold_num,fea_num,kfold_num)
     elif fea_num == 2 and kfold_num == 1:
         model_path = 'E:/Research-bachelor/storeMODELs/2dif_feature/' \
                      '{}/allmerge_f{}_kfold{}/' \
-                     'model_feature{}_kfold{}.ckpt-3000'.format(fea_num,fea_num,kfold_num,fea_num,kfold_num)
+                     'model_feature{}_kfold{}.ckpt-3200'.format(fea_num, fea_num, kfold_num, fea_num, kfold_num)
     elif fea_num == 3 and kfold_num == 1:
         model_path = 'E:/Research-bachelor/storeMODELs/2dif_feature/' \
                      '{}/allmerge_f{}_kfold{}/' \
-                     'model_feature{}_kfold{}.ckpt-3000'.format(fea_num,fea_num,kfold_num,fea_num,kfold_num)
+                     'model_feature{}_kfold{}.ckpt-3200'.format(fea_num, fea_num, kfold_num, fea_num, kfold_num)
+    elif fea_num == 4 and kfold_num == 1:
+        model_path = 'E:/Research-bachelor/storeMODELs/2dif_feature/' \
+                     '{}/allmerge_f{}_kfold{}/' \
+                     'model_feature{}_kfold{}.ckpt-final'.format(fea_num, fea_num, kfold_num, fea_num, kfold_num)
+    elif fea_num == 5 and kfold_num == 1:
+        model_path = 'E:/Research-bachelor/storeMODELs/2dif_feature/' \
+                     '{}/allmerge_f{}_kfold{}/' \
+                     'model_feature{}_kfold{}.ckpt-final'.format(fea_num, fea_num, kfold_num, fea_num, kfold_num)
+    elif fea_num == 6 and kfold_num == 1:
+        model_path = 'E:/Research-bachelor/storeMODELs/2dif_feature/' \
+                     '{}/allmerge_f{}_kfold{}/' \
+                     'model_feature{}_kfold{}.ckpt-2600'.format(fea_num, fea_num, kfold_num, fea_num, kfold_num)
+    elif fea_num == 7 and kfold_num == 1:
+        model_path = 'E:/Research-bachelor/storeMODELs/2dif_feature/' \
+                     '{}/allmerge_f{}_kfold{}/' \
+                     'model_feature{}_kfold{}.ckpt-final'.format(fea_num, fea_num, kfold_num, fea_num, kfold_num)
+    elif fea_num == 8 and kfold_num == 1:
+        model_path = 'E:/Research-bachelor/storeMODELs/2dif_feature/' \
+                     '{}/allmerge_f{}_kfold{}/' \
+                     'model_feature{}_kfold{}.ckpt-final'.format(fea_num, fea_num, kfold_num, fea_num, kfold_num)
+    elif fea_num == 0 and kfold_num == 2:
+        model_path = 'E:/Research-bachelor/storeMODELs/2dif_feature/' \
+                     '{}/allmerge_f{}_kfold{}/' \
+                     'model_feature{}_kfold{}.ckpt-final'.format(fea_num, fea_num, kfold_num, fea_num, kfold_num)
+    elif fea_num == 0 and kfold_num == 3:
+        model_path = 'E:/Research-bachelor/storeMODELs/2dif_feature/' \
+                     '{}/allmerge_f{}_kfold{}/' \
+                     'model_feature{}_kfold{}.ckpt-2800'.format(fea_num, fea_num, kfold_num, fea_num, kfold_num)
+    elif fea_num == 0 and kfold_num == 4:
+        model_path = 'E:/Research-bachelor/storeMODELs/2dif_feature/' \
+                     '{}/allmerge_f{}_kfold{}/' \
+                     'model_feature{}_kfold{}.ckpt-2800'.format(fea_num, fea_num, kfold_num, fea_num, kfold_num)
+    elif fea_num == 1 and kfold_num == 2:
+        model_path = 'E:/Research-bachelor/storeMODELs/2dif_feature/' \
+                     '{}/allmerge_f{}_kfold{}/' \
+                     'model_feature{}_kfold{}.ckpt-final'.format(fea_num, fea_num, kfold_num, fea_num, kfold_num)
+    elif fea_num == 1 and kfold_num == 3:
+        model_path = 'E:/Research-bachelor/storeMODELs/2dif_feature/' \
+                     '{}/allmerge_f{}_kfold{}/' \
+                     'model_feature{}_kfold{}.ckpt-1800'.format(fea_num, fea_num, kfold_num, fea_num, kfold_num)
+    elif fea_num == 1 and kfold_num == 4:
+        model_path = 'E:/Research-bachelor/storeMODELs/2dif_feature/' \
+                     '{}/allmerge_f{}_kfold{}/' \
+                     'model_feature{}_kfold{}.ckpt-2000'.format(fea_num, fea_num, kfold_num, fea_num, kfold_num)
+    elif fea_num == 2 and kfold_num == 2:
+        model_path = 'E:/Research-bachelor/storeMODELs/2dif_feature/' \
+                     '{}/allmerge_f{}_kfold{}/' \
+                     'model_feature{}_kfold{}.ckpt-2000'.format(fea_num, fea_num, kfold_num, fea_num, kfold_num)
+    elif fea_num == 2 and kfold_num == 3:
+        model_path = 'E:/Research-bachelor/storeMODELs/2dif_feature/' \
+                     '{}/allmerge_f{}_kfold{}/' \
+                     'model_feature{}_kfold{}.ckpt-2000'.format(fea_num, fea_num, kfold_num, fea_num, kfold_num)
+    elif fea_num == 2 and kfold_num == 4:
+        model_path = 'E:/Research-bachelor/storeMODELs/2dif_feature/' \
+                     '{}/allmerge_f{}_kfold{}/' \
+                     'model_feature{}_kfold{}.ckpt-2600'.format(fea_num, fea_num, kfold_num, fea_num, kfold_num)
+    elif fea_num == 3 and kfold_num == 2:
+        model_path = 'E:/Research-bachelor/storeMODELs/2dif_feature/' \
+                     '{}/allmerge_f{}_kfold{}/' \
+                     'model_feature{}_kfold{}.ckpt-1600'.format(fea_num, fea_num, kfold_num, fea_num, kfold_num)
+    elif fea_num == 3 and kfold_num == 3:
+        model_path = 'E:/Research-bachelor/storeMODELs/2dif_feature/' \
+                     '{}/allmerge_f{}_kfold{}/' \
+                     'model_feature{}_kfold{}.ckpt-final'.format(fea_num, fea_num, kfold_num, fea_num, kfold_num)
+    elif fea_num == 3 and kfold_num == 4:
+        model_path = 'E:/Research-bachelor/storeMODELs/2dif_feature/' \
+                     '{}/allmerge_f{}_kfold{}/' \
+                     'model_feature{}_kfold{}.ckpt-1400'.format(fea_num, fea_num, kfold_num, fea_num, kfold_num)
+    elif fea_num == 4 and kfold_num == 2:
+        model_path = 'E:/Research-bachelor/storeMODELs/2dif_feature/' \
+                     '{}/allmerge_f{}_kfold{}/' \
+                     'model_feature{}_kfold{}.ckpt-3000'.format(fea_num, fea_num, kfold_num, fea_num, kfold_num)
+    elif fea_num == 4 and kfold_num == 3:
+        model_path = 'E:/Research-bachelor/storeMODELs/2dif_feature/' \
+                     '{}/allmerge_f{}_kfold{}/' \
+                     'model_feature{}_kfold{}.ckpt-3000'.format(fea_num, fea_num, kfold_num, fea_num, kfold_num)
+    elif fea_num == 4 and kfold_num == 4:
+        model_path = 'E:/Research-bachelor/storeMODELs/2dif_feature/' \
+                     '{}/allmerge_f{}_kfold{}/' \
+                     'model_feature{}_kfold{}.ckpt-1800'.format(fea_num, fea_num, kfold_num, fea_num, kfold_num)
+    elif fea_num == 5 and kfold_num == 2:
+        model_path = 'E:/Research-bachelor/storeMODELs/2dif_feature/' \
+                     '{}/allmerge_f{}_kfold{}/' \
+                     'model_feature{}_kfold{}.ckpt-2800'.format(fea_num, fea_num, kfold_num, fea_num, kfold_num)
+    elif fea_num == 5 and kfold_num == 3:
+        model_path = 'E:/Research-bachelor/storeMODELs/2dif_feature/' \
+                     '{}/allmerge_f{}_kfold{}/' \
+                     'model_feature{}_kfold{}.ckpt-3000'.format(fea_num, fea_num, kfold_num, fea_num, kfold_num)
+    elif fea_num == 5 and kfold_num == 4:
+        model_path = 'E:/Research-bachelor/storeMODELs/2dif_feature/' \
+                     '{}/allmerge_f{}_kfold{}/' \
+                     'model_feature{}_kfold{}.ckpt-2400'.format(fea_num, fea_num, kfold_num, fea_num, kfold_num)
+    elif fea_num == 6 and kfold_num == 2:
+        model_path = 'E:/Research-bachelor/storeMODELs/2dif_feature/' \
+                     '{}/allmerge_f{}_kfold{}/' \
+                     'model_feature{}_kfold{}.ckpt-2600'.format(fea_num, fea_num, kfold_num, fea_num, kfold_num)
+    elif fea_num == 6 and kfold_num == 3:
+        model_path = 'E:/Research-bachelor/storeMODELs/2dif_feature/' \
+                     '{}/allmerge_f{}_kfold{}/' \
+                     'model_feature{}_kfold{}.ckpt-3000'.format(fea_num, fea_num, kfold_num, fea_num, kfold_num)
+    elif fea_num == 6 and kfold_num == 4:
+        model_path = 'E:/Research-bachelor/storeMODELs/2dif_feature/' \
+                     '{}/allmerge_f{}_kfold{}/' \
+                     'model_feature{}_kfold{}.ckpt-1600'.format(fea_num, fea_num, kfold_num, fea_num, kfold_num)
+    elif fea_num == 7 and kfold_num == 2:
+        model_path = 'E:/Research-bachelor/storeMODELs/2dif_feature/' \
+                     '{}/allmerge_f{}_kfold{}/' \
+                     'model_feature{}_kfold{}.ckpt-2400'.format(fea_num, fea_num, kfold_num, fea_num, kfold_num)
+    elif fea_num == 7 and kfold_num == 3:
+        model_path = 'E:/Research-bachelor/storeMODELs/2dif_feature/' \
+                     '{}/allmerge_f{}_kfold{}/' \
+                     'model_feature{}_kfold{}.ckpt-2000'.format(fea_num, fea_num, kfold_num, fea_num, kfold_num)
+    elif fea_num == 7 and kfold_num == 4:
+        model_path = 'E:/Research-bachelor/storeMODELs/2dif_feature/' \
+                     '{}/allmerge_f{}_kfold{}/' \
+                     'model_feature{}_kfold{}.ckpt-1600'.format(fea_num, fea_num, kfold_num, fea_num, kfold_num)
+    elif fea_num == 8 and kfold_num == 2:
+        model_path = 'E:/Research-bachelor/storeMODELs/2dif_feature/' \
+                     '{}/allmerge_f{}_kfold{}/' \
+                     'model_feature{}_kfold{}.ckpt-3000'.format(fea_num, fea_num, kfold_num, fea_num, kfold_num)
+    elif fea_num == 8 and kfold_num == 3:
+        model_path = 'E:/Research-bachelor/storeMODELs/2dif_feature/' \
+                     '{}/allmerge_f{}_kfold{}/' \
+                     'model_feature{}_kfold{}.ckpt-1600'.format(fea_num, fea_num, kfold_num, fea_num, kfold_num)
+    elif fea_num == 8 and kfold_num == 4:
+        model_path = 'E:/Research-bachelor/storeMODELs/2dif_feature/' \
+                     '{}/allmerge_f{}_kfold{}/' \
+                     'model_feature{}_kfold{}.ckpt-2800'.format(fea_num, fea_num, kfold_num, fea_num, kfold_num)
     return model_path
 
 
@@ -212,6 +338,8 @@ def main():
     seq_len = tf.placeholder(tf.float32, [None])
 
     # pred = LSTM_RNN_f1(x, seq_len)
+    k_fold_num = 4
+    feature_num__s = 8
     pred = LSTM_RNN_f8(x, seq_len, weights, biases)
 
     with tf.name_scope('fullConnect'):
@@ -224,7 +352,7 @@ def main():
 
     saver.restore(sess, get_model(fea_num=feature_num__s, kfold_num=k_fold_num))
 
-    save_path = saver.save(sess, "./models/fea{}/model_kfold{}.ckpt".format(feature_num__s, k_fold_num))
+    save_path = saver.save(sess, "./models/kfold{}/fea{}/model_kfold{}.ckpt".format(k_fold_num, feature_num__s, k_fold_num))
     print("Model Resave at {}".format(save_path))
 
     sess.close()
