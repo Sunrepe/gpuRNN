@@ -1,4 +1,8 @@
-# 用于测试新数据是否和老数据可以共用
+'''
+根据文件夹生成相关文件。
+此处作用是，根据训练好的Model，生成可以后期使用的res10与Res50数据
+'''
+
 from data_pre.diffeature import *
 import tensorflow as tf
 import os
