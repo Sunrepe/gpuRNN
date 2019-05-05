@@ -1231,7 +1231,7 @@ class All_data_merge_self(object):
 
 
 class data_load_res(object):
-    def __init__(self, foldname, trainable=False, kfold_num=0):
+    def __init__(self, foldname, trainable=False, kfold_num=0, fea_num=0):
         '''
         获得相关的中间过程。直接获得所有组合好的结果即可，不需要中间在训练过程中进行组合，加快训练速度。
         :param foldname: 数据集合
@@ -1246,15 +1246,15 @@ class data_load_res(object):
         # if not trainable:print(__person)
         self.batch_id = 0  # use for batch_get
         if trainable:
-            self.all_label = Read_data_res(foldname+'train/label_kfold{}'.format(kfold_num))  # only one use
+            self.all_label = Read_data_res(foldname+'trainLabel_kfold{}'.format(kfold_num))  # only one use
             self.data_res = Read_data_res(foldname + 'train/fea{}_kfold{}'.format(0, kfold_num))
-            for i_fea in range(1, 8):
+            for i_fea in range(1, 9):
                 tmp_data = Read_data_res(foldname + 'train/fea{}_kfold{}'.format(i_fea, kfold_num))
                 self.data_res = np.concatenate([self.data_res, tmp_data], 1)
         else:
-            self.all_label = Read_data_res(foldname+'test/label_kfold{}'.format(kfold_num))  # only one use
+            self.all_label = Read_data_res(foldname+'testLabel_kfold{}'.format(kfold_num))  # only one use
             self.data_res = Read_data_res(foldname + 'test/fea{}_kfold{}'.format(0, kfold_num))
-            for i_fea in range(1, 8):
+            for i_fea in range(1, 9):
                 tmp_data = Read_data_res(foldname + 'test/fea{}_kfold{}'.format(i_fea, kfold_num))
                 self.data_res = np.concatenate([self.data_res, tmp_data], 1)
 

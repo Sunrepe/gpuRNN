@@ -17,12 +17,12 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'  # just error no warning
 # All hyperparameters
 n_hidden = 50  # Hidden layer num of features
 n_classes = 10  # Total classes (should go up, or should go down)
-n_concat = 400
+n_concat = 450
 
 # Training
-learning_rate = 0.000025
-lambda_loss_amount = 0.00015
-training_iters = 80  # Loop 1000 times on the dataset
+learning_rate = 0.00025
+lambda_loss_amount = 0.00015  # 目前最好参数 0.000025,0.00015
+training_iters = 150  # Loop 1000 times on the dataset
 batch_size = 400
 display_iter = 2000  # To show test set accuracy during training
 model_save = 80
@@ -30,7 +30,7 @@ model_save = 80
 k_fold_num = 0
 fold = './data/res50/'
 
-savename = './models/kfold{}/fcnet_kfold{}'.format(k_fold_num, k_fold_num)
+savename = './models/kfold{}/fcnet/fcnet_kfold{}'.format(k_fold_num, k_fold_num)
 
 LABELS = ['double', 'fist', 'spread', 'six', 'wavein', 'waveout', 'yes', 'no', 'finger', 'snap']
 
@@ -44,6 +44,13 @@ def Matrix_to_CSV(filename, data):
             writer.writerow([row])
 
 
+def Matrix_to_CSV_array(filename, data):
+    with open(filename, "w", newline='', ) as csvfile:
+        writer = csv.writer(csvfile)
+        for row in data:
+            writer.writerow(row)
+
+
 def FC_Net(lstm_out, keep_pro):
     '''
     训练单独的FC网络
@@ -54,10 +61,10 @@ def FC_Net(lstm_out, keep_pro):
     with tf.variable_scope('FC_Nets'):
         lstm_out = tf.nn.dropout(lstm_out, keep_prob=keep_pro)
         lstm_out = tf.layers.dense(lstm_out, 512)
-        lstm_out = tf.nn.dropout(lstm_out, keep_prob=keep_pro)
-        lstm_out = tf.layers.dense(lstm_out, 512)
-        lstm_out = tf.nn.dropout(lstm_out, keep_prob=keep_pro)
-        lstm_out = tf.layers.dense(lstm_out, 128)
+        # lstm_out = tf.nn.dropout(lstm_out, keep_prob=keep_pro)
+        # lstm_out = tf.layers.dense(lstm_out, 512)
+        # lstm_out = tf.nn.dropout(lstm_out, keep_prob=keep_pro)
+        # lstm_out = tf.layers.dense(lstm_out, 128)
         lstm_out = tf.layers.dense(lstm_out, 10)
 
     return lstm_out
@@ -103,7 +110,7 @@ def main():
     sess = tf.InteractiveSession(config=tf.ConfigProto(log_device_placement=False))
     init = tf.global_variables_initializer()
     sess.run(init)
-    # saver.restore(sess, "./lstm2/model_mergeall_kfold1.ckpt-100")
+    # saver.restore(sess, savename+'final')
     # Perform Training steps with "batch_size" amount of example data at each loop
     step = 1
     print("Start train!")
@@ -113,7 +120,7 @@ def main():
         feed_dic = {
             y: batch_ys,
             x: batch_xs,
-            keep_prob: 0.4
+            keep_prob: 0.2
         }
         # Fit training using batch data
         _, loss, acc = sess.run(
@@ -148,7 +155,7 @@ def main():
                   ", Accuracy = {}".format(acc))
 
         # save the model:
-        if (step * batch_size % (display_iter * 20) == 0) or (
+        if (step * batch_size % (display_iter * 100) == 0) or (
                         step * batch_size > training_iters * train_data_len):
             save_path = saver.save(sess, savename, global_step=step)
             print("Model saved in file: %s" % save_path)
@@ -231,6 +238,7 @@ def main():
     print("")
     print("Confusion Matrix:")
     confusion_matrix = metrics.confusion_matrix(result_labels, predictions)
+    Matrix_to_CSV_array(filename='./matrix/all_lstm/matrix_kfold{}.txt'.format(k_fold_num), data=confusion_matrix)
     print(confusion_matrix)
     normalised_confusion_matrix = np.array(confusion_matrix, dtype=np.float32) / np.sum(confusion_matrix) * 100
 
@@ -253,7 +261,7 @@ def main():
     plt.colorbar()
     tick_marks = np.arange(n_classes)
     plt.yticks(tick_marks, LABELS)
-    plt.savefig('./loss_dir/Matrix{}.png'.format(savename), dpi=600, bbox_inches='tight')
+    plt.savefig('./loss_dir/Matrix_kfold{}.png'.format(k_fold_num), dpi=600, bbox_inches='tight')
 
     sess.close()
 

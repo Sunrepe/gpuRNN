@@ -2,124 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e51bf105-f34c-4031-aa58-28fd3cc5807c" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/res10/test/label_kfold0" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/res10/train/label_kfold0" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/res50/test/label_kfold0" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/res50/train/label_kfold0" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/kfold0/checkpoint" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/kfold0/fcnet_kfold0-1000.data-00000-of-00001" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/kfold0/fcnet_kfold0-1000.index" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/kfold0/fcnet_kfold0-1000.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/kfold0/fcnet_kfold0-1100.data-00000-of-00001" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/kfold0/fcnet_kfold0-1100.index" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/kfold0/fcnet_kfold0-1100.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/kfold0/fcnet_kfold0-1200.data-00000-of-00001" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/kfold0/fcnet_kfold0-1200.index" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/kfold0/fcnet_kfold0-1200.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/kfold0/fcnet_kfold0-200.data-00000-of-00001" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/kfold0/fcnet_kfold0-200.index" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/kfold0/fcnet_kfold0-200.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/kfold0/fcnet_kfold0-300.data-00000-of-00001" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/kfold0/fcnet_kfold0-300.index" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/kfold0/fcnet_kfold0-300.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/kfold0/fcnet_kfold0-3700.data-00000-of-00001" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/kfold0/fcnet_kfold0-3700.index" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/kfold0/fcnet_kfold0-3700.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/kfold0/fcnet_kfold0-3800.data-00000-of-00001" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/kfold0/fcnet_kfold0-3800.index" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/kfold0/fcnet_kfold0-3800.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/kfold0/fcnet_kfold0-3900.data-00000-of-00001" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/kfold0/fcnet_kfold0-3900.index" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/kfold0/fcnet_kfold0-3900.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/kfold0/fcnet_kfold0-400.data-00000-of-00001" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/kfold0/fcnet_kfold0-400.index" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/kfold0/fcnet_kfold0-400.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/kfold0/fcnet_kfold0-4000.data-00000-of-00001" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/kfold0/fcnet_kfold0-4000.index" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/kfold0/fcnet_kfold0-4000.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/kfold0/fcnet_kfold0-4100.data-00000-of-00001" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/kfold0/fcnet_kfold0-4100.index" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/kfold0/fcnet_kfold0-4100.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/kfold0/fcnet_kfold0-4200.data-00000-of-00001" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/kfold0/fcnet_kfold0-4200.index" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/kfold0/fcnet_kfold0-4200.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/kfold0/fcnet_kfold0-4300.data-00000-of-00001" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/kfold0/fcnet_kfold0-4300.index" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/kfold0/fcnet_kfold0-4300.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/kfold0/fcnet_kfold0-4400.data-00000-of-00001" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/kfold0/fcnet_kfold0-4400.index" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/kfold0/fcnet_kfold0-4400.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/kfold0/fcnet_kfold0-4500.data-00000-of-00001" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/kfold0/fcnet_kfold0-4500.index" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/kfold0/fcnet_kfold0-4500.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/kfold0/fcnet_kfold0-4600.data-00000-of-00001" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/kfold0/fcnet_kfold0-4600.index" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/kfold0/fcnet_kfold0-4600.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/kfold0/fcnet_kfold0-4700.data-00000-of-00001" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/kfold0/fcnet_kfold0-4700.index" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/kfold0/fcnet_kfold0-4700.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/kfold0/fcnet_kfold0-500.data-00000-of-00001" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/kfold0/fcnet_kfold0-500.index" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/kfold0/fcnet_kfold0-500.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/kfold0/fcnet_kfold0-600.data-00000-of-00001" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/kfold0/fcnet_kfold0-600.index" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/kfold0/fcnet_kfold0-600.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/kfold0/fcnet_kfold0-700.data-00000-of-00001" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/kfold0/fcnet_kfold0-700.index" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/kfold0/fcnet_kfold0-700.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/kfold0/fcnet_kfold0-800.data-00000-of-00001" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/kfold0/fcnet_kfold0-800.index" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/kfold0/fcnet_kfold0-800.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/kfold0/fcnet_kfold0-900.data-00000-of-00001" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/kfold0/fcnet_kfold0-900.index" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/kfold0/fcnet_kfold0-900.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/kfold0/fcnet_kfold0final.data-00000-of-00001" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/kfold0/fcnet_kfold0final.index" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/kfold0/fcnet_kfold0final.meta" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/res10/test/fea0_kfold0" afterPath="$PROJECT_DIR$/data/res10/test/fea0_kfold0" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/res10/test/fea1_kfold0" afterPath="$PROJECT_DIR$/data/res10/test/fea1_kfold0" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/res10/test/fea2_kfold0" afterPath="$PROJECT_DIR$/data/res10/test/fea2_kfold0" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/res10/test/fea3_kfold0" afterPath="$PROJECT_DIR$/data/res10/test/fea3_kfold0" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/res10/test/fea4_kfold0" afterPath="$PROJECT_DIR$/data/res10/test/fea4_kfold0" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/res10/test/fea5_kfold0" afterPath="$PROJECT_DIR$/data/res10/test/fea5_kfold0" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/res10/test/fea6_kfold0" afterPath="$PROJECT_DIR$/data/res10/test/fea6_kfold0" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/res10/test/fea7_kfold0" afterPath="$PROJECT_DIR$/data/res10/test/fea7_kfold0" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/res10/test/fea8_kfold0" afterPath="$PROJECT_DIR$/data/res10/test/fea8_kfold0" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/res10/testLabel_kfold0" afterPath="$PROJECT_DIR$/data/res10/testLabel_kfold0" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/res10/train/fea0_kfold0" afterPath="$PROJECT_DIR$/data/res10/train/fea0_kfold0" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/res10/train/fea1_kfold0" afterPath="$PROJECT_DIR$/data/res10/train/fea1_kfold0" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/res10/train/fea2_kfold0" afterPath="$PROJECT_DIR$/data/res10/train/fea2_kfold0" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/res10/train/fea3_kfold0" afterPath="$PROJECT_DIR$/data/res10/train/fea3_kfold0" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/res10/train/fea4_kfold0" afterPath="$PROJECT_DIR$/data/res10/train/fea4_kfold0" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/res10/train/fea5_kfold0" afterPath="$PROJECT_DIR$/data/res10/train/fea5_kfold0" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/res10/train/fea6_kfold0" afterPath="$PROJECT_DIR$/data/res10/train/fea6_kfold0" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/res10/train/fea7_kfold0" afterPath="$PROJECT_DIR$/data/res10/train/fea7_kfold0" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/res10/train/fea8_kfold0" afterPath="$PROJECT_DIR$/data/res10/train/fea8_kfold0" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/res10/trainLabel_kfold0" afterPath="$PROJECT_DIR$/data/res10/trainLabel_kfold0" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/res50/test/fea0_kfold0" afterPath="$PROJECT_DIR$/data/res50/test/fea0_kfold0" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/res50/test/fea1_kfold0" afterPath="$PROJECT_DIR$/data/res50/test/fea1_kfold0" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/res50/test/fea2_kfold0" afterPath="$PROJECT_DIR$/data/res50/test/fea2_kfold0" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/res50/test/fea3_kfold0" afterPath="$PROJECT_DIR$/data/res50/test/fea3_kfold0" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/res50/test/fea4_kfold0" afterPath="$PROJECT_DIR$/data/res50/test/fea4_kfold0" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/res50/test/fea5_kfold0" afterPath="$PROJECT_DIR$/data/res50/test/fea5_kfold0" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/res50/test/fea6_kfold0" afterPath="$PROJECT_DIR$/data/res50/test/fea6_kfold0" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/res50/test/fea7_kfold0" afterPath="$PROJECT_DIR$/data/res50/test/fea7_kfold0" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/res50/test/fea8_kfold0" afterPath="$PROJECT_DIR$/data/res50/test/fea8_kfold0" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/res50/testLabel_kfold0" afterPath="$PROJECT_DIR$/data/res50/testLabel_kfold0" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/res50/train/fea0_kfold0" afterPath="$PROJECT_DIR$/data/res50/train/fea0_kfold0" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/res50/train/fea1_kfold0" afterPath="$PROJECT_DIR$/data/res50/train/fea1_kfold0" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/res50/train/fea2_kfold0" afterPath="$PROJECT_DIR$/data/res50/train/fea2_kfold0" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/res50/train/fea3_kfold0" afterPath="$PROJECT_DIR$/data/res50/train/fea3_kfold0" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/res50/train/fea4_kfold0" afterPath="$PROJECT_DIR$/data/res50/train/fea4_kfold0" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/res50/train/fea5_kfold0" afterPath="$PROJECT_DIR$/data/res50/train/fea5_kfold0" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/res50/train/fea6_kfold0" afterPath="$PROJECT_DIR$/data/res50/train/fea6_kfold0" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/res50/train/fea7_kfold0" afterPath="$PROJECT_DIR$/data/res50/train/fea7_kfold0" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/res50/train/fea8_kfold0" afterPath="$PROJECT_DIR$/data/res50/train/fea8_kfold0" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/res50/trainLabel_kfold0" afterPath="$PROJECT_DIR$/data/res50/trainLabel_kfold0" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/getRes50and10.py" afterPath="$PROJECT_DIR$/getRes50and10.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/load_all_confusionMatrix.py" afterPath="$PROJECT_DIR$/load_all_confusionMatrix.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rename_models.py" afterPath="$PROJECT_DIR$/rename_models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testtmp.py" afterPath="$PROJECT_DIR$/testtmp.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/cs_errors/2res10_final.csv" afterPath="$PROJECT_DIR$/data/cs_errors/2res10_final.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/cs_errors/2res50_final.csv" afterPath="$PROJECT_DIR$/data/cs_errors/2res50_final.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data_pre/alldata.py" afterPath="$PROJECT_DIR$/data_pre/alldata.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fcrnn_cnn.py" afterPath="$PROJECT_DIR$/fcrnn_cnn.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -132,11 +19,11 @@
     <SUITE FILE_PATH="coverage/gpuRNN$oriandsmooth.coverage" NAME="oriandsmooth Coverage Results" MODIFIED="1555917186958" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/forPICS" />
     <SUITE FILE_PATH="coverage/gpuRNN$lstm_0410_emgandwavelet.coverage" NAME="lstm_0410_emgandwavelet Coverage Results" MODIFIED="1555037799100" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$lstm_0405_kfold.coverage" NAME="lstm_0405_kfold Coverage Results" MODIFIED="1555307258176" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/gpuRNN$load_all_confusionMatrix.coverage" NAME="load_all_confusionMatrix Coverage Results" MODIFIED="1557057381292" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/gpuRNN$load_all_confusionMatrix.coverage" NAME="load_all_confusionMatrix Coverage Results" MODIFIED="1557059846462" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$bilstm_0402.coverage" NAME="bilstm_0402 Coverage Results" MODIFIED="1554211984148" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$testEveryone.coverage" NAME="testEveryone Coverage Results" MODIFIED="1554951599362" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/gpuRNN$fcrnn_cnn.coverage" NAME="fcrnn_cnn Coverage Results" MODIFIED="1556611776606" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$rename_models.coverage" NAME="rename_models Coverage Results" MODIFIED="1556958603225" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/gpuRNN$fcrnn_cnn.coverage" NAME="fcrnn_cnn Coverage Results" MODIFIED="1557062034726" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$lstm_mfcctest.coverage" NAME="lstm_mfcctest Coverage Results" MODIFIED="1553744180019" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$lstm_8pose.coverage" NAME="lstm_8pose Coverage Results" MODIFIED="1554256648416" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$softmax_cross_errors.coverage" NAME="softmax_cross_errors Coverage Results" MODIFIED="1557057216618" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -253,7 +140,7 @@
         <entry file="file://$PROJECT_DIR$/load_all_confusionMatrix.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="150">
-              <caret line="102" column="18" lean-forward="true" selection-start-line="102" selection-start-column="18" selection-end-line="102" selection-end-column="18" />
+              <caret line="102" column="18" lean-forward="false" selection-start-line="102" selection-start-column="18" selection-end-line="102" selection-end-column="18" />
               <folding>
                 <element signature="e#481#995#0" expanded="false" />
               </folding>
@@ -265,7 +152,7 @@
         <entry file="file://$PROJECT_DIR$/softmax_cross_errors.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="250">
-              <caret line="126" column="53" lean-forward="true" selection-start-line="126" selection-start-column="53" selection-end-line="126" selection-end-column="53" />
+              <caret line="126" column="53" lean-forward="false" selection-start-line="126" selection-start-column="53" selection-end-line="126" selection-end-column="53" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
                 <element signature="e#1078#3285#0" expanded="false" />
@@ -277,11 +164,9 @@
       <file leaf-file-name="fcrnn_cnn.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/fcrnn_cnn.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4062">
-              <caret line="259" column="0" lean-forward="false" selection-start-line="259" selection-start-column="0" selection-end-line="259" selection-end-column="0" />
-              <folding>
-                <element signature="e#5557#5650#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="95">
+              <caret line="24" column="54" lean-forward="true" selection-start-line="24" selection-start-column="54" selection-end-line="24" selection-end-column="54" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -296,21 +181,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="feature_0get.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/feature_0get.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="214" column="74" lean-forward="false" selection-start-line="214" selection-start-column="74" selection-end-line="214" selection-end-column="74" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="alldata.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data_pre/alldata.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="17" column="17" lean-forward="false" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+            <state relative-caret-position="-493">
+              <caret line="1254" column="58" lean-forward="false" selection-start-line="1254" selection-start-column="58" selection-end-line="1254" selection-end-column="58" />
               <folding>
                 <element signature="e#74#291#0" expanded="false" />
                 <element signature="e#559#683#0" expanded="false" />
@@ -336,7 +211,6 @@
                 <element signature="e#37645#42241#0" expanded="false" />
                 <element signature="e#42272#45560#0" expanded="false" />
                 <element signature="e#45602#52403#0" expanded="false" />
-                <element signature="e#52439#54695#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -365,9 +239,9 @@
       <find>saver</find>
       <find>png</find>
       <find>plt</find>
-      <find>final</find>
       <find>lstm/</find>
       <find>loss_</find>
+      <find>final</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -418,15 +292,15 @@
         <option value="$PROJECT_DIR$/feature_0get.py" />
         <option value="$PROJECT_DIR$/reget_modelpath.py" />
         <option value="$PROJECT_DIR$/data_pre/diffeature.py" />
-        <option value="$PROJECT_DIR$/data_pre/alldata.py" />
         <option value="$PROJECT_DIR$/testEveryone.py" />
-        <option value="$PROJECT_DIR$/fcrnn_cnn.py" />
         <option value="$PROJECT_DIR$/res_mid_recode.py" />
         <option value="$PROJECT_DIR$/rename_models.py" />
         <option value="$PROJECT_DIR$/testtmp.py" />
         <option value="$PROJECT_DIR$/getRes50and10.py" />
         <option value="$PROJECT_DIR$/softmax_cross_errors.py" />
         <option value="$PROJECT_DIR$/load_all_confusionMatrix.py" />
+        <option value="$PROJECT_DIR$/data_pre/alldata.py" />
+        <option value="$PROJECT_DIR$/fcrnn_cnn.py" />
       </list>
     </option>
   </component>
@@ -498,8 +372,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.load_all_confusionMatrix">
-    <configuration name="getRes50and10" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.fcrnn_cnn">
+    <configuration name="fcrnn_cnn" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -512,7 +386,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="gpuRNN" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/getRes50and10.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/fcrnn_cnn.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -591,18 +465,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.rename_models" />
-      <item index="1" class="java.lang.String" itemvalue="Python.getRes50and10" />
-      <item index="2" class="java.lang.String" itemvalue="Python.testtmp" />
-      <item index="3" class="java.lang.String" itemvalue="Python.softmax_cross_errors" />
-      <item index="4" class="java.lang.String" itemvalue="Python.load_all_confusionMatrix" />
+      <item index="1" class="java.lang.String" itemvalue="Python.testtmp" />
+      <item index="2" class="java.lang.String" itemvalue="Python.softmax_cross_errors" />
+      <item index="3" class="java.lang.String" itemvalue="Python.load_all_confusionMatrix" />
+      <item index="4" class="java.lang.String" itemvalue="Python.fcrnn_cnn" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.load_all_confusionMatrix" />
-        <item index="1" class="java.lang.String" itemvalue="Python.softmax_cross_errors" />
-        <item index="2" class="java.lang.String" itemvalue="Python.testtmp" />
-        <item index="3" class="java.lang.String" itemvalue="Python.rename_models" />
-        <item index="4" class="java.lang.String" itemvalue="Python.getRes50and10" />
+        <item index="0" class="java.lang.String" itemvalue="Python.fcrnn_cnn" />
+        <item index="1" class="java.lang.String" itemvalue="Python.load_all_confusionMatrix" />
+        <item index="2" class="java.lang.String" itemvalue="Python.softmax_cross_errors" />
+        <item index="3" class="java.lang.String" itemvalue="Python.testtmp" />
+        <item index="4" class="java.lang.String" itemvalue="Python.rename_models" />
       </list>
     </recent_temporary>
   </component>
@@ -632,13 +506,13 @@
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15279879" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19440243" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901135" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28687197" sideWeight="0.50680786" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24959481" sideWeight="0.49546143" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3873582" sideWeight="0.49319214" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25931928" sideWeight="0.49546143" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.6693679" sideWeight="0.49319214" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28038898" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -850,14 +724,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Program/Anaconda/Lib/site-packages/tensorflow/python/client/session.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="61">
-          <caret line="1318" column="0" lean-forward="false" selection-start-line="1318" selection-start-column="0" selection-end-line="1318" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/all_lstm.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="10850">
@@ -951,40 +817,6 @@
         <state relative-caret-position="157">
           <caret line="84" column="53" lean-forward="false" selection-start-line="84" selection-start-column="53" selection-end-line="84" selection-end-column="53" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data_pre/alldata.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="17" column="17" lean-forward="false" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
-          <folding>
-            <element signature="e#74#291#0" expanded="false" />
-            <element signature="e#559#683#0" expanded="false" />
-            <element signature="e#710#971#0" expanded="false" />
-            <element signature="e#1013#1043#0" expanded="false" />
-            <element signature="e#1082#1166#0" expanded="false" />
-            <element signature="e#1210#1685#0" expanded="false" />
-            <element signature="e#1717#2448#0" expanded="false" />
-            <element signature="e#3292#3390#0" expanded="false" />
-            <element signature="e#3433#3514#0" expanded="false" />
-            <element signature="e#3554#3602#0" expanded="false" />
-            <element signature="e#3630#4361#0" expanded="false" />
-            <element signature="e#4391#7832#0" expanded="false" />
-            <element signature="e#7862#10866#0" expanded="false" />
-            <element signature="e#10901#13929#0" expanded="false" />
-            <element signature="e#13964#17027#0" expanded="false" />
-            <element signature="e#17062#20146#0" expanded="false" />
-            <element signature="e#20180#23469#0" expanded="false" />
-            <element signature="e#23507#26768#0" expanded="false" />
-            <element signature="e#26801#29642#0" expanded="false" />
-            <element signature="e#29683#33594#0" expanded="false" />
-            <element signature="e#33628#37586#0" expanded="false" />
-            <element signature="e#37645#42241#0" expanded="false" />
-            <element signature="e#42272#45560#0" expanded="false" />
-            <element signature="e#45602#52403#0" expanded="false" />
-            <element signature="e#52439#54695#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1101,7 +933,7 @@
     <entry file="file://$PROJECT_DIR$/load_all_confusionMatrix.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
-          <caret line="102" column="18" lean-forward="true" selection-start-line="102" selection-start-column="18" selection-end-line="102" selection-end-column="18" />
+          <caret line="102" column="18" lean-forward="false" selection-start-line="102" selection-start-column="18" selection-end-line="102" selection-end-column="18" />
           <folding>
             <element signature="e#481#995#0" expanded="false" />
           </folding>
@@ -1111,7 +943,7 @@
     <entry file="file://$PROJECT_DIR$/softmax_cross_errors.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="250">
-          <caret line="126" column="53" lean-forward="true" selection-start-line="126" selection-start-column="53" selection-end-line="126" selection-end-column="53" />
+          <caret line="126" column="53" lean-forward="false" selection-start-line="126" selection-start-column="53" selection-end-line="126" selection-end-column="53" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
             <element signature="e#1078#3285#0" expanded="false" />
@@ -1127,13 +959,52 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/data_pre/alldata.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-493">
+          <caret line="1254" column="58" lean-forward="false" selection-start-line="1254" selection-start-column="58" selection-end-line="1254" selection-end-column="58" />
+          <folding>
+            <element signature="e#74#291#0" expanded="false" />
+            <element signature="e#559#683#0" expanded="false" />
+            <element signature="e#710#971#0" expanded="false" />
+            <element signature="e#1013#1043#0" expanded="false" />
+            <element signature="e#1082#1166#0" expanded="false" />
+            <element signature="e#1210#1685#0" expanded="false" />
+            <element signature="e#1717#2448#0" expanded="false" />
+            <element signature="e#3292#3390#0" expanded="false" />
+            <element signature="e#3433#3514#0" expanded="false" />
+            <element signature="e#3554#3602#0" expanded="false" />
+            <element signature="e#3630#4361#0" expanded="false" />
+            <element signature="e#4391#7832#0" expanded="false" />
+            <element signature="e#7862#10866#0" expanded="false" />
+            <element signature="e#10901#13929#0" expanded="false" />
+            <element signature="e#13964#17027#0" expanded="false" />
+            <element signature="e#17062#20146#0" expanded="false" />
+            <element signature="e#20180#23469#0" expanded="false" />
+            <element signature="e#23507#26768#0" expanded="false" />
+            <element signature="e#26801#29642#0" expanded="false" />
+            <element signature="e#29683#33594#0" expanded="false" />
+            <element signature="e#33628#37586#0" expanded="false" />
+            <element signature="e#37645#42241#0" expanded="false" />
+            <element signature="e#42272#45560#0" expanded="false" />
+            <element signature="e#45602#52403#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Program/Anaconda/Lib/site-packages/tensorflow/python/client/session.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3170">
+          <caret line="1127" column="0" lean-forward="false" selection-start-line="1127" selection-start-column="0" selection-end-line="1127" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/fcrnn_cnn.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4062">
-          <caret line="259" column="0" lean-forward="false" selection-start-line="259" selection-start-column="0" selection-end-line="259" selection-end-column="0" />
-          <folding>
-            <element signature="e#5557#5650#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="95">
+          <caret line="24" column="54" lean-forward="true" selection-start-line="24" selection-start-column="54" selection-end-line="24" selection-end-column="54" />
+          <folding />
         </state>
       </provider>
     </entry>
