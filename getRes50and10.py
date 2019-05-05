@@ -227,9 +227,9 @@ def main():
     y = tf.placeholder(tf.float32, [None, n_classes])
     seq_len = tf.placeholder(tf.float32, [None])
 
-    k_fold_num = 1
-    feature_num__s = 0
-    pred = LSTM_RNN_f0(x, seq_len, weights, biases)
+    k_fold_num = 4
+    feature_num__s = 5
+    pred = LSTM_RNN_f5(x, seq_len, weights, biases)
     #
     with tf.name_scope('fullConnect'):
         lstm_out = tf.matmul(pred, weights['out']) + biases['out']
@@ -277,11 +277,11 @@ def main():
     # label
     if feature_num__s == 0:
         # train
-        Matrix_to_CSV('./data/res10/trainLabel_kfold{}'.format(feature_num__s, k_fold_num), train_sets.all_label)
-        Matrix_to_CSV('./data/res50/trainLabel_kfold{}'.format(feature_num__s, k_fold_num), train_sets.all_label)
+        Matrix_to_CSV('./data/res10/trainLabel_kfold{}'.format(k_fold_num), train_sets.all_label)
+        Matrix_to_CSV('./data/res50/trainLabel_kfold{}'.format(k_fold_num), train_sets.all_label)
         # test
-        Matrix_to_CSV('./data/res50/testLabel_kfold{}'.format(feature_num__s, k_fold_num), test_sets.all_label)
-        Matrix_to_CSV('./data/res10/testLabel_kfold{}'.format(feature_num__s, k_fold_num), test_sets.all_label)
+        Matrix_to_CSV('./data/res50/testLabel_kfold{}'.format(k_fold_num), test_sets.all_label)
+        Matrix_to_CSV('./data/res10/testLabel_kfold{}'.format(k_fold_num), test_sets.all_label)
 
 
     sess.close()

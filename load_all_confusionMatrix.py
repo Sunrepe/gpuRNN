@@ -8,7 +8,7 @@ from sklearn import metrics
 
 
 def Matrix_to_CSV(filename, data):
-    with open(filename, "a", newline='', ) as csvfile:
+    with open(filename, "w", newline='', ) as csvfile:
         writer = csv.writer(csvfile)
         # 先写入columns_name
         # writer.writerow(["emg1", "emg2", "emg3", "emg4", "emg5", "emg6", "emg7", "emg8", "label"])
@@ -43,6 +43,16 @@ def Read__mean_2(filename):
     '''
     # f_csv = csv.reader(filename)
     my_matrix = np.loadtxt(filename, dtype='int', delimiter=",")
+    return my_matrix
+
+
+def Read_data_res(filename):
+    '''
+    获得所有且分点信息，同时将所有数据进行（绝对值、去噪操作）
+    :param filename:
+    :return: 组合的数据
+    '''
+    my_matrix = np.loadtxt(filename, dtype='float', delimiter=",")
     return my_matrix
 
 
@@ -82,5 +92,20 @@ def main():
     # print(type(z[0, 0]))
     # print(z)
 
+
+def main2():
+    '''
+    计算所有的cross_errors，
+    5 折合并。
+    :return:
+    '''
+    res = np.zeros([9, 9])
+    num_class = 10
+    for i_kfold in range(5):
+        file = './data/cs_errors/2res{}_kfold{}.csv'.format(num_class, i_kfold)
+        res += Read_data_res(file)
+    Matrix_to_CSV('./data/cs_errors/2res{}_final.csv'.format(num_class), res)
+
+
 if __name__ == '__main__':
-    main()
+    main2()

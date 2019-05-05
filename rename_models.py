@@ -339,8 +339,8 @@ def main():
 
     # pred = LSTM_RNN_f1(x, seq_len)
     k_fold_num = 4
-    feature_num__s = 0
-    pred = LSTM_RNN_f0(x, seq_len, weights, biases)
+    feature_num__s = 5
+    pred = LSTM_RNN_f5(x, seq_len, weights, biases)
 
     with tf.name_scope('fullConnect'):
         lstm_out = tf.matmul(pred, weights['out']) + biases['out']

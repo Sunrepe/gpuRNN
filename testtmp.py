@@ -1,118 +1,292 @@
 '''
-采用小波变换去噪,
-先变换,去噪后重构原始信号.
+根据文件夹生成相关文件。
+此处作用是，根据训练好的Model，生成可以后期使用的res10与Res50数据
 '''
 
-import os
-import csv
-import time
-import shutil
-import numpy as np
+from data_pre.diffeature import *
 import tensorflow as tf
+import os
+import time
 import matplotlib
+import csv
 import matplotlib.pyplot as plt
-import pywt
+import numpy as np
+from sklearn import metrics
+
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'  # just error no warning
+# os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'  # warnings and errors
+# os.environ['TF_CPP_MIN_LOG_LEVEL'] = '1'
+# os.environ['TF_CPP_MIN_LOG_LEVEL'] = '0'
+
+# All hyperparameters
+n_hidden = 50  # Hidden layer num of features
+n_classes = 10  # Total classes (should go up, or should go down)
+n_inputs = 8
+max_seq = 800
+tmp_use_len = [150, 150, 250, 450, 800, 800, 800, 800, 400]
+
+# Training
+# learning_rate = 0.0001
+lambda_loss_amount = 0.0020
+training_iters = 200  # Loop 1000 times on the dataset
+batch_size = 400
+display_iter = 4000  # To show test set accuracy during training
+model_save = 20
+
+fold = './data/actdata/'
+LABELS = ['double', 'fist', 'spread', 'six', 'wavein', 'waveout', 'yes', 'no', 'finger', 'snap']
 
 
 def Matrix_to_CSV(filename, data):
-    import numpy as np
-    data = data.astype('int')
-    with open(filename, "a", newline='', ) as csvfile:
+    with open(filename, "w", newline='', ) as csvfile:
         writer = csv.writer(csvfile)
-        # 先写入columns_name
-        # writer.writerow(["emg1", "emg2", "emg3", "emg4", "emg5", "emg6", "emg7", "emg8", "label"])
         for row in data:
             writer.writerow(row)
 
 
-def Read__mean_2(filename):
-    '''
-    获得所有且分点信息，同时将所有数据进行（绝对值、去噪操作）
-    :param filename:
-    :return: 转置的8*N 的预处理的原始数据
-    '''
-    # f_csv = csv.reader(filename)
-    my_matrix = np.loadtxt(filename, dtype='int', delimiter=",")
-    return my_matrix
+def get_model(fea_num, kfold_num):
+    pass
+    if fea_num == 0 and kfold_num == 0:
+        model_path = 'E:/Research-bachelor/storeMODELs/2dif_feature/' \
+                     '{}/allmerge_f{}_kfold{}/' \
+                     'model_feature{}_kfold{}.ckpt-3000'.format(fea_num,fea_num,kfold_num,fea_num,kfold_num)
+    elif fea_num == 1 and kfold_num == 0:
+        model_path = 'E:/Research-bachelor/storeMODELs/2dif_feature/' \
+                     '{}/allmerge_f{}_kfold{}/' \
+                     'model_feature{}_kfold{}.ckpt-final'.format(fea_num,fea_num,kfold_num,fea_num,kfold_num)
+    elif fea_num == 2 and kfold_num == 0:
+        model_path = 'E:/Research-bachelor/storeMODELs/2dif_feature/' \
+                     '{}/allmerge_f{}_kfold{}/' \
+                     'model_feature{}_kfold{}.ckpt-2000'.format(fea_num,fea_num,kfold_num,fea_num,kfold_num)
+    elif fea_num == 3 and kfold_num == 0:
+        model_path = 'E:/Research-bachelor/storeMODELs/2dif_feature/' \
+                     '{}/allmerge_f{}_kfold{}/' \
+                     'model_feature{}_kfold{}.ckpt-2400'.format(fea_num,fea_num,kfold_num,fea_num,kfold_num)
+    elif fea_num == 4 and kfold_num == 0:
+        model_path = 'E:/Research-bachelor/storeMODELs/2dif_feature/' \
+                     '{}/allmerge_f{}_kfold{}/' \
+                     'model_feature{}_kfold{}.ckpt-2400'.format(fea_num,fea_num,kfold_num,fea_num,kfold_num)
+    elif fea_num == 5 and kfold_num == 0:
+        model_path = 'E:/Research-bachelor/storeMODELs/2dif_feature/' \
+                     '{}/allmerge_f{}_kfold{}/' \
+                     'model_feature{}_kfold{}.ckpt-2600'.format(fea_num,fea_num,kfold_num,fea_num,kfold_num)
+    elif fea_num == 6 and kfold_num == 0:
+        model_path = 'E:/Research-bachelor/storeMODELs/2dif_feature/' \
+                     '{}/allmerge_f{}_kfold{}/' \
+                     'model_feature{}_kfold{}.ckpt-final'.format(fea_num,fea_num,kfold_num,fea_num,kfold_num)
+    elif fea_num == 7 and kfold_num == 0:
+        model_path = 'E:/Research-bachelor/storeMODELs/2dif_feature/' \
+                     '{}/allmerge_f{}_kfold{}/' \
+                     'model_feature{}_kfold{}.ckpt-2000'.format(fea_num,fea_num,kfold_num,fea_num,kfold_num)
+    elif fea_num == 8 and kfold_num == 0:
+        model_path = 'E:/Research-bachelor/storeMODELs/2dif_feature/' \
+                     '{}/allmerge_f{}_kfold{}/' \
+                     'model_feature{}_kfold{}.ckpt-final'.format(fea_num,fea_num,kfold_num,fea_num,kfold_num)
+    elif fea_num == 0 and kfold_num == 1:
+        model_path = 'E:/Research-bachelor/storeMODELs/2dif_feature/' \
+                     '{}/allmerge_f{}_kfold{}/' \
+                     'model_feature{}_kfold{}.ckpt-3000'.format(fea_num,fea_num,kfold_num,fea_num,kfold_num)
+    elif fea_num == 1 and kfold_num == 1:
+        model_path = 'E:/Research-bachelor/storeMODELs/2dif_feature/' \
+                     '{}/allmerge_f{}_kfold{}/' \
+                     'model_feature{}_kfold{}.ckpt-3000'.format(fea_num,fea_num,kfold_num,fea_num,kfold_num)
+    elif fea_num == 2 and kfold_num == 1:
+        model_path = 'E:/Research-bachelor/storeMODELs/2dif_feature/' \
+                     '{}/allmerge_f{}_kfold{}/' \
+                     'model_feature{}_kfold{}.ckpt-3000'.format(fea_num,fea_num,kfold_num,fea_num,kfold_num)
+    elif fea_num == 3 and kfold_num == 1:
+        model_path = 'E:/Research-bachelor/storeMODELs/2dif_feature/' \
+                     '{}/allmerge_f{}_kfold{}/' \
+                     'model_feature{}_kfold{}.ckpt-3000'.format(fea_num,fea_num,kfold_num,fea_num,kfold_num)
+    return model_path
 
 
-def wave_change(data):
-    _len = data.shape[0]
-    for i in range(_len - 1):
-        data[i, :] = data[i + 1, :] - data[i, :]
-    return data[0:-1, :]
+def LSTM_RNN_f0(x, seq, _weight, _bias):
+    # dwt
+    with tf.variable_scope('ori'):
+        lstm_cell_1 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
+        lstm_cell_2 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
+        lstm_cells = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2])
+        outputs, _ = tf.nn.dynamic_rnn(lstm_cells, inputs=x, sequence_length=tf.to_int32(seq), dtype=tf.float32)
+        lstm_out = tf.divide(tf.reduce_sum(outputs, 1), seq[:, None])
+
+    return lstm_out
 
 
-def partition(num, low, high):
-    pivot = num[low]
-    while(low<high):
-        while(low < high and num[high] > pivot):
-            high -= 1
-        while (low < high and num[low] < pivot):
-            low += 1
-        temp = num[low]
-        num[low] = num[high]
-        num[high] = temp
-    num[low] = pivot
-    return low
+def LSTM_RNN_f1(x, seq, _weight, _bias):
+    # dwt
+    with tf.variable_scope('avg'):
+        lstm_cell_1 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
+        lstm_cell_2 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
+        lstm_cells = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2])
+        outputs, _ = tf.nn.dynamic_rnn(lstm_cells, inputs=x, sequence_length=tf.to_int32(seq), dtype=tf.float32)
+        lstm_out = tf.divide(tf.reduce_sum(outputs, 1), seq[:, None])
+
+    return lstm_out
 
 
-def findkth(num, low, high, k):  # 找到数组里第k个数
-    index = partition(num, low, high)
-    if index == k: return num[index]
-    if index < k:
-        return findkth(num, index + 1, high, k)
-    else:
-        return findkth(num, low, index - 1, k)
+def LSTM_RNN_f2(x, seq, _weight, _bias):
+    # dwt
+    with tf.variable_scope('std'):
+        lstm_cell_1 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
+        lstm_cell_2 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
+        lstm_cells = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2])
+        outputs, _ = tf.nn.dynamic_rnn(lstm_cells, inputs=x, sequence_length=tf.to_int32(seq), dtype=tf.float32)
+        lstm_out = tf.divide(tf.reduce_sum(outputs, 1), seq[:, None])
 
-# data_n = wavelet_trans(data)
+    return lstm_out
 
-def wavelet_trans(data):
-    # data = data.T
-    wave_let = pywt.Wavelet('db2')
-    data_new = []
-    for i in range(8):
-        channel_data = data[:,i]
-        # 小波变换
-        coeffs = pywt.wavedec(channel_data, wavelet=wave_let, level=3)
-        new_coeffs = []
-        for i_coeffs in coeffs:
-            # print(findkth(pai, 0, len(pai) - 1, 0))
-            thresh = np.sort(i_coeffs)[int((len(i_coeffs))/2)]/0.6745
-            i_coeffs = pywt.threshold(i_coeffs,thresh,'soft',0)
-            new_coeffs.append(i_coeffs)
-        # 小波重构
-        data_new.append(np.array(pywt.waverec(new_coeffs, wave_let,),'int'))
-    data_new = np.array(data_new)
-    return data_new.T
 
-            # print(pywt.dwt_max_level(50, wave_let))      # 查看可进行的最高分解层次
-        # print(np.array(pywt.waverec(coeffs, 'db5'), 'int'))  # 查看反小波分解
-        # print('coffs.shaoe',coeffs[0])
+def LSTM_RNN_f3(x, seq, _weight, _bias):
+    # dwt
+    with tf.variable_scope('wlc'):
+        lstm_cell_1 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
+        lstm_cell_2 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
+        lstm_cells = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2])
+        outputs, _ = tf.nn.dynamic_rnn(lstm_cells, inputs=x, sequence_length=tf.to_int32(seq), dtype=tf.float32)
+        lstm_out = tf.divide(tf.reduce_sum(outputs, 1), seq[:, None])
+
+    return lstm_out
+
+
+def LSTM_RNN_f4(x, seq, _weight, _bias):
+    # dwt
+    with tf.variable_scope('dwt1'):
+        lstm_cell_1 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
+        lstm_cell_2 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
+        lstm_cells = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2])
+        outputs, _ = tf.nn.dynamic_rnn(lstm_cells, inputs=x, sequence_length=tf.to_int32(seq), dtype=tf.float32)
+        lstm_out = tf.divide(tf.reduce_sum(outputs, 1), seq[:, None])
+
+    return lstm_out
+
+
+def LSTM_RNN_f5(x, seq, _weight, _bias):
+    # dwt
+    with tf.variable_scope('dwt2'):
+        lstm_cell_1 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
+        lstm_cell_2 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
+        lstm_cells = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2])
+        outputs, _ = tf.nn.dynamic_rnn(lstm_cells, inputs=x, sequence_length=tf.to_int32(seq), dtype=tf.float32)
+        lstm_out = tf.divide(tf.reduce_sum(outputs, 1), seq[:, None])
+
+    return lstm_out
+
+
+def LSTM_RNN_f6(x, seq, _weight, _bias):
+    # dwt
+    with tf.variable_scope('dwt3'):
+        lstm_cell_1 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
+        lstm_cell_2 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
+        lstm_cells = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2])
+        outputs, _ = tf.nn.dynamic_rnn(lstm_cells, inputs=x, sequence_length=tf.to_int32(seq), dtype=tf.float32)
+        lstm_out = tf.divide(tf.reduce_sum(outputs, 1), seq[:, None])
+
+    return lstm_out
+
+
+def LSTM_RNN_f7(x, seq, _weight, _bias):
+    # dwt
+    with tf.variable_scope('dwt4'):
+        lstm_cell_1 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
+        lstm_cell_2 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
+        lstm_cells = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2])
+        outputs, _ = tf.nn.dynamic_rnn(lstm_cells, inputs=x, sequence_length=tf.to_int32(seq), dtype=tf.float32)
+        lstm_out = tf.divide(tf.reduce_sum(outputs, 1), seq[:, None])
+
+    return lstm_out
+
+
+def LSTM_RNN_f8(x, seq, _weight, _bias):
+    # dwt
+    with tf.variable_scope('fft'):
+        lstm_cell_1 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
+        lstm_cell_2 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
+        lstm_cells = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2])
+        outputs, _ = tf.nn.dynamic_rnn(lstm_cells, inputs=x, sequence_length=tf.to_int32(seq), dtype=tf.float32)
+        lstm_out = tf.divide(tf.reduce_sum(outputs, 1), seq[:, None])
+
+    return lstm_out
+
 
 def main():
-    # foldname = '../myodata/actdata/'
-    foldname = '../myodata/testdata/'
-    for filename in os.listdir(foldname):
-        oa, ob, oc = filename.split('_')
-        if oc == 'b.txt':
-            print(filename)
-            a_filename = '../../gpuRNN/data/wtdata/' + oa + '_' + ob + '_c.txt'
-            csvfile = open(a_filename, "a", newline='')
-            writer = csv.writer(csvfile)
+    # time0 = time.time()
 
-            filenames = foldname + filename
-            data = Read__mean_2(filenames)
-            cutting = np.loadtxt(foldname + oa + '_' + ob + '_c.txt')
-            _last = 0
-            for i in range(0, len(cutting)):
-                tmp_data = data[_last:int(_last + cutting[i]), :]
-                _last = int(_last + cutting[i])
-                tmp_data = wavelet_trans(tmp_data)
-                Matrix_to_CSV('../../gpuRNN/data/wtdata/' + oa + '_' + ob + '_b.txt', tmp_data)
-                writer.writerow([_last])
+    time1 = time.time()
+    # # Graph weights
+    # with tf.variable_scope("weight"):
+    #     weights = {
+    #         'out': tf.Variable(tf.random_normal([n_hidden, n_classes], mean=1.0))
+    #     }
+    #     biases = {
+    #         'out': tf.Variable(tf.random_normal([n_classes]))
+    #     }
+    # #
+    # # # Graph input/output
+    # x = tf.placeholder(tf.float32, [None, max_seq, n_inputs])
+    # y = tf.placeholder(tf.float32, [None, n_classes])
+    # seq_len = tf.placeholder(tf.float32, [None])
+    #
+    k_fold_num = 2
+    feature_num__s = 0
+    # pred = LSTM_RNN_f5(x, seq_len, weights, biases)
+    # #
+    # with tf.name_scope('fullConnect'):
+    #     lstm_out = tf.matmul(pred, weights['out']) + biases['out']
+    #
+    # correct_pred = tf.equal(tf.argmax(lstm_out, 1), tf.argmax(y, 1))
+    # accuracy = tf.reduce_mean(tf.cast(correct_pred, tf.float32))
+    # saver = tf.train.Saver(max_to_keep=12)
 
+    print('loading data...')
+    train_sets = All_data_feature_lable(foldname=fold, max_seq=max_seq,
+                     num_class=10, trainable=True, kfold_num=k_fold_num,
+                     feature_num=feature_num__s)
+    test_sets = All_data_feature_lable(foldname=fold, max_seq=max_seq,
+                     num_class=10, trainable=False, kfold_num=k_fold_num,
+                     feature_num=feature_num__s)
+    print('train:', len(train_sets.all_label), 'test:', len(test_sets.all_label))
+    print('load data time:', time.time() - time1)
+
+    # sess = tf.InteractiveSession(config=tf.ConfigProto(log_device_placement=False))
+    # saver.restore(sess, "./models/kfold{}/fea{}/model_kfold{}.ckpt".format(k_fold_num, feature_num__s, k_fold_num))
+
+    # save 中间结果
+    # res50, res10 = sess.run(
+    #     [pred, lstm_out],
+    #     feed_dict={
+    #         x: train_sets.all_data,
+    #         y: train_sets.all_label,
+    #         seq_len: train_sets.all_seq_len
+    #     }
+    # )
+    # Matrix_to_CSV('./data/res50/train/fea{}_kfold{}'.format(feature_num__s, k_fold_num), res50)
+    # Matrix_to_CSV('./data/res10/train/fea{}_kfold{}'.format(feature_num__s, k_fold_num), res10)
+
+    # res50, res10 = sess.run(
+    #     [pred, lstm_out],
+    #     feed_dict={
+    #         x: test_sets.all_data,
+    #         y: test_sets.all_label,
+    #         seq_len: test_sets.all_seq_len
+    #     }
+    # )
+    # Matrix_to_CSV('./data/res50/test/fea{}_kfold{}'.format(feature_num__s, k_fold_num), res50)
+    # Matrix_to_CSV('./data/res10/test/fea{}_kfold{}'.format(feature_num__s, k_fold_num), res10)
+
+    # label
+    if feature_num__s == 0:
+        # train
+        print('kfold:{}'.format(k_fold_num))
+        Matrix_to_CSV('./lstmp/trainLabel_kfold{}'.format(k_fold_num), train_sets.all_label)
+        # Matrix_to_CSV('./data/res50/trainLabel_kfold{}'.format(feature_num__s, k_fold_num), train_sets.all_label)
+        # test
+        # Matrix_to_CSV('./data/res50/testLabel_kfold{}'.format(feature_num__s, k_fold_num), test_sets.all_label)
+        Matrix_to_CSV('./lstmp/testLabel_kfold{}'.format(k_fold_num), test_sets.all_label)
+
+
+    # sess.close()
+    # print('All time:', time.time() - time1)
 
 if __name__ == '__main__':
     main()
-
