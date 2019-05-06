@@ -1,0 +1,6 @@
+model_checkpoint_path: "fcnet_kfold2final"
+all_model_checkpoint_paths: "fcnet_kfold2-500"
+all_model_checkpoint_paths: "fcnet_kfold2-1000"
+all_model_checkpoint_paths: "fcnet_kfold2-1500"
+all_model_checkpoint_paths: "fcnet_kfold2-2000"
+all_model_checkpoint_paths: "fcnet_kfold2final"

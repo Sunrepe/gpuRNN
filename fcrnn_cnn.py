@@ -20,14 +20,14 @@ n_classes = 10  # Total classes (should go up, or should go down)
 n_concat = 450
 
 # Training
-learning_rate = 0.00025
+learning_rate = 0.00005
 lambda_loss_amount = 0.00015  # 目前最好参数 0.000025,0.00015
 training_iters = 150  # Loop 1000 times on the dataset
 batch_size = 400
 display_iter = 2000  # To show test set accuracy during training
 model_save = 80
 
-k_fold_num = 0
+k_fold_num = 2
 fold = './data/res50/'
 
 savename = './models/kfold{}/fcnet/fcnet_kfold{}'.format(k_fold_num, k_fold_num)
@@ -120,7 +120,7 @@ def main():
         feed_dic = {
             y: batch_ys,
             x: batch_xs,
-            keep_prob: 0.2
+            keep_prob: 0.3
         }
         # Fit training using batch data
         _, loss, acc = sess.run(
@@ -181,7 +181,7 @@ def main():
           "Batch Loss = {}".format(final_loss) + \
           ", Accuracy = {}".format(accuracy))
     print("All train time = {}".format(time.time() - time1))
-    save_path = saver.save(sess, savename+'final')
+    save_path = saver.save(sess, savename+'-final')
     print("Final Model saved in file: %s" % save_path)
     #
     # font = {

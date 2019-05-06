@@ -2,11 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e51bf105-f34c-4031-aa58-28fd3cc5807c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/loss_dir/Matrix_kfold0.png" afterPath="$PROJECT_DIR$/loss_dir/Matrix_kfold0.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/kfold0/fcnet/fcnet_kfold0-1000.data-00000-of-00001" afterPath="$PROJECT_DIR$/models/kfold0/fcnet/fcnet_kfold0-1000.data-00000-of-00001" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/kfold0/fcnet/fcnet_kfold0-1000.index" afterPath="$PROJECT_DIR$/models/kfold0/fcnet/fcnet_kfold0-1000.index" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/kfold0/fcnet/fcnet_kfold0-1000.meta" afterPath="$PROJECT_DIR$/models/kfold0/fcnet/fcnet_kfold0-1000.meta" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/kfold0/fcnet/fcnet_kfold0-1500.data-00000-of-00001" afterPath="$PROJECT_DIR$/models/kfold0/fcnet/fcnet_kfold0-1500.data-00000-of-00001" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/kfold0/fcnet/fcnet_kfold0-1500.index" afterPath="$PROJECT_DIR$/models/kfold0/fcnet/fcnet_kfold0-1500.index" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/kfold0/fcnet/fcnet_kfold0-1500.meta" afterPath="$PROJECT_DIR$/models/kfold0/fcnet/fcnet_kfold0-1500.meta" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/kfold0/fcnet/fcnet_kfold0-2000.data-00000-of-00001" afterPath="$PROJECT_DIR$/models/kfold0/fcnet/fcnet_kfold0-2000.data-00000-of-00001" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/kfold0/fcnet/fcnet_kfold0-2000.index" afterPath="$PROJECT_DIR$/models/kfold0/fcnet/fcnet_kfold0-2000.index" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/kfold0/fcnet/fcnet_kfold0-2000.meta" afterPath="$PROJECT_DIR$/models/kfold0/fcnet/fcnet_kfold0-2000.meta" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/kfold0/fcnet/fcnet_kfold0-500.data-00000-of-00001" afterPath="$PROJECT_DIR$/models/kfold0/fcnet/fcnet_kfold0-500.data-00000-of-00001" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/kfold0/fcnet/fcnet_kfold0-500.index" afterPath="$PROJECT_DIR$/models/kfold0/fcnet/fcnet_kfold0-500.index" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/kfold0/fcnet/fcnet_kfold0-500.meta" afterPath="$PROJECT_DIR$/models/kfold0/fcnet/fcnet_kfold0-500.meta" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/kfold0/fcnet/fcnet_kfold0final.data-00000-of-00001" afterPath="$PROJECT_DIR$/models/kfold0/fcnet/fcnet_kfold0final.data-00000-of-00001" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/kfold0/fcnet/fcnet_kfold0final.index" afterPath="$PROJECT_DIR$/models/kfold0/fcnet/fcnet_kfold0final.index" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/kfold0/fcnet/fcnet_kfold0final.meta" afterPath="$PROJECT_DIR$/models/kfold0/fcnet/fcnet_kfold0final.meta" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/cs_errors/2res10_final.csv" afterPath="$PROJECT_DIR$/data/cs_errors/2res10_final.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/cs_errors/2res50_final.csv" afterPath="$PROJECT_DIR$/data/cs_errors/2res50_final.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data_pre/alldata.py" afterPath="$PROJECT_DIR$/data_pre/alldata.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fcrnn_cnn.py" afterPath="$PROJECT_DIR$/fcrnn_cnn.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/load_all_confusionMatrix.py" afterPath="$PROJECT_DIR$/load_all_confusionMatrix.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/matrix/all_lstm/matrix_kfold0.txt" afterPath="$PROJECT_DIR$/matrix/all_lstm/matrix_kfold0.txt" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,11 +35,11 @@
     <SUITE FILE_PATH="coverage/gpuRNN$oriandsmooth.coverage" NAME="oriandsmooth Coverage Results" MODIFIED="1555917186958" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/forPICS" />
     <SUITE FILE_PATH="coverage/gpuRNN$lstm_0410_emgandwavelet.coverage" NAME="lstm_0410_emgandwavelet Coverage Results" MODIFIED="1555037799100" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$lstm_0405_kfold.coverage" NAME="lstm_0405_kfold Coverage Results" MODIFIED="1555307258176" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/gpuRNN$load_all_confusionMatrix.coverage" NAME="load_all_confusionMatrix Coverage Results" MODIFIED="1557059846462" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/gpuRNN$load_all_confusionMatrix.coverage" NAME="load_all_confusionMatrix Coverage Results" MODIFIED="1557128748483" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$bilstm_0402.coverage" NAME="bilstm_0402 Coverage Results" MODIFIED="1554211984148" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$testEveryone.coverage" NAME="testEveryone Coverage Results" MODIFIED="1554951599362" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$rename_models.coverage" NAME="rename_models Coverage Results" MODIFIED="1556958603225" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/gpuRNN$fcrnn_cnn.coverage" NAME="fcrnn_cnn Coverage Results" MODIFIED="1557062034726" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/gpuRNN$fcrnn_cnn.coverage" NAME="fcrnn_cnn Coverage Results" MODIFIED="1557062628107" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$lstm_mfcctest.coverage" NAME="lstm_mfcctest Coverage Results" MODIFIED="1553744180019" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$lstm_8pose.coverage" NAME="lstm_8pose Coverage Results" MODIFIED="1554256648416" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$softmax_cross_errors.coverage" NAME="softmax_cross_errors Coverage Results" MODIFIED="1557057216618" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -136,13 +152,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="load_all_confusionMatrix.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="load_all_confusionMatrix.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/load_all_confusionMatrix.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="102" column="18" lean-forward="false" selection-start-line="102" selection-start-column="18" selection-end-line="102" selection-end-column="18" />
+            <state relative-caret-position="869">
+              <caret line="173" column="31" lean-forward="true" selection-start-line="173" selection-start-column="31" selection-end-line="173" selection-end-column="31" />
               <folding>
-                <element signature="e#481#995#0" expanded="false" />
+                <element signature="e#499#1013#0" expanded="false" />
+                <element signature="e#1048#1265#0" expanded="false" />
+                <element signature="e#1301#1474#0" expanded="false" />
+                <element signature="e#1810#2848#0" expanded="false" />
+                <element signature="e#2868#3673#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -151,8 +171,8 @@
       <file leaf-file-name="softmax_cross_errors.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/softmax_cross_errors.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="126" column="53" lean-forward="false" selection-start-line="126" selection-start-column="53" selection-end-line="126" selection-end-column="53" />
+            <state relative-caret-position="0">
+              <caret line="116" column="30" lean-forward="true" selection-start-line="116" selection-start-column="30" selection-end-line="116" selection-end-column="30" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
                 <element signature="e#1078#3285#0" expanded="false" />
@@ -161,12 +181,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fcrnn_cnn.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="fcrnn_cnn.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/fcrnn_cnn.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="24" column="54" lean-forward="true" selection-start-line="24" selection-start-column="54" selection-end-line="24" selection-end-column="54" />
-              <folding />
+            <state relative-caret-position="130">
+              <caret line="34" column="96" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="96" />
+              <folding>
+                <element signature="e#20#50#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -184,8 +206,8 @@
       <file leaf-file-name="alldata.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data_pre/alldata.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-493">
-              <caret line="1254" column="58" lean-forward="false" selection-start-line="1254" selection-start-column="58" selection-end-line="1254" selection-end-column="58" />
+            <state relative-caret-position="184">
+              <caret line="1258" column="76" lean-forward="true" selection-start-line="1258" selection-start-column="32" selection-end-line="1258" selection-end-column="76" />
               <folding>
                 <element signature="e#74#291#0" expanded="false" />
                 <element signature="e#559#683#0" expanded="false" />
@@ -298,9 +320,9 @@
         <option value="$PROJECT_DIR$/testtmp.py" />
         <option value="$PROJECT_DIR$/getRes50and10.py" />
         <option value="$PROJECT_DIR$/softmax_cross_errors.py" />
-        <option value="$PROJECT_DIR$/load_all_confusionMatrix.py" />
         <option value="$PROJECT_DIR$/data_pre/alldata.py" />
         <option value="$PROJECT_DIR$/fcrnn_cnn.py" />
+        <option value="$PROJECT_DIR$/load_all_confusionMatrix.py" />
       </list>
     </option>
   </component>
@@ -339,6 +361,11 @@
               <item name="gpuRNN" type="b2602c69:ProjectViewProjectNode" />
               <item name="gpuRNN" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="gpuRNN" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gpuRNN" type="462c0819:PsiDirectoryNode" />
+              <item name="matrix" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -372,7 +399,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.fcrnn_cnn">
+  <component name="RunManager" selected="Python.load_all_confusionMatrix">
     <configuration name="fcrnn_cnn" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -472,8 +499,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.fcrnn_cnn" />
-        <item index="1" class="java.lang.String" itemvalue="Python.load_all_confusionMatrix" />
+        <item index="0" class="java.lang.String" itemvalue="Python.load_all_confusionMatrix" />
+        <item index="1" class="java.lang.String" itemvalue="Python.fcrnn_cnn" />
         <item index="2" class="java.lang.String" itemvalue="Python.softmax_cross_errors" />
         <item index="3" class="java.lang.String" itemvalue="Python.testtmp" />
         <item index="4" class="java.lang.String" itemvalue="Python.rename_models" />
@@ -506,13 +533,13 @@
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19440243" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22163388" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901135" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28687197" sideWeight="0.50680786" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25931928" sideWeight="0.49546143" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.6693679" sideWeight="0.49319214" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38411668" sideWeight="0.49546143" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22852512" sideWeight="0.49319214" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28038898" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -535,25 +562,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="12" />
+      <option name="time" value="13" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/lstm_8pose.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="86" column="15" lean-forward="false" selection-start-line="86" selection-start-column="15" selection-end-line="86" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data_pre/wavelet_trans.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="87" column="40" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="87" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tmp_lstm.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1525">
@@ -930,27 +943,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/load_all_confusionMatrix.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="102" column="18" lean-forward="false" selection-start-line="102" selection-start-column="18" selection-end-line="102" selection-end-column="18" />
-          <folding>
-            <element signature="e#481#995#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/softmax_cross_errors.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="126" column="53" lean-forward="false" selection-start-line="126" selection-start-column="53" selection-end-line="126" selection-end-column="53" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-            <element signature="e#1078#3285#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/fcrnn.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="25">
@@ -959,10 +951,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://C:/Program/Anaconda/Lib/site-packages/tensorflow/python/client/session.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3170">
+          <caret line="1127" column="0" lean-forward="false" selection-start-line="1127" selection-start-column="0" selection-end-line="1127" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/data_pre/alldata.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-493">
-          <caret line="1254" column="58" lean-forward="false" selection-start-line="1254" selection-start-column="58" selection-end-line="1254" selection-end-column="58" />
+        <state relative-caret-position="184">
+          <caret line="1258" column="76" lean-forward="true" selection-start-line="1258" selection-start-column="32" selection-end-line="1258" selection-end-column="76" />
           <folding>
             <element signature="e#74#291#0" expanded="false" />
             <element signature="e#559#683#0" expanded="false" />
@@ -992,19 +992,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Program/Anaconda/Lib/site-packages/tensorflow/python/client/session.py">
+    <entry file="file://$PROJECT_DIR$/data/res10/all/label">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3170">
-          <caret line="1127" column="0" lean-forward="false" selection-start-line="1127" selection-start-column="0" selection-end-line="1127" selection-end-column="0" />
+        <state relative-caret-position="50">
+          <caret line="2" column="39" lean-forward="true" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/softmax_cross_errors.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="116" column="30" lean-forward="true" selection-start-line="116" selection-start-column="30" selection-end-line="116" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+            <element signature="e#1078#3285#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fcrnn_cnn.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="24" column="54" lean-forward="true" selection-start-line="24" selection-start-column="54" selection-end-line="24" selection-end-column="54" />
+        <state relative-caret-position="130">
+          <caret line="34" column="96" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="96" />
+          <folding>
+            <element signature="e#20#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/res10/all/pre_fea0">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/load_all_confusionMatrix.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="869">
+          <caret line="173" column="31" lean-forward="true" selection-start-line="173" selection-start-column="31" selection-end-line="173" selection-end-column="31" />
+          <folding>
+            <element signature="e#499#1013#0" expanded="false" />
+            <element signature="e#1048#1265#0" expanded="false" />
+            <element signature="e#1301#1474#0" expanded="false" />
+            <element signature="e#1810#2848#0" expanded="false" />
+            <element signature="e#2868#3673#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
