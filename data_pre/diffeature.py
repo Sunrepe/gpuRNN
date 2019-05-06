@@ -498,17 +498,17 @@ class All_data_feature_test(object):
         #     self.all_label = self.all_label[_per, :]
         #     self.all_seq_len = self.all_seq_len[_per]
 
-    def _shuffle_data(self):
-        _per = np.random.permutation(len(self.all_seq_len))  # 打乱后的行号
-        self.all_data = self.all_data[_per, :, :]
-        self.all_label = self.all_label[_per, :]
-        self.all_seq_len = self.all_seq_len[_per]
+    # def _shuffle_data(self):
+    #     _per = np.random.permutation(len(self.all_seq_len))  # 打乱后的行号
+    #     self.all_data = self.all_data[_per, :, :]
+    #     self.all_label = self.all_label[_per, :]
+    #     self.all_seq_len = self.all_seq_len[_per]
 
     def next(self, batch_size, shuffle=True):
         if self.batch_id == len(self.all_seq_len):
             self.batch_id = 0
-            if shuffle:
-                self._shuffle_data()
+            # if shuffle:
+            #     self._shuffle_data()
         batch_data = self.all_data[self.batch_id:min(self.batch_id + batch_size, len(self.all_seq_len))]
         batch_labels = self.all_label[self.batch_id:min(self.batch_id + batch_size, len(self.all_seq_len))]
         batch_seq_len = self.all_seq_len[self.batch_id:min(self.batch_id + batch_size, len(self.all_seq_len))]

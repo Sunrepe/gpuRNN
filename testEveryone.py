@@ -146,7 +146,7 @@ def main():
         print(person, "\t total wrong pred:{}".format(n_wrong))
         print("")
         df_data.append([_recall, _percision, _f1Score, n_wrong])
-    df=pd.DataFrame(df_data, index=person_list, columns=["Recall","Precision","F1_score","Total_wrong"])
+    df = pd.DataFrame(df_data, index=person_list, columns=["Recall","Precision","F1_score","Total_wrong"])
     df.to_csv(df_save_path)
     sess.close()
 

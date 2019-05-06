@@ -22,7 +22,7 @@ n_concat = 450
 # Training
 learning_rate = 0.00005
 lambda_loss_amount = 0.00015  # 目前最好参数 0.000025,0.00015
-training_iters = 150  # Loop 1000 times on the dataset
+training_iters = 80  # Loop 1000 times on the dataset
 batch_size = 400
 display_iter = 2000  # To show test set accuracy during training
 model_save = 80
@@ -120,7 +120,7 @@ def main():
         feed_dic = {
             y: batch_ys,
             x: batch_xs,
-            keep_prob: 0.3
+            keep_prob: 0.4
         }
         # Fit training using batch data
         _, loss, acc = sess.run(
@@ -155,7 +155,7 @@ def main():
                   ", Accuracy = {}".format(acc))
 
         # save the model:
-        if (step * batch_size % (display_iter * 100) == 0) or (
+        if (step * batch_size % (display_iter * 40) == 0) or (
                         step * batch_size > training_iters * train_data_len):
             save_path = saver.save(sess, savename, global_step=step)
             print("Model saved in file: %s" % save_path)
@@ -173,6 +173,9 @@ def main():
         [pred, accuracy, cost],
         feed_dict=feed_dic
     )
+
+    Matrix_to_CSV_array('./data/res10/test/fea9_kfold{}'.format(k_fold_num), one_hot_predictions)
+    Matrix_to_CSV_array('./data/res10/label_fea9_kfold{}'.format(k_fold_num), test_sets.all_label)
 
     test_losses.append(final_loss)
     test_accuracies.append(accuracy)
@@ -261,7 +264,7 @@ def main():
     plt.colorbar()
     tick_marks = np.arange(n_classes)
     plt.yticks(tick_marks, LABELS)
-    plt.savefig('./loss_dir/Matrix_kfold{}.png'.format(k_fold_num), dpi=600, bbox_inches='tight')
+    plt.savefig('./loss_dir/Matrix_kfold{}.png'.format(k_fold_num), dpi=300, bbox_inches='tight')
 
     sess.close()
 

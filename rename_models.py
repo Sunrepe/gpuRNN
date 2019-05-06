@@ -26,7 +26,6 @@ def Matrix_to_CSV(filename, data):
 
 
 def get_model(fea_num, kfold_num):
-    pass
     if fea_num == 0 and kfold_num == 0:
         model_path = 'E:/Research-bachelor/storeMODELs/2dif_feature/' \
                      '{}/allmerge_f{}_kfold{}/' \

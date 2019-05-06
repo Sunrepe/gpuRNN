@@ -17,6 +17,13 @@ def Matrix_to_CSV(filename, data):
             writer.writerow(row)
 
 
+def Matrix_to_CSV_array(filename, data):
+    with open(filename, "w", newline='', ) as csvfile:
+        writer = csv.writer(csvfile)
+        for row in data:
+            writer.writerow(row)
+
+
 def f1scores(maxix,rangese):
     recdi = np.sum(maxix,axis=1)
     predi = np.sum(maxix,axis=0)
@@ -63,6 +70,12 @@ def get_one_hot_pre(n_fea):
         file = './data/res10/test/fea{}_kfold{}'.format(n_fea, i_kfold)
         _tmp = Read_data_res(file)
         res = np.concatenate([res, _tmp], 0)
+    return res
+
+
+def get_one_hot_pre_kfold(n_fea, n_kfold):
+    file = './data/res10/test/fea{}_kfold{}'.format(n_fea, n_kfold)
+    res = Read_data_res(file)
     return res
 
 
@@ -142,12 +155,15 @@ def main3():
     # LABELS = ['double', 'fist', 'spread', 'six', 'wavein', 'waveout', 'yes', 'no', 'finger', 'snap']
     stream = ["原始信号", "均值", "标准差", "波长变化", "dwt1", "dwt2", "dwt3", "dwt4", "fft", "融合"]
     print("------------------------------")
+    pre_ = []
+    rec_ = []
+    f1s_ = []
     label_one_hot = Read_data_res('./data/res10/all/label')
     for i_fea in range(9):
         print(stream[i_fea])
         fea_num = i_fea
         one_hot_predictions = get_one_hot_pre(fea_num)
-        # Matrix_to_CSV('./data/res10/all/pre_fea{}'.format(fea_num), one_hot_predictions)
+        Matrix_to_CSV('./data/res10/all/pre_fea{}'.format(fea_num), one_hot_predictions)
 
         font = {
             'family': 'Times New Roman',
@@ -159,6 +175,100 @@ def main3():
         width = 12
         height = 12
         plt.figure(figsize=(width, height))
+
+        predictions = one_hot_predictions.argmax(1)
+        result_labels = label_one_hot.argmax(1)
+
+        pre_.append(metrics.precision_score(result_labels, predictions))
+        rec_.append(metrics.recall_score(result_labels, predictions, average="weighted"))
+        f1s_.append(metrics.f1_score(result_labels, predictions, average="weighted"))
+
+        print("Precision: {}%".format(100 * metrics.precision_score(result_labels, predictions, average="weighted")))
+        print("Recall: {}%".format(100 * metrics.recall_score(result_labels, predictions, average="weighted")))
+        print("f1_score: {}%".format(100 * metrics.f1_score(result_labels, predictions, average="weighted")))
+
+        print("")
+        print("Confusion Matrix:")
+        confusion_matrix = metrics.confusion_matrix(result_labels, predictions)
+        Matrix_to_CSV(filename='./matrix/all1_feas/matrix_fea{}.txt'.format(fea_num), data=confusion_matrix)
+        print(confusion_matrix)
+
+        # normalised_confusion_matrix = np.array(confusion_matrix, dtype=np.float32) / np.sum(confusion_matrix) * 100
+        # width = 12
+        # height = 12
+        # plt.figure(figsize=(width, height))
+        # plt.imshow(
+        #     normalised_confusion_matrix,
+        #     interpolation='nearest',
+        #     cmap=plt.cm.rainbow
+        # )
+        # plt.title("Confusion matrix \n(normalised to % of total test data)")
+        # plt.colorbar()
+        # tick_marks = np.arange(10)
+        # plt.yticks(tick_marks, LABELS)
+        # plt.savefig('./matrix/all1_feas/matrix_fea{}.png'.format(fea_num), dpi=600, bbox_inches='tight')
+        print()
+        print("------------------------------")
+        print()
+
+
+def main4():
+    file = './data/res10/testLabel_kfold0'
+    res = Read_data_res(file)
+    for i_kfold in range(1, 5):
+        file = './data/res10/testLabel_kfold{}'.format(i_kfold)
+        _tmp = Read_data_res(file)
+        res = np.concatenate([res, _tmp], 0)
+    Matrix_to_CSV('./data/res10/all/label', res)
+
+
+def main5():
+    '''
+    计算不同类输出结果，并作简要分析。
+    具体方法：根据不同类进行结果分析。
+    :return:
+    '''
+    # LABELS = ['double', 'fist', 'spread', 'six', 'wavein', 'waveout', 'yes', 'no', 'finger', 'snap']
+    stream = ["原始信号", "均值", "标准差", "波长变化", "dwt1", "dwt2", "dwt3", "dwt4", "fft", "融合"]
+    print("------------------------------")
+    label_one_hot = Read_data_res('./data/res10/all/label')
+
+    for i_fea in range(9):
+        print(stream[i_fea])
+        fea_num = i_fea
+        for i_kfold in range(5):
+            print(stream[i_fea], "Kfold{}".format(i_kfold))
+            one_hot_pre = get_one_hot_pre_kfold(fea_num, i_kfold)
+            label = Read_data_res('./data/res10/testLabel_kfold{}'.format(i_kfold))
+            predictions = one_hot_pre.argmax(1)
+            result_labels = label.argmax(1)
+
+            print(
+                "Precision: {}%".format(100 * metrics.precision_score(result_labels, predictions, average="weighted")))
+            print("Recall: {}%".format(100 * metrics.recall_score(result_labels, predictions, average="weighted")))
+            print("f1_score: {}%".format(100 * metrics.f1_score(result_labels, predictions, average="weighted")))
+
+            if metrics.recall_score(result_labels, predictions, average="weighted") < 0.2:
+                print("Here Wrong ----------------------------------")
+            print("Confusion Matrix:")
+            confusion_matrix = metrics.confusion_matrix(result_labels, predictions)
+            # Matrix_to_CSV(filename='./matrix/all1_feas/matrix_fea{}.txt'.format(fea_num), data=confusion_matrix)
+            print(confusion_matrix)
+
+        print("\n----Final Result----{}".format(stream[i_fea]))
+        one_hot_predictions = get_one_hot_pre(fea_num)
+        # Matrix_to_CSV('./data/res10/all/pre_fea{}'.format(fea_num), one_hot_predictions)
+
+        # font = {
+        #     'family': 'Times New Roman',
+        #     'weight': 'bold',
+        #     'size': 18
+        # }
+        # matplotlib.rc('font', **font)
+        # #
+        # width = 12
+        # height = 12
+        # plt.figure(figsize=(width, height))
 
         predictions = one_hot_predictions.argmax(1)
         result_labels = label_one_hot.argmax(1)
@@ -190,15 +300,6 @@ def main3():
         print()
         print("------------------------------")
         print()
-
-def main4():
-    file = './data/res10/testLabel_kfold0'
-    res = Read_data_res(file)
-    for i_kfold in range(1, 5):
-        file = './data/res10/testLabel_kfold{}'.format(i_kfold)
-        _tmp = Read_data_res(file)
-        res = np.concatenate([res, _tmp], 0)
-    Matrix_to_CSV('./data/res10/all/label', res)
 
 
 if __name__ == '__main__':
