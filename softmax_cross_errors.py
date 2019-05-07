@@ -3,6 +3,7 @@ import numpy as np
 import csv
 import time
 import scipy.stats as ss
+from minepy import MINE
 
 
 def Read_data_res(filename):
@@ -44,6 +45,14 @@ def softmax(x):
     # exp_x = np.exp(x)
     # return exp_x / np.sum(exp_x)
 
+
+def get_mic(da_x, da_y, da_len):
+    res = 0.0
+    mine = MINE(alpha=0.6, c=15)
+    for i in range(da_len):
+        mine.compute_score(da_x[i], da_y[i])
+        res += mine.mic()
+    return res/da_len
 
 
 def main():
@@ -103,6 +112,10 @@ def main():
 
 
 def main2():
+    '''
+    计算相对熵，即KL散度
+    :return:
+    '''
     cs_errors_matrix = np.zeros([9, 9])
     num_class = 10
     time0 = time.time()
@@ -132,5 +145,39 @@ def main2():
     print('All time:', time.time() - time0)
 
 
+def main3():
+    '''
+    计算最大互信息系数（MIC）
+    :return:
+    '''
+    cs_errors_matrix = np.zeros([9, 9])
+    num_class = 50
+    time0 = time.time()
+    fea_order = [0,2,1,3,6,7,5,4,8]
+    for kfold_num in range(5):
+        print('Loading data...')
+        print("K_fold{}".format(kfold_num))
+        time1 = time.time()
+        data = getAlldata_cross_errors(num_class, kfold_num)
+        print('load data time:', time.time() - time1)
+
+        for i_fea_i in range(9):
+            i_fea = fea_order[i_fea_i]
+            res_y = data.get_data(i_fea)
+            # res_y = data.get_data(i_fea)
+            for i_next in range(i_fea, 9):
+                res_x = data.get_data(i_next)
+                c_e2 = get_mic(res_x, res_y, num_class)
+
+                cs_errors_matrix[i_fea, i_next] = c_e2
+                cs_errors_matrix[i_next, i_fea] = c_e2
+                print('fea:{}--{}:\t{:.6f}'.format(i_fea, i_next, c_e2))
+
+        Matrix_to_CSV(filename='./data/cs_errors/4res{}_kfold{}.csv'.format(num_class, kfold_num),
+                      data=cs_errors_matrix)
+
+    print('All time:', time.time() - time0)
+
+
 if __name__ == '__main__':
-    main2()
+    main3()

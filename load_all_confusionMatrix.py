@@ -6,6 +6,15 @@ import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
 from sklearn import metrics
+import seaborn as sns
+
+
+def ShowHeatMap(DataFrame):
+    colormap = plt.cm.RdBu
+    plt.figure(figsize=(14,12))
+    plt.title('MIC for different Features', y=1.05, size=15)
+    sns.heatmap(DataFrame.astype(float),linewidths=0.1,vmax=1.0, square=True, cmap=colormap, linecolor='white', annot=True)
+    plt.show()
 
 
 def Matrix_to_CSV(filename, data):
@@ -159,27 +168,16 @@ def main3():
     rec_ = []
     f1s_ = []
     label_one_hot = Read_data_res('./data/res10/all/label')
-    for i_fea in range(9):
+    for i_fea in range(10):
         print(stream[i_fea])
         fea_num = i_fea
         one_hot_predictions = get_one_hot_pre(fea_num)
         Matrix_to_CSV('./data/res10/all/pre_fea{}'.format(fea_num), one_hot_predictions)
 
-        font = {
-            'family': 'Times New Roman',
-            'weight': 'bold',
-            'size': 18
-        }
-        matplotlib.rc('font', **font)
-        #
-        width = 12
-        height = 12
-        plt.figure(figsize=(width, height))
-
         predictions = one_hot_predictions.argmax(1)
         result_labels = label_one_hot.argmax(1)
 
-        pre_.append(metrics.precision_score(result_labels, predictions))
+        pre_.append(metrics.precision_score(result_labels, predictions, average="weighted"))
         rec_.append(metrics.recall_score(result_labels, predictions, average="weighted"))
         f1s_.append(metrics.f1_score(result_labels, predictions, average="weighted"))
 
@@ -210,6 +208,10 @@ def main3():
         print()
         print("------------------------------")
         print()
+    df = pd.DataFrame(pre_, index=stream, columns=["Precision"])
+    df["Recall"] = rec_
+    df["F1score"] = f1s_
+    df.to_csv('./matrix/all_lstm/all_tesult.csv')
 
 
 def main4():
@@ -302,5 +304,23 @@ def main5():
         print()
 
 
+def main6():
+    '''
+    计算所有的cross_errors，
+    该处结果是MIC结果
+    5 折合并。
+    :return:
+    '''
+    res = np.zeros([9, 9])
+    num_class = 10
+    for i_kfold in range(5):
+        file = './data/cs_errors/4res{}_kfold{}.csv'.format(num_class, i_kfold)
+        res += Read_data_res(file)
+    Matrix_to_CSV('./data/cs_errors/4res{}_final.csv'.format(num_class), res)
+    print('PICS')
+    # Plot Results:
+    ShowHeatMap(res/5.0)
+
+
 if __name__ == '__main__':
-    main3()
+    main6()

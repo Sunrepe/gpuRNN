@@ -27,7 +27,7 @@ batch_size = 400
 display_iter = 2000  # To show test set accuracy during training
 model_save = 80
 
-k_fold_num = 2
+k_fold_num = 4
 fold = './data/res50/'
 
 savename = './models/kfold{}/fcnet/fcnet_kfold{}'.format(k_fold_num, k_fold_num)
