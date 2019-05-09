@@ -24,9 +24,9 @@ n_classes = 10  # Total classes (should go up, or should go down)
 n_inputs = 8
 max_seq = 800
 
-k_fold_num = 0
+k_fold_num = 4
 model_name = "E:/Research-bachelor/storeMODELs/all_lstm_3/all_model3_kfold{}/" \
-             "model_selftest_kfold0.ckpt-4100".format(k_fold_num)
+             "model_mergeall_kfold4.ckpt-3600".format(k_fold_num)
 
 foldname = './data/actdata/'
 matrix_save_path = "E:/Research-bachelor/storeMODELs/all_lstm_3/all_model3Matrix_kfold{}.txt".format(k_fold_num)
@@ -184,46 +184,47 @@ def main():
     saver.restore(sess, model_name)
     # load accomplished
     print('Model are loaded!\t{}s'.format(time.time()-time1))
-
+    pathss = saver.save(sess, 'models/all_lstm3/kfold{}/all_lstm3_model_kfold{}.ckpt'.format(k_fold_num, k_fold_num))
+    print("Model resaved at {}".format(pathss))
     # df_data = []
-    print("Start test!")
-    person_list = getPersons_every(foldname, k_fold_num)
-
-    for person in person_list:
-        print(person)
-        test_sets = perAll_data_merge(foldname=foldname,
-                                      max_seq=max_seq,
-                                      num_class=n_classes,
-                                      testperson=person)
-        result_labels = test_sets.all_label
-        feed_dic = {
-            y: test_sets.all_label,
-            x0: test_sets.data[0],
-            x1: test_sets.data[1],
-            x2: test_sets.data[2],
-            x3: test_sets.data[3],
-            x4: test_sets.data[4],
-            x5: test_sets.data[5],
-            x6: test_sets.data[6],
-            x7: test_sets.data[7],
-            x8: test_sets.data[8],
-            seq_len0: test_sets.seqlen[0],
-            seq_len1: test_sets.seqlen[1],
-            seq_len2: test_sets.seqlen[2],
-            seq_len3: test_sets.seqlen[3],
-            seq_len4: test_sets.seqlen[4],
-            seq_len5: test_sets.seqlen[5],
-            seq_len6: test_sets.seqlen[6],
-            seq_len7: test_sets.seqlen[7],
-            seq_len8: test_sets.seqlen[8]
-        }
-        # Accuracy for test data
-        one_hot_predictions = sess.run(
-            preds,
-            feed_dict=feed_dic
-        )
-        Matrix_to_CSV('data/res10/all_lstm3/pre_{}'.format(person), one_hot_predictions)
-        Matrix_to_CSV('data/res10/all_lstm3/label_{}'.format(person), one_hot_predictions)
+    # print("Start test!")
+    # person_list = getPersons_every(foldname, k_fold_num)
+    #
+    # for person in person_list:
+    #     print(person)
+    #     test_sets = perAll_data_merge(foldname=foldname,
+    #                                   max_seq=max_seq,
+    #                                   num_class=n_classes,
+    #                                   testperson=person)
+    #     result_labels = test_sets.all_label
+    #     feed_dic = {
+    #         y: test_sets.all_label,
+    #         x0: test_sets.data[0],
+    #         x1: test_sets.data[1],
+    #         x2: test_sets.data[2],
+    #         x3: test_sets.data[3],
+    #         x4: test_sets.data[4],
+    #         x5: test_sets.data[5],
+    #         x6: test_sets.data[6],
+    #         x7: test_sets.data[7],
+    #         x8: test_sets.data[8],
+    #         seq_len0: test_sets.seqlen[0],
+    #         seq_len1: test_sets.seqlen[1],
+    #         seq_len2: test_sets.seqlen[2],
+    #         seq_len3: test_sets.seqlen[3],
+    #         seq_len4: test_sets.seqlen[4],
+    #         seq_len5: test_sets.seqlen[5],
+    #         seq_len6: test_sets.seqlen[6],
+    #         seq_len7: test_sets.seqlen[7],
+    #         seq_len8: test_sets.seqlen[8]
+    #     }
+    #     # Accuracy for test data
+    #     one_hot_predictions = sess.run(
+    #         preds,
+    #         feed_dict=feed_dic
+    #     )
+    #     Matrix_to_CSV('data/res10/all_lstm3/pre_{}'.format(person), one_hot_predictions)
+    #     Matrix_to_CSV('data/res10/all_lstm3/label_{}'.format(person), one_hot_predictions)
 
     sess.close()
 
