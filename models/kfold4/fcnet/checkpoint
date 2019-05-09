@@ -1,8 +1,3 @@
 model_checkpoint_path: "fcnet_kfold4-final"
-all_model_checkpoint_paths: "fcnet_kfold4-200"
-all_model_checkpoint_paths: "fcnet_kfold4-400"
-all_model_checkpoint_paths: "fcnet_kfold4-600"
-all_model_checkpoint_paths: "fcnet_kfold4-800"
 all_model_checkpoint_paths: "fcnet_kfold4-1000"
-all_model_checkpoint_paths: "fcnet_kfold4-1200"
 all_model_checkpoint_paths: "fcnet_kfold4-final"

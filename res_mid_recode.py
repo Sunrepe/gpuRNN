@@ -30,7 +30,6 @@ display_iter = 4000  # To show test set accuracy during training
 model_save = 20
 
 fold = './data/actdata/'
-savename = '_feature{}_kfold{}'.format(feature_num__s, k_fold_num)
 LABELS = ['double', 'fist', 'spread', 'six', 'wavein', 'waveout', 'yes', 'no', 'finger', 'snap']
 
 
@@ -207,6 +206,11 @@ def LSTM_RNN_f8(x, seq, _weight, _bias):
 
 
 def main():
+    '''
+    根据训练好的45个model
+    获得res10、 res50
+    :return:
+    '''
     # time0 = time.time()
 
     time1 = time.time()
@@ -225,9 +229,9 @@ def main():
     seq_len = tf.placeholder(tf.float32, [None])
     #
     # pred = LSTM_RNN_f1(x, seq_len)
-
     k_fold_num = 0
     feature_num__s = 7
+    savename = '_feature{}_kfold{}'.format(feature_num__s, k_fold_num)
     pred = LSTM_RNN_f7(x, seq_len, weights, biases)
     #
     with tf.name_scope('fullConnect'):
@@ -306,5 +310,196 @@ def main():
     # sess.close()
     print('All time:', time.time() - time1)
 
+
+def main2():
+    '''
+    在GCP-instance 中进行res10 、res50收集
+    使用了所有训练好的model。（一共45个model）
+    :return:
+    '''
+    # time0 = time.time()
+
+    time1 = time.time()
+    # Graph weights
+    with tf.variable_scope("weight"):
+        weights = {
+            'out': tf.Variable(tf.random_normal([n_hidden, n_classes], mean=1.0))
+        }
+        biases = {
+            'out': tf.Variable(tf.random_normal([n_classes]))
+        }
+    #
+    # # Graph input/output
+    x = tf.placeholder(tf.float32, [None, max_seq, n_inputs])
+    y = tf.placeholder(tf.float32, [None, n_classes])
+    seq_len = tf.placeholder(tf.float32, [None])
+    #
+    # pred = LSTM_RNN_f1(x, seq_len)
+
+    k_fold_num = 1
+    feature_num__s = 8
+    pred = LSTM_RNN_f8(x, seq_len, weights, biases)
+
+    # savename = '_feature{}_kfold{}'.format(feature_num__s, k_fold_num)
+    #
+    with tf.name_scope('fullConnect'):
+        lstm_out = tf.matmul(pred, weights['out']) + biases['out']
+
+    correct_pred = tf.equal(tf.argmax(lstm_out, 1), tf.argmax(y, 1))
+    accuracy = tf.reduce_mean(tf.cast(correct_pred, tf.float32))
+    saver = tf.train.Saver(max_to_keep=12)
+    sess = tf.InteractiveSession(config=tf.ConfigProto(log_device_placement=False))
+    saver.restore(sess, "./models/kfold{}/fea{}/model_kfold{}.ckpt".format(k_fold_num, feature_num__s, k_fold_num))
+
+
+    print('loading data...')
+    print("Fea:{}   Kfold:{}".format(feature_num__s, k_fold_num))
+    train_sets = All_data_feature_test(foldname=fold, max_seq=max_seq,
+                     num_class=10, trainable=True, kfold_num=k_fold_num,
+                     feature_num=feature_num__s)
+    test_sets = All_data_feature_test(foldname=fold, max_seq=max_seq,
+                     num_class=10, trainable=False, kfold_num=k_fold_num,
+                     feature_num=feature_num__s)
+    print('train:', len(train_sets.all_label), 'test:', len(test_sets.all_label))
+    print('load data time:', time.time() - time1)
+
+# ----------------------
+    # save 中间结果
+    # train
+    res50, res10, acc = sess.run(
+        [pred, lstm_out, accuracy],
+        feed_dict={
+            x: train_sets.all_data,
+            y: train_sets.all_label,
+            seq_len: train_sets.all_seq_len
+        }
+    )
+    Matrix_to_CSV('./datas/res50/train/fea{}_kfold{}'.format(feature_num__s, k_fold_num), res50)
+    Matrix_to_CSV('./datas/res10/train/fea{}_kfold{}'.format(feature_num__s, k_fold_num), res10)
+    # test
+    res50, res10, acc = sess.run(
+        [pred, lstm_out, accuracy],
+        feed_dict={
+            x: test_sets.all_data,
+            y: test_sets.all_label,
+            seq_len: test_sets.all_seq_len
+        }
+    )
+    Matrix_to_CSV('./datas/res50/test/fea{}_kfold{}'.format(feature_num__s, k_fold_num), res50)
+    Matrix_to_CSV('./datas/res10/test/fea{}_kfold{}'.format(feature_num__s, k_fold_num), res10)
+
+    # labels ----------
+    Matrix_to_CSV('./datas/res10/trainLabel_kfold{}'.format(k_fold_num), train_sets.all_label)
+    Matrix_to_CSV('./datas/res50/trainLabel_kfold{}'.format(k_fold_num), train_sets.all_label)
+    Matrix_to_CSV('./datas/res50/testLabel_kfold{}'.format(k_fold_num), test_sets.all_label)
+    Matrix_to_CSV('./datas/res10/testLabel_kfold{}'.format(k_fold_num), test_sets.all_label)
+    # labels ----------
+
+    predictions = res10.argmax(1)
+    result_labels = test_sets.all_label.argmax(1)
+    print("Precision: {}%".format(100 * metrics.precision_score(result_labels, predictions, average="weighted")))
+    print("Recall: {}%".format(100 * metrics.recall_score(result_labels, predictions, average="weighted")))
+    print("f1_score: {}%".format(100 * metrics.f1_score(result_labels, predictions, average="weighted")))
+
+    print("")
+    print("Confusion Matrix:")
+    confusion_matrix = metrics.confusion_matrix(result_labels, predictions)
+    print(confusion_matrix)
+    print("Accuracy:{}".format(acc))
+    # sess.close()
+    print('All time:', time.time() - time1)
+# --------------------
+    sess.close()
+
+
+def main3():
+    '''
+    测试如何更改参数，而不用重新训练。
+    :return:
+    '''
+    # time0 = time.time()
+    wei_name = ['yuan', 'pin', 'biao', 'bobian', 'zhou', 'xu', 'feng', 'yan', 'xin']
+    lstm_name = ['ori', 'avg', 'std', 'wlc', 'dwt1', 'dwt2', 'dwt3', 'dwt4', 'fft']
+    time1 = time.time()
+
+    with tf.variable_scope("weight"):
+        weights = {
+            'out': tf.Variable(tf.random_normal([n_hidden, n_classes], mean=1.0))
+        }
+        biases = {
+            'out': tf.Variable(tf.random_normal([n_classes]))
+        }
+
+    for i_fea in range(8, 9):
+        g = tf.Graph()
+        with tf.variable_scope(wei_name[i_fea]):
+            weights0 = tf.Variable(tf.random_normal([n_hidden, n_classes], mean=1.0))
+            biases0 = tf.Variable(tf.random_normal([n_classes]))
+
+        # Graph input/output
+        x = tf.placeholder(tf.float32, [None, max_seq, n_inputs])
+        y = tf.placeholder(tf.float32, [None, n_classes])
+        seq_len = tf.placeholder(tf.float32, [None])
+
+        feature_num__s = i_fea
+        if feature_num__s == 0:
+            pred = LSTM_RNN_f0(x, seq_len, weights, biases)
+        elif feature_num__s == 1:
+            pred = LSTM_RNN_f1(x, seq_len, weights, biases)
+        elif feature_num__s == 2:
+            pred = LSTM_RNN_f2(x, seq_len, weights, biases)
+        elif feature_num__s == 3:
+            pred = LSTM_RNN_f3(x, seq_len, weights, biases)
+        elif feature_num__s == 4:
+            pred = LSTM_RNN_f4(x, seq_len, weights, biases)
+        elif feature_num__s == 5:
+            pred = LSTM_RNN_f5(x, seq_len, weights, biases)
+        elif feature_num__s == 6:
+            pred = LSTM_RNN_f6(x, seq_len, weights, biases)
+        elif feature_num__s == 7:
+            pred = LSTM_RNN_f7(x, seq_len, weights, biases)
+        elif feature_num__s == 8:
+            pred = LSTM_RNN_f8(x, seq_len, weights, biases)
+        with tf.name_scope('fullConnect'):
+            lstm_out = tf.matmul(pred, weights['out']) + biases['out']
+
+        for i_kfold in range(5):
+            k_fold_num = i_kfold
+            saver = tf.train.Saver(max_to_keep=12)
+            var = tf.global_variables()
+            # for i in var:
+            #     print(i)
+            var_flow_restore00 = [val for val in var if lstm_name[i_fea] in val.name]
+            print('var_flow_restore00:')
+            for i in var_flow_restore00:
+                print(i)
+            var_flow_restore01 = [val for val in var if 'weight' in val.name]  # 取出名字中有‘flownet’的参数
+            print('var_flow_restore01:')
+            for i in var_flow_restore01:
+                print(i)
+
+            saver00 = tf.train.Saver(var_flow_restore00)  # 这句话就是关键了，可以网Saver中传参数
+            saver01 = tf.train.Saver(var_flow_restore01)
+
+            sess = tf.InteractiveSession(config=tf.ConfigProto(log_device_placement=False))
+            # sess = tf.InteractiveSession(g)
+            saver00.restore(sess,
+                            "./models/kfold{}/fea{}/model_kfold{}.ckpt".format(k_fold_num, feature_num__s, k_fold_num))
+            saver01.restore(sess,
+                            "./models/kfold{}/fea{}/model_kfold{}.ckpt".format(k_fold_num, feature_num__s, k_fold_num))
+
+            w = sess.run(tf.assign(weights0, weights['out']))
+            b = sess.run(tf.assign(biases0, biases['out']))
+            # a = sess.run(var)
+            # print(w)
+            # print(b)
+            save_path = saver.save(sess,
+                                   "./modelsnew/kfold{}/fea{}/model_kfold{}.ckpt".format(k_fold_num, feature_num__s,
+                                                                                         k_fold_num))
+            print("Model saved in file: %s" % save_path)
+
+            sess.close()
+    print("All time:{}".format(time.time() - time1))
+
 if __name__ == '__main__':
-    main()
+    main3()

@@ -22,9 +22,9 @@ n_concat = 450
 # Training
 learning_rate = 0.00005
 lambda_loss_amount = 0.00015  # 目前最好参数 0.000025,0.00015
-training_iters = 80  # Loop 1000 times on the dataset
-batch_size = 400
-display_iter = 2000  # To show test set accuracy during training
+training_iters = 140  # Loop 1000 times on the dataset
+batch_size = 800
+display_iter = 4000  # To show test set accuracy during training
 model_save = 80
 
 k_fold_num = 4
@@ -98,7 +98,7 @@ def main():
     correct_pred = tf.equal(tf.argmax(pred, 1), tf.argmax(y, 1))
     accuracy = tf.reduce_mean(tf.cast(correct_pred, tf.float32))
 
-    saver = tf.train.Saver(max_to_keep=12)
+    saver = tf.train.Saver(max_to_keep=2)
     # start train and test
     # To keep track of training's performance
     test_losses = []
@@ -117,11 +117,19 @@ def main():
 
     while step * batch_size <= training_iters * train_data_len:
         batch_ys, batch_xs = train_sets.next(batch_size)
-        feed_dic = {
-            y: batch_ys,
-            x: batch_xs,
-            keep_prob: 0.4
-        }
+
+        if step % 500 == 0:
+            feed_dic = {
+                y: test_sets.all_label,
+                x: test_sets.data_res,
+                keep_prob: 1.0
+            }
+        else:
+            feed_dic = {
+                y: batch_ys,
+                x: batch_xs,
+                keep_prob: 0.4
+            }
         # Fit training using batch data
         _, loss, acc = sess.run(
             [optimizer, cost, accuracy],
@@ -155,7 +163,7 @@ def main():
                   ", Accuracy = {}".format(acc))
 
         # save the model:
-        if (step * batch_size % (display_iter * 40) == 0) or (
+        if (step * batch_size % (display_iter * 100) == 0) or (
                         step * batch_size > training_iters * train_data_len):
             save_path = saver.save(sess, savename, global_step=step)
             print("Model saved in file: %s" % save_path)
@@ -175,7 +183,7 @@ def main():
     )
 
     Matrix_to_CSV_array('./data/res10/test/fea9_kfold{}'.format(k_fold_num), one_hot_predictions)
-    Matrix_to_CSV_array('./data/res10/label_fea9_kfold{}'.format(k_fold_num), test_sets.all_label)
+    # Matrix_to_CSV_array('./data/res10/label_fea9_kfold{}'.format(k_fold_num), test_sets.all_label)
 
     test_losses.append(final_loss)
     test_accuracies.append(accuracy)

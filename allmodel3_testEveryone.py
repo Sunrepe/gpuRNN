@@ -20,11 +20,11 @@ n_hidden = 50  # Hidden layer num of features
 n_classes = 10  # Total classes (should go up, or should go down)
 n_inputs = 8
 max_seq = 800
-k_fold_num = 4
-# model_name = 'E:/Research-bachelor/storeMODELs/5kfold/lstmkfold{}/lstm/model_LSTM_kfold{}.ckpt-final'.format(k_fold_num,k_fold_num)
 
+k_fold_num = 4
 model_name = "E:/Research-bachelor/storeMODELs/all_lstm_3/all_model3_kfold{}/" \
              "model_mergeall_kfold4.ckpt-3600".format(k_fold_num,k_fold_num)
+
 foldname = './data/actdata/'
 matrix_save_path = "E:/Research-bachelor/storeMODELs/all_lstm_3/all_model3Matrix_kfold{}.txt".format(k_fold_num)
 
@@ -57,13 +57,7 @@ def getPersons_every(foldname, kfold_num):
         _person.add(oa)
     _person = list(_person)
     _person.sort()
-    # _person.remove('marui')
-    # _person.remove('zhangyixuan')
     test_p = _person[7*kfold_num:7*(kfold_num+1)]
-    # train_p = []
-    # for i in _person:
-    #     if i not in test_p:
-    #         train_p.append(i)
     return test_p
 
 
@@ -78,6 +72,7 @@ def LSTM_RNN_tmp(x0,x1,x2,x3,x4,x5,x6,x7,x8,
         lstm_out0 = tf.divide(tf.reduce_sum(outputs, 1), seq0[:, None])
         lstm_out0 = tf.nn.dropout(lstm_out0, keep_prob=0.8)
         lstm_out0 = tf.layers.dense(lstm_out0, 10)
+
     with tf.variable_scope('dwt1'):
         lstm_cell_1 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
         lstm_cell_2 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
@@ -86,6 +81,7 @@ def LSTM_RNN_tmp(x0,x1,x2,x3,x4,x5,x6,x7,x8,
         lstm_out1 = tf.divide(tf.reduce_sum(outputs, 1), seq1[:, None])
         lstm_out1 = tf.nn.dropout(lstm_out1, keep_prob=0.8)
         lstm_out1 = tf.layers.dense(lstm_out1, 10)
+
     with tf.variable_scope('dwt2'):
         lstm_cell_1 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
         lstm_cell_2 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
@@ -94,6 +90,7 @@ def LSTM_RNN_tmp(x0,x1,x2,x3,x4,x5,x6,x7,x8,
         lstm_out2 = tf.divide(tf.reduce_sum(outputs, 1), seq2[:, None])
         lstm_out2 = tf.nn.dropout(lstm_out2, keep_prob=0.5)
         lstm_out2 = tf.layers.dense(lstm_out2, 10)
+
     with tf.variable_scope('dwt3'):
         lstm_cell_1 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
         lstm_cell_2 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)

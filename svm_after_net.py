@@ -45,7 +45,7 @@ def Matrix_to_CSV_array(filename, data):
 
 def main():
     time1 = time.time()
-    print('loading data...')
+    print('loading data...from {}'.format(fold))
     train_sets = data_load_res(foldname=fold, trainable=True, kfold_num=k_fold_num)
     test_sets = data_load_res(foldname=fold, trainable=False, kfold_num=k_fold_num)
     print('train:', len(train_sets.all_label), 'test:', len(test_sets.all_label))
@@ -71,24 +71,28 @@ def main():
     # print('radio', pca_model.explained_variance_ratio_, sum(pca_model.explained_variance_ratio_), len(pca_model.explained_variance_ratio_))
     # print(',', pca_model.explained_variance_, sum(pca_model.explained_variance_))
     # PCA---------------------------------------------------------------------
-    cishu = 1
-    a_ks = np.arange(10, 100, 10)
-    a_c = np.arange(10, 50, 5)
-    for ks in a_ks:
+    cishu = 0
+    a_gamma = np.sort(np.array([0.01, 0.02, 0.4, 0.08, 0.005, 0.001, 0.0001, 0.1, 0.5]))
+    a_c = np.sort(np.array([1e-3, 1e-2, 1e-1, 0.5, 1, 1.5, 3.0, 5, 10, 100, 1000]))
+    # param_grid = {'C': [1e-3, 1e-2, 1e-1, 1, 10, 100, 1000], 'gamma': [0.001, 0.0001]}
+    for ks in a_gamma:
         for c_ceshi in a_c:
+            cishu += 1
             time2 = time.time()
-            c_x_1 = c_ceshi / 10
-            g_x_1 = ks / 100
+            c_x_1 = c_ceshi
+            g_x_1 = ks
+            print('------------------------------------')
             print("SVM training....{}".format(cishu))
             clf_svm = svm.SVC(C=c_x_1, kernel='rbf', gamma=g_x_1, decision_function_shape='ovr')
             clf_svm.fit(x1, y1.ravel())
             jingdu = clf_svm.score(x1, y1)
             quedu = clf_svm.score(x2, y2)
-            print('训练集结果精度', jingdu)
-            print('测试集结果正确率', quedu)
-            if (jingdu > 0.5) and (quedu > 0.5):
-                print(cishu, 'C:', c_x_1, '   gama:', g_x_1, '  训练集精度：', jingdu, '  测试集正确率：', quedu)
-            print("A train epoch time:  {}".format(time.time()-time2))
+            # print('训练集结果精度', jingdu)
+            # print('测试集结果正确率', quedu)
+            print("Epoch {},  C:{}   Gamma: {}".format(cishu, c_x_1, g_x_1))
+            print('训练集精度：', jingdu, '  测试集准确率：', quedu)
+
+            print("A train epoch time: {:.2f} s\n".format(time.time()-time2))
 
     # one_hot_predictions, accuracy, final_loss = sess.run(
     #     [pred, accuracy, cost],

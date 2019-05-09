@@ -261,6 +261,11 @@ def LSTM_RNN_f8(x, seq, _weight, _bias):
 
 
 def main():
+    '''
+    在GCP-instance 中进行res10 、res50收集
+    使用了所有训练好的model。（一共45个model）
+    :return:
+    '''
     # time0 = time.time()
 
     time1 = time.time()

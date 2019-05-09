@@ -229,8 +229,10 @@ def main():
     sess = tf.InteractiveSession(config=tf.ConfigProto(log_device_placement=False))
     init = tf.global_variables_initializer()
     sess.run(init)
+
     # saver.restore(sess, './lstm/model_feature0_kfold1.ckpt-800')
     # Perform Training steps with "batch_size" amount of example data at each loop
+
     step = 0
     print("Start train!")
 

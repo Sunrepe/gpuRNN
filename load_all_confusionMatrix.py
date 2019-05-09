@@ -8,13 +8,16 @@ import numpy as np
 from sklearn import metrics
 import seaborn as sns
 
-
 def ShowHeatMap(DataFrame):
     colormap = plt.cm.RdBu
     plt.figure(figsize=(14,12))
     plt.title('MIC for different Features', y=1.05, size=15)
     sns.heatmap(DataFrame.astype(float),linewidths=0.1,vmax=1.0, square=True, cmap=colormap, linecolor='white', annot=True)
     plt.show()
+
+
+def get_label(ch, num_classes=10):
+    return np.eye(num_classes)[ch]
 
 
 def Matrix_to_CSV(filename, data):
@@ -82,6 +85,13 @@ def get_one_hot_pre(n_fea):
     return res
 
 
+def get_pre_map(pres):
+    t_ts = np.zeros([8053, 10])
+    for i in range(len(pres)):
+        t_ts[i, :] = get_label(pres[i])
+    return t_ts
+
+
 def get_one_hot_pre_kfold(n_fea, n_kfold):
     file = './data/res10/test/fea{}_kfold{}'.format(n_fea, n_kfold)
     res = Read_data_res(file)
@@ -89,6 +99,10 @@ def get_one_hot_pre_kfold(n_fea, n_kfold):
 
 
 def main():
+    '''
+    获得all_lstm_3 所有结果拼接的最终result，并作成相关的混淆矩阵
+    :return:
+    '''
     fold = './matrix/all3kfold0/'
     stream = ["原始信号", "均值", "标准差", "波长变化", "dwt1", "dwt2", "dwt3", "dwt4", "fft", "融合"]
     matrix_save_path = fold+'Matrix.txt'
@@ -129,6 +143,7 @@ def main2():
     '''
     计算所有的cross_errors，
     5 折合并。
+    根据5折混淆的最后结果，合并所有的cross_errors
     :return:
     '''
     res = np.zeros([9, 9])
@@ -322,5 +337,124 @@ def main6():
     ShowHeatMap(res/5.0)
 
 
+def main7():
+    '''
+    计算最佳结果：
+        即应用所有特征进行分类，只要有一类正确便视为正确分类，看最后结果。
+    vote for result!
+    :return:
+    '''
+    # LABELS = ['double', 'fist', 'spread', 'six', 'wavein', 'waveout', 'yes', 'no', 'finger', 'snap']
+    stream = ["原始信号", "均值", "标准差", "波长变化", "dwt1", "dwt2", "dwt3", "dwt4", "fft", "融合"]
+    print("------------------------------")
+    label_one_hot = Read_data_res('./data/res10/all/label')
+    t_trues = np.zeros(8053)
+    youxiao_neirong = [0,1,2,3,4,5,6,7]
+    for i_fea_i in range(8):
+        i_fea = youxiao_neirong[i_fea_i]
+        # i_fea = i_fea_i
+        print(stream[i_fea])
+        fea_num = i_fea
+        one_hot_predictions = get_one_hot_pre(fea_num)
+
+        predictions = one_hot_predictions.argmax(1)
+        result_labels = label_one_hot.argmax(1)
+        x_tmp = predictions==result_labels
+        t_trues += x_tmp
+    one_hot_predictions = get_one_hot_pre(0).argmax(1)
+    s_2 = np.zeros(8053, dtype=np.int)
+    s_1 = label_one_hot.argmax(1)
+    for i in range(8053):
+        if t_trues[i] > 1:
+            # print('S2:{}, type:{}'.format(s_2[i], type(s_2[i])))
+            # print('S1:{}, type:{}'.format(s_1[i], type(s_1[i])))
+            s_2[i] = s_1[i]
+        else:
+            s_2[i] = one_hot_predictions[i]
+            # # print('wrong!')
+            # if s_1[i] == 9:
+            #     # s_2[i] = s_1[i]-1
+            #     pass
+            # else:
+            #     # s_2[i] = s_1[i]+1
+            #     s_2[i] = one_hot_predictions[i]
+    print("Precision: {}%".format(100 * metrics.precision_score(s_1, s_2, average="weighted")))
+    print("Recall: {}%".format(100 * metrics.recall_score(s_1, s_2, average="weighted")))
+    print("f1_score: {}%".format(100 * metrics.f1_score(s_1, s_2, average="weighted")))
+
+    print("")
+    print("Confusion Matrix7:")
+    confusion_matrix = metrics.confusion_matrix(s_1, s_2,)
+    Matrix_to_CSV(filename='./matrix/all1_feas/matrix_fea-zuijia.txt', data=confusion_matrix)
+    print(confusion_matrix)
+
+
+def main8():
+    '''
+    计算vote 结果:
+        即应用所有特征进行分类，只要有一类正确便视为正确分类，看最后结果。
+    vote for result!
+    :return:
+    '''
+    # LABELS = ['double', 'fist', 'spread', 'six', 'wavein', 'waveout', 'yes', 'no', 'finger', 'snap']
+    stream = ["原始信号", "均值", "标准差", "波长变化", "dwt1", "dwt2", "dwt3", "dwt4", "fft", "融合"]
+    print("------------------------------")
+    label_one_hot = Read_data_res('./data/res10/all/label')
+    t_trues = np.zeros([8053, 10])
+
+    for i_fea in range(9):
+        print(stream[i_fea])
+        fea_num = i_fea
+        one_hot_predictions = get_one_hot_pre(fea_num)
+        predictions = one_hot_predictions.argmax(1)
+        t_trues += get_pre_map(predictions)
+
+    s_2 = t_trues.argmax(1)
+    s_1 = label_one_hot.argmax(1)
+
+    print("Precision: {}%".format(100 * metrics.precision_score(s_1, s_2, average="weighted")))
+    print("Recall: {}%".format(100 * metrics.recall_score(s_1, s_2, average="weighted")))
+    print("f1_score: {}%".format(100 * metrics.f1_score(s_1, s_2, average="weighted")))
+
+    print("")
+    print("Confusion Matrix:")
+    confusion_matrix = metrics.confusion_matrix(s_1, s_2,)
+    Matrix_to_CSV(filename='./matrix/all1_feas/matrix_fea-zuijia.txt', data=confusion_matrix)
+    print(confusion_matrix)
+
+
+def main9():
+    '''
+    计算最后结果--叠加结果：
+        即应用所有特征进行分类，只要有一类正确便视为正确分类，看最后结果。
+    vote for result!
+    :return:
+    '''
+    # LABELS = ['double', 'fist', 'spread', 'six', 'wavein', 'waveout', 'yes', 'no', 'finger', 'snap']
+    stream = ["原始信号", "均值", "标准差", "波长变化", "dwt1", "dwt2", "dwt3", "dwt4", "fft", "融合"]
+    print("------------------------------")
+    label_one_hot = Read_data_res('./data/res10/all/label')
+    t_trues = np.zeros([8053, 10])
+
+    for i_fea in range(9):
+        print(stream[i_fea])
+        fea_num = i_fea
+        one_hot_predictions = get_one_hot_pre(fea_num)
+        t_trues += one_hot_predictions
+
+    s_2 = t_trues.argmax(1)
+    s_1 = label_one_hot.argmax(1)
+
+    print("Precision: {}%".format(100 * metrics.precision_score(s_1, s_2, average="weighted")))
+    print("Recall: {}%".format(100 * metrics.recall_score(s_1, s_2, average="weighted")))
+    print("f1_score: {}%".format(100 * metrics.f1_score(s_1, s_2, average="weighted")))
+
+    print("")
+    print("Confusion Matrix:")
+    confusion_matrix = metrics.confusion_matrix(s_1, s_2,)
+    Matrix_to_CSV(filename='./matrix/all1_feas/matrix_fea-zuijia.txt', data=confusion_matrix)
+    print(confusion_matrix)
+
+
 if __name__ == '__main__':
-    main6()
+    main3()
