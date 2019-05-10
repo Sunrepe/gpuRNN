@@ -22,12 +22,12 @@ n_concat = 450
 # Training
 learning_rate = 0.00005
 lambda_loss_amount = 0.00015  # 目前最好参数 0.000025,0.00015
-training_iters = 140  # Loop 1000 times on the dataset
+training_iters = 300  # Loop 1000 times on the dataset
 batch_size = 800
-display_iter = 4000  # To show test set accuracy during training
+display_iter = 8800  # To show test set accuracy during training
 model_save = 80
 
-k_fold_num = 0
+k_fold_num = 4
 fold = './data/res50/'
 
 savename = './models/kfold{}/fcnet/fcnet_kfold{}'.format(k_fold_num, k_fold_num)
@@ -62,7 +62,11 @@ def FC_Net(lstm_out, keep_pro):
         lstm_out = tf.nn.dropout(lstm_out, keep_prob=keep_pro)
         lstm_out = tf.layers.dense(lstm_out, 512)
         lstm_out = tf.nn.dropout(lstm_out, keep_prob=keep_pro)
+        lstm_out = tf.layers.dense(lstm_out, 1024)
+        lstm_out = tf.nn.dropout(lstm_out, keep_prob=keep_pro)
         lstm_out = tf.layers.dense(lstm_out, 512)
+        lstm_out = tf.nn.dropout(lstm_out, keep_prob=keep_pro)
+        lstm_out = tf.layers.dense(lstm_out, 256)
         lstm_out = tf.nn.dropout(lstm_out, keep_prob=keep_pro)
         lstm_out = tf.layers.dense(lstm_out, 128)
         lstm_out = tf.layers.dense(lstm_out, 10)
@@ -118,7 +122,7 @@ def main():
     while step * batch_size <= training_iters * train_data_len:
         batch_ys, batch_xs = train_sets.next(batch_size)
 
-        if step % 500 == 0:
+        if step % 1000 == 0:
             feed_dic = {
                 y: test_sets.all_label,
                 x: test_sets.data_res,
@@ -142,7 +146,7 @@ def main():
         if (step * batch_size % display_iter == 0) or (step == 1) or (
                 step * batch_size > training_iters * train_data_len):
             # To not spam console, show training accuracy/loss in this "if"
-            print("Training iter #" + str(step * batch_size) + \
+            print("Training step #" + str(step) + \
                   ":   Batch Loss = " + "{:.6f}".format(loss) + \
                   ", Accuracy = {}".format(acc))
             feed_dic = {

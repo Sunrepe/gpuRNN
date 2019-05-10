@@ -461,7 +461,9 @@ class All_data_feature_test(object):
         self.all_label = []
         self.all_seq_len = []
         self.batch_id = 0
-        for filename in os.listdir(foldname):
+        filelists = os.listdir(foldname)
+        filelists.sort()
+        for filename in filelists:
             oa, ob, oc = filename.split('_')
             if oc == 'b.txt' and get_lei(ob) < num_class and oa in __person:
                 filename = foldname + filename

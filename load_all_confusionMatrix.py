@@ -2,7 +2,7 @@
 本函数计算各种matrix，具体每个main函数使用如下：
 main1
 main2
-main3
+main3：all_lstm1 最完整结果展示，各类比较及最后的组合结果。
 main4
 main5
 main6
@@ -202,7 +202,7 @@ def main2():
 def main3():
     '''
     计算不同类输出结果，并作简要分析。
-    具体方法：根据不同类进行结果分析。
+        具体方法：根据不同类进行结果分析。
     :return:
     '''
     # LABELS = ['double', 'fist', 'spread', 'six', 'wavein', 'waveout', 'yes', 'no', 'finger', 'snap']
@@ -604,4 +604,4 @@ def main11():
 
 
 if __name__ == '__main__':
-    main11()
+    main3()

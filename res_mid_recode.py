@@ -314,7 +314,7 @@ def main():
 def main2():
     '''
     在GCP-instance 中进行res10 、res50收集
-    使用了所有训练好的model。（一共45个model）
+        使用了所有训练好的model。（一共45个model）
     :return:
     '''
     # time0 = time.time()
@@ -376,6 +376,7 @@ def main2():
     )
     Matrix_to_CSV('./datas/res50/train/fea{}_kfold{}'.format(feature_num__s, k_fold_num), res50)
     Matrix_to_CSV('./datas/res10/train/fea{}_kfold{}'.format(feature_num__s, k_fold_num), res10)
+
     # test
     res50, res10, acc = sess.run(
         [pred, lstm_out, accuracy],
@@ -387,7 +388,6 @@ def main2():
     )
     Matrix_to_CSV('./datas/res50/test/fea{}_kfold{}'.format(feature_num__s, k_fold_num), res50)
     Matrix_to_CSV('./datas/res10/test/fea{}_kfold{}'.format(feature_num__s, k_fold_num), res10)
-
     # labels ----------
     Matrix_to_CSV('./datas/res10/trainLabel_kfold{}'.format(k_fold_num), train_sets.all_label)
     Matrix_to_CSV('./datas/res50/trainLabel_kfold{}'.format(k_fold_num), train_sets.all_label)

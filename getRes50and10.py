@@ -287,5 +287,106 @@ def main():
     sess.close()
     print('All time:', time.time() - time1)
 
+
+def main2():
+    '''
+    在GCP-instance 中进行res10 、res50收集
+        使用了所有训练好的model。（一共45个model）
+    :return:
+    '''
+    # time0 = time.time()
+
+    time1 = time.time()
+    # Graph weights
+    with tf.variable_scope("weight"):
+        weights = {
+            'out': tf.Variable(tf.random_normal([n_hidden, n_classes], mean=1.0))
+        }
+        biases = {
+            'out': tf.Variable(tf.random_normal([n_classes]))
+        }
+    #
+    # # Graph input/output
+    x = tf.placeholder(tf.float32, [None, max_seq, n_inputs])
+    y = tf.placeholder(tf.float32, [None, n_classes])
+    seq_len = tf.placeholder(tf.float32, [None])
+    #
+    # pred = LSTM_RNN_f1(x, seq_len)
+
+    k_fold_num = 1
+    feature_num__s = 8
+    pred = LSTM_RNN_f8(x, seq_len, weights, biases)
+
+    # savename = '_feature{}_kfold{}'.format(feature_num__s, k_fold_num)
+    #
+    with tf.name_scope('fullConnect'):
+        lstm_out = tf.matmul(pred, weights['out']) + biases['out']
+
+    correct_pred = tf.equal(tf.argmax(lstm_out, 1), tf.argmax(y, 1))
+    accuracy = tf.reduce_mean(tf.cast(correct_pred, tf.float32))
+    saver = tf.train.Saver(max_to_keep=12)
+    sess = tf.InteractiveSession(config=tf.ConfigProto(log_device_placement=False))
+    saver.restore(sess, "./models/kfold{}/fea{}/model_kfold{}.ckpt".format(k_fold_num, feature_num__s, k_fold_num))
+
+    print('loading data...')
+    print("Fea:{}   Kfold:{}".format(feature_num__s, k_fold_num))
+    train_sets = All_data_feature_test(foldname=fold, max_seq=max_seq,
+                                       num_class=10, trainable=True, kfold_num=k_fold_num,
+                                       feature_num=feature_num__s)
+    test_sets = All_data_feature_test(foldname=fold, max_seq=max_seq,
+                                      num_class=10, trainable=False, kfold_num=k_fold_num,
+                                      feature_num=feature_num__s)
+    print('train:', len(train_sets.all_label), 'test:', len(test_sets.all_label))
+    print('load data time:', time.time() - time1)
+
+    # ----------------------
+    # save 中间结果
+    # train
+    res50, res10, acc = sess.run(
+        [pred, lstm_out, accuracy],
+        feed_dict={
+            x: train_sets.all_data,
+            y: train_sets.all_label,
+            seq_len: train_sets.all_seq_len
+        }
+    )
+    Matrix_to_CSV('./datas/res50/train/fea{}_kfold{}'.format(feature_num__s, k_fold_num), res50)
+    Matrix_to_CSV('./datas/res10/train/fea{}_kfold{}'.format(feature_num__s, k_fold_num), res10)
+
+    # test
+    res50, res10, acc = sess.run(
+        [pred, lstm_out, accuracy],
+        feed_dict={
+            x: test_sets.all_data,
+            y: test_sets.all_label,
+            seq_len: test_sets.all_seq_len
+        }
+    )
+    Matrix_to_CSV('./datas/res50/test/fea{}_kfold{}'.format(feature_num__s, k_fold_num), res50)
+    Matrix_to_CSV('./datas/res10/test/fea{}_kfold{}'.format(feature_num__s, k_fold_num), res10)
+    # labels ----------
+    Matrix_to_CSV('./datas/res10/trainLabel_kfold{}'.format(k_fold_num), train_sets.all_label)
+    Matrix_to_CSV('./datas/res50/trainLabel_kfold{}'.format(k_fold_num), train_sets.all_label)
+    Matrix_to_CSV('./datas/res50/testLabel_kfold{}'.format(k_fold_num), test_sets.all_label)
+    Matrix_to_CSV('./datas/res10/testLabel_kfold{}'.format(k_fold_num), test_sets.all_label)
+    # labels ----------
+
+    predictions = res10.argmax(1)
+    result_labels = test_sets.all_label.argmax(1)
+    print("Precision: {}%".format(100 * metrics.precision_score(result_labels, predictions, average="weighted")))
+    print("Recall: {}%".format(100 * metrics.recall_score(result_labels, predictions, average="weighted")))
+    print("f1_score: {}%".format(100 * metrics.f1_score(result_labels, predictions, average="weighted")))
+
+    print("")
+    print("Confusion Matrix:")
+    confusion_matrix = metrics.confusion_matrix(result_labels, predictions)
+    print(confusion_matrix)
+    print("Accuracy:{}".format(acc))
+    # sess.close()
+    print('All time:', time.time() - time1)
+    # --------------------
+    sess.close()
+
+
 if __name__ == '__main__':
-    main()
+    main2()
