@@ -138,11 +138,13 @@ class Per_RNNData(object):
     根据文件夹和人物名获得相关人物所有数据进行测试
     '''
 
-    def __init__(self, foldname, person_name, max_seq=700, num_class=10):
+    def __init__(self, foldname, person_name, max_seq=800, num_class=10):
         self.all_data = []
         self.all_label = []
         self.all_seq_len = []
-        for filename in os.listdir(foldname):
+        filelists = os.listdir(foldname)
+        filelists.sort()
+        for filename in filelists:
             oa, ob, oc = filename.split('_')
             if oc == 'b.txt' and get_lei(ob) < num_class and oa == person_name:
                 filenames = foldname + filename
@@ -200,7 +202,9 @@ class perAll_data_merge(object):
         for i_initdict in range(len(tmp_use_len)):
             self.data[i_initdict] = []
             self.seqlen[i_initdict] = []
-        for filename in os.listdir(foldname):
+        filelists = os.listdir(foldname)
+        filelists.sort()
+        for filename in filelists:
             oa, ob, oc = filename.split('_')
             if oc == 'b.txt' and oa in __person:
                 filename = foldname + filename

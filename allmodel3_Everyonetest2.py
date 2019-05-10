@@ -1,5 +1,6 @@
 '''
 使用Model3进行所有人群测试。
+分别两种方案执行，一是输出所有的结果，二是输出最终结果。
 结果输出到针对每个个体，仅输出用于判断的算法的最终结果
 与all_lstm1进行比较实验。
 数据转存到data/res10/all_lstm3/中
@@ -24,7 +25,7 @@ n_classes = 10  # Total classes (should go up, or should go down)
 n_inputs = 8
 max_seq = 800
 
-k_fold_num = 1
+k_fold_num = 4
 model_name = 'models/all_lstm3/kfold{}/all_lstm3_model_kfold{}.ckpt'.format(k_fold_num, k_fold_num)
 
 foldname = './data/actdata/'
@@ -38,10 +39,8 @@ tmp_use_len = [150, 150, 250, 450, 800, 800, 800, 800, 400]
 
 
 def Matrix_to_CSV(filename, data):
-    with open(filename, "a", newline='', ) as csvfile:
+    with open(filename, "w", newline='', ) as csvfile:
         writer = csv.writer(csvfile)
-        # 先写入columns_name
-        # writer.writerow(["emg1", "emg2", "emg3", "emg4", "emg5", "emg6", "emg7", "emg8", "label"])
         for row in data:
             writer.writerow(row)
 
@@ -141,7 +140,9 @@ def LSTM_RNN_tmp(x0,x1,x2,x3,x4,x5,x6,x7,x8,
         lstm_out8 = tf.nn.dropout(lstm_out8, keep_prob=0.5)
         lstm_out8 = tf.layers.dense(lstm_out8, 10)
 
-    return lstm_out0+lstm_out1+lstm_out2+lstm_out3+lstm_out4+lstm_out5+lstm_out6+lstm_out7+lstm_out8
+    return [lstm_out0, lstm_out1, lstm_out2, lstm_out3, lstm_out4, lstm_out5, lstm_out6, lstm_out7, lstm_out8,
+            lstm_out0 + lstm_out1 + lstm_out2 + lstm_out3 + lstm_out4 + lstm_out5 + lstm_out6 + lstm_out7 + lstm_out8]
+    # return lstm_out0+lstm_out1+lstm_out2+lstm_out3+lstm_out4+lstm_out5+lstm_out6+lstm_out7+lstm_out8
 
 
 def main():
@@ -186,8 +187,10 @@ def main():
     # pathss = saver.save(sess, 'models/all_lstm3/kfold{}/all_lstm3_model_kfold{}.ckpt'.format(k_fold_num, k_fold_num))
     # print("Model resaved at {}".format(pathss))
     # df_data = []
-    print("Start test!")
+    print("Start test!----------kfold:{}".format(k_fold_num))
     person_list = getPersons_every(foldname, k_fold_num)
+    if not os.path.exists('./data/res10/all_lstm3_feas/'):
+        os.mkdir('./data/res10/all_lstm3_feas/')
 
     for person in person_list:
         time2 = time.time()
@@ -197,6 +200,7 @@ def main():
                                       num_class=n_classes,
                                       testperson=person)
         result_labels = test_sets.all_label
+        Matrix_to_CSV('data/res10/all_lstm3_feas/label_{}'.format(person), result_labels)
         feed_dic = {
             y: test_sets.all_label,
             x0: test_sets.data[0],
@@ -223,11 +227,14 @@ def main():
             preds,
             feed_dict=feed_dic
         )
-        Matrix_to_CSV('data/res10/all_lstm3/pre_{}'.format(person), one_hot_predictions)
-        Matrix_to_CSV('data/res10/all_lstm3/label_{}'.format(person), result_labels)
+        for i_pre_onehot in range(10):
+            press_fea = one_hot_predictions[i_pre_onehot]
+            Matrix_to_CSV('data/res10/all_lstm3_feas/pre_fea{}_{}'.format(i_pre_onehot, person), press_fea)
+        # Matrix_to_CSV('data/res10/all_lstm3/pre_{}'.format(person), one_hot_predictions)
+        # Matrix_to_CSV('data/res10/all_lstm3/label_{}'.format(person), result_labels)
         print("finish time: {}\n".format(time.time()-time2))
     sess.close()
-
+    print("All time:{}".format(time.time()-time1))
 
 if __name__ == '__main__':
     main()

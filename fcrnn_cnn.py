@@ -27,7 +27,7 @@ batch_size = 800
 display_iter = 4000  # To show test set accuracy during training
 model_save = 80
 
-k_fold_num = 4
+k_fold_num = 0
 fold = './data/res50/'
 
 savename = './models/kfold{}/fcnet/fcnet_kfold{}'.format(k_fold_num, k_fold_num)
@@ -61,10 +61,10 @@ def FC_Net(lstm_out, keep_pro):
     with tf.variable_scope('FC_Nets'):
         lstm_out = tf.nn.dropout(lstm_out, keep_prob=keep_pro)
         lstm_out = tf.layers.dense(lstm_out, 512)
-        # lstm_out = tf.nn.dropout(lstm_out, keep_prob=keep_pro)
-        # lstm_out = tf.layers.dense(lstm_out, 512)
-        # lstm_out = tf.nn.dropout(lstm_out, keep_prob=keep_pro)
-        # lstm_out = tf.layers.dense(lstm_out, 128)
+        lstm_out = tf.nn.dropout(lstm_out, keep_prob=keep_pro)
+        lstm_out = tf.layers.dense(lstm_out, 512)
+        lstm_out = tf.nn.dropout(lstm_out, keep_prob=keep_pro)
+        lstm_out = tf.layers.dense(lstm_out, 128)
         lstm_out = tf.layers.dense(lstm_out, 10)
 
     return lstm_out
@@ -128,7 +128,7 @@ def main():
             feed_dic = {
                 y: batch_ys,
                 x: batch_xs,
-                keep_prob: 0.4
+                keep_prob: 1.0
             }
         # Fit training using batch data
         _, loss, acc = sess.run(
@@ -249,7 +249,7 @@ def main():
     print("")
     print("Confusion Matrix:")
     confusion_matrix = metrics.confusion_matrix(result_labels, predictions)
-    Matrix_to_CSV_array(filename='./matrix/all_lstm/matrix_kfold{}.txt'.format(k_fold_num), data=confusion_matrix)
+    Matrix_to_CSV_array(filename='./matrix/all_lstm/2-matrix_kfold{}.txt'.format(k_fold_num), data=confusion_matrix)
     print(confusion_matrix)
     normalised_confusion_matrix = np.array(confusion_matrix, dtype=np.float32) / np.sum(confusion_matrix) * 100
 
@@ -272,7 +272,7 @@ def main():
     plt.colorbar()
     tick_marks = np.arange(n_classes)
     plt.yticks(tick_marks, LABELS)
-    plt.savefig('./loss_dir/Matrix_kfold{}.png'.format(k_fold_num), dpi=300, bbox_inches='tight')
+    plt.savefig('./loss_dir/2-Matrix_kfold{}.png'.format(k_fold_num), dpi=300, bbox_inches='tight')
 
     sess.close()
 

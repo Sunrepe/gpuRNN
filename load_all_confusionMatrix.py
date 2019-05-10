@@ -1,3 +1,19 @@
+'''
+本函数计算各种matrix，具体每个main函数使用如下：
+main1
+main2
+main3
+main4
+main5
+main6
+main7
+main8：all_lstm1 的pre结果投票成果
+main9：all_lstm1 的pre结果叠加成果
+main10: all_lstm3的every结果展示，以及最后所有人结果展示
+main11：all_lstm3的不同feature结果展示
+main
+'''
+
 import os
 import time
 import csv
@@ -18,6 +34,19 @@ def ShowHeatMap(DataFrame):
 
 def get_label(ch, num_classes=10):
     return np.eye(num_classes)[ch]
+
+
+def getPersons_every(foldname):
+    '''
+        根据文件夹获得获得所有人,并根据kfold_num将所有人分类为训练集/测试集人物
+    '''
+    _person = set()
+    for filename in os.listdir(foldname):
+        oa, ob = filename.split('_')
+        _person.add(ob)
+    _person = list(_person)
+    _person.sort()
+    return _person
 
 
 def Matrix_to_CSV(filename, data):
@@ -456,5 +485,123 @@ def main9():
     print(confusion_matrix)
 
 
+def main10():
+    '''
+    计算不同类输出结果，并作简要分析。
+        根据不同人做结果输出。
+        具体方法：根据不同类进行结果分析。
+    :return:
+    '''
+    fold = './data/res10/all_lstm3/'
+
+    pre_ = []
+    rec_ = []
+    f1s_ = []
+    all_pre = []
+    all_label = []
+    for person in getPersons_every(fold):
+        print("------------------------------")
+        print(person)
+        label_one_hot = Read_data_res(fold+'label_{}'.format(person))
+
+        one_hot_predictions = Read_data_res(fold+'pre_{}'.format(person))
+
+        predictions = one_hot_predictions.argmax(1)
+        result_labels = label_one_hot.argmax(1)
+        for pre_i in predictions: all_pre.append(pre_i)
+        for label_i in result_labels: all_label.append(label_i)
+
+        pre_.append(metrics.precision_score(result_labels, predictions, average="weighted"))
+        rec_.append(metrics.recall_score(result_labels, predictions, average="weighted"))
+        f1s_.append(metrics.f1_score(result_labels, predictions, average="weighted"))
+
+        print("Precision: {}%".format(100 * metrics.precision_score(result_labels, predictions, average="weighted")))
+        print("Recall: {}%".format(100 * metrics.recall_score(result_labels, predictions, average="weighted")))
+        print("f1_score: {}%".format(100 * metrics.f1_score(result_labels, predictions, average="weighted")))
+
+        print("")
+        print("Confusion Matrix:")
+        confusion_matrix = metrics.confusion_matrix(result_labels, predictions)
+        # Matrix_to_CSV(filename='./matrix/all1_feas/matrix_fea{}.txt'.format(fea_num), data=confusion_matrix)
+        print(confusion_matrix)
+        #
+        # print()
+        # print("------------------------------")
+        print()
+    print("------------------------------")
+    print('最终结果：')
+    pre_.append(metrics.precision_score(all_label, all_pre, average="weighted"))
+    rec_.append(metrics.recall_score(all_label, all_pre, average="weighted"))
+    f1s_.append(metrics.f1_score(all_label, all_pre, average="weighted"))
+
+    print("Precision: {}%".format(100 * metrics.precision_score(all_label, all_pre, average="weighted")))
+    print("Recall: {}%".format(100 * metrics.recall_score(all_label, all_pre, average="weighted")))
+    print("f1_score: {}%".format(100 * metrics.f1_score(all_label, all_pre, average="weighted")))
+
+    print("")
+    print("Confusion Matrix:")
+    confusion_matrix = metrics.confusion_matrix(all_label, all_pre,)
+    print(confusion_matrix)
+
+    stream = getPersons_every(fold)
+    stream.append('最终结果')
+    df = pd.DataFrame(pre_, index=stream, columns=["Precision"])
+    df["Recall"] = rec_
+    df["F1score"] = f1s_
+    df.to_csv('./matrix/all_3/all_tesult.csv')
+
+
+def main11():
+    '''
+    计算不同类输出结果，并作简要分析。
+        具体方法：根据不同特征拓展方案进行结果分析。
+    :return:
+    '''
+    fold = './data/res10/all_lstm3/'
+    filelist = getPersons_every(fold)
+    pre_ = []
+    rec_ = []
+    f1s_ = []
+    fold = './data/res10/all_lstm3_feas/'
+
+    for i_fea in range(10):
+        print("------------------------------")
+        print('All_fea{}'.format(i_fea))
+        all_pre = []
+        all_label = []
+        for person in filelist:
+            label_one_hot = Read_data_res(fold+'label_{}'.format(person))
+
+            one_hot_predictions = Read_data_res(fold+'pre_fea{}_{}'.format(i_fea, person))
+
+            predictions = one_hot_predictions.argmax(1)
+            result_labels = label_one_hot.argmax(1)
+            for pre_i in predictions: all_pre.append(pre_i)
+            for label_i in result_labels: all_label.append(label_i)
+
+        pre_.append(metrics.precision_score(all_label, all_pre, average="weighted"))
+        rec_.append(metrics.recall_score(all_label, all_pre, average="weighted"))
+        f1s_.append(metrics.f1_score(all_label, all_pre, average="weighted"))
+
+        print("Precision: {}%".format(100 * metrics.precision_score(all_label, all_pre, average="weighted")))
+        print("Recall: {}%".format(100 * metrics.recall_score(all_label, all_pre, average="weighted")))
+        print("f1_score: {}%".format(100 * metrics.f1_score(all_label, all_pre, average="weighted")))
+
+        print("")
+        print("Confusion Matrix:")
+        confusion_matrix = metrics.confusion_matrix(all_label, all_pre,)
+        print(confusion_matrix)
+
+    # ------------------feas
+    stream = []
+    for i in range(10):
+        stream.append('fea{}'.format(i))
+    df = pd.DataFrame(pre_, index=stream, columns=["Precision"])
+    df["Recall"] = rec_
+    df["F1score"] = f1s_
+    df.to_csv('./matrix/all_3/all3_feas_tesult.csv')
+    # ------------------feas
+
+
 if __name__ == '__main__':
-    main3()
+    main11()
