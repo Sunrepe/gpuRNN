@@ -35,10 +35,7 @@ batch_size = 400
 display_iter = 2000  # To show test set accuracy during training
 model_save = 80
 
-k_fold_num = 0
 fold = './data/res50/'
-
-savename = './models/kfold{}/fcnet/fcnet_kfold{}'.format(k_fold_num, k_fold_num)
 
 LABELS = ['double', 'fist', 'spread', 'six', 'wavein', 'waveout', 'yes', 'no', 'finger', 'snap']
 
@@ -51,6 +48,7 @@ def Matrix_to_CSV_array(filename, data):
 
 
 def main():
+    k_fold_num = 0
     time1 = time.time()
     print('loading data...from {}'.format(fold))
     train_sets = data_load_res(foldname=fold, trainable=True, kfold_num=k_fold_num)
@@ -149,5 +147,58 @@ def main():
     plt.savefig('./loss_dir/SVM-Matrix_kfold{}.png'.format(k_fold_num), dpi=300, bbox_inches='tight')
 
 
+def main2():
+    # k_fold_num = 0
+    for i in range(5):
+        print("Now Kfold:{}---------------------------".format(i))
+        k_fold_num = i
+        time1 = time.time()
+        print('loading data...from {}'.format(fold))
+        train_sets = data_load_SVMfeas(foldname=fold, trainable=True, kfold_num=k_fold_num)
+        test_sets = data_load_SVMfeas(foldname=fold, trainable=False, kfold_num=k_fold_num)
+        print('train:', len(train_sets.all_label), 'test:', len(test_sets.all_label))
+        print('load data time:', time.time() - time1)
+        x1 = train_sets.data_res
+        y1 = train_sets.all_label.argmax(1)
+        x2 = test_sets.data_res
+        y2 = test_sets.all_label.argmax(1)
+
+        cishu = 0
+        a_gamma = np.sort(np.array([0.01, 0.4, 0.001, 0.0001]))
+        a_c = np.sort(np.array([1e-3, 1e-2, 1e-1, 0.5, 10, 100, 1000]))
+        # param_grid = {'C': [1e-3, 1e-2, 1e-1, 1, 10, 100, 1000], 'gamma': [0.001, 0.0001]}
+        for ks in a_gamma:
+            for c_ceshi in a_c:
+                cishu += 1
+                time2 = time.time()
+                c_x_1 = c_ceshi
+                g_x_1 = ks
+                print('------------------------------------')
+                print("SVM training....{}".format(cishu))
+                clf_svm = svm.SVC(C=c_x_1, kernel='rbf', gamma=g_x_1, decision_function_shape='ovr')
+                clf_svm.fit(x1, y1.ravel())
+                jingdu = clf_svm.score(x1, y1)
+                quedu = clf_svm.score(x2, y2)
+                # print('训练集结果精度', jingdu)
+                # print('测试集结果正确率', quedu)
+                print("Epoch {},  C:{}   Gamma: {}".format(cishu, c_x_1, g_x_1))
+                print('训练集精度：', jingdu, '  测试集准确率：', quedu)
+
+                predictions = clf_svm.predict(x2)
+                result_labels = y2
+                print(
+                    "Precision: {}%".format(
+                        100 * metrics.precision_score(result_labels, predictions, average="weighted")))
+                print("Recall: {}%".format(100 * metrics.recall_score(result_labels, predictions, average="weighted")))
+                print("f1_score: {}%".format(100 * metrics.f1_score(result_labels, predictions, average="weighted")))
+
+                print("")
+                print("Confusion Matrix:")
+                confusion_matrix = metrics.confusion_matrix(result_labels, predictions)
+                print(confusion_matrix)
+
+                print("A train epoch time: {:.2f} s\n".format(time.time() - time2))
+
+
 if __name__ == '__main__':
-    main()
+    main2()
