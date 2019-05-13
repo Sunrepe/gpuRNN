@@ -35,7 +35,7 @@ batch_size = 400
 display_iter = 2000  # To show test set accuracy during training
 model_save = 80
 
-fold = './data/res50/'
+fold = './data/data_svmfea/'
 
 LABELS = ['double', 'fist', 'spread', 'six', 'wavein', 'waveout', 'yes', 'no', 'finger', 'snap']
 
