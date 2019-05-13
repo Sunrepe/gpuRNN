@@ -2,6 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e51bf105-f34c-4031-aa58-28fd3cc5807c" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/data_svmfea_self/test_fold0.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/data_svmfea_self/test_fold1.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/data_svmfea_self/test_fold2.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/data_svmfea_self/test_fold3.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/data_svmfea_self/test_fold4.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/data_svmfea_self/train_fold0.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/data_svmfea_self/train_fold1.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/data_svmfea_self/train_fold2.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/data_svmfea_self/train_fold3.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/data_svmfea_self/train_fold4.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/matrix/svm_old.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pre_result/svm_old_label.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pre_result/svm_old_pre.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data_pre/alldata.py" afterPath="$PROJECT_DIR$/data_pre/alldata.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data_pre/get_svmfea_data.py" afterPath="$PROJECT_DIR$/data_pre/get_svmfea_data.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svm_after_net.py" afterPath="$PROJECT_DIR$/svm_after_net.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -14,9 +30,9 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/gpuRNN$oriandsmooth.coverage" NAME="oriandsmooth Coverage Results" MODIFIED="1555917186958" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/forPICS" />
     <SUITE FILE_PATH="coverage/gpuRNN$lstm_0410_emgandwavelet.coverage" NAME="lstm_0410_emgandwavelet Coverage Results" MODIFIED="1555037799100" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/gpuRNN$get_svmfea_data.coverage" NAME="get_svmfea_data Coverage Results" MODIFIED="1557716889783" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data_pre" />
+    <SUITE FILE_PATH="coverage/gpuRNN$get_svmfea_data.coverage" NAME="get_svmfea_data Coverage Results" MODIFIED="1557740005542" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data_pre" />
     <SUITE FILE_PATH="coverage/gpuRNN$lstm_0405_kfold.coverage" NAME="lstm_0405_kfold Coverage Results" MODIFIED="1555307258176" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/gpuRNN$svm_after_net.coverage" NAME="svm_after_net Coverage Results" MODIFIED="1557718777270" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/gpuRNN$svm_after_net.coverage" NAME="svm_after_net Coverage Results" MODIFIED="1557734655063" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$load_all_confusionMatrix.coverage" NAME="load_all_confusionMatrix Coverage Results" MODIFIED="1557659874220" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$bilstm_0402.coverage" NAME="bilstm_0402 Coverage Results" MODIFIED="1554211984148" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$testEveryone.coverage" NAME="testEveryone Coverage Results" MODIFIED="1554951599362" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -60,8 +76,8 @@
       <file leaf-file-name="feature_0get.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/feature_0get.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+            <state relative-caret-position="189">
+              <caret line="387" column="89" lean-forward="true" selection-start-line="374" selection-start-column="4" selection-end-line="387" selection-end-column="89" />
               <folding />
             </state>
           </provider>
@@ -70,12 +86,12 @@
       <file leaf-file-name="get_svmfea_data.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data_pre/get_svmfea_data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-18">
-              <caret line="76" column="38" lean-forward="false" selection-start-line="76" selection-start-column="38" selection-end-line="76" selection-end-column="38" />
+            <state relative-caret-position="193">
+              <caret line="154" column="26" lean-forward="true" selection-start-line="154" selection-start-column="26" selection-end-line="154" selection-end-column="26" />
               <folding>
-                <element signature="e#0#18#0" expanded="true" />
-                <element signature="e#74#291#0" expanded="false" />
-                <element signature="e#665#919#0" expanded="false" />
+                <element signature="e#60#78#0" expanded="true" />
+                <element signature="e#134#351#0" expanded="false" />
+                <element signature="e#849#1103#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -84,11 +100,24 @@
       <file leaf-file-name="svm_after_net.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/svm_after_net.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
-              <caret line="203" column="11" lean-forward="true" selection-start-line="203" selection-start-column="11" selection-end-line="203" selection-end-column="11" />
+            <state relative-caret-position="119">
+              <caret line="378" column="11" lean-forward="false" selection-start-line="378" selection-start-column="11" selection-end-line="378" selection-end-column="11" />
               <folding>
-                <element signature="e#1258#5642#0" expanded="false" />
+                <element signature="e#166#196#0" expanded="true" />
+                <element signature="e#2062#6446#0" expanded="false" />
+                <element signature="e#6466#9016#0" expanded="false" />
+                <element signature="e#9036#12679#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="allmodel3_selfEveryone.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/allmodel3_selfEveryone.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="188" column="28" lean-forward="false" selection-start-line="188" selection-start-column="28" selection-end-line="188" selection-end-column="28" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -96,8 +125,8 @@
       <file leaf-file-name="alldata.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data_pre/alldata.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="519">
-              <caret line="1311" column="37" lean-forward="false" selection-start-line="1311" selection-start-column="37" selection-end-line="1311" selection-end-column="37" />
+            <state relative-caret-position="549">
+              <caret line="1344" column="47" lean-forward="true" selection-start-line="1344" selection-start-column="47" selection-end-line="1344" selection-end-column="47" />
               <folding>
                 <element signature="e#74#291#0" expanded="false" />
                 <element signature="e#559#683#0" expanded="false" />
@@ -107,7 +136,6 @@
                 <element signature="e#2170#2901#0" expanded="false" />
                 <element signature="e#2930#3708#0" expanded="false" />
                 <element signature="e#3745#3843#0" expanded="false" />
-                <element signature="e#3886#3967#0" expanded="false" />
                 <element signature="e#4007#4055#0" expanded="false" />
                 <element signature="e#4083#4814#0" expanded="false" />
                 <element signature="e#4844#8285#0" expanded="false" />
@@ -122,85 +150,8 @@
                 <element signature="e#34081#38039#0" expanded="false" />
                 <element signature="e#38098#42694#0" expanded="false" />
                 <element signature="e#42725#46013#0" expanded="false" />
-                <element signature="e#46055#52856#0" expanded="false" />
+                <element signature="e#47638#49271#0" expanded="false" />
                 <element signature="e#52892#55157#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="readme.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/readme.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="50">
-              <caret line="2" column="61" lean-forward="false" selection-start-line="2" selection-start-column="61" selection-end-line="2" selection-end-column="61" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="load_all_confusionMatrix.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/load_all_confusionMatrix.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3021">
-              <caret line="605" column="25" lean-forward="false" selection-start-line="605" selection-start-column="25" selection-end-line="605" selection-end-column="25" />
-              <folding>
-                <element signature="e#243#252#0" expanded="true" />
-                <element signature="e#448#702#0" expanded="false" />
-                <element signature="e#813#1063#0" expanded="false" />
-                <element signature="e#1105#1377#0" expanded="false" />
-                <element signature="e#1425#1570#0" expanded="false" />
-                <element signature="e#1606#2120#0" expanded="false" />
-                <element signature="e#2155#2372#0" expanded="false" />
-                <element signature="e#2408#2581#0" expanded="false" />
-                <element signature="e#2616#2898#0" expanded="false" />
-                <element signature="e#2928#3042#0" expanded="false" />
-                <element signature="e#3092#3200#0" expanded="false" />
-                <element signature="e#3219#4330#0" expanded="false" />
-                <element signature="e#4350#5189#0" expanded="false" />
-                <element signature="e#5209#7729#0" expanded="false" />
-                <element signature="e#7749#8042#0" expanded="false" />
-                <element signature="e#8062#11578#0" expanded="false" />
-                <element signature="e#11598#12002#0" expanded="false" />
-                <element signature="e#12022#13992#0" expanded="false" />
-                <element signature="e#14012#15268#0" expanded="false" />
-                <element signature="e#15288#16484#0" expanded="false" />
-                <element signature="e#16505#19141#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="getRes50and10.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/getRes50and10.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="43" selection-end-column="32" />
-              <folding>
-                <element signature="e#1261#4837#0" expanded="false" />
-                <element signature="e#9873#12848#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="diffeature.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data_pre/diffeature.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="50">
-              <caret line="12" column="20" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="12" selection-end-column="20" />
-              <folding>
-                <element signature="e#74#291#0" expanded="false" />
-                <element signature="e#838#922#0" expanded="false" />
-                <element signature="e#1473#2204#0" expanded="false" />
-                <element signature="e#2233#3011#0" expanded="false" />
-                <element signature="e#3048#3146#0" expanded="false" />
-                <element signature="e#3189#3270#0" expanded="false" />
-                <element signature="e#3310#3358#0" expanded="false" />
-                <element signature="e#3386#4117#0" expanded="false" />
-                <element signature="e#4167#7611#0" expanded="false" />
-                <element signature="e#7676#11924#0" expanded="false" />
-                <element signature="e#11963#15456#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -242,7 +193,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/cnnOLD.py" />
         <option value="$PROJECT_DIR$/cnntest.py" />
         <option value="$PROJECT_DIR$/data_pre/origindata.py" />
         <option value="$PROJECT_DIR$/lstm_testMerge.py" />
@@ -290,6 +240,7 @@
         <option value="$PROJECT_DIR$/data_pre/diffeature.py" />
         <option value="$PROJECT_DIR$/feature_0get.py" />
         <option value="$PROJECT_DIR$/readme.txt" />
+        <option value="$PROJECT_DIR$/data/data_svmfea_self.py" />
         <option value="$PROJECT_DIR$/data_pre/get_svmfea_data.py" />
         <option value="$PROJECT_DIR$/data_pre/alldata.py" />
         <option value="$PROJECT_DIR$/svm_after_net.py" />
@@ -329,6 +280,17 @@
               <item name="gpuRNN" type="b2602c69:ProjectViewProjectNode" />
               <item name="gpuRNN" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="gpuRNN" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gpuRNN" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gpuRNN" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gpuRNN" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="data_svmfea_self" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -364,7 +326,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.svm_after_net">
+  <component name="RunManager" selected="Python.get_svmfea_data">
     <configuration name="alldata" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -464,9 +426,9 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.svm_after_net" />
-        <item index="1" class="java.lang.String" itemvalue="Python.alldata" />
-        <item index="2" class="java.lang.String" itemvalue="Python.get_svmfea_data" />
+        <item index="0" class="java.lang.String" itemvalue="Python.get_svmfea_data" />
+        <item index="1" class="java.lang.String" itemvalue="Python.svm_after_net" />
+        <item index="2" class="java.lang.String" itemvalue="Python.alldata" />
         <item index="3" class="java.lang.String" itemvalue="Python.load_all_confusionMatrix" />
         <item index="4" class="java.lang.String" itemvalue="Python.getRes50and10" />
       </list>
@@ -498,13 +460,13 @@
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2246596" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21331316" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901135" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28687197" sideWeight="0.50680786" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28687197" sideWeight="0.49546143" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.56239873" sideWeight="0.49319214" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.46029174" sideWeight="0.49319214" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28038898" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -532,28 +494,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/matrix/all_model3Matrix_kfold1.txt" />
-    <entry file="file://$PROJECT_DIR$/forPICS/tmp_ori.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/forPICS/dt.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="1811" column="17" lean-forward="true" selection-start-line="1811" selection-start-column="17" selection-end-line="1811" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/forPICS/oriandsmooth.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="81" column="0" lean-forward="true" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/datadescribe.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
@@ -645,13 +585,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/allmodel3_selfEveryone.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4767">
-          <caret line="36" column="22" lean-forward="false" selection-start-line="36" selection-start-column="22" selection-end-line="36" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/cs_errors/kfold0" />
     <entry file="file://$PROJECT_DIR$/data/cs_errors/kfold0.csv" />
     <entry file="file://$PROJECT_DIR$/data/cs_errors/res10_kfold0.csv" />
@@ -719,13 +652,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/softmax_cross_errors.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="153" column="18" lean-forward="false" selection-start-line="153" selection-start-column="18" selection-end-line="153" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/res10/all/pre_fea0">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-201034">
@@ -776,54 +702,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/load_all_confusionMatrix.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3021">
-          <caret line="605" column="25" lean-forward="false" selection-start-line="605" selection-start-column="25" selection-end-line="605" selection-end-column="25" />
-          <folding>
-            <element signature="e#243#252#0" expanded="true" />
-            <element signature="e#448#702#0" expanded="false" />
-            <element signature="e#813#1063#0" expanded="false" />
-            <element signature="e#1105#1377#0" expanded="false" />
-            <element signature="e#1425#1570#0" expanded="false" />
-            <element signature="e#1606#2120#0" expanded="false" />
-            <element signature="e#2155#2372#0" expanded="false" />
-            <element signature="e#2408#2581#0" expanded="false" />
-            <element signature="e#2616#2898#0" expanded="false" />
-            <element signature="e#2928#3042#0" expanded="false" />
-            <element signature="e#3092#3200#0" expanded="false" />
-            <element signature="e#3219#4330#0" expanded="false" />
-            <element signature="e#4350#5189#0" expanded="false" />
-            <element signature="e#5209#7729#0" expanded="false" />
-            <element signature="e#7749#8042#0" expanded="false" />
-            <element signature="e#8062#11578#0" expanded="false" />
-            <element signature="e#11598#12002#0" expanded="false" />
-            <element signature="e#12022#13992#0" expanded="false" />
-            <element signature="e#14012#15268#0" expanded="false" />
-            <element signature="e#15288#16484#0" expanded="false" />
-            <element signature="e#16505#19141#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/fcrnn_cnn.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="227">
           <caret line="76" column="11" lean-forward="false" selection-start-line="76" selection-start-column="11" selection-end-line="76" selection-end-column="11" />
           <folding>
-            <element signature="e#20#50#0" expanded="true" />
+            <element signature="e#20#50#0" expanded="false" />
             <element signature="e#1079#1353#0" expanded="false" />
             <element signature="e#1401#1546#0" expanded="false" />
             <element signature="e#1585#2340#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/feature_0get.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -902,10 +790,78 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/softmax_cross_errors.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-189">
+          <caret line="153" column="18" lean-forward="false" selection-start-line="153" selection-start-column="18" selection-end-line="153" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/load_all_confusionMatrix.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="365" column="24" lean-forward="true" selection-start-line="365" selection-start-column="24" selection-end-line="365" selection-end-column="24" />
+          <folding>
+            <element signature="e#243#252#0" expanded="true" />
+            <element signature="e#813#1063#0" expanded="false" />
+            <element signature="e#1105#1377#0" expanded="false" />
+            <element signature="e#1425#1570#0" expanded="false" />
+            <element signature="e#1606#2120#0" expanded="false" />
+            <element signature="e#2155#2372#0" expanded="false" />
+            <element signature="e#2408#2581#0" expanded="false" />
+            <element signature="e#2616#2898#0" expanded="false" />
+            <element signature="e#2928#3042#0" expanded="false" />
+            <element signature="e#3092#3200#0" expanded="false" />
+            <element signature="e#3219#4330#0" expanded="false" />
+            <element signature="e#4350#5189#0" expanded="false" />
+            <element signature="e#5209#7729#0" expanded="false" />
+            <element signature="e#7749#8042#0" expanded="false" />
+            <element signature="e#8062#11578#0" expanded="false" />
+            <element signature="e#12022#13992#0" expanded="false" />
+            <element signature="e#14012#15268#0" expanded="false" />
+            <element signature="e#15288#16484#0" expanded="false" />
+            <element signature="e#16505#19141#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/feature_0get.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="387" column="89" lean-forward="true" selection-start-line="374" selection-start-column="4" selection-end-line="387" selection-end-column="89" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pre_result/svm_old_label.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-450">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/data_svmfea_self.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/allmodel3_selfEveryone.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="188" column="28" lean-forward="false" selection-start-line="188" selection-start-column="28" selection-end-line="188" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/data_pre/alldata.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="519">
-          <caret line="1311" column="37" lean-forward="false" selection-start-line="1311" selection-start-column="37" selection-end-line="1311" selection-end-column="37" />
+        <state relative-caret-position="549">
+          <caret line="1344" column="47" lean-forward="true" selection-start-line="1344" selection-start-column="47" selection-end-line="1344" selection-end-column="47" />
           <folding>
             <element signature="e#74#291#0" expanded="false" />
             <element signature="e#559#683#0" expanded="false" />
@@ -915,7 +871,6 @@
             <element signature="e#2170#2901#0" expanded="false" />
             <element signature="e#2930#3708#0" expanded="false" />
             <element signature="e#3745#3843#0" expanded="false" />
-            <element signature="e#3886#3967#0" expanded="false" />
             <element signature="e#4007#4055#0" expanded="false" />
             <element signature="e#4083#4814#0" expanded="false" />
             <element signature="e#4844#8285#0" expanded="false" />
@@ -930,30 +885,49 @@
             <element signature="e#34081#38039#0" expanded="false" />
             <element signature="e#38098#42694#0" expanded="false" />
             <element signature="e#42725#46013#0" expanded="false" />
-            <element signature="e#46055#52856#0" expanded="false" />
+            <element signature="e#47638#49271#0" expanded="false" />
             <element signature="e#52892#55157#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/data/data_svmfea_self/train_fold0.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/data_svmfea_self/test_fold0.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-39826">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/data_pre/get_svmfea_data.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-18">
-          <caret line="76" column="38" lean-forward="false" selection-start-line="76" selection-start-column="38" selection-end-line="76" selection-end-column="38" />
+        <state relative-caret-position="193">
+          <caret line="154" column="26" lean-forward="true" selection-start-line="154" selection-start-column="26" selection-end-line="154" selection-end-column="26" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#74#291#0" expanded="false" />
-            <element signature="e#665#919#0" expanded="false" />
+            <element signature="e#60#78#0" expanded="true" />
+            <element signature="e#134#351#0" expanded="false" />
+            <element signature="e#849#1103#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/svm_after_net.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="203" column="11" lean-forward="true" selection-start-line="203" selection-start-column="11" selection-end-line="203" selection-end-column="11" />
+        <state relative-caret-position="119">
+          <caret line="378" column="11" lean-forward="false" selection-start-line="378" selection-start-column="11" selection-end-line="378" selection-end-column="11" />
           <folding>
-            <element signature="e#1258#5642#0" expanded="false" />
+            <element signature="e#166#196#0" expanded="true" />
+            <element signature="e#2062#6446#0" expanded="false" />
+            <element signature="e#6466#9016#0" expanded="false" />
+            <element signature="e#9036#12679#0" expanded="false" />
           </folding>
         </state>
       </provider>
