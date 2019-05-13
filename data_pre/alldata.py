@@ -71,6 +71,24 @@ def getPersons(foldname, kfold_num):
     return train_p, test_p
 
 
+def getPersons_svm(foldname, kfold_num):
+    '''
+        根据文件夹获得获得所有人,并根据kfold_num将所有人分类为训练集/测试集人物
+    '''
+    _person = set()
+    for filename in os.listdir(foldname):
+        oa, ob = filename.split('_')
+        _person.add(oa)
+    _person = list(_person)
+    _person.sort()
+    test_p = _person[7*kfold_num:7*(kfold_num+1)]
+    train_p = []
+    for i in _person:
+        if i not in test_p:
+            train_p.append(i)
+    return train_p, test_p
+
+
 def wavelet_trans(data):
     # data = data.T
     wave_let = pywt.Wavelet('sym4')
@@ -1279,7 +1297,30 @@ class data_load_res(object):
         return batch_labels, batch_data
 
 
+class data_load_SVMfeas(object):
+    def __init__(self, foldname, trainable=False, kfold_num=0, fea_num=0):
+        '''
+        获得相关的中间过程。直接获得所有组合好的结果即可，不需要中间在训练过程中进行组合，加快训练速度。
+        :param foldname: 数据集合
+        :param max_seq:
+        :param num_class: 分类的数量
+        :param trainable:
+        :param kfold_num:
+        '''
+        train_person, test_person = getPersons_svm(foldname, kfold_num)
+        __person = train_person if trainable else test_person
+        print("All person:", __person)
+        self.all_label = []
+        self.data_res = []
+        for pers in __person:
+            data = Read_data_res("{}{}_svmfeas.txt".format(foldname, pers))
+            for i in range(data.shape[0]):
+                self.all_label.append(np.eye(10)[int(data[i, 32])])
+                self.data_res.append(data[i, 0:32])
+        self.all_label = np.array(self.all_label)
+        self.data_res = np.array(self.data_res)
+
+
 if __name__ == '__main__':
-    train_sets = data_load_res(foldname='../data/res50/', trainable=False, kfold_num=0)
-    batch_ys, batch_xs = train_sets.next(10)
-    print(batch_xs.shape)
+    train_sets = data_load_SVMfeas(foldname='../data/data_svmfea/', trainable=True, kfold_num=0)
+    print(train_sets.data_res.shape)

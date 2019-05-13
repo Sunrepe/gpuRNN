@@ -305,20 +305,18 @@ def main2():
         biases = {
             'out': tf.Variable(tf.random_normal([n_classes]))
         }
-    #
-    # # Graph input/output
+
+    # Graph input/output
     x = tf.placeholder(tf.float32, [None, max_seq, n_inputs])
     y = tf.placeholder(tf.float32, [None, n_classes])
     seq_len = tf.placeholder(tf.float32, [None])
-    #
+
     # pred = LSTM_RNN_f1(x, seq_len)
 
-    k_fold_num = 1
-    feature_num__s = 8
-    pred = LSTM_RNN_f8(x, seq_len, weights, biases)
+    k_fold_num = 0
+    feature_num__s = 0
+    pred = LSTM_RNN_f0(x, seq_len, weights, biases)
 
-    # savename = '_feature{}_kfold{}'.format(feature_num__s, k_fold_num)
-    #
     with tf.name_scope('fullConnect'):
         lstm_out = tf.matmul(pred, weights['out']) + biases['out']
 
@@ -350,8 +348,8 @@ def main2():
             seq_len: train_sets.all_seq_len
         }
     )
-    Matrix_to_CSV('./datas/res50/train/fea{}_kfold{}'.format(feature_num__s, k_fold_num), res50)
-    Matrix_to_CSV('./datas/res10/train/fea{}_kfold{}'.format(feature_num__s, k_fold_num), res10)
+    Matrix_to_CSV('./data/res50/train/fea{}_kfold{}'.format(feature_num__s, k_fold_num), res50)
+    Matrix_to_CSV('./data/res10/train/fea{}_kfold{}'.format(feature_num__s, k_fold_num), res10)
 
     # test
     res50, res10, acc = sess.run(
@@ -362,14 +360,15 @@ def main2():
             seq_len: test_sets.all_seq_len
         }
     )
-    Matrix_to_CSV('./datas/res50/test/fea{}_kfold{}'.format(feature_num__s, k_fold_num), res50)
-    Matrix_to_CSV('./datas/res10/test/fea{}_kfold{}'.format(feature_num__s, k_fold_num), res10)
-    # labels ----------
-    Matrix_to_CSV('./datas/res10/trainLabel_kfold{}'.format(k_fold_num), train_sets.all_label)
-    Matrix_to_CSV('./datas/res50/trainLabel_kfold{}'.format(k_fold_num), train_sets.all_label)
-    Matrix_to_CSV('./datas/res50/testLabel_kfold{}'.format(k_fold_num), test_sets.all_label)
-    Matrix_to_CSV('./datas/res10/testLabel_kfold{}'.format(k_fold_num), test_sets.all_label)
-    # labels ----------
+    Matrix_to_CSV('./data/res50/test/fea{}_kfold{}'.format(feature_num__s, k_fold_num), res50)
+    Matrix_to_CSV('./data/res10/test/fea{}_kfold{}'.format(feature_num__s, k_fold_num), res10)
+
+    # labels ------------------------------
+    Matrix_to_CSV('./data/res10/trainLabel_kfold{}'.format(k_fold_num), train_sets.all_label)
+    Matrix_to_CSV('./data/res50/trainLabel_kfold{}'.format(k_fold_num), train_sets.all_label)
+    Matrix_to_CSV('./data/res50/testLabel_kfold{}'.format(k_fold_num), test_sets.all_label)
+    Matrix_to_CSV('./data/res10/testLabel_kfold{}'.format(k_fold_num), test_sets.all_label)
+    # labels ------------------------------
 
     predictions = res10.argmax(1)
     result_labels = test_sets.all_label.argmax(1)
@@ -382,6 +381,7 @@ def main2():
     confusion_matrix = metrics.confusion_matrix(result_labels, predictions)
     print(confusion_matrix)
     print("Accuracy:{}".format(acc))
+
     # sess.close()
     print('All time:', time.time() - time1)
     # --------------------

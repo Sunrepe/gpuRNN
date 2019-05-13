@@ -252,10 +252,10 @@ def main3():
         print()
         print("------------------------------")
         print()
-    df = pd.DataFrame(pre_, index=stream, columns=["Precision"])
-    df["Recall"] = rec_
-    df["F1score"] = f1s_
-    df.to_csv('./matrix/all_lstm/all_tesult.csv')
+    # df = pd.DataFrame(pre_, index=stream, columns=["Precision"])
+    # df["Recall"] = rec_
+    # df["F1score"] = f1s_
+    # df.to_csv('./matrix/all_lstm/all_tesult.csv')
 
 
 def main4():
@@ -425,6 +425,7 @@ def main8():
     vote for result!
     :return:
     '''
+    print("all_lstm1投票结果")
     # LABELS = ['double', 'fist', 'spread', 'six', 'wavein', 'waveout', 'yes', 'no', 'finger', 'snap']
     stream = ["原始信号", "均值", "标准差", "波长变化", "dwt1", "dwt2", "dwt3", "dwt4", "fft", "融合"]
     print("------------------------------")
@@ -459,6 +460,7 @@ def main9():
     vote for result!
     :return:
     '''
+    print("输出叠加结果：")
     # LABELS = ['double', 'fist', 'spread', 'six', 'wavein', 'waveout', 'yes', 'no', 'finger', 'snap']
     stream = ["原始信号", "均值", "标准差", "波长变化", "dwt1", "dwt2", "dwt3", "dwt4", "fft", "融合"]
     print("------------------------------")
@@ -557,6 +559,7 @@ def main11():
         具体方法：根据不同特征拓展方案进行结果分析。
     :return:
     '''
+    print("All lstm3 结果展示：")
     fold = './data/res10/all_lstm3/'
     filelist = getPersons_every(fold)
     pre_ = []
@@ -592,7 +595,7 @@ def main11():
         confusion_matrix = metrics.confusion_matrix(all_label, all_pre,)
         print(confusion_matrix)
 
-    # ------------------feas
+    # ------------------ feas ------------------
     stream = []
     for i in range(10):
         stream.append('fea{}'.format(i))
@@ -600,8 +603,8 @@ def main11():
     df["Recall"] = rec_
     df["F1score"] = f1s_
     df.to_csv('./matrix/all_3/all3_feas_tesult.csv')
-    # ------------------feas
+    # ------------------ feas ------------------
 
 
 if __name__ == '__main__':
-    main3()
+    main9()

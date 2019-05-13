@@ -157,6 +157,7 @@ def fft_trans(data):
     data_new = np.array(data_new)
     return data_new.T
 
+
 def data_feature_transform(data, feature):
     '''
     对所有特征提取，并根据feature类型选择返回，其中-1表示全部返回
@@ -170,10 +171,17 @@ def data_feature_transform(data, feature):
         return res_da
     # mean 1
     elif feature == 1:
-        tmp_data = np.zeros(data.shape)
-        for i in range(data.shape[0] - 4):
-            tmp_data[i, :] = np.mean(data[i:i + 4, :], axis=0)
-        res_da.append(tmp_data[:-4, :])
+        # 窗长为4，叠帧为3，即步长为1.-----
+        # tmp_data = np.zeros(data.shape)
+        # for i in range(data.shape[0] - 4):
+        #     tmp_data[i, :] = np.mean(data[i:i + 4, :], axis=0)
+        # res_da.append(tmp_data[:-4, :])
+        # return res_da
+        # 窗长为10，叠帧为5，即步长为5.-----
+        _ranges = np.arange(0, data.shape[0]-9, 5)
+        for i in _ranges:
+            res_da.append(np.mean(data[i:i + 10, :], axis=0))
+        res_da = np.array(res_da)
         return res_da
     # std 2
     elif feature == 2:
@@ -253,6 +261,7 @@ def data_feature_transform(data, feature):
         tmp_data = np.abs(np.fft.fft(data))
         res_da.append(tmp_data[0:(int(tmp_data.shape[0] / 2) + 1), :])
         return res_da
+
 
 # class All_data_merge()
 class All_data_feature_tmp(object):

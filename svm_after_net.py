@@ -1,4 +1,11 @@
-# 用于测试新数据是否和老数据可以共用
+'''
+SVM 方案在新数据上测试：
+main:
+    测试网络50 与10 输出作为特征提取的识别结果
+main2:
+    直接测试使用《软件学报》投稿论文的SVM方法最终结果
+
+'''
 from data_pre.alldata import *
 import tensorflow as tf
 import os
@@ -140,7 +147,6 @@ def main():
     tick_marks = np.arange(n_classes)
     plt.yticks(tick_marks, LABELS)
     plt.savefig('./loss_dir/SVM-Matrix_kfold{}.png'.format(k_fold_num), dpi=300, bbox_inches='tight')
-
 
 
 if __name__ == '__main__':
