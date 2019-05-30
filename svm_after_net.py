@@ -8,7 +8,7 @@ main2:
 mian3:
     获得SVM五折的所有结果。即最后分类效果说明。
 main4:
-    测试SELF 结果
+    测试SELF-mean结果
 '''
 from data_pre.alldata import *
 import tensorflow as tf
@@ -40,8 +40,6 @@ training_iters = 80  # Loop 1000 times on the dataset
 batch_size = 400
 display_iter = 2000  # To show test set accuracy during training
 model_save = 80
-
-fold = './data/data_svmfea/'
 
 LABELS = ['double', 'fist', 'spread', 'six', 'wavein', 'waveout', 'yes', 'no', 'finger', 'snap']
 
@@ -181,6 +179,7 @@ def main2():
         C:100.0   Gamma: 0.01
     :return:
     '''
+    fold = 'data/data_svmfea/'
     for i in range(5):
         print("Now Kfold:{}---------------------------".format(i))
         k_fold_num = i
@@ -244,6 +243,7 @@ def main3():
     # lab_ = []
     # c_x_1 = 100
     # g_x_1 = 0.01
+    # fold = './data/data_svmfea/'
     # for i in range(5):
     #     print("Now Kfold:{}---------------------------".format(i))
     #     k_fold_num = i
@@ -278,11 +278,13 @@ def main3():
     #     confusion_matrix = metrics.confusion_matrix(result_labels, predictions)
     #     print(confusion_matrix)
     #     print("A train epoch time: {:.2f} s\n".format(time.time() - time1))
-
-    predictions = Read__mean_2('pre_result/svm_old_pre.txt')
-    result_labels = Read__mean_2('pre_result/svm_old_label.txt')
+    #
+    # predictions = res_
+    # result_labels = lab_
     # Matrix_to_CSV_element('pre_result/svm_old_pre.txt', predictions)
     # Matrix_to_CSV_element('pre_result/svm_old_label.txt', result_labels)
+    predictions = Read__mean_2('pre_result/svm_old_pre.txt')
+    result_labels = Read__mean_2('pre_result/svm_old_label.txt')
     print("len_pre:{},\tlen_label:{}".format(len(predictions), len(result_labels)))
     print("最终结果：")
     print(
@@ -297,23 +299,23 @@ def main3():
     print(confusion_matrix)
     Matrix_to_CSV_array('./matrix/svm_old.csv', confusion_matrix)
     normalised_confusion_matrix = np.array(confusion_matrix, dtype=np.float32) / np.sum(confusion_matrix) * 100
-    ShowHeatMap(normalised_confusion_matrix)
+    # ShowHeatMap(normalised_confusion_matrix)
     # Plot Results:
-    # width = 12
-    # height = 12
-    # plt.figure(figsize=(width, height))
-    # plt.imshow(
-    #     normalised_confusion_matrix,
-    #     interpolation='nearest',
-    #     cmap=plt.cm.rainbow
-    # )
-    # plt.title("Confusion matrix \n(normalised to % of total test data)")
-    # plt.colorbar()
-    # tick_marks = np.arange(n_classes)
-    # plt.yticks(tick_marks, LABELS)
-    # plt.xticks(tick_marks, LABELS)
+    width = 12
+    height = 12
+    plt.figure(figsize=(width, height))
+    plt.imshow(
+        normalised_confusion_matrix,
+        interpolation='nearest',
+        cmap=plt.cm.rainbow
+    )
+    plt.title("Confusion matrix \n(normalised to % of total test data)")
+    plt.colorbar()
+    tick_marks = np.arange(n_classes)
+    plt.yticks(tick_marks, LABELS)
+    plt.xticks(tick_marks, LABELS)
     # plt.show()
-    # plt.savefig('./loss_dir/Matrix{}.png'.format(savename), dpi=600, bbox_inches='tight')
+    plt.savefig('./matrix/SVM_old_Matrix.png', dpi=600, bbox_inches='tight')
     print("A train epoch time: {:.2f} s\n".format(time.time() - time1))
 
 
@@ -321,59 +323,97 @@ def main4():
     # k_fold_num = 0
     '''
     最佳参数组合：
-        C:100.0   Gamma: 0.01
+        C:100.0   Gamma: 0.4
     :return:
     '''
-    for i in range(5):
-        print("Now Kfold:{}---------------------------".format(i))
-        k_fold_num = i
-        time1 = time.time()
-        print('loading data...from {}'.format(fold))
-        train_sets = data_load_SVMfeas_self(foldname=fold, trainable=True, kfold_num=k_fold_num)
-        test_sets = data_load_SVMfeas_self(foldname=fold, trainable=False, kfold_num=k_fold_num)
-        print('train:', len(train_sets.all_label), 'test:', len(test_sets.all_label))
-        print('load data time:', time.time() - time1)
-        x1 = train_sets.data_res
-        y1 = train_sets.all_label.argmax(1)
-        x2 = test_sets.data_res
-        y2 = test_sets.all_label.argmax(1)
+    # res_ = []
+    # lab_ = []
+    # fold = './data/data_svmfea_self/'
+    # for i in range(5):
+    #     print("Now Kfold:{}---------------------------".format(i))
+    #     k_fold_num = i
+    #     time1 = time.time()
+    #     print('loading data...from {}'.format(fold))
+    #     train_sets = data_load_SVMfeas_self2(foldname=fold, trainable=True, kfold_num=k_fold_num)
+    #     test_sets = data_load_SVMfeas_self2(foldname=fold, trainable=False, kfold_num=k_fold_num)
+    #     print('train:', len(train_sets.all_label), 'test:', len(test_sets.all_label))
+    #     print('load data time:', time.time() - time1)
+    #     x1 = train_sets.data_res
+    #     y1 = train_sets.all_label.argmax(1)
+    #     x2 = test_sets.data_res
+    #     y2 = test_sets.all_label.argmax(1)
+    #
+    #     cishu = 0
+    #     # param_grid = {'C': [1e-3, 1e-2, 1e-1, 1, 10, 100, 1000], 'gamma': [0.001, 0.0001]}
+    #     cishu += 1
+    #     time2 = time.time()
+    #     c_x_1 = 100
+    #     g_x_1 = 0.4
+    #     print('------------------------------------')
+    #     print("SVM training....{}".format(cishu))
+    #     clf_svm = svm.SVC(C=c_x_1, kernel='rbf', gamma=g_x_1, decision_function_shape='ovr')
+    #     clf_svm.fit(x1, y1.ravel())
+    #     jingdu = clf_svm.score(x1, y1)
+    #     quedu = clf_svm.score(x2, y2)
+    #     # print('训练集结果精度', jingdu)
+    #     # print('测试集结果正确率', quedu)
+    #     print('训练集精度：', jingdu, '  测试集准确率：', quedu)
+    #
+    #     predictions = clf_svm.predict(x2)
+    #     result_labels = y2
+    #     for i_every in range(len(y2)):
+    #         res_.append(predictions[i_every])
+    #         lab_.append(result_labels[i_every])
+    #     print(
+    #         "Precision: {}%".format(
+    #             100 * metrics.precision_score(result_labels, predictions, average="weighted")))
+    #     print("Recall: {}%".format(100 * metrics.recall_score(result_labels, predictions, average="weighted")))
+    #     print("f1_score: {}%".format(100 * metrics.f1_score(result_labels, predictions, average="weighted")))
+    #
+    #     print("")
+    #     print("Confusion Matrix:")
+    #     confusion_matrix = metrics.confusion_matrix(result_labels, predictions)
+    #     print(confusion_matrix)
+    #
+    #     print("A train epoch time: {:.2f} s\n".format(time.time() - time2))
+    #
+    # predictions = res_
+    # result_labels = lab_
+    # Matrix_to_CSV_element('pre_result/mean_svm_old_pre.txt', predictions)
+    # Matrix_to_CSV_element('pre_result/mean_svm_old_label.txt', result_labels)
+    predictions = Read__mean_2('pre_result/svm_old_pre.txt')
+    result_labels = Read__mean_2('pre_result/svm_old_label.txt')
 
-        cishu = 0
-        a_gamma = np.sort(np.array([0.01, 0.4, 0.001, 0.0001, 0.005]))
-        a_c = np.sort(np.array([1e-1, 0.5, 10, 100, 500, 1000]))
-        # param_grid = {'C': [1e-3, 1e-2, 1e-1, 1, 10, 100, 1000], 'gamma': [0.001, 0.0001]}
-        for ks in a_gamma:
-            for c_ceshi in a_c:
-                cishu += 1
-                time2 = time.time()
-                c_x_1 = c_ceshi
-                g_x_1 = ks
-                print('------------------------------------')
-                print("SVM training....{}".format(cishu))
-                clf_svm = svm.SVC(C=c_x_1, kernel='rbf', gamma=g_x_1, decision_function_shape='ovr')
-                clf_svm.fit(x1, y1.ravel())
-                jingdu = clf_svm.score(x1, y1)
-                quedu = clf_svm.score(x2, y2)
-                # print('训练集结果精度', jingdu)
-                # print('测试集结果正确率', quedu)
-                print("Epoch {},  C:{}   Gamma: {}".format(cishu, c_x_1, g_x_1))
-                print('训练集精度：', jingdu, '  测试集准确率：', quedu)
+    print("len_pre:{},\tlen_label:{}".format(len(predictions), len(result_labels)))
+    print("最终结果：")
+    print(
+        "Precision: {}%".format(
+            100 * metrics.precision_score(result_labels, predictions, average="weighted")))
+    print("Recall: {}%".format(100 * metrics.recall_score(result_labels, predictions, average="weighted")))
+    print("f1_score: {}%".format(100 * metrics.f1_score(result_labels, predictions, average="weighted")))
 
-                predictions = clf_svm.predict(x2)
-                result_labels = y2
-                print(
-                    "Precision: {}%".format(
-                        100 * metrics.precision_score(result_labels, predictions, average="weighted")))
-                print("Recall: {}%".format(100 * metrics.recall_score(result_labels, predictions, average="weighted")))
-                print("f1_score: {}%".format(100 * metrics.f1_score(result_labels, predictions, average="weighted")))
-
-                print("")
-                print("Confusion Matrix:")
-                confusion_matrix = metrics.confusion_matrix(result_labels, predictions)
-                print(confusion_matrix)
-
-                print("A train epoch time: {:.2f} s\n".format(time.time() - time2))
-
+    print("")
+    print("Confusion Matrix:")
+    confusion_matrix = metrics.confusion_matrix(result_labels, predictions)
+    print(confusion_matrix)
+    Matrix_to_CSV_array('./matrix/mean_svm_old_self.csv', confusion_matrix)
+    normalised_confusion_matrix = np.array(confusion_matrix, dtype=np.float32) / np.sum(confusion_matrix) * 100
+    # ShowHeatMap(normalised_confusion_matrix)
+    width = 12
+    height = 12
+    plt.figure(figsize=(width, height))
+    plt.imshow(
+        normalised_confusion_matrix,
+        interpolation='nearest',
+        cmap=plt.cm.Blues
+    )
+    plt.title("Confusion matrix \n(normalised to % of total test data)")
+    plt.colorbar()
+    tick_marks = np.arange(n_classes)
+    plt.yticks(tick_marks, LABELS, fontsize=14)
+    plt.xticks(tick_marks, LABELS, fontsize=14)
+    # plt.show()
+    plt.savefig('./matrix/mean_svm_old_self.png', dpi=300, bbox_inches='tight')
 
 if __name__ == '__main__':
     main4()

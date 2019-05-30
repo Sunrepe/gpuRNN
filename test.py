@@ -1,163 +1,332 @@
-'''
-使用Model3进行所有人群测试。
-一共进行五次，存在5折交叉验证。
-'''
 # 用于测试新数据是否和老数据可以共用
 from data_pre.alldata import *
 import tensorflow as tf
 import os
 import time
+import matplotlib
 import csv
-import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 from sklearn import metrics
+import tmp_trans_wavelet
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'  # just error no warning
+# os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'  # warnings and errors
+# os.environ['TF_CPP_MIN_LOG_LEVEL'] = '1'
+# os.environ['TF_CPP_MIN_LOG_LEVEL'] = '0'
 
 # All hyperparameters
 n_hidden = 50  # Hidden layer num of features
 n_classes = 10  # Total classes (should go up, or should go down)
 n_inputs = 8
 max_seq = 800
-k_fold_num = 4
-# model_name = 'E:/Research-bachelor/storeMODELs/5kfold/lstmkfold{}/lstm/model_LSTM_kfold{}.ckpt-final'.format(k_fold_num,k_fold_num)
-
-model_name = "E:/Research-bachelor/storeMODELs/all_lstm_3/all_model3_kfold{}/" \
-             "model_mergeall_kfold4.ckpt-3600".format(k_fold_num,k_fold_num)
-fold = './data/actdata/'
-matrix_save_path = "E:/Research-bachelor/storeMODELs/all_lstm_3/all_model3Matrix_kfold{}.txt".format(k_fold_num)
-
-df_save_path = 'E:/Research-bachelor/storeMODELs/all_lstm_3/allmodel3_everyone_precision_kfold{}.csv'.format(k_fold_num)
-df_save_path2 = 'E:/Research-bachelor/storeMODELs/all_lstm_3/allmodel3_everyone_recall_kfold{}.csv'.format(k_fold_num)
-df_save_path3 = 'E:/Research-bachelor/storeMODELs/all_lstm_3/allmodel3_everyone_f1score_kfold{}.csv'.format(k_fold_num)
+tmp_use_len = [150, 150, 250, 450, 800, 800, 800, 800, 400]
 
 # Training
 learning_rate = 0.0025
-lambda_loss_amount = 0.0015
+lambda_loss_amount = 0.0055
+training_iters = 200  # Loop 1000 times on the dataset
+batch_size = 400
+display_iter = 4000  # To show test set accuracy during training
+model_save = 20
+
+k_fold_num = 0
+fold = './data/actdata/'
+savename = '_selftest_kfold'+str(k_fold_num)
 LABELS = ['double', 'fist', 'spread', 'six', 'wavein', 'waveout', 'yes', 'no', 'finger', 'snap']
-tmp_use_len = [150, 150, 250, 450, 800, 800, 800, 800, 400]
+
 
 def Matrix_to_CSV(filename, data):
-    with open(filename, "a", newline='', ) as csvfile:
+    with open(filename, "w", newline='', ) as csvfile:
         writer = csv.writer(csvfile)
         # 先写入columns_name
         # writer.writerow(["emg1", "emg2", "emg3", "emg4", "emg5", "emg6", "emg7", "emg8", "label"])
         for row in data:
-            writer.writerow(row)
+            writer.writerow([row])
 
-def LSTM_RNN_tmp(x0,x1,x2,seq0,seq1,seq2):
-    with tf.variable_scope('ori'):
-        lstm_cell_1 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
-        lstm_cell_2 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
-        lstm_cells = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2])
-        outputs, _ = tf.nn.dynamic_rnn(lstm_cells, inputs=x0, sequence_length=tf.to_int32(seq0), dtype=tf.float32)
-        lstm_out0 = tf.divide(tf.reduce_sum(outputs, 1), seq0[:, None])
 
-    with tf.variable_scope('avg'):
-        lstm_cell_1 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
-        lstm_cell_2 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
-        lstm_cells = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2])
-        outputs, _ = tf.nn.dynamic_rnn(lstm_cells, inputs=x1, sequence_length=tf.to_int32(seq1), dtype=tf.float32)
-        lstm_out1 = tf.divide(tf.reduce_sum(outputs, 1), seq1[:, None])
-
-    with tf.variable_scope('std'):
+def LSTM_RNN_tmp(x2,x3,x4,x6,
+                 seq2,seq3,seq4,seq6):
+    # dwt
+    with tf.variable_scope('dwt2'):
         lstm_cell_1 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
         lstm_cell_2 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
         lstm_cells = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2])
         outputs, _ = tf.nn.dynamic_rnn(lstm_cells, inputs=x2, sequence_length=tf.to_int32(seq2), dtype=tf.float32)
         lstm_out2 = tf.divide(tf.reduce_sum(outputs, 1), seq2[:, None])
+        lstm_out2 = tf.nn.dropout(lstm_out2, keep_prob=0.5)
+        lstm_out2 = tf.layers.dense(lstm_out2, 10)
+    with tf.variable_scope('dwt3'):
+        lstm_cell_1 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
+        lstm_cell_2 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
+        lstm_cells = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2])
+        outputs, _ = tf.nn.dynamic_rnn(lstm_cells, inputs=x3, sequence_length=tf.to_int32(seq3), dtype=tf.float32)
+        lstm_out3 = tf.divide(tf.reduce_sum(outputs, 1), seq3[:, None])
+        lstm_out3 = tf.nn.dropout(lstm_out3, keep_prob=0.5)
+        lstm_out3 = tf.layers.dense(lstm_out3, 10)
 
-    lstm_out0 = tf.concat([lstm_out0, lstm_out1], 1)
-    lstm_out0 = tf.concat([lstm_out0, lstm_out2], 1)
-    with tf.variable_scope('fullConnect'):
-        # lstm_out = tf.nn.dropout(lstm_out, keep_prob=0.8)
-        lstm_out = tf.layers.dense(lstm_out0, 10)
-    return lstm_out
+    # time domain
+    with tf.variable_scope('ori'):
+        lstm_cell_1 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
+        lstm_cell_2 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
+        lstm_cells = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2])
+        outputs, _ = tf.nn.dynamic_rnn(lstm_cells, inputs=x4, sequence_length=tf.to_int32(seq4), dtype=tf.float32)
+        lstm_out4 = tf.divide(tf.reduce_sum(outputs, 1), seq4[:, None])
+        lstm_out4 = tf.nn.dropout(lstm_out4, keep_prob=0.8)
+        lstm_out4 = tf.layers.dense(lstm_out4, 10)
+    with tf.variable_scope('std'):
+        lstm_cell_1 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
+        lstm_cell_2 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
+        lstm_cells = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2])
+        outputs, _ = tf.nn.dynamic_rnn(lstm_cells, inputs=x6, sequence_length=tf.to_int32(seq6), dtype=tf.float32)
+        lstm_out6 = tf.divide(tf.reduce_sum(outputs, 1), seq6[:, None])
+        lstm_out6 = tf.nn.dropout(lstm_out6, keep_prob=0.6)
+        lstm_out6 = tf.layers.dense(lstm_out6, 10)
 
-
-
+    return [lstm_out2, lstm_out3, lstm_out4, lstm_out6]
 
 def main():
     time1 = time.time()
+    # tmp_trans_wavelet.main_datatrans(fold)
+    print('loading data...')
+    train_sets = All_data_merge(foldname=fold, max_seq=max_seq,
+                                num_class=n_classes, trainable=True, kfold_num=k_fold_num)
+    test_sets = All_data_merge(foldname=fold, max_seq=max_seq,
+                               num_class=n_classes, trainable=False, kfold_num=k_fold_num)
+    train_data_len = len(train_sets.all_label)
+    print('train:', len(train_sets.all_label), 'test:', len(test_sets.all_label))
+    print('load data time:', time.time()-time1)
 
-    # load sess and model
     # Graph input/output
-    x0 = tf.placeholder(tf.float32, [None, tmp_use_len[0], n_inputs])
-    x1 = tf.placeholder(tf.float32, [None, tmp_use_len[1], n_inputs])
     x2 = tf.placeholder(tf.float32, [None, tmp_use_len[2], n_inputs])
-    seq_len0 = tf.placeholder(tf.float32, [None])
-    seq_len1 = tf.placeholder(tf.float32, [None])
+    x3 = tf.placeholder(tf.float32, [None, tmp_use_len[3], n_inputs])
+    x4 = tf.placeholder(tf.float32, [None, tmp_use_len[4], n_inputs])
+    x6 = tf.placeholder(tf.float32, [None, tmp_use_len[6], n_inputs])
     seq_len2 = tf.placeholder(tf.float32, [None])
+    seq_len3 = tf.placeholder(tf.float32, [None])
+    seq_len4 = tf.placeholder(tf.float32, [None])
+    seq_len6 = tf.placeholder(tf.float32, [None])
     y = tf.placeholder(tf.float32, [None, n_classes])
 
-    preds = LSTM_RNN_tmp(x0, x1, x2, seq_len0, seq_len1, seq_len2)
+    preds = LSTM_RNN_tmp(x2, x3, x4, x6,
+                         seq_len2, seq_len3, seq_len4, seq_len6)
+
+    costs = []
+    for i_preds in range(len(preds)):
+        costs.append(tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits_v2(labels=y, logits=preds[i_preds])))
+
     # Loss, optimizer and evaluation
-    saver = tf.train.Saver()
+    l2 = lambda_loss_amount * sum(
+        tf.nn.l2_loss(tf_var) for tf_var in tf.trainable_variables()
+    )
+    # L2 loss prevents this overkill neural network to overfit the data
+
+    cost = l2+sum(costs)  # Softmax loss
+    pred = sum(preds)
+    optimizer = tf.train.AdamOptimizer(learning_rate=learning_rate).minimize(cost)  # Adam Optimizer
+
+    correct_pred = tf.equal(tf.argmax(pred, 1), tf.argmax(y, 1))
+    accuracy = tf.reduce_mean(tf.cast(correct_pred, tf.float32))
+
+    saver = tf.train.Saver(max_to_keep=12)
     # start train and test
     # To keep track of training's performance
-
-
+    test_losses = []
+    test_accuracies = []
+    train_losses = []
+    train_accuracies = []
 
     # Launch the graph
     sess = tf.InteractiveSession(config=tf.ConfigProto(log_device_placement=False))
-    # assert os.path.exists(foldname)
-    saver.restore(sess, model_name)
-    # load accomplished
-    print('Model are loaded!\t{}s'.format(time.time()-time1))
+    init = tf.global_variables_initializer()
+    sess.run(init)
+    # saver.restore(sess, "./lstm/model_mergeall_kfold4.ckpt-200")
+    # Perform Training steps with "batch_size" amount of example data at each loop
+    step = 1
+    print("Start train!")
 
-    var = tf.global_variables()  # 取出全局中所有的参数
-    var_flow_restore2 = [val for val in var if 'avg' in val.name]  # 取出名字中有‘flownet’的参数
-    saver2 = tf.train.Saver(var_flow_restore2)  # 这句话就是关键了，可以网Saver中传参数
-    saver2.restore(sess, './tmpmodel/1/model_feature1_kfold0.ckpt-3200')  # 然后就往sess对应的图中导入了参数（var_flow_restore
+    while step * batch_size <= training_iters * train_data_len:
+        batch_ys, batch_xs, batch_seq_len = train_sets.next(batch_size)
+        feed_dic = {
+            y: batch_ys,
+            x2: batch_xs[2],
+            x3: batch_xs[3],
+            x4: batch_xs[4],
+            x6: batch_xs[6],
+            seq_len2: batch_seq_len[2],
+            seq_len3: batch_seq_len[3],
+            seq_len4: batch_seq_len[4],
+            seq_len6: batch_seq_len[6],
+        }
+        # Fit training using batch data
+        _, loss, acc = sess.run(
+            [optimizer, cost, accuracy],
+            feed_dict=feed_dic
+        )
+        train_losses.append(loss)
+        train_accuracies.append(acc)
 
-    # df_data = []
-    print("Start test!")
-    test_sets = All_data_merge(foldname=fold, max_seq=max_seq,
-                               num_class=n_classes, trainable=False, kfold_num=k_fold_num)
+        # Evaluate network only at some steps for faster training:
+        if (step * batch_size % display_iter == 0) or (step == 1) or (
+                step * batch_size > training_iters * train_data_len):
+            # To not spam console, show training accuracy/loss in this "if"
+            print("Training iter #" + str(step * batch_size) + \
+                  ":   Batch Loss = " + "{:.6f}".format(loss) + \
+                  ", Accuracy = {}".format(acc))
+            feed_dic = {
+                y: test_sets.all_label,
+                x2: test_sets.data[2],
+                x3: test_sets.data[3],
+                x4: test_sets.data[4],
+                x6: test_sets.data[6],
+                seq_len2: test_sets.seqlen[2],
+                seq_len3: test_sets.seqlen[3],
+                seq_len4: test_sets.seqlen[4],
+                seq_len6: test_sets.seqlen[6],
+            }
 
-    result_labels = test_sets.all_label.argmax(1)
+            # Evaluation on the test set (no learning made here - just evaluation for diagnosis)
+            loss, acc = sess.run(
+                [cost, accuracy],
+                feed_dict=feed_dic
+            )
+            test_losses.append(loss)
+            test_accuracies.append(acc)
+            print("PERFORMANCE ON TEST SET: " + \
+                  "Batch Loss = {}".format(loss) + \
+                  ", Accuracy = {}".format(acc))
+
+        # save the model:
+        if (step * batch_size % (display_iter * model_save) == 0) or (
+                        step * batch_size > training_iters * train_data_len):
+            save_path = saver.save(sess, "./lstm2/model{}.ckpt".format(savename), global_step=step)
+            print("Model saved in file: %s" % save_path)
+            # save loss and acc
+            # save and load
+            Matrix_to_CSV(
+                './loss_dir2/{}_hd{}iter{}ba{}lr{}train_loss.txt'.format(savename, n_hidden, training_iters, batch_size,
+                                                                         learning_rate), train_losses)
+            Matrix_to_CSV(
+                './loss_dir2/{}_hd{}iter{}ba{}lr{}train_acc.txt'.format(savename, n_hidden, training_iters, batch_size,
+                                                                        learning_rate), train_accuracies)
+            Matrix_to_CSV(
+                './loss_dir2/{}_hd{}iter{}ba{}lr{}test_loss.txt'.format(savename, n_hidden, training_iters, batch_size,
+                                                                        learning_rate), test_losses)
+            Matrix_to_CSV(
+                './loss_dir2/{}_hd{}iter{}ba{}lr{}test_acc.txt'.format(savename, n_hidden, training_iters, batch_size,
+                                                                       learning_rate), test_accuracies)
+        step += 1
+
+    print("Optimization Finished!")
+
+    # Accuracy for test data
     feed_dic = {
         y: test_sets.all_label,
-        x0: test_sets.data[0],
-        x1: test_sets.data[1],
         x2: test_sets.data[2],
         x3: test_sets.data[3],
         x4: test_sets.data[4],
-        x5: test_sets.data[5],
         x6: test_sets.data[6],
-        x7: test_sets.data[7],
-        x8: test_sets.data[8],
-        seq_len0: test_sets.seqlen[0],
-        seq_len1: test_sets.seqlen[1],
         seq_len2: test_sets.seqlen[2],
         seq_len3: test_sets.seqlen[3],
         seq_len4: test_sets.seqlen[4],
-        seq_len5: test_sets.seqlen[5],
-        seq_len6: test_sets.seqlen[6],
-        seq_len7: test_sets.seqlen[7],
-        seq_len8: test_sets.seqlen[8]
+        seq_len6: test_sets.seqlen[6]
     }
-    # Accuracy for test data
-    one_hot_predictions = sess.run(
-        preds,
+    one_hot_predictions, accuracy, final_loss = sess.run(
+        [pred, accuracy, cost],
         feed_dict=feed_dic
     )
 
-    predictions = sum(one_hot_predictions).argmax(1)
-    _percision = metrics.precision_score(result_labels, predictions, average="weighted")
-    _recall = metrics.recall_score(result_labels, predictions, average="weighted")
-    _f1Score = metrics.f1_score(result_labels, predictions, average="weighted")
-    # zhengcun
+    test_losses.append(final_loss)
+    test_accuracies.append(accuracy)
+    # save and load
+    Matrix_to_CSV(
+        './loss_dir2/{}_hd{}iter{}ba{}lr{}train_loss.txt'.format(savename, n_hidden, training_iters, batch_size,
+                                                                 learning_rate), train_losses)
+    Matrix_to_CSV(
+        './loss_dir2/{}_hd{}iter{}ba{}lr{}train_acc.txt'.format(savename, n_hidden, training_iters, batch_size,
+                                                                learning_rate), train_accuracies)
+    Matrix_to_CSV(
+        './loss_dir2/{}_hd{}iter{}ba{}lr{}test_loss.txt'.format(savename, n_hidden, training_iters, batch_size,
+                                                                learning_rate), test_losses)
+    Matrix_to_CSV('./loss_dir2/{}_hd{}iter{}ba{}lr{}test_acc.txt'.format(savename, n_hidden, training_iters, batch_size,
+                                                                         learning_rate), test_accuracies)
 
-    print("Precision: {}%".format(100 * _percision))
-    print("Recall: {}%".format(100 * _recall))
-    print("f1_score: {}%".format(100 * _f1Score))
+    print("FINAL RESULT: " + \
+          "Batch Loss = {}".format(final_loss) + \
+          ", Accuracy = {}".format(accuracy))
+    print("All train time = {}".format(time.time() - time1))
+    save_path = saver.save(sess, "./lstm2/model{}.ckpt-final".format(savename))
+    print("Final Model saved in file: %s" % save_path)
 
+
+    # plt.show()
+
+    # train_losses = np.loadtxt('./loss_dir/train_loss.txt')
+    # train_accuracies = np.loadtxt('../loss_dir/train_acc.txt')
+    # test_losses = np.loadtxt('../loss_dir/test_loss.txt')
+    # test_accuracies = np.loadtxt('../loss_dir/test_acc.txt')
+
+    predictions = one_hot_predictions.argmax(1)
+    result_labels = test_sets.all_label.argmax(1)
+    print("Precision: {}%".format(100 * metrics.precision_score(result_labels, predictions, average="weighted")))
+    print("Recall: {}%".format(100 * metrics.recall_score(result_labels, predictions, average="weighted")))
+    print("f1_score: {}%".format(100 * metrics.f1_score(result_labels, predictions, average="weighted")))
+
+    print("")
     print("Confusion Matrix:")
     confusion_matrix = metrics.confusion_matrix(result_labels, predictions)
     print(confusion_matrix)
+    normalised_confusion_matrix = np.array(confusion_matrix, dtype=np.float32) / np.sum(confusion_matrix) * 100
 
+    print("")
+    print("Confusion matrix (normalised to % of total test data):")
+    print(normalised_confusion_matrix)
+    print("Note: training and testing data is not equally distributed amongst classes, ")
+    print("so it is normal that more than a 6th of the data is correctly classifier in the last category.")
+
+    # Plot Results:
+    width = 12
+    height = 12
+    plt.figure(figsize=(width, height))
+    plt.imshow(
+        normalised_confusion_matrix,
+        interpolation='nearest',
+        cmap=plt.cm.rainbow
+    )
+    plt.title("Confusion matrix \n(normalised to % of total test data)")
+    plt.colorbar()
+    tick_marks = np.arange(n_classes)
+    plt.yticks(tick_marks, LABELS)
+    plt.savefig('./loss_dir2/Matrix{}.png'.format(savename), dpi=600, bbox_inches='tight')
+
+
+    font = {
+        'family': 'Times New Roman',
+        'weight': 'bold',
+        'size': 18
+    }
+    matplotlib.rc('font', **font)
+    # matplotlib.use('Agg')
+    width = 12
+    height = 12
+    plt.figure(figsize=(width, height))
+
+    indep_train_axis = np.array(range(batch_size, (len(train_losses) + 1) * batch_size, batch_size))
+    plt.plot(indep_train_axis, np.array(train_losses), "b--", label="Train losses")
+    plt.plot(indep_train_axis, np.array(train_accuracies), "g--", label="Train accuracies")
+
+    indep_test_axis = np.append(
+        np.array(range(batch_size, len(test_losses) * display_iter, display_iter)[:-1]),
+        [training_iters * train_data_len]
+    )
+    plt.plot(indep_test_axis, np.array(test_losses), "b-", label="Test losses")
+    plt.plot(indep_test_axis, np.array(test_accuracies), "g-", label="Test accuracies")
+
+    plt.title("Training session's progress over iterations")
+    plt.legend(loc='upper right', shadow=True)
+    plt.ylabel('Training Progress (Loss or Accuracy values)')
+    plt.xlabel('Training iteration')
+    plt.savefig('./loss_dir2/accloss_{}.png'.format(savename), dpi=600, bbox_inches='tight')
 
     sess.close()
 

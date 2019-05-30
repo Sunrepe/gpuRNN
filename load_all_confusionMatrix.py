@@ -11,7 +11,8 @@ main8：all_lstm1 的pre结果投票成果
 main9：all_lstm1 的pre结果叠加成果
 main10: all_lstm3的every结果展示，以及最后所有人结果展示
 main11：all_lstm3的不同feature结果展示
-main
+main12:
+    实时识别结果记录。
 '''
 
 import os
@@ -23,6 +24,9 @@ import matplotlib.pyplot as plt
 import numpy as np
 from sklearn import metrics
 import seaborn as sns
+
+n_classes = 10
+LABELS = ['double', 'fist', 'spread', 'six', 'wavein', 'waveout', 'yes', 'no', 'finger', 'snap']
 
 def ShowHeatMap(DataFrame):
     colormap = plt.cm.RdBu
@@ -65,22 +69,30 @@ def Matrix_to_CSV_array(filename, data):
             writer.writerow(row)
 
 
-def f1scores(maxix,rangese):
-    recdi = np.sum(maxix,axis=1)
-    predi = np.sum(maxix,axis=0)
-    print(recdi)
+def Matrix_to_CSV_array_append(filename, data):
+    with open(filename, "a", newline='', ) as csvfile:
+        writer = csv.writer(csvfile)
+        for row in data:
+            writer.writerow(row)
+
+
+def f1scores(maxix, rangese=10):
+    recdi = np.sum(maxix, axis=1)
+    predi = np.sum(maxix, axis=0)
+    # print(recdi)
     # print(predi)
     rec = []
     pre = []
     f1sc = []
     for i in range(rangese):
-        tmp1 = maxix[i,i]/recdi[i]
-        tmp2 = maxix[i,i]/predi[i]
-        f1sc.append(2.0/(1.0/tmp1+1.0/tmp2)*10000)
-        rec.append(tmp1*10000)
-        pre.append(tmp2*10000)
+        tmp1 = maxix[i, i]/recdi[i]
+        tmp2 = maxix[i, i]/predi[i]
+        f1sc.append(2.0/(1.0/tmp1+1.0/tmp2)*100)
+        rec.append(tmp1*100)
+        pre.append(tmp2*100)
     accu = sum(rec)/rangese
-    return [['Recall:',np.array(rec,dtype='int')],['Precision:',np.array(pre,dtype='int')],['F1score:',np.array(f1sc,dtype='int')],accu]
+    return [rec, pre, f1sc], accu
+    # return [['Recall:',np.array(rec,dtype='int')],['Precision:',np.array(pre,dtype='int')],['F1score:',np.array(f1sc,dtype='int')],accu]
 
 
 def Read__mean_2(filename):
@@ -212,9 +224,10 @@ def main3():
     rec_ = []
     f1s_ = []
     label_one_hot = Read_data_res('./data/res10/all/label')
-    for i_fea in range(10):
+    for i_fea in range(1):
         print(stream[i_fea])
-        fea_num = i_fea
+        # fea_num = i_fea
+        fea_num = 9
         one_hot_predictions = get_one_hot_pre(fea_num)
         Matrix_to_CSV('./data/res10/all/pre_fea{}'.format(fea_num), one_hot_predictions)
 
@@ -232,26 +245,28 @@ def main3():
         print("")
         print("Confusion Matrix:")
         confusion_matrix = metrics.confusion_matrix(result_labels, predictions)
-        Matrix_to_CSV(filename='./matrix/all1_feas/matrix_fea{}.txt'.format(fea_num), data=confusion_matrix)
+        Matrix_to_CSV(filename='./matrix/all1_feas/matrix_fea{}.csv'.format(fea_num), data=confusion_matrix)
         print(confusion_matrix)
 
-        # normalised_confusion_matrix = np.array(confusion_matrix, dtype=np.float32) / np.sum(confusion_matrix) * 100
-        # width = 12
-        # height = 12
-        # plt.figure(figsize=(width, height))
-        # plt.imshow(
-        #     normalised_confusion_matrix,
-        #     interpolation='nearest',
-        #     cmap=plt.cm.rainbow
-        # )
-        # plt.title("Confusion matrix \n(normalised to % of total test data)")
-        # plt.colorbar()
-        # tick_marks = np.arange(10)
-        # plt.yticks(tick_marks, LABELS)
-        # plt.savefig('./matrix/all1_feas/matrix_fea{}.png'.format(fea_num), dpi=600, bbox_inches='tight')
-        print()
-        print("------------------------------")
-        print()
+        normalised_confusion_matrix = np.array(confusion_matrix, dtype=np.float32) / np.sum(confusion_matrix) * 100
+        width = 12
+        height = 12
+        plt.figure(figsize=(width, height))
+        plt.imshow(
+            normalised_confusion_matrix,
+            interpolation='nearest',
+            cmap=plt.cm.Blues
+        )
+        plt.title("Confusion matrix")
+        plt.colorbar()
+        tick_marks = np.arange(10)
+        plt.yticks(tick_marks, LABELS, fontsize=14)
+        plt.xticks(tick_marks, LABELS, fontsize=14)
+        # plt.show()
+        plt.savefig('./matrix/all1_feas/matrix_fea{}.png'.format(fea_num), dpi=300, bbox_inches='tight')
+        # print()
+        # print("------------------------------")
+        # print()
     # df = pd.DataFrame(pre_, index=stream, columns=["Precision"])
     # df["Recall"] = rec_
     # df["F1score"] = f1s_
@@ -543,14 +558,32 @@ def main10():
     print("")
     print("Confusion Matrix:")
     confusion_matrix = metrics.confusion_matrix(all_label, all_pre,)
+    Matrix_to_CSV_array('./matrix/all_3/matrix_final.csv', confusion_matrix)
     print(confusion_matrix)
 
-    stream = getPersons_every(fold)
-    stream.append('最终结果')
-    df = pd.DataFrame(pre_, index=stream, columns=["Precision"])
-    df["Recall"] = rec_
-    df["F1score"] = f1s_
-    df.to_csv('./matrix/all_3/all_tesult.csv')
+    normalised_confusion_matrix = np.array(confusion_matrix, dtype=np.float32) / np.sum(confusion_matrix) * 100
+    width = 12
+    height = 12
+    plt.figure(figsize=(width, height))
+    plt.imshow(
+        normalised_confusion_matrix,
+        interpolation='nearest',
+        cmap=plt.cm.Blues
+    )
+    plt.title("Confusion matrix")
+    plt.colorbar()
+    tick_marks = np.arange(10)
+    plt.yticks(tick_marks, LABELS)
+    plt.xticks(tick_marks, LABELS)
+    plt.show()
+    # plt.savefig('./matrix/all_3/matrix_all.png', dpi=600, bbox_inches='tight')
+
+    # stream = getPersons_every(fold)
+    # stream.append('最终结果')
+    # df = pd.DataFrame(pre_, index=stream, columns=["Precision"])
+    # df["Recall"] = rec_
+    # df["F1score"] = f1s_
+    # df.to_csv('./matrix/all_3/all_tesult.csv')
 
 
 def main11():
@@ -567,7 +600,8 @@ def main11():
     f1s_ = []
     fold = './data/res10/all_lstm3_feas/'
 
-    for i_fea in range(10):
+    for i_fea in [9]:
+    # for i_fea in range(10):
         print("------------------------------")
         print('All_fea{}'.format(i_fea))
         all_pre = []
@@ -592,19 +626,79 @@ def main11():
 
         print("")
         print("Confusion Matrix:")
-        confusion_matrix = metrics.confusion_matrix(all_label, all_pre,)
+        confusion_matrix = metrics.confusion_matrix(all_label, all_pre)
+
+        Matrix_to_CSV_array('./matrix/all_3/matrix_final-feas9.csv', confusion_matrix)
         print(confusion_matrix)
+        normalised_confusion_matrix = np.array(confusion_matrix, dtype=np.float32) / np.sum(confusion_matrix) * 100
+        width = 12
+        height = 12
+        plt.figure(figsize=(width, height))
+        plt.imshow(
+            normalised_confusion_matrix,
+            interpolation='nearest',
+            cmap=plt.cm.Blues
+        )
+        # plt.title("Confusion matrix")
+        plt.colorbar()
+        tick_marks = np.arange(10)
+        plt.yticks(tick_marks, LABELS, fontsize=14)
+        plt.xticks(tick_marks, LABELS, fontsize=14)
+        # plt.show()
+        plt.savefig('./matrix/all_3/matrix_final-feas9.png', dpi=300, bbox_inches='tight')
 
     # ------------------ feas ------------------
-    stream = []
-    for i in range(10):
-        stream.append('fea{}'.format(i))
-    df = pd.DataFrame(pre_, index=stream, columns=["Precision"])
-    df["Recall"] = rec_
-    df["F1score"] = f1s_
-    df.to_csv('./matrix/all_3/all3_feas_tesult.csv')
+    # stream = []
+    # for i in range(10):
+    #     stream.append('fea{}'.format(i))
+    # df = pd.DataFrame(pre_, index=stream, columns=["Precision"])
+    # df["Recall"] = rec_
+    # df["F1score"] = f1s_
+    # df.to_csv('./matrix/all_3/all3_feas_tesult.csv')
     # ------------------ feas ------------------
+
+
+def main12():
+    file = 'realtime_act-resandpre.txt'
+    data = Read__mean_2(file)
+    predictions = data[:, 1]
+    result_labels = data[:, 0]
+
+    print("len_pre:{},\tlen_label:{}".format(len(predictions), len(result_labels)))
+    print("最终结果：")
+    print(
+        "Precision: {}%".format(
+            100 * metrics.precision_score(result_labels, predictions, average="weighted")))
+    print("Recall: {}%".format(100 * metrics.recall_score(result_labels, predictions, average="weighted")))
+    print("f1_score: {}%".format(100 * metrics.f1_score(result_labels, predictions, average="weighted")))
+
+    confusion_matrix = metrics.confusion_matrix(result_labels, predictions)
+    print("")
+    print("Confusion Matrix:")
+    print(confusion_matrix)
+
+    Matrix_to_CSV_array_append('./matrix/realtime_matrix.csv', confusion_matrix)
+    sc, acc = f1scores(confusion_matrix, 10)
+    Matrix_to_CSV_array_append('./matrix/realtime_matrix.csv', np.array(sc))
+
+    print("Accuracy: {}".format(acc))
+    normalised_confusion_matrix = np.array(confusion_matrix, dtype=np.float32) / np.sum(confusion_matrix) * 100
+    # ShowHeatMap(normalised_confusion_matrix)
+    width = 12
+    height = 12
+    plt.figure(figsize=(width, height))
+    plt.imshow(
+        normalised_confusion_matrix,
+        interpolation='nearest',
+        cmap=plt.cm.Blues
+    )
+    plt.title("Confusion matrix \n(normalised to % of total test data)")
+    plt.colorbar()
+    tick_marks = np.arange(n_classes)
+    plt.yticks(tick_marks, LABELS)
+    plt.xticks(tick_marks, LABELS)
+    plt.show()
 
 
 if __name__ == '__main__':
-    main9()
+    main3()

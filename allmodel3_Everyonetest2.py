@@ -236,5 +236,6 @@ def main():
     sess.close()
     print("All time:{}".format(time.time()-time1))
 
+
 if __name__ == '__main__':
     main()

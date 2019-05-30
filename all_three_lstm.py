@@ -45,45 +45,6 @@ def Matrix_to_CSV(filename, data):
             writer.writerow([row])
 
 
-def LSTM_RNN(_X, seqlen, _weight, _bias):
-    with tf.variable_scope('dwt0'):
-        lstm_cell_1 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
-        lstm_cell_2 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
-        lstm_cells = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2])
-        outputs, _ = tf.nn.dynamic_rnn(lstm_cells, inputs=_X[0], sequence_length=tf.to_int32(seqlen[0]), dtype=tf.float32)
-        lstm_out0 = tf.divide(tf.reduce_sum(outputs, 1), seqlen[0][:, None])
-    with tf.variable_scope('dwt1'):
-        lstm_cell_1 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
-        lstm_cell_2 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
-        lstm_cells = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2])
-        outputs, _ = tf.nn.dynamic_rnn(lstm_cells, inputs=_X[1], sequence_length=tf.to_int32(seqlen[1]), dtype=tf.float32)
-        lstm_out1 = tf.divide(tf.reduce_sum(outputs, 1), seqlen[1][:, None])
-    with tf.variable_scope('dwt2'):
-        lstm_cell_1 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
-        lstm_cell_2 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
-        lstm_cells = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2])
-        outputs, _ = tf.nn.dynamic_rnn(lstm_cells, inputs=_X[2], sequence_length=tf.to_int32(seqlen[2]), dtype=tf.float32)
-        lstm_out2 = tf.divide(tf.reduce_sum(outputs, 1), seqlen[2][:, None])
-    with tf.variable_scope('dwt3'):
-        lstm_cell_1 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
-        lstm_cell_2 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
-        lstm_cells = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2])
-        outputs, _ = tf.nn.dynamic_rnn(lstm_cells, inputs=_X[3], sequence_length=tf.to_int32(seqlen[3]), dtype=tf.float32)
-        lstm_out3 = tf.divide(tf.reduce_sum(outputs, 1), seqlen[3][:, None])
-
-    # print(type(lstm_out0.shape))
-    # print(type(lstm_out1.shape))
-    # print(type(lstm_out2.shape))
-    # print(type(lstm_out3.shape))
-    lstm_out0 = tf.concat([lstm_out0, lstm_out1], 0)
-    lstm_out0 = tf.concat([lstm_out0, lstm_out2], 0)
-    lstm_out0 = tf.concat([lstm_out0, lstm_out3], 0)
-    with tf.variable_scope('fullConnect'):
-        lstm_out = tf.layers.dense(lstm_out0, 50)
-
-    return tf.matmul(lstm_out, _weight['out']) + _bias['out']
-
-
 def LSTM_RNN_tmp(x0,x1,x2,x3,x4,x5,x6,x7,x8,
                  seq0,seq1,seq2,seq3,seq4,seq5,seq6,seq7,seq8):
     # dwt
@@ -166,45 +127,6 @@ def LSTM_RNN_tmp(x0,x1,x2,x3,x4,x5,x6,x7,x8,
     # return tf.matmul(lstm_out, _weight['out']) + _bias['out']
 
 
-
-def LSTM_RNN_static(_X, seqlen, _weight, _bias):
-    lstm_cell_1 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
-    lstm_cell_2 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
-    # lstm_cell_3 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
-    # lstm_cells = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2, lstm_cell_3])
-    lstm_cells = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2])
-    # Get LSTM cell output
-    outputs, _ = tf.nn.dynamic_rnn(lstm_cells, inputs=_X, sequence_length=seqlen, dtype=tf.float32)
-    # many to one 关键。两种方案，一个是选择最后的输出，一个是选择所有输出的均值
-    # 方案一：
-    # 获取数据,此时维度为[none,batch_size,n_hidden],需要进一步降维
-    # lstm_out = tf.batch_gather(outputs, tf.to_int32(seqlen[:, None]-1))
-    # lstm_out = tf.reshape(lstm_out, [-1, n_hidden])
-    # 方案二：
-    lstm_out = tf.divide(tf.reduce_sum(outputs, 1), seqlen[:, None])
-
-    return tf.matmul(lstm_out, _weight['out']) + _bias['out']
-
-
-def LSTM_RNN_WT(_X, seqlen, _weight, _bias):
-    lstm_cell_1 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
-    lstm_cell_2 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
-    # lstm_cell_3 = tf.nn.rnn_cell.LSTMCell(n_hidden, forget_bias=1.0, state_is_tuple=True)
-    # lstm_cells = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2, lstm_cell_3])
-    lstm_cells = tf.nn.rnn_cell.MultiRNNCell([lstm_cell_1, lstm_cell_2])
-    # Get LSTM cell output
-    outputs, _ = tf.nn.dynamic_rnn(lstm_cells, inputs=_X, sequence_length=seqlen, dtype=tf.float32)
-    # many to one 关键。两种方案，一个是选择最后的输出，一个是选择所有输出的均值
-    # 方案一：
-    # 获取数据,此时维度为[none,batch_size,n_hidden],需要进一步降维
-    lstm_out = tf.batch_gather(outputs, tf.to_int32(seqlen[:, None]-1))
-    lstm_out = tf.reshape(lstm_out, [-1, n_hidden])
-    # 方案二：
-    # lstm_out = tf.divide(tf.reduce_sum(outputs, 1), seqlen[:, None])
-
-    return tf.matmul(lstm_out, _weight['out']) + _bias['out']
-
-
 def main():
     time1 = time.time()
     # tmp_trans_wavelet.main_datatrans(fold)
@@ -237,23 +159,6 @@ def main():
     seq_len7 = tf.placeholder(tf.float32, [None])
     seq_len8 = tf.placeholder(tf.float32, [None])
     y = tf.placeholder(tf.float32, [None, n_classes])
-
-    # Graph weights
-    # weights = {
-    #     'out': tf.Variable(tf.random_normal([n_hidden, n_classes], mean=1.0))
-    # }
-    # biases = {
-    #     'out': tf.Variable(tf.random_normal([n_classes]))
-    # }
-    #
-    # weights = {
-    #     'hidden': tf.Variable(tf.random_normal([n_inputs, n_hidden])),  # Hidden layer weights
-    #     'out': tf.Variable(tf.random_normal([n_hidden, n_classes], mean=1.0))
-    # }
-    # biases = {
-    #     'hidden': tf.Variable(tf.random_normal([n_hidden])),
-    #     'out': tf.Variable(tf.random_normal([n_classes]))
-    # }
 
     preds = LSTM_RNN_tmp(x0,x1,x2,x3,x4,x5,x6,x7,x8,
                         seq_len0,seq_len1,seq_len2,seq_len3,

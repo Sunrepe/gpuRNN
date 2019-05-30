@@ -1,16 +1,14 @@
 '''
-根据文件夹生成相关文件。
-此处作用是，根据训练好的Model，生成可以后期使用的res10与Res50数据
+根据所有的数据及网络训练的结果生成中间使用的res数据。
+    根据训练好的Model，生成可以后期使用的res10与Res50数据
+    可以使用res10数据对比不同特征流数据分类效果
+    可以使用Res50 数据进行全连接层网络训练
 '''
-
-from data_pre.diffeature import *
+from data_pre.alldata import *
 import tensorflow as tf
 import os
 import time
-import matplotlib
 import csv
-import matplotlib.pyplot as plt
-import numpy as np
 from sklearn import metrics
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'  # just error no warning
@@ -42,63 +40,6 @@ def Matrix_to_CSV(filename, data):
         writer = csv.writer(csvfile)
         for row in data:
             writer.writerow(row)
-
-
-def get_model(fea_num, kfold_num):
-    pass
-    if fea_num == 0 and kfold_num == 0:
-        model_path = 'E:/Research-bachelor/storeMODELs/2dif_feature/' \
-                     '{}/allmerge_f{}_kfold{}/' \
-                     'model_feature{}_kfold{}.ckpt-3000'.format(fea_num,fea_num,kfold_num,fea_num,kfold_num)
-    elif fea_num == 1 and kfold_num == 0:
-        model_path = 'E:/Research-bachelor/storeMODELs/2dif_feature/' \
-                     '{}/allmerge_f{}_kfold{}/' \
-                     'model_feature{}_kfold{}.ckpt-final'.format(fea_num,fea_num,kfold_num,fea_num,kfold_num)
-    elif fea_num == 2 and kfold_num == 0:
-        model_path = 'E:/Research-bachelor/storeMODELs/2dif_feature/' \
-                     '{}/allmerge_f{}_kfold{}/' \
-                     'model_feature{}_kfold{}.ckpt-2000'.format(fea_num,fea_num,kfold_num,fea_num,kfold_num)
-    elif fea_num == 3 and kfold_num == 0:
-        model_path = 'E:/Research-bachelor/storeMODELs/2dif_feature/' \
-                     '{}/allmerge_f{}_kfold{}/' \
-                     'model_feature{}_kfold{}.ckpt-2400'.format(fea_num,fea_num,kfold_num,fea_num,kfold_num)
-    elif fea_num == 4 and kfold_num == 0:
-        model_path = 'E:/Research-bachelor/storeMODELs/2dif_feature/' \
-                     '{}/allmerge_f{}_kfold{}/' \
-                     'model_feature{}_kfold{}.ckpt-2400'.format(fea_num,fea_num,kfold_num,fea_num,kfold_num)
-    elif fea_num == 5 and kfold_num == 0:
-        model_path = 'E:/Research-bachelor/storeMODELs/2dif_feature/' \
-                     '{}/allmerge_f{}_kfold{}/' \
-                     'model_feature{}_kfold{}.ckpt-2600'.format(fea_num,fea_num,kfold_num,fea_num,kfold_num)
-    elif fea_num == 6 and kfold_num == 0:
-        model_path = 'E:/Research-bachelor/storeMODELs/2dif_feature/' \
-                     '{}/allmerge_f{}_kfold{}/' \
-                     'model_feature{}_kfold{}.ckpt-final'.format(fea_num,fea_num,kfold_num,fea_num,kfold_num)
-    elif fea_num == 7 and kfold_num == 0:
-        model_path = 'E:/Research-bachelor/storeMODELs/2dif_feature/' \
-                     '{}/allmerge_f{}_kfold{}/' \
-                     'model_feature{}_kfold{}.ckpt-2000'.format(fea_num,fea_num,kfold_num,fea_num,kfold_num)
-    elif fea_num == 8 and kfold_num == 0:
-        model_path = 'E:/Research-bachelor/storeMODELs/2dif_feature/' \
-                     '{}/allmerge_f{}_kfold{}/' \
-                     'model_feature{}_kfold{}.ckpt-final'.format(fea_num,fea_num,kfold_num,fea_num,kfold_num)
-    elif fea_num == 0 and kfold_num == 1:
-        model_path = 'E:/Research-bachelor/storeMODELs/2dif_feature/' \
-                     '{}/allmerge_f{}_kfold{}/' \
-                     'model_feature{}_kfold{}.ckpt-3000'.format(fea_num,fea_num,kfold_num,fea_num,kfold_num)
-    elif fea_num == 1 and kfold_num == 1:
-        model_path = 'E:/Research-bachelor/storeMODELs/2dif_feature/' \
-                     '{}/allmerge_f{}_kfold{}/' \
-                     'model_feature{}_kfold{}.ckpt-3000'.format(fea_num,fea_num,kfold_num,fea_num,kfold_num)
-    elif fea_num == 2 and kfold_num == 1:
-        model_path = 'E:/Research-bachelor/storeMODELs/2dif_feature/' \
-                     '{}/allmerge_f{}_kfold{}/' \
-                     'model_feature{}_kfold{}.ckpt-3000'.format(fea_num,fea_num,kfold_num,fea_num,kfold_num)
-    elif fea_num == 3 and kfold_num == 1:
-        model_path = 'E:/Research-bachelor/storeMODELs/2dif_feature/' \
-                     '{}/allmerge_f{}_kfold{}/' \
-                     'model_feature{}_kfold{}.ckpt-3000'.format(fea_num,fea_num,kfold_num,fea_num,kfold_num)
-    return model_path
 
 
 def LSTM_RNN_f0(x, seq, _weight, _bias):

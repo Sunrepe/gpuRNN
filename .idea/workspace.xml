@@ -2,23 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e51bf105-f34c-4031-aa58-28fd3cc5807c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/data_svmfea_self/test_fold0.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/data_svmfea_self/test_fold1.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/data_svmfea_self/test_fold2.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/data_svmfea_self/test_fold3.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/data_svmfea_self/test_fold4.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/data_svmfea_self/train_fold0.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/data_svmfea_self/train_fold1.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/data_svmfea_self/train_fold2.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/data_svmfea_self/train_fold3.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/data_svmfea_self/train_fold4.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/matrix/svm_old.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pre_result/svm_old_label.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pre_result/svm_old_pre.txt" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/tmpdata/caimengyuan_finger_b.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/tmpdata/caimengyuan_finger_c.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/tmpdata/caimengyuan_fist_b.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/tmpdata/caimengyuan_fist_c.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/tmpdata/caimengyuan_no_b.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/tmpdata/caimengyuan_no_c.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/tmpdata/caimengyuan_six_b.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/tmpdata/caimengyuan_six_c.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/tmpdata/caimengyuan_snap_b.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/tmpdata/caimengyuan_snap_c.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/tmpdata/caimengyuan_spread_b.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/tmpdata/caimengyuan_spread_c.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/tmpdata/caimengyuan_wavein_b.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/tmpdata/caimengyuan_wavein_c.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/tmpdata/caimengyuan_waveout_b.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/tmpdata/caimengyuan_waveout_c.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/tmpdata/caimengyuan_yes_b.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/tmpdata/caimengyuan_yes_c.txt" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/all_three_lstm.py" afterPath="$PROJECT_DIR$/all_three_lstm.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/allmodel3_Everyonetest2.py" afterPath="$PROJECT_DIR$/allmodel3_Everyonetest2.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data_pre/alldata.py" afterPath="$PROJECT_DIR$/data_pre/alldata.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data_pre/get_svmfea_data.py" afterPath="$PROJECT_DIR$/data_pre/get_svmfea_data.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/getRes50and10.py" afterPath="$PROJECT_DIR$/getRes50and10.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/load_all_confusionMatrix.py" afterPath="$PROJECT_DIR$/load_all_confusionMatrix.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lstm_0405_kfold.py" afterPath="$PROJECT_DIR$/lstm_0405_kfold.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svm_after_net.py" afterPath="$PROJECT_DIR$/svm_after_net.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test.py" afterPath="$PROJECT_DIR$/test.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,16 +40,18 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/gpuRNN$oriandsmooth.coverage" NAME="oriandsmooth Coverage Results" MODIFIED="1555917186958" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/forPICS" />
+    <SUITE FILE_PATH="coverage/gpuRNN$dwt_pic_res.coverage" NAME="dwt_pic_res Coverage Results" MODIFIED="1557856331405" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/forPICS" />
     <SUITE FILE_PATH="coverage/gpuRNN$lstm_0410_emgandwavelet.coverage" NAME="lstm_0410_emgandwavelet Coverage Results" MODIFIED="1555037799100" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/gpuRNN$get_svmfea_data.coverage" NAME="get_svmfea_data Coverage Results" MODIFIED="1557740005542" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data_pre" />
+    <SUITE FILE_PATH="coverage/gpuRNN$get_svmfea_data.coverage" NAME="get_svmfea_data Coverage Results" MODIFIED="1557767914667" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data_pre" />
     <SUITE FILE_PATH="coverage/gpuRNN$lstm_0405_kfold.coverage" NAME="lstm_0405_kfold Coverage Results" MODIFIED="1555307258176" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/gpuRNN$svm_after_net.coverage" NAME="svm_after_net Coverage Results" MODIFIED="1557734655063" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/gpuRNN$load_all_confusionMatrix.coverage" NAME="load_all_confusionMatrix Coverage Results" MODIFIED="1557659874220" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/gpuRNN$svm_after_net.coverage" NAME="svm_after_net Coverage Results" MODIFIED="1557861653587" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/gpuRNN$load_all_confusionMatrix.coverage" NAME="load_all_confusionMatrix Coverage Results" MODIFIED="1557861132990" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$bilstm_0402.coverage" NAME="bilstm_0402 Coverage Results" MODIFIED="1554211984148" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$testEveryone.coverage" NAME="testEveryone Coverage Results" MODIFIED="1554951599362" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$rename_models.coverage" NAME="rename_models Coverage Results" MODIFIED="1556958603225" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$fcrnn_cnn.coverage" NAME="fcrnn_cnn Coverage Results" MODIFIED="1557484856682" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$lstm_mfcctest.coverage" NAME="lstm_mfcctest Coverage Results" MODIFIED="1553744180019" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/gpuRNN$real_time.coverage" NAME="real_time Coverage Results" MODIFIED="1557837630025" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$lstm_8pose.coverage" NAME="lstm_8pose Coverage Results" MODIFIED="1554256648416" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$softmax_cross_errors.coverage" NAME="softmax_cross_errors Coverage Results" MODIFIED="1557220449934" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$lstm_newown.coverage" NAME="lstm_newown Coverage Results" MODIFIED="1553529159829" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -54,7 +67,7 @@
     <SUITE FILE_PATH="coverage/gpuRNN$cnntest.coverage" NAME="cnntest Coverage Results" MODIFIED="1553865292101" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$feature_0get.coverage" NAME="feature_0get Coverage Results" MODIFIED="1556099359722" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$lstm_newdata04.coverage" NAME="lstm_newdata04 Coverage Results" MODIFIED="1554306706690" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/gpuRNN$test.coverage" NAME="test Coverage Results" MODIFIED="1555759941867" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/gpuRNN$test.coverage" NAME="test Coverage Results" MODIFIED="1559130492206" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$testtmp.coverage" NAME="testtmp Coverage Results" MODIFIED="1557133894409" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$diffeature.coverage" NAME="diffeature Coverage Results" MODIFIED="1556099227889" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data_pre" />
     <SUITE FILE_PATH="coverage/gpuRNN$test__1_.coverage" NAME="test (1) Coverage Results" MODIFIED="1555156105515" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -65,93 +78,79 @@
     <SUITE FILE_PATH="coverage/gpuRNN$lstm_testMerge.coverage" NAME="lstm_testMerge Coverage Results" MODIFIED="1553927273515" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$wavelet_trans.coverage" NAME="wavelet_trans Coverage Results" MODIFIED="1554862420513" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data_pre" />
     <SUITE FILE_PATH="coverage/gpuRNN$lstm_testNEWOLD.coverage" NAME="lstm_testNEWOLD Coverage Results" MODIFIED="1553927643948" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/gpuRNN$datadescribe.coverage" NAME="datadescribe Coverage Results" MODIFIED="1554898717396" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/gpuRNN$datadescribe.coverage" NAME="datadescribe Coverage Results" MODIFIED="1558288165712" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$cnnOLD.coverage" NAME="cnnOLD Coverage Results" MODIFIED="1553865280485" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$dwt_lstm.coverage" NAME="dwt_lstm Coverage Results" MODIFIED="1555292818349" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/gpuRNN$realTIME2.coverage" NAME="realTIME2 Coverage Results" MODIFIED="1557839404511" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$all_lstm.coverage" NAME="all_lstm Coverage Results" MODIFIED="1555322640850" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gpuRNN$getRes50and10.coverage" NAME="getRes50and10 Coverage Results" MODIFIED="1557656927723" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="feature_0get.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/feature_0get.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="387" column="89" lean-forward="true" selection-start-line="374" selection-start-column="4" selection-end-line="387" selection-end-column="89" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="get_svmfea_data.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data_pre/get_svmfea_data.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
-              <caret line="154" column="26" lean-forward="true" selection-start-line="154" selection-start-column="26" selection-end-line="154" selection-end-column="26" />
-              <folding>
-                <element signature="e#60#78#0" expanded="true" />
-                <element signature="e#134#351#0" expanded="false" />
-                <element signature="e#849#1103#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="svm_after_net.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/svm_after_net.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="378" column="11" lean-forward="false" selection-start-line="378" selection-start-column="11" selection-end-line="378" selection-end-column="11" />
-              <folding>
-                <element signature="e#166#196#0" expanded="true" />
-                <element signature="e#2062#6446#0" expanded="false" />
-                <element signature="e#6466#9016#0" expanded="false" />
-                <element signature="e#9036#12679#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="allmodel3_selfEveryone.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/allmodel3_selfEveryone.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="188" column="28" lean-forward="false" selection-start-line="188" selection-start-column="28" selection-end-line="188" selection-end-column="28" />
+            <state relative-caret-position="575">
+              <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="alldata.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data_pre/alldata.py">
+      <file leaf-file-name="all_three_lstm.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/all_three_lstm.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="549">
-              <caret line="1344" column="47" lean-forward="true" selection-start-line="1344" selection-start-column="47" selection-end-line="1344" selection-end-column="47" />
+            <state relative-caret-position="425">
+              <caret line="160" column="53" lean-forward="true" selection-start-line="159" selection-start-column="49" selection-end-line="160" selection-end-column="53" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="realTIME2.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/realTIME2.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="183">
+              <caret line="273" column="13" lean-forward="true" selection-start-line="264" selection-start-column="12" selection-end-line="273" selection-end-column="13" />
               <folding>
-                <element signature="e#74#291#0" expanded="false" />
-                <element signature="e#559#683#0" expanded="false" />
-                <element signature="e#710#971#0" expanded="false" />
-                <element signature="e#1082#1166#0" expanded="false" />
-                <element signature="e#1210#1685#0" expanded="false" />
-                <element signature="e#2170#2901#0" expanded="false" />
-                <element signature="e#2930#3708#0" expanded="false" />
-                <element signature="e#3745#3843#0" expanded="false" />
-                <element signature="e#4007#4055#0" expanded="false" />
-                <element signature="e#4083#4814#0" expanded="false" />
-                <element signature="e#4844#8285#0" expanded="false" />
-                <element signature="e#8315#11319#0" expanded="false" />
-                <element signature="e#11354#14382#0" expanded="false" />
-                <element signature="e#14417#17480#0" expanded="false" />
-                <element signature="e#17515#20599#0" expanded="false" />
-                <element signature="e#20633#23922#0" expanded="false" />
-                <element signature="e#23960#27221#0" expanded="false" />
-                <element signature="e#27254#30095#0" expanded="false" />
-                <element signature="e#30136#34047#0" expanded="false" />
-                <element signature="e#34081#38039#0" expanded="false" />
-                <element signature="e#38098#42694#0" expanded="false" />
-                <element signature="e#42725#46013#0" expanded="false" />
-                <element signature="e#47638#49271#0" expanded="false" />
-                <element signature="e#52892#55157#0" expanded="false" />
+                <element signature="e#2969#5444#0" expanded="false" />
+                <element signature="e#5492#8319#0" expanded="false" />
+                <element signature="e#9939#10226#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="svm_after_net.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/svm_after_net.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="217">
+              <caret line="410" column="18" lean-forward="false" selection-start-line="410" selection-start-column="18" selection-end-line="410" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2650">
+              <caret line="29" column="25" lean-forward="false" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
+              <folding>
+                <element signature="e#1461#3936#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="real_time.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/real_time.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="175">
+              <caret line="15" column="101" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="15" selection-end-column="101" />
+              <folding>
+                <element signature="e#2581#8165#0" expanded="false" />
+                <element signature="e#8213#11040#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -185,7 +184,12 @@
       <find>final</find>
       <find>Here</find>
       <find>pd</find>
+      <find>est_sets.seqlen</find>
+      <find>test_sets.seqlen</find>
     </findStrings>
+    <replaceStrings>
+      <replace>seqlen_</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -193,19 +197,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/cnntest.py" />
-        <option value="$PROJECT_DIR$/data_pre/origindata.py" />
-        <option value="$PROJECT_DIR$/lstm_testMerge.py" />
-        <option value="$PROJECT_DIR$/lstm_testNEWOLD.py" />
-        <option value="$PROJECT_DIR$/data_pre/myo_data.py" />
-        <option value="$PROJECT_DIR$/data_pre/cnndata.py" />
-        <option value="$PROJECT_DIR$/lstm_8pose.py" />
-        <option value="$PROJECT_DIR$/gru_8pose.py" />
-        <option value="$PROJECT_DIR$/testEveryoneBilstm.py" />
-        <option value="$PROJECT_DIR$/testEveryRNNCNN.py" />
-        <option value="$PROJECT_DIR$/data_pre/filter_data.py" />
-        <option value="$PROJECT_DIR$/lstm_newdata04.py" />
-        <option value="$PROJECT_DIR$/data_pre/wavelet_trans.py" />
         <option value="$PROJECT_DIR$/tmp_lstm.py" />
         <option value="$PROJECT_DIR$/data_pre/test.py" />
         <option value="$PROJECT_DIR$/datadescribe.py" />
@@ -222,9 +213,6 @@
         <option value="$PROJECT_DIR$/data_pre/myo-sdk-win-0.9.0/diffeature.py" />
         <option value="$PROJECT_DIR$/all_lstm.py" />
         <option value="$PROJECT_DIR$/fcrnn.py" />
-        <option value="$PROJECT_DIR$/test.py" />
-        <option value="$PROJECT_DIR$/all_three_lstm.py" />
-        <option value="$PROJECT_DIR$/lstm_0405_kfold.py" />
         <option value="$PROJECT_DIR$/reget_modelpath.py" />
         <option value="$PROJECT_DIR$/rename_models.py" />
         <option value="$PROJECT_DIR$/testEveryone.py" />
@@ -232,18 +220,34 @@
         <option value="$PROJECT_DIR$/testtmp.py" />
         <option value="$PROJECT_DIR$/allmodel3_testEveryone.py" />
         <option value="$PROJECT_DIR$/data_pre/dataFortest.py" />
-        <option value="$PROJECT_DIR$/allmodel3_Everyonetest2.py" />
         <option value="$PROJECT_DIR$/fcrnn_cnn.py" />
         <option value="$PROJECT_DIR$/res_mid_recode.py" />
-        <option value="$PROJECT_DIR$/getRes50and10.py" />
-        <option value="$PROJECT_DIR$/load_all_confusionMatrix.py" />
-        <option value="$PROJECT_DIR$/data_pre/diffeature.py" />
         <option value="$PROJECT_DIR$/feature_0get.py" />
         <option value="$PROJECT_DIR$/readme.txt" />
         <option value="$PROJECT_DIR$/data/data_svmfea_self.py" />
         <option value="$PROJECT_DIR$/data_pre/get_svmfea_data.py" />
         <option value="$PROJECT_DIR$/data_pre/alldata.py" />
+        <option value="$PROJECT_DIR$/allmodel3_Everyonetest2.py" />
+        <option value="$PROJECT_DIR$/real_time.py" />
+        <option value="$PROJECT_DIR$/data_pre/diffeature.py" />
+        <option value="$PROJECT_DIR$/forPICS/dwt_pic_res.py" />
+        <option value="$PROJECT_DIR$/load_all_confusionMatrix.py" />
         <option value="$PROJECT_DIR$/svm_after_net.py" />
+        <option value="$PROJECT_DIR$/../../周旭峰的毕业设计/2-程序/EMG_RNN/data_pre/myo_data.py" />
+        <option value="$PROJECT_DIR$/../../周旭峰的毕业设计/2-程序/EMG_RNN/data_pre/renameCdata.py" />
+        <option value="$PROJECT_DIR$/lstm_0405_kfold.py" />
+        <option value="$PROJECT_DIR$/all_three_lstm.py" />
+        <option value="$PROJECT_DIR$/../../周旭峰的毕业设计/2-程序/EMG_RNN/data_pre/alldata.py" />
+        <option value="$PROJECT_DIR$/../../周旭峰的毕业设计/2-程序/EMG_RNN/data_pre/get_svmfea_data.py" />
+        <option value="$PROJECT_DIR$/../../周旭峰的毕业设计/2-程序/EMG_RNN/fcrnn_cnn.py" />
+        <option value="$PROJECT_DIR$/../../周旭峰的毕业设计/2-程序/EMG_RNN/all_lstm1.py" />
+        <option value="$PROJECT_DIR$/../../周旭峰的毕业设计/2-程序/EMG_RNN/all_lstm3.py" />
+        <option value="$PROJECT_DIR$/realTIME2.py" />
+        <option value="$PROJECT_DIR$/../../周旭峰的毕业设计/2-程序/EMG_RNN/real_time.py" />
+        <option value="$PROJECT_DIR$/../../周旭峰的毕业设计/2-程序/EMG_RNN/svm_old.py" />
+        <option value="$PROJECT_DIR$/getRes50and10.py" />
+        <option value="$PROJECT_DIR$/../../周旭峰的毕业设计/2-程序/EMG_RNN/get_Res50and10.py" />
+        <option value="$PROJECT_DIR$/test.py" />
       </list>
     </option>
   </component>
@@ -254,7 +258,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="676" />
+    <option name="x" value="-7" />
     <option name="width" value="697" />
     <option name="height" value="745" />
   </component>
@@ -273,6 +277,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -280,23 +286,10 @@
               <item name="gpuRNN" type="b2602c69:ProjectViewProjectNode" />
               <item name="gpuRNN" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="gpuRNN" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gpuRNN" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gpuRNN" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gpuRNN" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-              <item name="data_svmfea_self" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -305,13 +298,13 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\Research-bachelor\python\gpuRNN\data_pre" />
-      <recent name="E:\Research-bachelor\python\gpuRNN" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\Research-bachelor\python\gpuRNN\matrix\all3kfold0" />
       <recent name="E:\Research-bachelor\python\gpuRNN\forPICS" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Research-bachelor\python\gpuRNN\data_pre" />
+      <recent name="E:\Research-bachelor\python\gpuRNN" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -326,26 +319,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.get_svmfea_data">
-    <configuration name="alldata" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data_pre" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="gpuRNN" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data_pre/alldata.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-    </configuration>
-    <configuration name="getRes50and10" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.test">
+    <configuration name="datadescribe" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -358,25 +333,25 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="gpuRNN" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/getRes50and10.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/datadescribe.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <configuration name="get_svmfea_data" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="dwt_pic_res" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data_pre" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/forPICS" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="gpuRNN" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data_pre/get_svmfea_data.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/forPICS/dwt_pic_res.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -417,20 +392,38 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="gpuRNN" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.load_all_confusionMatrix" />
-      <item index="1" class="java.lang.String" itemvalue="Python.getRes50and10" />
-      <item index="2" class="java.lang.String" itemvalue="Python.get_svmfea_data" />
-      <item index="3" class="java.lang.String" itemvalue="Python.alldata" />
-      <item index="4" class="java.lang.String" itemvalue="Python.svm_after_net" />
+      <item index="1" class="java.lang.String" itemvalue="Python.svm_after_net" />
+      <item index="2" class="java.lang.String" itemvalue="Python.dwt_pic_res" />
+      <item index="3" class="java.lang.String" itemvalue="Python.datadescribe" />
+      <item index="4" class="java.lang.String" itemvalue="Python.test" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.get_svmfea_data" />
-        <item index="1" class="java.lang.String" itemvalue="Python.svm_after_net" />
-        <item index="2" class="java.lang.String" itemvalue="Python.alldata" />
+        <item index="0" class="java.lang.String" itemvalue="Python.test" />
+        <item index="1" class="java.lang.String" itemvalue="Python.datadescribe" />
+        <item index="2" class="java.lang.String" itemvalue="Python.svm_after_net" />
         <item index="3" class="java.lang.String" itemvalue="Python.load_all_confusionMatrix" />
-        <item index="4" class="java.lang.String" itemvalue="Python.getRes50and10" />
+        <item index="4" class="java.lang.String" itemvalue="Python.dwt_pic_res" />
       </list>
     </recent_temporary>
   </component>
@@ -460,13 +453,13 @@
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21331316" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18986385" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901135" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28687197" sideWeight="0.50680786" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28687197" sideWeight="0.49546143" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.46029174" sideWeight="0.49319214" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46029174" sideWeight="0.49546143" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.49319214" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28038898" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -489,413 +482,23 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="15" />
+      <option name="time" value="23" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/datadescribe.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="173" column="0" lean-forward="false" selection-start-line="173" selection-start-column="0" selection-end-line="173" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/all_two_lstm.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="875">
-          <caret line="44" column="34" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="44" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Program/Anaconda/Lib/site-packages/tensorflow/python/framework/ops.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="1630" column="0" lean-forward="false" selection-start-line="1630" selection-start-column="0" selection-end-line="1630" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data_pre/cnndata.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="625">
-          <caret line="27" column="25" lean-forward="false" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cnn_newdata.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="214" column="25" lean-forward="false" selection-start-line="214" selection-start-column="25" selection-end-line="214" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2775">
-          <caret line="138" column="37" lean-forward="false" selection-start-line="138" selection-start-column="36" selection-end-line="138" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/all_three_lstm.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lstm_0405_kfold.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="26" column="18" lean-forward="false" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/res10/test/fea0_kfold0">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/all_lstm.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10850">
-          <caret line="470" column="27" lean-forward="false" selection-start-line="461" selection-start-column="4" selection-end-line="470" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PicandMatrix.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2126">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/matrix/all_3/all_model3Matrix_kfold0.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/matrix/all3kfold0/all_model3Matrix_kfold0.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/cs_errors/kfold0" />
-    <entry file="file://$PROJECT_DIR$/data/cs_errors/kfold0.csv" />
-    <entry file="file://$PROJECT_DIR$/data/cs_errors/res10_kfold0.csv" />
-    <entry file="file://C:/Program/Anaconda/Lib/site-packages/tensorflow/python/client/session.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3170">
-          <caret line="1127" column="0" lean-forward="false" selection-start-line="1127" selection-start-column="0" selection-end-line="1127" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rename_models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="67">
-          <caret line="27" column="34" lean-forward="false" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fcrnn.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="172" column="63" lean-forward="false" selection-start-line="172" selection-start-column="63" selection-end-line="172" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reget_modelpath.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1927">
-          <caret line="197" column="36" lean-forward="false" selection-start-line="197" selection-start-column="36" selection-end-line="197" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/res10/testLabel_kfold0">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testEveryoneBilstm.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/res10/all/label">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-200834">
-          <caret line="2" column="39" lean-forward="true" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testEveryone.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-825">
-          <caret line="32" column="96" lean-forward="false" selection-start-line="32" selection-start-column="96" selection-end-line="32" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testEveryRNNCNN.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="23" column="33" lean-forward="false" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/res10/all/pre_fea0">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-201034">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/res10/all/pre_fea9">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-201034">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/res10/label_fea9_kfold0">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/all_lstm3/kfold0/checkpoint">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/allmodel3_testEveryone.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2225">
-          <caret line="144" column="102" lean-forward="false" selection-start-line="144" selection-start-column="11" selection-end-line="144" selection-end-column="102" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res_mid_recode.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="411" column="16" lean-forward="true" selection-start-line="313" selection-start-column="0" selection-end-line="411" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data_pre/dataFortest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-425">
-          <caret line="207" column="44" lean-forward="false" selection-start-line="207" selection-start-column="44" selection-end-line="207" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fcrnn_cnn.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="76" column="11" lean-forward="false" selection-start-line="76" selection-start-column="11" selection-end-line="76" selection-end-column="11" />
-          <folding>
-            <element signature="e#20#50#0" expanded="false" />
-            <element signature="e#1079#1353#0" expanded="false" />
-            <element signature="e#1401#1546#0" expanded="false" />
-            <element signature="e#1585#2340#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/allmodel3_Everyonetest2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="58" column="17" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="58" selection-end-column="17" />
-          <folding>
-            <element signature="e#1104#1249#0" expanded="false" />
-            <element signature="e#1299#1602#0" expanded="false" />
-            <element signature="e#1718#7471#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testtmp.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-322">
-          <caret line="360" column="16" lean-forward="false" selection-start-line="360" selection-start-column="16" selection-end-line="360" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data_pre/diffeature.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="12" column="20" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="12" selection-end-column="20" />
-          <folding>
-            <element signature="e#74#291#0" expanded="false" />
-            <element signature="e#838#922#0" expanded="false" />
-            <element signature="e#1473#2204#0" expanded="false" />
-            <element signature="e#2233#3011#0" expanded="false" />
-            <element signature="e#3048#3146#0" expanded="false" />
-            <element signature="e#3189#3270#0" expanded="false" />
-            <element signature="e#3310#3358#0" expanded="false" />
-            <element signature="e#3386#4117#0" expanded="false" />
-            <element signature="e#4167#7611#0" expanded="false" />
-            <element signature="e#7676#11924#0" expanded="false" />
-            <element signature="e#11963#15456#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/getRes50and10.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="43" selection-end-column="32" />
-          <folding>
-            <element signature="e#1261#4837#0" expanded="false" />
-            <element signature="e#9873#12848#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/data_svmfea/caimengyuan_svmfeas.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/readme.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="61" lean-forward="false" selection-start-line="2" selection-start-column="61" selection-end-line="2" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/softmax_cross_errors.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-189">
-          <caret line="153" column="18" lean-forward="false" selection-start-line="153" selection-start-column="18" selection-end-line="153" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/load_all_confusionMatrix.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="365" column="24" lean-forward="true" selection-start-line="365" selection-start-column="24" selection-end-line="365" selection-end-column="24" />
-          <folding>
-            <element signature="e#243#252#0" expanded="true" />
-            <element signature="e#813#1063#0" expanded="false" />
-            <element signature="e#1105#1377#0" expanded="false" />
-            <element signature="e#1425#1570#0" expanded="false" />
-            <element signature="e#1606#2120#0" expanded="false" />
-            <element signature="e#2155#2372#0" expanded="false" />
-            <element signature="e#2408#2581#0" expanded="false" />
-            <element signature="e#2616#2898#0" expanded="false" />
-            <element signature="e#2928#3042#0" expanded="false" />
-            <element signature="e#3092#3200#0" expanded="false" />
-            <element signature="e#3219#4330#0" expanded="false" />
-            <element signature="e#4350#5189#0" expanded="false" />
-            <element signature="e#5209#7729#0" expanded="false" />
-            <element signature="e#7749#8042#0" expanded="false" />
-            <element signature="e#8062#11578#0" expanded="false" />
-            <element signature="e#12022#13992#0" expanded="false" />
-            <element signature="e#14012#15268#0" expanded="false" />
-            <element signature="e#15288#16484#0" expanded="false" />
-            <element signature="e#16505#19141#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/feature_0get.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="387" column="89" lean-forward="true" selection-start-line="374" selection-start-column="4" selection-end-line="387" selection-end-column="89" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pre_result/svm_old_label.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-450">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/data_svmfea_self.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/allmodel3_selfEveryone.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="188" column="28" lean-forward="false" selection-start-line="188" selection-start-column="28" selection-end-line="188" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data_pre/alldata.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="549">
-          <caret line="1344" column="47" lean-forward="true" selection-start-line="1344" selection-start-column="47" selection-end-line="1344" selection-end-column="47" />
-          <folding>
-            <element signature="e#74#291#0" expanded="false" />
-            <element signature="e#559#683#0" expanded="false" />
-            <element signature="e#710#971#0" expanded="false" />
-            <element signature="e#1082#1166#0" expanded="false" />
-            <element signature="e#1210#1685#0" expanded="false" />
-            <element signature="e#2170#2901#0" expanded="false" />
-            <element signature="e#2930#3708#0" expanded="false" />
-            <element signature="e#3745#3843#0" expanded="false" />
-            <element signature="e#4007#4055#0" expanded="false" />
-            <element signature="e#4083#4814#0" expanded="false" />
-            <element signature="e#4844#8285#0" expanded="false" />
-            <element signature="e#8315#11319#0" expanded="false" />
-            <element signature="e#11354#14382#0" expanded="false" />
-            <element signature="e#14417#17480#0" expanded="false" />
-            <element signature="e#17515#20599#0" expanded="false" />
-            <element signature="e#20633#23922#0" expanded="false" />
-            <element signature="e#23960#27221#0" expanded="false" />
-            <element signature="e#27254#30095#0" expanded="false" />
-            <element signature="e#30136#34047#0" expanded="false" />
-            <element signature="e#34081#38039#0" expanded="false" />
-            <element signature="e#38098#42694#0" expanded="false" />
-            <element signature="e#42725#46013#0" expanded="false" />
-            <element signature="e#47638#49271#0" expanded="false" />
-            <element signature="e#52892#55157#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/data/data_svmfea_self.py" />
     <entry file="file://$PROJECT_DIR$/data/data_svmfea_self/train_fold0.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -903,31 +506,349 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-39826">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/recode.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-174">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testEveryoneBilstm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2798">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lstm_testNEWOLD.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1275">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/picsmo.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/picori.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-208506">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/pre_res.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-201056">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/allmodel3_testEveryone.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-150">
+          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/res10/all_lstm3_feas/label_caimengyuan">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4500">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_pre/cnndata.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PicandMatrix.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2175">
+          <caret line="91" column="27" lean-forward="false" selection-start-line="91" selection-start-column="27" selection-end-line="91" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testtmp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1552">
+          <caret line="360" column="16" lean-forward="false" selection-start-line="360" selection-start-column="16" selection-end-line="360" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tmp_lstm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6050">
+          <caret line="26" column="16" lean-forward="false" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_pre/dataFortest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="181" column="8" lean-forward="false" selection-start-line="181" selection-start-column="8" selection-end-line="181" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_pre/myo_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/forPICS/dwt_pic_res.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2675">
+          <caret line="293" column="0" lean-forward="false" selection-start-line="293" selection-start-column="0" selection-end-line="293" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datadescribe.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="750">
+          <caret line="123" column="21" lean-forward="false" selection-start-line="123" selection-start-column="21" selection-end-line="123" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_pre/alldata.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="875">
+          <caret line="90" column="0" lean-forward="true" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fcrnn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6922">
+          <caret line="172" column="63" lean-forward="false" selection-start-line="172" selection-start-column="63" selection-end-line="172" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/load_all_confusionMatrix.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="193" column="25" lean-forward="false" selection-start-line="193" selection-start-column="25" selection-end-line="193" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/data_pre/get_svmfea_data.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="154" column="26" lean-forward="true" selection-start-line="154" selection-start-column="26" selection-end-line="154" selection-end-column="26" />
+        <state relative-caret-position="675">
+          <caret line="56" column="0" lean-forward="true" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lstm_0410_emgandwavelet.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res_mid_recode.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10125">
+          <caret line="413" column="0" lean-forward="false" selection-start-line="413" selection-start-column="0" selection-end-line="413" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lstm_newdata04.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4725">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/all3_everyone_data.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/allmodel3_Everyonetest2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4300">
+          <caret line="49" column="13" lean-forward="true" selection-start-line="49" selection-start-column="13" selection-end-line="49" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/all_two_lstm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../周旭峰的毕业设计/2-程序/EMG_RNN/data_pre/alldata.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="645" column="0" lean-forward="true" selection-start-line="645" selection-start-column="0" selection-end-line="645" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../周旭峰的毕业设计/2-程序/EMG_RNN/data_pre/get_svmfea_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="950">
+          <caret line="70" column="20" lean-forward="false" selection-start-line="70" selection-start-column="20" selection-end-line="70" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../周旭峰的毕业设计/2-程序/EMG_RNN/data_pre/myo_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4075">
+          <caret line="170" column="42" lean-forward="true" selection-start-line="170" selection-start-column="42" selection-end-line="170" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../周旭峰的毕业设计/2-程序/EMG_RNN/data_pre/renameCdata.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1100">
+          <caret line="51" column="0" lean-forward="true" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fcrnn_cnn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="81" column="25" lean-forward="false" selection-start-line="81" selection-start-column="25" selection-end-line="81" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../周旭峰的毕业设计/2-程序/EMG_RNN/fcrnn_cnn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-572">
+          <caret line="198" column="19" lean-forward="false" selection-start-line="198" selection-start-column="19" selection-end-line="198" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/allmodel3_selfEveryone.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lstm_0405_kfold.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3500">
+          <caret line="9" column="27" lean-forward="false" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../周旭峰的毕业设计/2-程序/EMG_RNN/all_lstm3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-447">
+          <caret line="398" column="32" lean-forward="false" selection-start-line="398" selection-start-column="32" selection-end-line="398" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../周旭峰的毕业设计/2-程序/EMG_RNN/all_lstm1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="800">
+          <caret line="332" column="32" lean-forward="true" selection-start-line="332" selection-start-column="4" selection-end-line="332" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/feature_0get.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="367">
+          <caret line="59" column="23" lean-forward="false" selection-start-line="59" selection-start-column="23" selection-end-line="59" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_pre/diffeature.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="263" column="0" lean-forward="false" selection-start-line="263" selection-start-column="0" selection-end-line="263" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/real_time.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="15" column="101" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="15" selection-end-column="101" />
           <folding>
-            <element signature="e#60#78#0" expanded="true" />
-            <element signature="e#134#351#0" expanded="false" />
-            <element signature="e#849#1103#0" expanded="false" />
+            <element signature="e#2581#8165#0" expanded="false" />
+            <element signature="e#8213#11040#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../周旭峰的毕业设计/2-程序/EMG_RNN/real_time.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7350">
+          <caret line="294" column="29" lean-forward="false" selection-start-line="294" selection-start-column="29" selection-end-line="294" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../周旭峰的毕业设计/2-程序/EMG_RNN/svm_old.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3823">
+          <caret line="231" column="16" lean-forward="false" selection-start-line="231" selection-start-column="16" selection-end-line="231" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/getRes50and10.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../周旭峰的毕业设计/2-程序/EMG_RNN/get_Res50and10.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="149" column="20" lean-forward="true" selection-start-line="149" selection-start-column="20" selection-end-line="149" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/svm_after_net.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="378" column="11" lean-forward="false" selection-start-line="378" selection-start-column="11" selection-end-line="378" selection-end-column="11" />
+        <state relative-caret-position="217">
+          <caret line="410" column="18" lean-forward="false" selection-start-line="410" selection-start-column="18" selection-end-line="410" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/all_three_lstm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="160" column="53" lean-forward="true" selection-start-line="159" selection-start-column="49" selection-end-line="160" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/realTIME2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="273" column="13" lean-forward="true" selection-start-line="264" selection-start-column="12" selection-end-line="273" selection-end-column="13" />
           <folding>
-            <element signature="e#166#196#0" expanded="true" />
-            <element signature="e#2062#6446#0" expanded="false" />
-            <element signature="e#6466#9016#0" expanded="false" />
-            <element signature="e#9036#12679#0" expanded="false" />
+            <element signature="e#2969#5444#0" expanded="false" />
+            <element signature="e#5492#8319#0" expanded="false" />
+            <element signature="e#9939#10226#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2650">
+          <caret line="29" column="25" lean-forward="false" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
+          <folding>
+            <element signature="e#1461#3936#0" expanded="false" />
           </folding>
         </state>
       </provider>

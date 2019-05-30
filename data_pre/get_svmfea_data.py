@@ -4,6 +4,8 @@ main：
     用户独立
 main2：
     用户依赖_self
+main3:
+    用户依赖，但是只使用均值。非时间序列！
 '''
 
 import numpy as np
@@ -152,5 +154,48 @@ def main2():
         Matrix_to_CSV('../data/data_svmfea_self/train_fold{}.txt'.format(i_kfold), mean_d_train)
         Matrix_to_CSV('../data/data_svmfea_self/test_fold{}.txt'.format(i_kfold), mean_d_test)
 
+
+def main3():
+    fold = '../data/actdata/'
+    acts = ['double', 'fist', 'spread', 'six', 'wavein', 'waveout', 'yes', 'no', 'finger', 'snap']
+    all_person = getPersons_every(fold)
+    for i_kfold in range(5):
+        data_mean_train = []
+        data_mean_test = []
+        print("Now kfold{}".format(i_kfold))
+        for person in all_person:
+            for act in acts:
+                oa, ob = person, act
+                filename = fold + oa + '_' + ob + '_b.txt'
+                data = Read__mean_2(filename)
+                cutting = Read__mean_2(fold + oa + '_' + ob + '_c.txt')
+                _starts, _ends = data_len_get(len(cutting), i_kfold)  # 确定该区间范围
+                for cut in range(0, len(cutting)):
+                    if cut >= _starts and cut < _ends:
+                        # test--
+                        if cut == 0:
+                            tmp_data = data[0:cutting[cut], :]
+                        else:
+                            tmp_data = data[cutting[cut - 1]:cutting[cut], :]
+                        # dongzuo_data = z_score(get_2emg(np.abs(tmp_data)))
+                        dongzuo_data = z_score(np.mean(np.abs(tmp_data), axis=0))
+                        dongzuo_data = np.append(dongzuo_data, [get_lei(ob)])
+                        data_mean_test.append(dongzuo_data)
+                    else:
+                        # train--
+                        if cut == 0:
+                            tmp_data = data[0:cutting[cut], :]
+                        else:
+                            tmp_data = data[cutting[cut - 1]:cutting[cut], :]
+                        # dongzuo_data = z_score(get_2emg(np.abs(tmp_data)))
+                        dongzuo_data = z_score(np.mean(np.abs(tmp_data), axis=0))
+                        dongzuo_data = np.append(dongzuo_data, [get_lei(ob)])
+                        data_mean_train.append(dongzuo_data)
+        mean_d_train = np.array(data_mean_train)
+        mean_d_test = np.array(data_mean_test)
+        Matrix_to_CSV('../data/data_svmfea_self/mean_train_fold{}.txt'.format(i_kfold), mean_d_train)
+        Matrix_to_CSV('../data/data_svmfea_self/mean_test_fold{}.txt'.format(i_kfold), mean_d_test)
+
+
 if __name__ == '__main__':
-    main2()
+    main3()
